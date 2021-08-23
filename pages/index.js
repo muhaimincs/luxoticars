@@ -1,4 +1,7 @@
-import Head from 'next/head'
+import Head from 'next/head';
+
+import Layout from '../components/layout.homepage';
+import Header from '../components/header.homepage';
 
 export default function Home() {
   return (
@@ -78,5 +81,13 @@ export default function Home() {
         </a>
       </footer>
     </div>
+  )
+}
+
+Home.getLayout = function getLayout(page) {
+  return (
+    <Layout>
+      <Header />{page}
+    </Layout>
   )
 }
