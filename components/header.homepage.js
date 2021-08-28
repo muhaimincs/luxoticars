@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { Disclosure, Menu, Transition, Popover } from '@headlessui/react';
+import { Menu, Transition, Popover } from '@headlessui/react';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -15,11 +15,11 @@ const navigation = [
 export default function Example() {
   return (
     <Popover className="bg-gray-800">
-      <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto pr-2 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between h-16">
-          <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+          <div className="absolute inset-y-0 left-0 flex items-center sm:hidden pl-2 pr-5 bg-white after:w-0 after:h-0 after:block after:border-l-[24px] after:border-l-transparent after:border-r-0 after:border-r-transparent after:border-b-[80px] after:border-b-gray-800 after:absolute after:bottom-0 after:right-0">
             {/* Mobile menu button*/}
-            <Popover.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+            <Popover.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
               <span className="sr-only">Open main menu</span>
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h8m-8 6h16" />
@@ -29,8 +29,8 @@ export default function Example() {
           <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex-shrink-0 flex items-center">
               <img
-                className="block lg:hidden h-8 w-auto"
-                src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
+                className="block lg:hidden h-12 w-auto"
+                src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Skull-Icon.svg"
                 alt="Workflow"
               />
               <img
