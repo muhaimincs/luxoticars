@@ -33,13 +33,15 @@ export default function Example() {
                 src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Skull-Icon.svg"
                 alt="Workflow"
               />
-              <div className="hidden lg:block w-auto flex">
-                <img
-                  className="h-8 w-auto"
-                  src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Skull-Icon.svg"
-                  alt="Workflow"
-                />
-                Luxoticars
+              <div className="hidden lg:block w-auto">
+                <div className="flex items-center text-white">
+                  <img
+                    className="h-8"
+                    src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Skull-Icon.svg"
+                    alt="Workflow"
+                  />
+                  <span>Luxoticars</span>
+                </div>
               </div>
               
             </div>
