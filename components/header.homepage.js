@@ -138,8 +138,8 @@ export default function Example() {
               <div className="flex items-center justify-between">
                 <div>
                   <img
-                    className="h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+                    className="h-12 w-auto"
+                    src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Skull-Icon.svg"
                     alt="Workflow"
                   />
                 </div>
