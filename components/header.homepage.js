@@ -33,6 +33,15 @@ export default function Example() {
                 src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Skull-Icon.svg"
                 alt="Workflow"
               />
+              <div className="hidden lg:block w-auto flex">
+                <img
+                  className="h-8 w-auto"
+                  src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Skull-Icon.svg"
+                  alt="Workflow"
+                />
+                Luxoticars
+              </div>
+              
             </div>
             <div className="hidden sm:block sm:ml-6">
               <div className="flex space-x-4">
