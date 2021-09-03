@@ -17,9 +17,9 @@ function Yt ({ data }) {
 
   return (
     <div className="group relative" ref={elementRef}>
-      <div className="relative w-full h-80 rounded-lg overflow-hidden group-hover:opacity-75 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
+      <div className="relative w-full h-80 rounded-lg overflow-hidden group-hover:opacity-75 sm:h-64">
         <iframe
-          className="w-full h-full object-center object-cover"
+          className="h-full w-full"
           src={`${data.href}?controls=0`}
           title={data.name} 
           frameBorder="0"

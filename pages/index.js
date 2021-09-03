@@ -36,7 +36,7 @@ export default function Home() {
       /> */}
     </div>
     <div className="max-w-7xl mx-auto w-full sm:px-6 lg:px-8 px-3 py-6">
-      <h1 className="text-white text-3xl font-sans md:text-center">Importer for Rare, Classic & Exotic Vehicle</h1>
+      <h1 className="text-white text-3xl md:text-center font-sans">Importer for Rare, Classic & Exotic Vehicle</h1>
     </div>
     <YoutubeList />
     <div className="max-w-7xl w-full px-3 py-6">
@@ -45,13 +45,13 @@ export default function Home() {
     </div>
     <footer className="flex items-center justify-center w-full h-24">
       <a
-        className="flex items-center justify-center"
+        className="flex items-center justify-center font-sans"
         href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
         target="_blank"
         rel="noopener noreferrer"
       >
         Powered by{' '}
-        <img src="/vercel.svg" alt="Vercel Logo" className="h-4 ml-2" />
+        MCS DEV RESOURCES
       </a>
     </footer>
     </>
@@ -64,6 +64,10 @@ Home.getLayout = function getLayout(page) {
       <Head>
         <title>Luxoticars</title>
         <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/e/e3/Skull-Icon.svg" />
+        <link 
+          href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" 
+          rel="stylesheet"
+        />
       </Head>
       <Layout>
         <Header />
