@@ -1941,6 +1941,11 @@ react-dom@^17.0.2:
     object-assign "^4.1.1"
     scheduler "^0.20.2"
 
+react-hook-dimensions@^1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/react-hook-dimensions/-/react-hook-dimensions-1.3.1.tgz#41f1e05e86eddb4b800bb9a6db7e3d596ecce4e5"
+  integrity sha512-rcYpepK+ChCMUDdHVLQ5VltrSFYBVQJQyh+gsTDvpZP4LTnDqp4NBZqbrnj1XNl2cPKeB3KvbMcmRU4t3stpng==
+
 react-is@17.0.2:
   version "17.0.2"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"

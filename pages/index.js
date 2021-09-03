@@ -1,51 +1,74 @@
 import Head from 'next/head';
+import Image from 'next/image';
 
 import Layout from '../components/layout.homepage';
 import Header from '../components/header.homepage';
+import YoutubeList from '../components/youtube-homepage';
+
+import WelcomeImg from '../public/img/welcome.jpeg';
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Luxoticars
-          </a>
-        </h1>
-
-        <p className="mt-3 text-2xl">
-          Get started by editing{' '}
-          <code className="p-3 font-mono text-lg bg-gray-100 rounded-md">
-            pages/index.js
-          </code>
-        </p>
-      </main>
-
-      <footer className="flex items-center justify-center w-full h-24 border-t">
-        <a
-          className="flex items-center justify-center"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="h-4 ml-2" />
-        </a>
-      </footer>
+    <>
+    <div className="absolute top-0 h-3/4 w-screen overflow-hidden z-[-100]">
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline="playsinline"
+        preload="metadata"
+        className="bg-cover object-cover bg-center h-full w-full"
+        poster="/img/poster.jpeg"
+        data-object-fit="contain"
+      >
+        <source
+          src="/vids/montage.mp4"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
+      {/* <Image
+        alt="Luxoticars"
+        src={WelcomeImg}
+        layout="fill"
+        objectFit="contain"
+        quality={100}
+      /> */}
     </div>
+    <div className="max-w-7xl mx-auto w-full sm:px-6 lg:px-8 px-3 py-6">
+      <h1 className="text-white text-3xl font-sans md:text-center">Importer for Rare, Classic & Exotic Vehicle</h1>
+    </div>
+    <YoutubeList />
+    <div className="max-w-7xl w-full px-3 py-6">
+      <h1 className="text-white text-3xl">Why Us?</h1>
+      <p>Luxoticars, we pride ourselves through the industry’s recognition as one of the pioneer retailers of classic, rare, collectible & exotic cars. With an extensive international network & experience in sourcing, purchasing and selling vehicles to customers worldwide, our team is well prepared to provide fully tailored services for buyers on their next acquisition.</p>
+    </div>
+    <footer className="flex items-center justify-center w-full h-24">
+      <a
+        className="flex items-center justify-center"
+        href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Powered by{' '}
+        <img src="/vercel.svg" alt="Vercel Logo" className="h-4 ml-2" />
+      </a>
+    </footer>
+    </>
   )
 }
 
 Home.getLayout = function getLayout(page) {
   return (
-    <Layout>
-      <Header />{page}
-    </Layout>
+    <>
+      <Head>
+        <title>Luxoticars</title>
+        <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/e/e3/Skull-Icon.svg" />
+      </Head>
+      <Layout>
+        <Header />
+        {page}
+      </Layout>
+    </>
   )
 }
