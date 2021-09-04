@@ -36,7 +36,7 @@ export default function Home() {
       /> */}
     </div>
     <div className="max-w-7xl mx-auto w-full sm:px-6 lg:px-8 px-3 py-6">
-      <h1 className="text-white text-3xl md:text-center font-sans">Importer for Rare, Classic & Exotic Vehicle</h1>
+      <h1 className="text-white text-3xl md:text-center font-sans">The Syndicate Carlifestyle Cartel</h1>
     </div>
     <YoutubeList />
     <div className="max-w-7xl w-full px-3 py-6">

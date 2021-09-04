@@ -203,7 +203,7 @@ export default function Example() {
         leaveFrom="opacity-100 scale-100"
         leaveTo="opacity-0 scale-95"
       >
-        <Popover.Panel focus className="bg-black absolute inset-0 md:hidden z-10">
+        <Popover.Panel focus className="bg-black fixed inset-0 md:hidden z-10">
           <div className="text-white divide-y-2 divide-gray-50">
             <div className="pt-5 pb-6 px-5">
               <div className="flex items-center justify-between">
