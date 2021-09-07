@@ -21,8 +21,8 @@ export default function Example() {
       if (!entry.isIntersecting && entry !== undefined) {
         navRef.current.classList.add('backdrop-blur-lg');
         navRef.current.classList.add('bg-gradient-to-r');
-        navRef.current.classList.add('from-[#833ab466]');
-        navRef.current.classList.add('via-[#fd1d1d57]');
+        navRef.current.classList.add('from-[#21252999]');
+        navRef.current.classList.add('via-[#2125293d]');
         navRef.current.classList.add('to-gray-900');
         navRef.current.classList.add('bg-opacity-25');
         navRef.current.classList.add('translate-y-0');
@@ -32,8 +32,8 @@ export default function Example() {
       } else {
         navRef.current.classList.remove('backdrop-blur-lg');
         navRef.current.classList.remove('bg-gradient-to-r');
-        navRef.current.classList.remove('from-[#833ab466]');
-        navRef.current.classList.remove('via-[#fd1d1d57]');
+        navRef.current.classList.remove('from-[#21252999]');
+        navRef.current.classList.remove('via-[#2125293d]');
         navRef.current.classList.remove('to-gray-900');
         navRef.current.classList.remove('bg-opacity-25');
         navRef.current.classList.remove('translate-y-0');

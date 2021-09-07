@@ -35,7 +35,7 @@ export default function Home() {
         quality={100}
       /> */}
     </div>
-    <div className="max-w-7xl mx-auto w-full sm:px-6 lg:px-8 px-3 pt-48 md:py-60 lg:pt-[48rem] lg:pb-3">
+    <div className="max-w-7xl mx-auto w-full sm:px-6 lg:px-8 px-3 pt-36 md:py-60 lg:pt-[48rem] lg:pb-3">
       <h1 className="text-white text-3xl md:text-5xl md:text-center font-sans">The Syndicate Carlifestyle Cartel</h1>
     </div>
     <YoutubeList />
