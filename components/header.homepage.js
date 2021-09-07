@@ -1,7 +1,8 @@
-import { Fragment, useRef, useEffect } from 'react';
-import { Menu, Transition, Popover } from '@headlessui/react';
+/* eslint-disable @next/next/no-img-element */
+import { Fragment, useRef, useEffect } from 'react'
+import { Menu, Transition, Popover } from '@headlessui/react'
 
-function classNames(...classes) {
+function classNames (...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
@@ -9,47 +10,47 @@ const navigation = [
   { name: 'History', href: '#', current: true },
   { name: 'Stock', href: '#', current: false },
   { name: 'Gallery', href: '#', current: false },
-  { name: 'Shop', href: '#', current: false },
+  { name: 'Shop', href: '#', current: false }
 ]
 
-export default function Example() {
-  const sentinalRef = useRef([]);
-  const navRef = useRef(null);
-  const mainNav = useRef(null);
+export default function Example () {
+  const sentinalRef = useRef([])
+  const navRef = useRef(null)
+  const mainNav = useRef(null)
   const handler = ([entry]) => {
     if (navRef && navRef.current) {
       if (!entry.isIntersecting && entry !== undefined) {
-        navRef.current.classList.add('backdrop-blur-lg');
-        navRef.current.classList.add('bg-gradient-to-r');
-        navRef.current.classList.add('from-[#21252999]');
-        navRef.current.classList.add('via-[#2125293d]');
-        navRef.current.classList.add('to-gray-900');
-        navRef.current.classList.add('bg-opacity-25');
-        navRef.current.classList.add('translate-y-0');
-        navRef.current.classList.remove('translate-y-full');
+        navRef.current.classList.add('backdrop-blur-lg')
+        navRef.current.classList.add('bg-gradient-to-r')
+        navRef.current.classList.add('from-[#21252999]')
+        navRef.current.classList.add('via-[#2125293d]')
+        navRef.current.classList.add('to-gray-900')
+        navRef.current.classList.add('bg-opacity-25')
+        navRef.current.classList.add('translate-y-0')
+        navRef.current.classList.remove('translate-y-full')
 
-        mainNav.current.classList.add('backdrop-blur-lg');
+        mainNav.current.classList.add('backdrop-blur-lg')
       } else {
-        navRef.current.classList.remove('backdrop-blur-lg');
-        navRef.current.classList.remove('bg-gradient-to-r');
-        navRef.current.classList.remove('from-[#21252999]');
-        navRef.current.classList.remove('via-[#2125293d]');
-        navRef.current.classList.remove('to-gray-900');
-        navRef.current.classList.remove('bg-opacity-25');
-        navRef.current.classList.remove('translate-y-0');
-        navRef.current.classList.add('translate-y-full');
+        navRef.current.classList.remove('backdrop-blur-lg')
+        navRef.current.classList.remove('bg-gradient-to-r')
+        navRef.current.classList.remove('from-[#21252999]')
+        navRef.current.classList.remove('via-[#2125293d]')
+        navRef.current.classList.remove('to-gray-900')
+        navRef.current.classList.remove('bg-opacity-25')
+        navRef.current.classList.remove('translate-y-0')
+        navRef.current.classList.add('translate-y-full')
 
-        mainNav.current.classList.remove('backdrop-blur-lg');
+        mainNav.current.classList.remove('backdrop-blur-lg')
       }
     }
-  };
+  }
 
   useEffect(() => {
     if (window) {
-      const observer = new window.IntersectionObserver(handler);
-      observer.observe(sentinalRef.current);
+      const observer = new window.IntersectionObserver(handler)
+      observer.observe(sentinalRef.current)
     }
-  }, [sentinalRef]);
+  }, [sentinalRef])
 
   return (
     <>
@@ -59,7 +60,7 @@ export default function Example() {
         <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
           <div className="relative flex items-center justify-between h-16">
             <div className="absolute bg-transparent inset-y-0 left-0 flex items-center sm:hidden pl-2 pr-5">
-              {/* Mobile menu button*/}
+              {/* Mobile menu button */}
               <Popover.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                 <span className="sr-only">Open main menu</span>
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -84,7 +85,6 @@ export default function Example() {
                     <span className="uppercase text-white font-serif subpixel-antialiased text-2xl tracking-wider">Luxoticars</span>
                   </div>
                 </div>
-                
               </div>
               <div className="hidden sm:block sm:ml-6">
                 <div className="flex space-x-4">
@@ -176,7 +176,7 @@ export default function Example() {
       <div id="bottom" ref={navRef} className="fixed z-10 lg:hidden bottom-0 left-0 right-0 max-w-7xl mx-auto sm:px-6 lg:px-8 transform backdrop-filter">
         <div className="relative flex items-center justify-between h-16">
           <div className="absolute bg-transparent inset-y-0 left-0 flex items-center sm:hidden pl-2 pr-5">
-            {/* Mobile menu button*/}
+            {/* Mobile menu button */}
             <Popover.Button className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
               <span className="sr-only">Open main menu</span>
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">

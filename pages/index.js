@@ -1,13 +1,30 @@
-import Head from 'next/head';
-import Image from 'next/image';
+import Head from 'next/head'
+// import Image from 'next/image'
 
-import Layout from '../components/layout.homepage';
-import Header from '../components/header.homepage';
-import YoutubeList from '../components/youtube-homepage';
+import WEB from '../web.config'
+import { getAllPosts } from '../lib/notion'
+import Layout from '../components/layout.homepage'
+import Header from '../components/header.homepage'
+import YoutubeList from '../components/youtube-homepage'
 
-import WelcomeImg from '../public/img/welcome.jpeg';
+// import WelcomeImg from '../public/img/welcome.jpeg'
 
-export default function Home() {
+export async function getStaticProps () {
+  const posts = await getAllPosts({ includePages: false })
+  const postsToShow = posts.slice(0, WEB.postsPerPage)
+  const totalPosts = posts.length
+  const showNext = totalPosts > WEB.postsPerPage
+  return {
+    props: {
+      page: 1, // current page is 1
+      postsToShow,
+      showNext
+    },
+    revalidate: 1
+  }
+}
+export default function Home ({ postsToShow, page, showNext }) {
+  console.log(postsToShow)
   return (
     <>
     <div className="absolute top-0 h-3/4 w-screen overflow-hidden z-[-100]">
@@ -27,13 +44,6 @@ export default function Home() {
         />
         Your browser does not support the video tag.
       </video>
-      {/* <Image
-        alt="Luxoticars"
-        src={WelcomeImg}
-        layout="fill"
-        objectFit="contain"
-        quality={100}
-      /> */}
     </div>
     <div className="max-w-7xl mx-auto w-full sm:px-6 lg:px-8 px-3 pt-36 md:py-60 lg:pt-[48rem] lg:pb-3">
       <h1 className="text-white text-3xl md:text-5xl md:text-center font-sans">The Syndicate Carlifestyle Cartel</h1>
@@ -58,16 +68,12 @@ export default function Home() {
   )
 }
 
-Home.getLayout = function getLayout(page) {
+Home.getLayout = function getLayout (page) {
   return (
     <>
       <Head>
         <title>Luxoticars</title>
         <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/e/e3/Skull-Icon.svg" />
-        <link 
-          href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" 
-          rel="stylesheet"
-        />
       </Head>
       <Layout>
         <Header />
