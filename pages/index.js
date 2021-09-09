@@ -56,7 +56,7 @@ export default function Home ({ postsToShow, page, showNext }) {
     <footer className="flex items-center justify-center w-full h-24">
       <a
         className="flex items-center justify-center font-sans"
-        href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+        href="https://mcstech.dev"
         target="_blank"
         rel="noopener noreferrer"
       >

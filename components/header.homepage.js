@@ -7,10 +7,10 @@ function classNames (...classes) {
 }
 
 const navigation = [
-  { name: 'History', href: '#', current: true },
+  { name: 'History', href: '/history', current: false },
   { name: 'Stock', href: '#', current: false },
   { name: 'Gallery', href: '#', current: false },
-  { name: 'Shop', href: '#', current: false }
+  { name: 'Shop', href: 'https://shop.luxoticars.my', current: false }
 ]
 
 export default function Example () {
@@ -173,7 +173,7 @@ export default function Example () {
           </div>
         </div>
       </div>
-      <div id="bottom" ref={navRef} className="fixed z-10 lg:hidden bottom-0 left-0 right-0 max-w-7xl mx-auto transform backdrop-filter">
+      <div id="bottom" ref={navRef} className="fixed z-50 lg:hidden bottom-0 left-0 right-0 max-w-7xl mx-auto transform backdrop-filter">
         <div className="relative flex items-center justify-between h-16 sm:px-6 lg:px-8">
           <div className="bg-transparent flex items-center pl-2 pr-5">
             {/* Mobile menu button */}

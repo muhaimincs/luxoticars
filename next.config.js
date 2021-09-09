@@ -1,8 +1,8 @@
 module.exports = {
   webpack5: true,
-  // images: {
-  //   domains: ['gravatar.com']
-  // },
+  images: {
+    domains: ['images.ctfassets.net']
+  },
   eslint: {
     dirs: [
       'components',
