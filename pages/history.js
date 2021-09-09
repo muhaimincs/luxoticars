@@ -18,14 +18,14 @@ export default function HistoryPage () {
             <p className="mt-4 text-2xl text-white">
               He has a decade of experience selling reconditioned cars
             </p>
-            <p className="mt-4 text-xl text-white">
+            <p className="mt-4 text-white">
               He looks cocky but kind-hearted. An influencer of luxury and exotic cars;
               He switched his interest and hobby into a career
               His interest in cars began since his school days;
               He likes to make his clients as his close friends;
               Building friendship in motorsports;
             </p>
-            <p className="mt-4 text-xl text-white">
+            <p className="mt-4 text-white">
             He is obsessed with exotic cars;
               Cars are his hobby for a long while now;
               Together with his brother he is producing a video on cars to influence others with same interest as his.
