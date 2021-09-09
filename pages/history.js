@@ -8,8 +8,9 @@ import Head from 'next/head'
 
 export default function HistoryPage () {
   return (
+    <>
     <div className="relative overflow-hidden">
-      <div className="pt-16 pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
+      <div className="pt-16 pb-12 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
         <div className="z-10 relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:static">
           <div className="sm:max-w-lg md:max-w-sm">
             <h1 className="text-4xl font font-extrabold tracking-tight text-gray-300 sm:text-6xl">
@@ -32,7 +33,7 @@ export default function HistoryPage () {
             </p>
             </div>
           <div>
-            <div className="mt-10">
+            <div className="hidden md:block mt-10">
               {/* Decorative image grid */}
               <div
                 aria-hidden="true"
@@ -110,6 +111,29 @@ export default function HistoryPage () {
         </div>
       </div>
     </div>
+    <div className="block md:hidden grid grid-cols-2 grid-rows-2 gap-4 sm:gap-6 lg:gap-8 mb-20">
+      <img
+        src="https://images.ctfassets.net/ijuxqf6x1pz2/4Ybp8mYNmbsNWy2JdtpPrV/896c5652069d5ba2d7bece9e194e84be/photo_2021-09-09_22.07.56.jpeg"
+        alt="Abu garcia"
+        className="bg-gray-100 rounded-lg"
+      />
+      <img
+        src="https://images.ctfassets.net/ijuxqf6x1pz2/2fwRtwlEFj5IYJo0t9WGT0/d13a2321ddb6ef567f9d17407efc0afd/photo_2021-09-09_22.10.58.jpeg"
+        alt="Abu garcia"
+        className="bg-gray-100 rounded-lg"
+      />
+      <img
+        src="https://images.ctfassets.net/ijuxqf6x1pz2/yFyY3S4MzuWUg5bqFLTRi/46fd0076aa57c80ac95f1eba025c7a3a/photo_2021-09-09_22.08.29.jpeg"
+        alt="Abu garcia"
+        className="bg-gray-100 rounded-lg"
+      />
+      <img
+        src="https://images.ctfassets.net/ijuxqf6x1pz2/2CO6UHZJzEUMSEf4d4H8M2/a428904141ef95c7bd1b0c891d1e1dde/photo_2021-09-09_22.08.37.jpeg"
+        alt="Abu garcia"
+        className="bg-gray-100 rounded-lg"
+      />
+    </div>
+    </>
   )
 }
 
