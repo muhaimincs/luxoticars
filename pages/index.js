@@ -45,8 +45,8 @@ export default function Home ({ postsToShow, page, showNext }) {
         Your browser does not support the video tag.
       </video>
     </div>
-    <div className="max-w-7xl mx-auto w-full sm:px-6 lg:px-8 px-3 pt-36 md:py-60 lg:pt-[48rem] lg:pb-3">
-      <h1 className="text-white text-3xl md:text-5xl md:text-center font-sans">The Syndicate Carlifestyle Cartel</h1>
+    <div className="max-w-7xl mx-auto w-full sm:px-6 lg:px-8 px-3 pt-36 md:pt-72 md:pb-10 lg:pt-[20rem] xl:pt-30 lg:pb-3">
+      <h1 className="text-white text-3xl md:text-5xl md:text-center">The Syndicate Carlifestyle Cartel</h1>
     </div>
     <YoutubeList />
     <div className="max-w-7xl w-full px-3 py-6">

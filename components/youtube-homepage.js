@@ -32,7 +32,7 @@ function Yt ({ data }) {
       <h3 className="mt-6 text-sm text-gray-500">
         {data.name}
       </h3>
-      <p className="text-base font-semibold text-gray-900">{data.description}</p>
+      <p className="text-base text-gray-100 md:text-gray-900">{data.description}</p>
     </div>
   )
 }
@@ -61,9 +61,9 @@ const callouts = [
 export default function YoutubePage () {
   return (
     <div className="max-w-7xl mx-auto w-full sm:px-6 lg:px-8 px-3 py-0">
-      <div className="max-w-2xl mx-auto lg:max-w-none">
+      <div className="max-w-2xl mx-auto lg:max-w-none md:bg-white md:p-3 md:rounded">
+        <h3 className="hidden md:block text-center  text-xl font-sans italic uppercase text-red-600 py-6">Delivery Stories</h3>
         <div className="space-y-12 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-x-6">
-          <h3 className="hidden md:block italic uppercase">Delivery Stories</h3>
           {callouts.map((callout) => (
             <Yt key={callout.name} data={callout} />
           ))}

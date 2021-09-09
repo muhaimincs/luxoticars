@@ -5,6 +5,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
             rel="preconnect"
             href="https://fonts.gstatic.com"
@@ -13,16 +14,20 @@ class MyDocument extends Document {
           <link
             rel="preload"
             as="style"
-            href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,700;1,300&display=optional"
           />
-          <noscript>
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,700;1,300&display=optional"
+          />
+          {/* <noscript>
             <link
               rel="stylesheet"
-              href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap"
+              href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,700;1,300&display=optional"
             />
-          </noscript>
+          </noscript> */}
         </Head>
-        <body>
+        <body className="bg-black">
           <Main />
           <NextScript />
         </body>

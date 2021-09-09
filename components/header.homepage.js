@@ -173,9 +173,9 @@ export default function Example () {
           </div>
         </div>
       </div>
-      <div id="bottom" ref={navRef} className="fixed z-10 lg:hidden bottom-0 left-0 right-0 max-w-7xl mx-auto sm:px-6 lg:px-8 transform backdrop-filter">
-        <div className="relative flex items-center justify-between h-16">
-          <div className="absolute bg-transparent inset-y-0 left-0 flex items-center sm:hidden pl-2 pr-5">
+      <div id="bottom" ref={navRef} className="fixed z-10 lg:hidden bottom-0 left-0 right-0 max-w-7xl mx-auto transform backdrop-filter">
+        <div className="relative flex items-center justify-between h-16 sm:px-6 lg:px-8">
+          <div className="bg-transparent flex items-center pl-2 pr-5">
             {/* Mobile menu button */}
             <Popover.Button className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
               <span className="sr-only">Open main menu</span>
@@ -184,7 +184,7 @@ export default function Example () {
               </svg>
             </Popover.Button>
           </div>
-          <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+          <div className="flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
             <img
               className="h-8"
               src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Skull-Icon.svg"
@@ -192,6 +192,9 @@ export default function Example () {
             />
             <span className="uppercase text-white font-serif subpixel-antialiased text-2xl tracking-wider">Luxoticars</span>
           </div>
+        </div>
+        <div className="text-gray-100 text-xs bg-black text-center">
+          Copyright © 2021 Luxoticars Sdn. Bhd. All rights reserved.
         </div>
       </div>
       <Transition
