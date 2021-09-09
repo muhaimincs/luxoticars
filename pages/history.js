@@ -13,14 +13,14 @@ export default function HistoryPage () {
       <div className="pt-16 pb-12 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
         <div className="z-10 relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:static">
           <div className="sm:max-w-lg md:max-w-sm">
-            <h1 className="text-4xl font font-extrabold tracking-tight text-gray-300 sm:text-6xl">
+            <h1 className="text-2xl font font-extrabold tracking-tight text-gray-300 sm:text-6xl">
               History
             </h1>
-            <p className="mt-4 text-2xl text-white">
-              He has a decade of experience selling reconditioned cars
+            <p className="mt-4 text-xl text-white">
+              Luxoticars has a decade of experience selling reconditioned cars
             </p>
             <p className="mt-4 text-white">
-              He looks cocky but kind-hearted. An influencer of luxury and exotic cars;
+              An influencer of luxury and exotic cars.
               He switched his interest and hobby into a career
               His interest in cars began since his school days;
               He likes to make his clients as his close friends;
@@ -150,10 +150,10 @@ HistoryPage.getLayout = function getLayout (page) {
     <>
       <Head>
         <title>History • Luxoticars</title>
-        <meta name="description" content="He looks cocky but kind-hearted. An influencer of luxury and exotic cars" />
+        <meta name="description" content="Luxoticars has a decade of experience selling reconditioned cars. An influencer of luxury and exotic cars" />
         <meta property="og:locale" content="en-GB" />
         <meta property="og:title" content="Luxoticars History" />
-        <meta property="og:description" content="He looks cocky but kind-hearted. An influencer of luxury and exotic cars" />
+        <meta property="og:description" content="Luxoticars has a decade of experience selling reconditioned cars. An influencer of luxury and exotic cars" />
         <meta property="og:url" content="https://luxoticars.my/history" />
         <meta
           property="og:image"
@@ -161,7 +161,7 @@ HistoryPage.getLayout = function getLayout (page) {
         />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:description" content="He looks cocky but kind-hearted. An influencer of luxury and exotic cars" />
+        <meta name="twitter:description" content="Luxoticars has a decade of experience selling reconditioned cars. An influencer of luxury and exotic cars" />
         <meta name="twitter:title" content="Luxoticars History" />
         <meta
           name="twitter:image"
