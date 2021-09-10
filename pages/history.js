@@ -19,14 +19,14 @@ export default function HistoryPage () {
             <p className="mt-4 text-xl text-white">
               Luxoticars has a decade of experience selling reconditioned cars
             </p>
-            <p className="mt-4 text-white">
+            <p className="mt-4 text-xs text-white">
               An influencer of luxury and exotic cars.
               He switched his interest and hobby into a career
               His interest in cars began since his school days;
               He likes to make his clients as his close friends;
               Building friendship in motorsports;
             </p>
-            <p className="mt-4 text-white">
+            <p className="mt-4 text-xs text-white">
             He is obsessed with exotic cars;
               Cars are his hobby for a long while now;
               Together with his brother he is producing a video on cars to influence others with same interest as his.
@@ -111,24 +111,9 @@ export default function HistoryPage () {
         </div>
       </div>
     </div>
-    <div className="block md:hidden grid grid-cols-2 grid-rows-2 gap-4 sm:gap-6 lg:gap-8 mb-20">
+    <div className="block md:hidden grid grid-cols-1 grid-rows-1 gap-0">
       <img
         src="https://images.ctfassets.net/ijuxqf6x1pz2/4Ybp8mYNmbsNWy2JdtpPrV/896c5652069d5ba2d7bece9e194e84be/photo_2021-09-09_22.07.56.jpeg"
-        alt="Abu garcia"
-        className="bg-gray-100 rounded-lg"
-      />
-      <img
-        src="https://images.ctfassets.net/ijuxqf6x1pz2/2fwRtwlEFj5IYJo0t9WGT0/d13a2321ddb6ef567f9d17407efc0afd/photo_2021-09-09_22.10.58.jpeg"
-        alt="Abu garcia"
-        className="bg-gray-100 rounded-lg"
-      />
-      <img
-        src="https://images.ctfassets.net/ijuxqf6x1pz2/yFyY3S4MzuWUg5bqFLTRi/46fd0076aa57c80ac95f1eba025c7a3a/photo_2021-09-09_22.08.29.jpeg"
-        alt="Abu garcia"
-        className="bg-gray-100 rounded-lg"
-      />
-      <img
-        src="https://images.ctfassets.net/ijuxqf6x1pz2/2CO6UHZJzEUMSEf4d4H8M2/a428904141ef95c7bd1b0c891d1e1dde/photo_2021-09-09_22.08.37.jpeg"
         alt="Abu garcia"
         className="bg-gray-100 rounded-lg"
       />
