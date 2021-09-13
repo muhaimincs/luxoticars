@@ -72,17 +72,21 @@ export default function Example () {
               <div className="flex-shrink-0 flex items-center">
                 <img
                   className="block lg:hidden h-12 w-auto"
-                  src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Skull-Icon.svg"
+                  src="/LUXOTICARS.svg"
                   alt="Workflow"
                 />
                 <div className="hidden lg:block w-auto">
                   <div className="flex items-center text-white">
                     <img
                       className="h-8"
-                      src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Skull-Icon.svg"
+                      src="/LUXOTICARS.svg"
                       alt="Workflow"
                     />
-                    <span className="uppercase text-white font-serif subpixel-antialiased text-2xl tracking-wider">Luxoticars</span>
+                    <img
+                      className="h-8"
+                      src="/LUXOTICARS_WHITE_FONT.svg"
+                      alt="Workflow"
+                    />
                   </div>
                 </div>
               </div>
@@ -187,10 +191,20 @@ export default function Example () {
           <div className="flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
             <img
               className="h-8"
-              src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Skull-Icon.svg"
+              src="/LUXOTICARS.svg"
               alt="Workflow"
             />
-            <span className="uppercase text-white font-serif subpixel-antialiased text-2xl tracking-wider">Luxoticars</span>
+            <img
+              className="h-8"
+              src="/LUXOTICARS_WHITE_FONT.svg"
+              alt="Workflow"
+            />
+            {/* <img
+              className="h-8"
+              src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Skull-Icon.svg"
+              alt="Workflow"
+            /> */}
+            {/* <span className="uppercase text-white font-serif subpixel-antialiased text-2xl tracking-wider">Luxoticars</span> */}
           </div>
         </div>
         <div className="text-gray-100 text-xs bg-black text-center">
