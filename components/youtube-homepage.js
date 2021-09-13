@@ -60,7 +60,8 @@ const callouts = [
 
 export default function YoutubePage () {
   return (
-    <div className="max-w-7xl mx-auto w-full sm:px-6 lg:px-8 px-3 py-0">
+    <div className="lg:bg-white">
+    <div className="max-w-7xl mx-auto w-full sm:px-0 px-3">
       <div className="max-w-2xl mx-auto lg:max-w-none md:bg-white md:p-3 md:rounded">
         <h3 className="hidden md:block text-center  text-xl font-sans italic uppercase text-red-600 py-6">Delivery Stories</h3>
         <div className="space-y-12 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-x-6">
@@ -69,6 +70,7 @@ export default function YoutubePage () {
           ))}
         </div>
       </div>
+    </div>
     </div>
   )
 }

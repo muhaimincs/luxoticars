@@ -177,7 +177,7 @@ export default function Example () {
           </div>
         </div>
       </div>
-      <div id="bottom" ref={navRef} className="fixed z-50 lg:hidden bottom-0 left-0 right-0 max-w-7xl mx-auto transform backdrop-filter">
+      <div id="bottom" ref={navRef} className="fixed z-50 md:hidden bottom-0 left-0 right-0 max-w-7xl mx-auto transform backdrop-filter">
         <div className="relative flex items-center justify-between h-16 sm:px-6 lg:px-8">
           <div className="bg-transparent flex items-center pl-2 pr-5">
             {/* Mobile menu button */}
@@ -195,7 +195,7 @@ export default function Example () {
               alt="Luxoticars"
             />
             <img
-              className="h-8 max-w-xs"
+              className="w-32 h-8 max-w-xs"
               src="/LUXOTICARS_WHITE_FONT.svg"
               alt="Luxoticars"
             />

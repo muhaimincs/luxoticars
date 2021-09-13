@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Head from 'next/head'
 // import Image from 'next/image'
 
@@ -45,11 +46,21 @@ export default function Home ({ postsToShow, page, showNext }) {
         Your browser does not support the video tag.
       </video>
     </div>
-    <div className="max-w-7xl mx-auto w-full sm:px-6 lg:px-8 px-3 pt-36 md:pt-72 md:pb-10 lg:pt-[20rem] xl:pt-30 lg:pb-3">
-      <h1 className="text-white text-3xl md:text-5xl md:text-center">The Syndicate Carlifestyle Cartel</h1>
+    <div className="max-w-7xl mx-auto h-[61vh] md:h-[calc(100vh-34vh)] lg:h-[64vh] w-screen flex flex-col items-center justify-center space-y-3">
+      <img
+        className="h-32 opacity-0 md:opacity-100"
+        src="/LUXOTICARS.svg"
+        alt="luxoticars"
+      />
+      <img
+        className="w-72 max-w-xs"
+        src="/LUXOTICARS_WHITE_FONT.svg"
+        alt="luxoticars"
+      />
+      <h1 className="text-white text-xs md:text-5xl md:text-center">The Syndicate Carlifestyle Cartel</h1>
     </div>
     <YoutubeList />
-    <div className="max-w-7xl w-full px-3 py-6">
+    <div className="max-w-7xl mx-auto w-full px-3 py-6">
       <h1 className="text-white text-3xl">Why Us?</h1>
       <p>Luxoticars, we pride ourselves through the industry’s recognition as one of the pioneer retailers of classic, rare, collectible & exotic cars. With an extensive international network & experience in sourcing, purchasing and selling vehicles to customers worldwide, our team is well prepared to provide fully tailored services for buyers on their next acquisition.</p>
     </div>
