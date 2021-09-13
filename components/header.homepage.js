@@ -73,19 +73,19 @@ export default function Example () {
                 <img
                   className="block lg:hidden h-12 w-auto"
                   src="/LUXOTICARS.svg"
-                  alt="Workflow"
+                  alt="luxoticars"
                 />
                 <div className="hidden lg:block w-auto">
-                  <div className="flex items-center text-white">
+                  <div className="flex items-center text-white space-x-4">
                     <img
                       className="h-8"
                       src="/LUXOTICARS.svg"
-                      alt="Workflow"
+                      alt="luxoticars"
                     />
                     <img
-                      className="h-8"
+                      className="h-8 max-w-xs"
                       src="/LUXOTICARS_WHITE_FONT.svg"
-                      alt="Workflow"
+                      alt="luxoticars"
                     />
                   </div>
                 </div>
@@ -188,16 +188,16 @@ export default function Example () {
               </svg>
             </Popover.Button>
           </div>
-          <div className="flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+          <div className="flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 space-x-3">
             <img
               className="h-8"
               src="/LUXOTICARS.svg"
-              alt="Workflow"
+              alt="Luxoticars"
             />
             <img
-              className="h-8"
+              className="h-8 max-w-xs"
               src="/LUXOTICARS_WHITE_FONT.svg"
-              alt="Workflow"
+              alt="Luxoticars"
             />
             {/* <img
               className="h-8"
