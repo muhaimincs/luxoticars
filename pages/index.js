@@ -85,8 +85,8 @@ export default function Home ({ postsToShow, page, showNext, tags }) {
     <YoutubeList />
     <Tags tags={tags} currentTag={currentTag} />
     <Cars currentTag={currentTag} posts={data} />
-    <div className="max-w-7xl mx-auto w-full px-3 py-6">
-      <h1 className="text-white text-3xl">Why Us?</h1>
+    <div className="max-w-7xl text-white mx-auto w-full px-3 py-6">
+      <h1 className="text-3xl">Why Us?</h1>
       <p>Luxoticars, we pride ourselves through the industry’s recognition as one of the pioneer retailers of classic, rare, collectible & exotic cars. With an extensive international network & experience in sourcing, purchasing and selling vehicles to customers worldwide, our team is well prepared to provide fully tailored services for buyers on their next acquisition.</p>
     </div>
     <footer className="md:hidden flex items-center justify-center w-full h-24">

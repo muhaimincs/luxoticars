@@ -23,6 +23,7 @@
     "react-notion-x": "^4.8.7"
   },
   "devDependencies": {
+    "@tailwindcss/aspect-ratio": "^0.2.1",
     "autoprefixer": "^10.2.6",
     "eslint": "^7.32.0",
     "eslint-config-next": "^11.1.2",

@@ -5,23 +5,26 @@ import Link from 'next/link'
 
 const CarPost = ({ post }) => {
   const firstPhoto = post['Photo Gallery'].split(',')[0]
-  console.log(post, firstPhoto)
+  const tags = post.tags
   return (
     <Link href={`/${post.slug}`} prefetch={false}>
-      <a>
-        <article>
-          <img src={firstPhoto} className="rounded" />
-          <header className="flex flex-col justify-between md:flex-row md:items-baseline">
-            <h2 className="text-lg md:text-xl font-medium mb-2 cursor-pointer text-black dark:text-gray-100">
-              {post.title}
-            </h2>
-          </header>
-          <main>
-            <p className="hidden md:block leading-8 text-gray-700 dark:text-gray-300">
-              {post.summary}
-            </p>
-          </main>
-        </article>
+      <a className="group relative">
+        <header className="relative z-10 px-4 pt-40 pb-10 bg-gradient-to-t from-black">
+          <p className="text-sm font-medium text-white sm:mb-1 sm:text-gray-500 inline-flex">
+            {tags.map((tag) => tag)}
+          </p>
+          <h2 className="text-xl font-semibold text-white">
+            {post.title}
+          </h2>
+        </header>
+        {/* <main>
+          <p className="hidden md:block leading-8 text-gray-700 dark:text-gray-300">
+            {post.summary}
+          </p>
+        </main> */}
+        {/* <div className="w-full"> */}
+          <img src={firstPhoto} className="absolute inset-0 w-full h-full object-cover" />
+        {/* </div> */}
       </a>
     </Link>
   )

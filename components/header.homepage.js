@@ -63,7 +63,7 @@ export default function Example () {
   return (
     <>
     <div className="bg-transparent observer-element h-4" ref={sentinalRef} />
-    <Popover className="md:sticky md:top-0 z-10">
+    <Popover className="md:sticky md:top-0 z-50">
       <div ref={mainNav} className="transition-colors transition-opacity transition-shadow backdrop-filter">
         <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
           <div className="relative flex items-center justify-between h-16">
@@ -185,7 +185,7 @@ export default function Example () {
           </div>
         </div>
       </div>
-      <div id="bottom" ref={navRef} className="fixed z-50 md:hidden bottom-0 left-0 right-0 max-w-7xl mx-auto transform backdrop-filter">
+      <div id="bottom" ref={navRef} className="fixed z-40 md:hidden bottom-0 left-0 right-0 max-w-7xl mx-auto transform backdrop-filter">
         <div className="relative flex items-center justify-between h-16 sm:px-6 lg:px-8">
           <div className="bg-transparent flex items-center pl-2 pr-5">
             {/* Mobile menu button */}
@@ -228,7 +228,7 @@ export default function Example () {
         leaveFrom="opacity-100 scale-100"
         leaveTo="opacity-0 scale-95"
       >
-        <Popover.Panel focus className="bg-black fixed inset-0 md:hidden z-10">
+        <Popover.Panel focus className="bg-black fixed inset-0 md:hidden z-50">
           <div className="text-white divide-y-2 divide-gray-50">
             <div className="pt-5 pb-6 px-5">
               <div className="flex items-center justify-between">
