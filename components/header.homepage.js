@@ -207,12 +207,6 @@ export default function Example () {
               src="/LUXOTICARS_WHITE_FONT.svg"
               alt="Luxoticars"
             />
-            {/* <img
-              className="h-8"
-              src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Skull-Icon.svg"
-              alt="Workflow"
-            /> */}
-            {/* <span className="uppercase text-white font-serif subpixel-antialiased text-2xl tracking-wider">Luxoticars</span> */}
           </div>
         </div>
         <div className="text-gray-100 text-xs bg-black text-center">
@@ -232,13 +226,17 @@ export default function Example () {
           <div className="text-white divide-y-2 divide-gray-50">
             <div className="pt-5 pb-6 px-5">
               <div className="flex items-center justify-between">
-                <div className="flex items-center">
+                <div className="flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 space-x-3">
                   <img
-                    className="h-12 w-auto"
-                    src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Skull-Icon.svg"
-                    alt="Workflow"
+                    className="h-8"
+                    src="/LUXOTICARS.svg"
+                    alt="Luxoticars"
                   />
-                  <span className="uppercase text-white font-serif subpixel-antialiased text-2xl tracking-wider">Luxoticars</span>
+                  <img
+                    className="w-32 h-8 max-w-xs"
+                    src="/LUXOTICARS_WHITE_FONT.svg"
+                    alt="Luxoticars"
+                  />
                 </div>
                 <div className="-mr-2">
                   <Popover.Button className="bg-gray-700 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
