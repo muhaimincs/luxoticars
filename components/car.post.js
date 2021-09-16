@@ -11,7 +11,7 @@ const CarPost = ({ post }) => {
       <a className="group relative">
         <header className="relative z-10 px-4 pt-40 pb-10 bg-gradient-to-t from-black">
           <p className="text-sm font-medium text-white sm:mb-1 sm:text-gray-500 inline-flex">
-            {tags.map((tag) => tag)}
+            {tags.map((tag, i) => `${i !== 0 ? ' | ' : ''}${tag}`)}
           </p>
           <h2 className="text-xl font-semibold text-white">
             {post.title}

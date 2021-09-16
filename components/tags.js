@@ -24,7 +24,7 @@ const Tags = ({ tags, currentTag }) => {
               replace
             >
               <a className="group relative flex-shrink-0 w-24 h-24">
-                <img src={`/img/car-type/${key}.png`} className="w-full h-full object-cover" />
+                <img src={`/img/car-type/${key.toLowerCase()}.png`} className="w-full h-full object-cover" />
                 <div className="px-0 md:px-4 text-center absolute z-10 bottom-0 inset-x-0">
                   <p className={classnames(currentTag === key
                     ? 'text-xs font-medium text-red-600 font-semibold mb-1 uppercase'
