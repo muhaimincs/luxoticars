@@ -30,6 +30,10 @@ export default function Example () {
         navRef.current.classList.remove('translate-y-full')
 
         mainNav.current.classList.add('backdrop-blur-lg')
+        mainNav.current.classList.add('bg-gradient-to-r')
+        mainNav.current.classList.add('from-[#21252999]')
+        mainNav.current.classList.add('via-[#2125293d]')
+        mainNav.current.classList.add('to-gray-900')
       } else {
         navRef.current.classList.remove('backdrop-blur-lg')
         navRef.current.classList.remove('bg-gradient-to-r')
@@ -41,6 +45,10 @@ export default function Example () {
         navRef.current.classList.add('translate-y-full')
 
         mainNav.current.classList.remove('backdrop-blur-lg')
+        mainNav.current.classList.remove('bg-gradient-to-r')
+        mainNav.current.classList.remove('from-[#21252999]')
+        mainNav.current.classList.remove('via-[#2125293d]')
+        mainNav.current.classList.remove('to-gray-900')
       }
     }
   }

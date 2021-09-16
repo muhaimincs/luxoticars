@@ -61,16 +61,26 @@ const callouts = [
 export default function YoutubePage () {
   return (
     <div className="lg:bg-white">
-    <div className="max-w-7xl mx-auto w-full sm:px-0 px-3">
-      <div className="max-w-2xl mx-auto lg:max-w-none md:bg-white md:p-3 md:rounded">
-        <h3 className="hidden md:block text-center  text-xl font-sans italic uppercase text-red-600 py-6">Delivery Stories</h3>
-        <div className="space-y-12 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-x-6">
-          {callouts.map((callout) => (
-            <Yt key={callout.name} data={callout} />
-          ))}
+      <div className="max-w-7xl mx-auto w-full sm:px-0 px-3">
+        <div className="max-w-2xl mx-auto lg:max-w-none md:bg-white md:p-3 md:rounded">
+          <h3 className="hidden md:block text-center  text-xl font-sans italic uppercase text-red-600 py-6">Delivery Stories</h3>
+          <div className="space-y-12 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-x-6">
+            {callouts.map((callout) => (
+              <Yt key={callout.name} data={callout} />
+            ))}
+          </div>
+        </div>
+        <div className="mt-8 max-w-sm mx-auto">
+          <div className="inline-flex rounded-md shadow">
+            <a
+              href="https://youtube.com/luxoticars"
+              className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-red-600 hover:bg-red-700"
+            >
+            Subscribe to our channel
+            </a>
+          </div>
         </div>
       </div>
-    </div>
     </div>
   )
 }
