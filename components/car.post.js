@@ -1,13 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from 'next/link'
-// import BLOG from '../web.config'
-// import formatDate from '../lib/formatDate'
 
 const CarPost = ({ post }) => {
   const firstPhoto = post['Photo Gallery'].split(',')[0]
   const tags = post.tags
   return (
-    <Link href={`/${post.slug}`} prefetch={false}>
+    <Link href={`/${post.slug}`}>
       <a className="group relative">
         <header className="relative z-10 px-4 pt-40 pb-10 bg-gradient-to-t from-black">
           <p className="text-sm font-medium text-white sm:mb-1 sm:text-gray-500 inline-flex">

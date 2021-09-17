@@ -101,7 +101,7 @@ export default function CarPage ({ post, blockMap, emailHash }) {
           ))}
       </Swiper>
       <div className="absolute top-0 left-0 right-0 z-10 bg-gradient-to-b from-black h-32">
-        <h1 className="my-10 text-white text-lg md:text-5xl text-center">{title}</h1>
+        <h1 className="my-5 text-white text-lg md:text-5xl text-center">{title}</h1>
       </div>
     </div>
     <article className="max-w-7xl mx-auto px-3 md:px-0">
