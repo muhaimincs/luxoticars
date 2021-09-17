@@ -89,6 +89,8 @@ export default function CarPage ({ post, blockMap, emailHash }) {
         style={{ '--swiper-navigation-color': '#fff', '--swiper-pagination-color': '#fff' }}
         zoom={true}
         navigation={true}
+        autoHeight={true}
+        spaceBetween={20}
         pagination={{
           clickable: true
         }} className="bg-gradient-to-t from-black">
