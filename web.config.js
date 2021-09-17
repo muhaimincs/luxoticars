@@ -1,4 +1,6 @@
 const WEB = {
+  name: 'LUXOTICARS',
+  lang: 'en-US',
   link: 'https://luxoticars.my',
   postsPerPage: 7,
   sortByDate: false,

@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { Fragment, useRef, useEffect } from 'react'
+import Link from 'next/link'
 import { Menu, Transition, Popover } from '@headlessui/react'
 
 function classNames (...classes) {
@@ -78,11 +79,15 @@ export default function Example () {
             </div>
             <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
               <div className="flex-shrink-0 flex items-center">
-                <img
-                  className="block lg:hidden h-12 w-auto"
-                  src="/LUXOTICARS.svg"
-                  alt="luxoticars"
-                />
+                <Link href="/">
+                  <a>
+                    <img
+                      className="block lg:hidden h-12 w-auto"
+                      src="/LUXOTICARS.svg"
+                      alt="luxoticars"
+                    />
+                  </a>
+                </Link>
                 <div className="hidden lg:block w-auto">
                   <div className="flex items-center text-white space-x-4">
                     <img
