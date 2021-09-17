@@ -89,18 +89,20 @@ export default function Example () {
                   </a>
                 </Link>
                 <div className="hidden lg:block w-auto">
-                  <div className="flex items-center text-white space-x-4">
-                    <img
-                      className="h-8"
-                      src="/LUXOTICARS.svg"
-                      alt="luxoticars"
-                    />
-                    <img
-                      className="h-8 max-w-xs"
-                      src="/LUXOTICARS_WHITE_FONT.svg"
-                      alt="luxoticars"
-                    />
-                  </div>
+                  <Link href="/">
+                    <a className="flex items-center text-white space-x-4">
+                      <img
+                        className="h-8"
+                        src="/LUXOTICARS.svg"
+                        alt="luxoticars"
+                      />
+                      <img
+                        className="h-8 max-w-xs"
+                        src="/LUXOTICARS_WHITE_FONT.svg"
+                        alt="luxoticars"
+                      />
+                    </a>
+                  </Link>
                 </div>
               </div>
               <div className="hidden sm:block sm:ml-6">
