@@ -15,7 +15,8 @@ import Cars from '../components/cars.post'
 export async function getStaticProps () {
   const posts = await getAllPosts({ includePages: false })
   const tags = getAllTagsFromPosts(posts)
-  const postsToShow = posts.slice(0, WEB.postsPerPage)
+  // const postsToShow = posts.slice(0, WEB.postsPerPage)
+  const postsToShow = posts
   const totalPosts = posts.length
   const showNext = totalPosts > WEB.postsPerPage
   return {
