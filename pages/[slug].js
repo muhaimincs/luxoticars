@@ -106,7 +106,7 @@ export default function CarPage ({ post, blockMap, emailHash }) {
         <h1 className="my-5 text-white text-lg md:text-5xl text-center">{title}</h1>
       </div>
     </div>
-    <article className="max-w-7xl mx-auto px-3 md:px-0">
+    <article className="max-w-7xl mx-auto px-3 lg:px-0">
       {blockMap && (
         <NotionRenderer
           recordMap={blockMap}
