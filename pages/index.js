@@ -91,7 +91,7 @@ export default function Home ({ postsToShow, page, showNext, tags }) {
     </div>
     <footer className="md:hidden flex items-center justify-center w-full h-24">
       <a
-        className="flex items-center justify-center font-sans"
+        className="flex items-center justify-center font-sans text-white"
         href="https://mcstech.dev"
         target="_blank"
         rel="noopener noreferrer"
@@ -110,6 +110,8 @@ Home.getLayout = function getLayout (page) {
       <Head>
         <title>LUXOTICARS</title>
         <link rel="icon" href="/LUXOTICARS_GRADIENT_SKULL.svg" />
+        <meta name="robots" content="follow, index" />
+        <meta charSet="UTF-8" />
       </Head>
       <Layout>
         <Header />

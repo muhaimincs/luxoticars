@@ -1,0 +1,36 @@
+.notion {
+  @apply text-gray-300;
+  overflow-wrap: break-word;
+}
+.notion,
+.notion-text,
+.notion-quote,
+.notion-h-title {
+  @apply leading-8;
+  @apply p-0;
+  @apply my-3;
+}
+
+pre[class*='language-'] {
+  line-height: inherit;
+}
+.notion-viewport {
+  z-index: -10;
+}
+.notion-asset-caption {
+  @apply text-center;
+  @apply text-gray-400;
+}
+.notion-full-width {
+  @apply px-0;
+}
+.notion-page {
+  @apply w-auto;
+  @apply px-0;
+}
+.notion-quote {
+  padding: 0.2em 0.9em;
+}
+.notion-collection-row {
+  @apply hidden;
+}

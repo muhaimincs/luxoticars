@@ -44,7 +44,7 @@ export async function getStaticProps ({ params: { slug } }) {
 }
 
 export async function getStaticPaths () {
-  const posts = await getAllPosts({ includePages: true })
+  const posts = await getAllPosts({ includePages: false })
   return {
     paths: posts.map(row => `/${row.slug}`),
     fallback: true
@@ -52,49 +52,33 @@ export async function getStaticPaths () {
 }
 
 export default function CarPage ({ post, blockMap, emailHash }) {
-  const photoGallery = post['Photo Gallery'].split(',')
+  const photoGallery = post ? post['Photo Gallery'].split(',') : []
   const firstPhoto = photoGallery[0]
-  // const router = useRouter()
-  // const [data, setData] = useState(() => postsToShow)
-  // const [currentTag, setCurrentTag] = useState('All')
-
-  // useEffect(() => {
-  //   if (!router.isReady) return
-  //   const query = router.query
-  //   if (query.tag) {
-  //     const filteredPosts = postsToShow.filter(
-  //       post => post && post.tags && post.tags.includes(query.tag)
-  //     )
-  //     setData(filteredPosts)
-  //   }
-  // }, [router.isReady, router.query])
-
-  // useEffect(() => {
-  //   const query = router.query
-  //   setCurrentTag(query.tag)
-  // }, [router.query])
-
+  const title = post ? post.title : ''
+  const summary = post ? post.summary : ''
+  const slug = post ? post.slug : ''
+  const date = post ? post.date : new Date()
   return (
     <>
     <Head>
-      <title>{post.title} • {WEB.name}</title>
-      <meta name="description" content={post.summary} />
+      <title>{title} • {WEB.name}</title>
+      <meta name="description" content={summary} />
       <meta property="og:locale" content={WEB.lang} />
-      <meta property="og:title" content={post.title} />
-      <meta property="og:description" content={post.summary} />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={summary} />
       <meta
         property="og:url"
-        content={`${WEB.link}/${post.slug}`}
+        content={`${WEB.link}/${slug}`}
       />
       <meta property="og:type" content="article" />
-      <meta property="article:published_time" content={post.date} />
+      <meta property="article:published_time" content={date} />
       <meta
         property="og:image"
         content={firstPhoto}
       />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:description" content={post.summary} />
-      <meta name="twitter:title" content={`${post.title} • ${WEB.name}`} />
+      <meta name="twitter:description" content={summary} />
+      <meta name="twitter:title" content={`${title} • ${WEB.name}`} />
       <meta
         property="twitter:image"
         content={firstPhoto}
@@ -117,10 +101,10 @@ export default function CarPage ({ post, blockMap, emailHash }) {
           ))}
       </Swiper>
       <div className="absolute top-0 left-0 right-0 z-10 bg-gradient-to-b from-black h-32">
-        <h1 className="my-10 text-white text-lg md:text-5xl text-center">{post.title}</h1>
+        <h1 className="my-10 text-white text-lg md:text-5xl text-center">{title}</h1>
       </div>
     </div>
-    <article className="max-w-7xl mx-auto">
+    <article className="max-w-7xl mx-auto px-3 md:px-0">
       {blockMap && (
         <NotionRenderer
           recordMap={blockMap}
@@ -133,7 +117,7 @@ export default function CarPage ({ post, blockMap, emailHash }) {
         />
       )}
     </article>
-    <footer className="md:hidden flex items-center justify-center w-full h-24">
+    <footer className="md:hidden flex items-center justify-center w-full h-24 text-white">
       <a
         className="flex items-center justify-center font-sans"
         href="https://mcstech.dev"
