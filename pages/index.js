@@ -8,6 +8,7 @@ import { getAllPosts, getAllTagsFromPosts } from '../lib/notion'
 import Layout from '../components/layout.homepage'
 import Header from '../components/header.homepage'
 import YoutubeList from '../components/youtube-homepage'
+import Pagination from '../components/pagination'
 import Tags from '../components/tags'
 import Cars from '../components/cars.post'
 
@@ -85,6 +86,7 @@ export default function Home ({ postsToShow, page, showNext, tags }) {
     <YoutubeList />
     <Tags tags={tags} currentTag={currentTag} />
     <Cars currentTag={currentTag} posts={data} />
+    {showNext && <Pagination page={page} showNext={showNext} />}
     <div className="max-w-7xl text-white mx-auto w-full px-3 py-6">
       <h1 className="text-3xl">Why Us?</h1>
       <p>Luxoticars, we pride ourselves through the industry’s recognition as one of the pioneer retailers of classic, rare, collectible & exotic cars. With an extensive international network & experience in sourcing, purchasing and selling vehicles to customers worldwide, our team is well prepared to provide fully tailored services for buyers on their next acquisition.</p>
