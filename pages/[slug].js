@@ -84,7 +84,7 @@ export default function CarPage ({ post, blockMap, emailHash }) {
         content={firstPhoto}
       />
     </Head>
-    <div className="relative my-10">
+    <div className="relative my-8">
       <Swiper
         style={{ '--swiper-navigation-color': '#fff', '--swiper-pagination-color': '#fff' }}
         zoom={true}
