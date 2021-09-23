@@ -4,10 +4,13 @@
 }
 .notion-app, .notion-header {
   @apply bg-black !important;
+  @apply mt-0 !important;
 }
 .notion-header {
   @apply md:relative !important;
   @apply md:z-0 !important;
+  @apply h-0 !important;
+  @apply min-h-0 !important;
 }
 
 .notion-header > .nav-header > .breadcrumbs {

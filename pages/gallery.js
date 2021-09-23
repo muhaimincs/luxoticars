@@ -46,7 +46,7 @@ export default function GalleryPage ({ post, blockMap }) {
           content="https://ipfs.fleek.co/ipfs/bafybeiefqbyugqurya5gqqlk6ez2hbbu7xxidj3vugmhvqhjsz2fml6f3y"
         />
       </Head>
-      <div className="absolute top-0 overflow-hidden z-[-100]">
+      <div className="absolute top-0 overflow-hidden z-[-100] inset-x-0">
         <article className="max-w-7xl mx-auto">
           {blockMap && (
             <NotionRenderer
