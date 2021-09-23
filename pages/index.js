@@ -61,11 +61,11 @@ export default function Home ({ postsToShow, page, showNext, tags }) {
         playsInline="playsinline"
         preload="metadata"
         className="bg-cover object-cover bg-center h-full w-full"
-        poster="/img/poster.jpeg"
+        poster="https://ipfs.fleek.co/ipfs/bafybeid7kualxhp3emamgkk2xbf2djyadbkl4u2onlcskmsudeucousm5m"
         data-object-fit="contain"
       >
         <source
-          src="/vids/montage.mp4"
+          src="https://ipfs.fleek.co/ipfs/bafybeidvysen4oi7su3owebwge5aof7b6ljemtmsyuzbytowdkh5kkpova"
           type="video/mp4"
         />
         Your browser does not support the video tag.
@@ -115,6 +115,25 @@ Home.getLayout = function getLayout (page) {
         <link rel="icon" href="/LUXOTICARS_GRADIENT_SKULL.svg" />
         <meta name="robots" content="follow, index" />
         <meta charSet="UTF-8" />
+        <meta name="description" content="Luxoticars has a decade of experience selling reconditioned cars. An influencer of luxury and exotic cars" />
+        <meta property="og:locale" content={WEB.lang} />
+        <meta property="og:title" content="LUXOTICARS" />
+        <meta property="og:description" content="Luxoticars has a decade of experience selling reconditioned cars. An influencer of luxury and exotic cars" />
+        <meta
+          property="og:url"
+          content={`${WEB.link}/gallery`}
+        />
+        <meta
+          property="og:image"
+          content="https://ipfs.fleek.co/ipfs/bafybeiefqbyugqurya5gqqlk6ez2hbbu7xxidj3vugmhvqhjsz2fml6f3y"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:description" content="Luxoticars has a decade of experience selling reconditioned cars. An influencer of luxury and exotic cars" />
+        <meta name="twitter:title" content="LUXOTICARS" />
+        <meta
+          property="twitter:image"
+          content="https://ipfs.fleek.co/ipfs/bafybeiefqbyugqurya5gqqlk6ez2hbbu7xxidj3vugmhvqhjsz2fml6f3y"
+        />
       </Head>
       <Layout>
         <Header />

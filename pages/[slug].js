@@ -1,7 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
-// import { useEffect, useState } from 'react'
+import 'rc-dropdown/assets/index.css'
+import 'prismjs/themes/prism.css'
+import 'react-notion-x/src/styles.css'
+import 'katex/dist/katex.min.css'
+
 import Head from 'next/head'
-// import { useRouter } from 'next/router'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import SwiperCore, {
   Zoom,
