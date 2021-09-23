@@ -13,9 +13,7 @@
 .notion-header > .nav-header > .breadcrumbs {
   @apply hidden;
 }
-img.notion-page-cover {
-  @apply w-screen min-w-max;
-}
+
 .notion,
 .notion-text,
 .notion-quote,

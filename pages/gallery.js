@@ -46,7 +46,7 @@ export default function GalleryPage ({ post, blockMap }) {
           content="https://ipfs.fleek.co/ipfs/bafybeiefqbyugqurya5gqqlk6ez2hbbu7xxidj3vugmhvqhjsz2fml6f3y"
         />
       </Head>
-      <article className="max-w-7xl mx-auto px-3 lg:px-0">
+      <article className="max-w-7xl mx-auto">
         {blockMap && (
           <NotionRenderer
             recordMap={blockMap}
