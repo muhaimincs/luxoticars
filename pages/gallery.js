@@ -11,10 +11,6 @@ import 'prismjs/themes/prism.css'
 import 'react-notion-x/src/styles.css'
 import 'katex/dist/katex.min.css'
 
-const mapPageUrl = id => {
-  return 'https://www.notion.so/' + id.replace(/-/g, '')
-}
-
 export async function getStaticProps () {
   const posts = await getAllPosts({ includePages: true })
   const post = posts.find(t => t.slug === 'gallery')
