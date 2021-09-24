@@ -10,7 +10,7 @@ export default function HistoryPage () {
   return (
     <div className="flex md:block flex-col-reverse">
       <div className="relative overflow-hidden">
-        <div className="pt-16 pb-12 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
+        <div className="pt-16 pb-32 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
           <div className="z-10 relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:static">
             <div className="sm:max-w-lg md:max-w-sm">
               <h1 className="text-2xl font font-extrabold tracking-tight text-gray-300 sm:text-6xl">
@@ -27,11 +27,11 @@ export default function HistoryPage () {
                 Building friendship in motorsports;
               </p>
               <p className="mt-4 text-xs text-white">
-              He is obsessed with exotic cars;
+                He is obsessed with exotic cars;
                 Cars are his hobby for a long while now;
                 Together with his brother he is producing a video on cars to influence others with same interest as his.
               </p>
-              </div>
+            </div>
             <div>
               <div className="hidden md:block mt-10">
                 {/* Decorative image grid */}
@@ -112,13 +112,18 @@ export default function HistoryPage () {
         </div>
       </div>
       <div className="flex items-center justify-center mt-10 md:hidden">
-        <div className="rounded-full overflow-hidden h-64 w-64">
-          <Image
-            src="https://images.ctfassets.net/ijuxqf6x1pz2/4Ybp8mYNmbsNWy2JdtpPrV/896c5652069d5ba2d7bece9e194e84be/photo_2021-09-09_22.07.56.jpeg"
-            alt="Abu garcia"
-            width={640}
-            height={1138}
-          />
+        <div className="relative group">
+          <div className="absolute inset-0 bg-gradient-to-r from-pink-600 to-purple-600 rounded-full h-64 w-64 transform scale-105 blur opacity-75" />
+          <div className="relative">
+            <div className="rounded-full overflow-hidden h-64 w-64">
+              <Image
+                src="https://images.ctfassets.net/ijuxqf6x1pz2/4Ybp8mYNmbsNWy2JdtpPrV/896c5652069d5ba2d7bece9e194e84be/photo_2021-09-09_22.07.56.jpeg"
+                alt="Abu garcia"
+                width={640}
+                height={1138}
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -81,7 +81,6 @@ export default function Example () {
 
   useEffect(() => {
     const contentElement = contentRef.current
-    console.log(contentElement)
     if (contentElement) {
       disableBodyScroll(contentElement, { reserveScrollBarGap: true })
     }
@@ -102,9 +101,9 @@ export default function Example () {
           <div ref={mainNav} className="transition-colors transition-opacity transition-shadow backdrop-filter">
             <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
               <div className="relative flex items-center justify-between h-16">
-                <div className="absolute bg-transparent inset-y-0 left-0 flex items-center sm:hidden pl-2 pr-5">
+                <div className="absolute inset-y-0 left-0 flex items-center sm:hidden pl-2 pr-5">
                   {/* Mobile menu button */}
-                  <Popover.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                  <Popover.Button className="bg-gray-700/50 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                     <span className="sr-only">Open main menu</span>
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h8m-8 6h16" />
@@ -246,7 +245,7 @@ export default function Example () {
                 />
               </div>
             </div>
-            <div className="text-gray-100 text-xs bg-black text-center pb-8">
+            <div className="text-gray-100 text-xs bg-black text-center pt-2 pb-3">
               Copyright © 2021 Luxoticars Sdn. Bhd. All rights reserved.
             </div>
           </div>
@@ -269,7 +268,7 @@ export default function Example () {
                           <Image src={LuxoticarsLogo} alt="Luxoticars" height={150} width={98} />
                         </a>
                       </Link>
-                      <Image src={LuxoticarsWhiteFont} alt="Luxoticars" width={240} />
+                      <Image src={LuxoticarsWhiteFont} alt="Luxoticars" width={140} layout="intrinsic" />
                     </div>
                     <div>
                       <Popover.Button className="bg-gray-700 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
@@ -294,7 +293,7 @@ export default function Example () {
                     </nav>
                   </div>
                 </div>
-                <div className="px-3 pt-4 pb-24">
+                <div className="px-3 pt-4 pb-28">
                   <p className="font-sans font-semibold text-white">Visit us:</p>
                   <address className="text-xs font-sans text-white pb-3">No 253 Jalan Ampang Hilir Off Jalan U-Thant 50450 Kuala Lumpur</address>
                   <p className="text-white text-xs">Copyright © 2021 Luxoticars Sdn. Bhd. All rights reserved.</p>
