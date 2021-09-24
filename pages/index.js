@@ -11,9 +11,9 @@ import { getAllPosts, getAllTagsFromPosts } from '../lib/notion'
 import Layout from '../components/layout.homepage'
 import Header from '../components/header.homepage'
 import YoutubeList from '../components/youtube-homepage'
-import Pagination from '../components/pagination'
-import Tags from '../components/tags'
-import Cars from '../components/cars.post'
+// import Pagination from '../components/pagination'
+// import Tags from '../components/tags'
+// import Cars from '../components/cars.post'
 
 const Carousel = dynamic(
   () => import('../components/carousel.homepage'),
@@ -40,8 +40,8 @@ export async function getStaticProps () {
 
 export default function Home ({ postsToShow, page, showNext, tags }) {
   const router = useRouter()
-  const [data, setData] = useState(() => postsToShow)
-  const [currentTag, setCurrentTag] = useState('All')
+  const [, setData] = useState(() => postsToShow)
+  const [, setCurrentTag] = useState('All')
 
   useEffect(() => {
     if (!router.isReady) return
