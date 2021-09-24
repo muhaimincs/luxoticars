@@ -2,8 +2,11 @@
 import { useEffect, useState } from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
+import dynamic from 'next/dynamic'
+import Image from 'next/image'
 
 import WEB from '../web.config'
+import LuxoticarsWhiteFont from '../public/LUXOTICARS_WHITE_FONT.svg'
 import { getAllPosts, getAllTagsFromPosts } from '../lib/notion'
 import Layout from '../components/layout.homepage'
 import Header from '../components/header.homepage'
@@ -11,6 +14,11 @@ import YoutubeList from '../components/youtube-homepage'
 import Pagination from '../components/pagination'
 import Tags from '../components/tags'
 import Cars from '../components/cars.post'
+
+const Carousel = dynamic(
+  () => import('../components/carousel.homepage'),
+  { ssr: false }
+)
 
 export async function getStaticProps () {
   const posts = await getAllPosts({ includePages: false })
@@ -53,41 +61,25 @@ export default function Home ({ postsToShow, page, showNext, tags }) {
 
   return (
     <>
-    <div className="absolute top-0 h-3/4 w-screen overflow-hidden z-[-100]">
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline="playsinline"
-        preload="metadata"
-        className="bg-cover object-cover bg-center h-full w-full"
-        poster="https://ipfs.fleek.co/ipfs/bafybeid7kualxhp3emamgkk2xbf2djyadbkl4u2onlcskmsudeucousm5m"
-        data-object-fit="contain"
-      >
-        <source
-          src="https://ipfs.fleek.co/ipfs/bafybeidvysen4oi7su3owebwge5aof7b6ljemtmsyuzbytowdkh5kkpova"
-          type="video/mp4"
-        />
-        Your browser does not support the video tag.
-      </video>
-    </div>
-    <div className="max-w-7xl mx-auto h-[61vh] md:h-[calc(100vh-34vh)] lg:h-[64vh] w-screen flex flex-col items-center justify-center space-y-3">
+    <Carousel />
+    <div className="max-w-7xl mx-auto w-screen flex flex-col items-center justify-center my-14">
       <img
-        className="h-32 opacity-0 md:opacity-100"
+        className="h-32 hidden md:block"
         src="/LUXOTICARS.svg"
         alt="luxoticars"
       />
-      <img
+      {/* <img
         className="w-72 max-w-xs"
         src="/LUXOTICARS_WHITE_FONT.svg"
         alt="luxoticars"
-      />
+      /> */}
+      <Image src={LuxoticarsWhiteFont} alt="Luxoticars" width={240} />
       <h1 className="text-white text-xs md:text-5xl md:text-center">The Syndicate Carlifestyle Cartel</h1>
     </div>
     <YoutubeList />
-    <Tags tags={tags} currentTag={currentTag} />
-    <Cars currentTag={currentTag} posts={data} />
-    {showNext && <Pagination page={page} showNext={showNext} />}
+    {/* <Tags tags={tags} currentTag={currentTag} /> */}
+    {/* <Cars currentTag={currentTag} posts={data} /> */}
+    {/* {showNext && <Pagination page={page} showNext={showNext} />} */}
     <div className="max-w-7xl text-white mx-auto w-full px-3 py-6">
       <h1 className="text-3xl">Why Us?</h1>
       <p>Luxoticars, we pride ourselves through the industry’s recognition as one of the pioneer retailers of classic, rare, collectible & exotic cars. With an extensive international network & experience in sourcing, purchasing and selling vehicles to customers worldwide, our team is well prepared to provide fully tailored services for buyers on their next acquisition.</p>

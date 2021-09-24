@@ -8,6 +8,10 @@ import {
   clearAllBodyScrollLocks,
   enableBodyScroll
 } from 'body-scroll-lock'
+import Image from 'next/image'
+
+import LuxoticarsLogo from '../public/LUXOTICARS.svg'
+import LuxoticarsWhiteFont from '../public/LUXOTICARS_WHITE_FONT.svg'
 
 function classNames (...classes) {
   return classes.filter(Boolean).join(' ')
@@ -234,11 +238,7 @@ export default function Example () {
                 </Popover.Button>
               </div>
               <div className="flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 space-x-3">
-                <img
-                  className="h-8"
-                  src="/LUXOTICARS.svg"
-                  alt="Luxoticars"
-                />
+                <Image src={LuxoticarsLogo} alt="Luxoticars" height={52} width={34} />
                 <img
                   className="w-32 h-8 max-w-xs"
                   src="/LUXOTICARS_WHITE_FONT.svg"
@@ -246,7 +246,7 @@ export default function Example () {
                 />
               </div>
             </div>
-            <div className="text-gray-100 text-xs bg-black text-center">
+            <div className="text-gray-100 text-xs bg-black text-center pb-8">
               Copyright © 2021 Luxoticars Sdn. Bhd. All rights reserved.
             </div>
           </div>
@@ -264,16 +264,12 @@ export default function Example () {
                 <div className="pt-5 px-3">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-3">
-                      <img
-                        className="h-8"
-                        src="/LUXOTICARS.svg"
-                        alt="Luxoticars"
-                      />
-                      <img
-                        className="w-32 h-8 max-w-xs"
-                        src="/LUXOTICARS_WHITE_FONT.svg"
-                        alt="Luxoticars"
-                      />
+                      <Link href="/">
+                        <a className="mx-3 w-10">
+                          <Image src={LuxoticarsLogo} alt="Luxoticars" height={150} width={98} />
+                        </a>
+                      </Link>
+                      <Image src={LuxoticarsWhiteFont} alt="Luxoticars" width={240} />
                     </div>
                     <div>
                       <Popover.Button className="bg-gray-700 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
@@ -285,22 +281,24 @@ export default function Example () {
                     </div>
                   </div>
                   <div className="mt-6">
-                    <nav className="grid gap-y-8 px-3">
+                    <nav className="grid gap-y-8">
                       {navigation.map((item) => (
+                        <Link key={item.name} href={item.href}>
                         <a
-                          key={item.name}
-                          href={item.href}
-                          className="-my-3 py-3 flex items-center rounded-md hover:bg-gray-700"
+                          className="-my-3 py-3 flex items-center rounded-md hover:bg-gray-900"
                         >
                           <span className="ml-3 text-base font-medium text-gray-100">{item.name}</span>
                         </a>
+                        </Link>
                       ))}
                     </nav>
                   </div>
                 </div>
-                <div className="px-3 py-4">
+                <div className="px-3 pt-4 pb-24">
+                  <p className="font-sans font-semibold text-white">Visit us:</p>
+                  <address className="text-xs font-sans text-white pb-3">No 253 Jalan Ampang Hilir Off Jalan U-Thant 50450 Kuala Lumpur</address>
                   <p className="text-white text-xs">Copyright © 2021 Luxoticars Sdn. Bhd. All rights reserved.</p>
-                  <ul className="text-white text-xs flex items-center space-x-2 pt-3 py-6">
+                  <ul className="text-white text-xs flex items-center space-x-2 pt-0 py-6">
                     <li className="flex items-center">
                       <a>Terms & Conditions</a>
                       <svg

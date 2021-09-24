@@ -62,8 +62,10 @@ export default function YoutubePage () {
   return (
     <div className="lg:bg-white">
       <div className="max-w-7xl mx-auto w-full sm:px-0 px-3">
-        <div className="max-w-2xl mx-auto lg:max-w-none md:bg-white md:p-3 md:rounded">
-          <h3 className="hidden md:block text-center  text-xl font-sans italic uppercase text-red-600 py-6">Delivery Stories</h3>
+        <div className="max-w-2xl mx-auto lg:max-w-none md:bg-white md:p-3 md:rounded flex items-center flex-col">
+          <span className="md:bg-black md:-mt-6 md:mb-6 whitespace-pre text-white text-center text-xs sm:text-md lg:text-lg font-bold border-2 border rounded-md py-1 px-1 md:px-2">
+            Delivery Stories
+          </span>
           <div className="space-y-12 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-x-6">
             {callouts.map((callout) => (
               <Yt key={callout.name} data={callout} />

@@ -11,7 +11,7 @@ import SwiperCore, {
   Navigation,
   Pagination
 } from 'swiper'
-import { NotionRenderer, Equation, Code, CollectionRow } from 'react-notion-x'
+import { NotionRenderer, Equation, Code, CollectionRow, Collection } from 'react-notion-x'
 
 import WEB from '../web.config'
 import { getAllPosts, getPostBlocks } from '../lib/notion'
@@ -109,14 +109,15 @@ export default function CarPage ({ post, blockMap, emailHash }) {
         <h1 className="my-5 text-white text-lg md:text-5xl text-center">{title}</h1>
       </div>
     </div>
-    <article className="max-w-7xl mx-auto px-3 lg:px-0">
+    <article className="max-w-7xl mx-auto px-3 lg:px-0 mb-10">
       {blockMap && (
         <NotionRenderer
           recordMap={blockMap}
           components={{
             equation: Equation,
             code: Code,
-            collectionRow: CollectionRow
+            collectionRow: CollectionRow,
+            Collection: Collection
           }}
           mapPageUrl={mapPageUrl}
         />
