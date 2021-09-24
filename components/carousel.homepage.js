@@ -33,14 +33,14 @@ const Carousel = () => {
         }}
       >
         <SwiperSlide data-swiper-autoplay="5500">
-          <div>
-            <Image
-              width={1280}
-              height={720}
-              layout="responsive"
-              src="https://images.ctfassets.net/ijuxqf6x1pz2/1N8YjfxoUBbnIdKnQtsZ0k/98bf4396c6cc3c4a323a33fae9accb49/photo_2021-09-24_09.31.08.jpeg" alt="Luxoticars Ferrari"
-            />
-          </div>
+          <Image
+            width={1280}
+            height={720}
+            layout="fill"
+            objectFit="cover"
+            placeholder="blur"
+            src="https://images.ctfassets.net/ijuxqf6x1pz2/1N8YjfxoUBbnIdKnQtsZ0k/98bf4396c6cc3c4a323a33fae9accb49/photo_2021-09-24_09.31.08.jpeg" alt="Luxoticars Ferrari"
+          />
         </SwiperSlide>
         <SwiperSlide data-swiper-autoplay="30000">
           <video
@@ -64,7 +64,9 @@ const Carousel = () => {
           <Image
             width={1280}
             height={720}
-            layout="fill"
+            layout="responsive"
+            objectFit="cover"
+            placeholder="blur"
             src="https://images.ctfassets.net/ijuxqf6x1pz2/15nQQBgBkiECSSQznnm5lV/1178ec83805376fbad23be545a9c7503/photo_2021-09-24_09.31.11.jpeg" alt="Luxoticars Ferrari"
           />
         </SwiperSlide>
