@@ -37,20 +37,19 @@ const Carousel = () => {
             <Image
               width={1280}
               height={720}
-              layout="fill"
+              layout="responsive"
               src="https://images.ctfassets.net/ijuxqf6x1pz2/1N8YjfxoUBbnIdKnQtsZ0k/98bf4396c6cc3c4a323a33fae9accb49/photo_2021-09-24_09.31.08.jpeg" alt="Luxoticars Ferrari"
             />
           </div>
         </SwiperSlide>
         <SwiperSlide data-swiper-autoplay="30000">
-          <div className="bg-gradient-to-t from-black">
           <video
             autoPlay
             loop
             muted
             playsInline="playsinline"
             preload="metadata"
-            className="bg-cover object-cover bg-center w-full h-52 bg-gradient-to-t from-black"
+            className="bg-cover object-cover bg-center w-full h-52 md:h-full bg-gradient-to-t from-black"
             poster="https://ipfs.fleek.co/ipfs/bafybeid7kualxhp3emamgkk2xbf2djyadbkl4u2onlcskmsudeucousm5m"
             data-object-fit="contain"
           >
@@ -60,7 +59,6 @@ const Carousel = () => {
             />
             Your browser does not support the video tag.
           </video>
-          </div>
         </SwiperSlide>
         <SwiperSlide data-swiper-autoplay="5500">
           <Image
