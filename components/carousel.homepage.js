@@ -38,7 +38,7 @@ const Carousel = () => {
             height={720}
             layout="fill"
             objectFit="cover"
-            placeholder="blur"
+            // placeholder="blur"
             src="https://images.ctfassets.net/ijuxqf6x1pz2/1N8YjfxoUBbnIdKnQtsZ0k/98bf4396c6cc3c4a323a33fae9accb49/photo_2021-09-24_09.31.08.jpeg" alt="Luxoticars Ferrari"
           />
         </SwiperSlide>
@@ -51,7 +51,7 @@ const Carousel = () => {
             preload="metadata"
             className="bg-cover object-cover bg-center w-full h-52 md:h-full bg-gradient-to-t from-black"
             poster="https://ipfs.fleek.co/ipfs/bafybeid7kualxhp3emamgkk2xbf2djyadbkl4u2onlcskmsudeucousm5m"
-            data-object-fit="contain"
+            data-object-fit="cover"
           >
             <source
               src="https://ipfs.fleek.co/ipfs/bafybeidvysen4oi7su3owebwge5aof7b6ljemtmsyuzbytowdkh5kkpova"
@@ -64,9 +64,9 @@ const Carousel = () => {
           <Image
             width={1280}
             height={720}
-            layout="responsive"
+            layout="fill"
             objectFit="cover"
-            placeholder="blur"
+            // placeholder="blur"
             src="https://images.ctfassets.net/ijuxqf6x1pz2/15nQQBgBkiECSSQznnm5lV/1178ec83805376fbad23be545a9c7503/photo_2021-09-24_09.31.11.jpeg" alt="Luxoticars Ferrari"
           />
         </SwiperSlide>

@@ -19,7 +19,7 @@ function classNames (...classes) {
 
 const navigation = [
   { name: 'History', href: '/history', current: false },
-  { name: 'Stock', href: '#', current: false },
+  { name: 'Stock', href: '/search', current: false },
   { name: 'Gallery', href: '/gallery', current: false },
   { name: 'Shop', href: 'https://shop.luxoticars.my', current: false }
 ]
