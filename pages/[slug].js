@@ -12,6 +12,7 @@ import SwiperCore, {
   Pagination
 } from 'swiper'
 import { NotionRenderer, Equation, Code, CollectionRow, Collection } from 'react-notion-x'
+import Link from 'next/link'
 
 import WEB from '../web.config'
 import { getAllPosts, getPostBlocks } from '../lib/notion'
@@ -106,6 +107,10 @@ export default function CarPage ({ post, blockMap, emailHash }) {
           ))}
       </Swiper>
       <div className="absolute top-0 left-0 right-0 z-10 bg-gradient-to-b from-black h-32">
+        <ul className="max-w-7xl mx-auto px-3 text-gray-400 flex space-x-3 text-xs">
+          <li><Link href="/search"><a>Stock</a></Link></li>
+          <li>&raquo; <Link href={`/tag/${post.tags[0]}`}><a className="capitalize">{post.tags[0].replace(/-/g, ' ')}</a></Link></li>
+        </ul>
         <h1 className="my-5 text-white text-lg md:text-5xl text-center">{title}</h1>
       </div>
     </div>
