@@ -1,11 +1,14 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
-const Tags = ({ tags, currentTag }) => {
+const Tags = ({ tags, currentTag, className }) => {
   if (!tags) return null
+  const ulClassName = !className
+    ? 'flex max-w-full mt-4 overflow-x-auto space-x-3'
+    : className
   return (
-    <div className="tag-container">
-      <ul className="flex max-w-full mt-4 overflow-x-auto space-x-3">
+    <div>
+      <ul className={ulClassName}>
         {Object.keys(tags).map(key => {
           const selected = key === currentTag
           let title = key.replace(/-/g, ' ')
@@ -13,10 +16,10 @@ const Tags = ({ tags, currentTag }) => {
           return (
             <li
               key={key}
-              className={`font-medium border rounded whitespace-nowrap flex flex-col justify-center items-center px-2 py-3 ${
+              className={`flex-shrink-0 w-32 font-sans font-medium shadow-xl rounded flex flex-col justify-center items-center px-2 py-3 ${
                 selected
-                  ? 'text-white bg-black border-red-600'
-                  : 'bg-gray-700 border-gray-400 text-gray-400'
+                  ? 'text-white bg-gradient-to-t from-gray-500 border-red-600 text-red-600'
+                  : 'bg-gradient-to-t from-gray-700 text-gray-200'
               }`}
             >
               <div className="w-8 h-8">
@@ -26,7 +29,7 @@ const Tags = ({ tags, currentTag }) => {
                 key={key}
                 href={selected ? '/search' : `/tag/${encodeURIComponent(key)}`}
               >
-                <a className="block capitalize">
+                <a className="block capitalize text-xs text-center">
                   {title}
                 </a>
               </Link>

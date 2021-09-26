@@ -63,6 +63,7 @@ export default function CarPage ({ post, blockMap, emailHash }) {
   const slug = post ? post.slug : ''
   const date = post ? post.date : new Date()
   const tag = post ? post.tags[0].replace(/-/g, ' ') : ''
+  const tagLink = post ? post.tags[0] : '#'
   return (
     <>
     <Head>
@@ -110,7 +111,7 @@ export default function CarPage ({ post, blockMap, emailHash }) {
       <div className="absolute top-0 left-0 right-0 z-10 bg-gradient-to-b from-black h-32">
         <ul className="max-w-7xl mx-auto px-3 text-gray-400 flex space-x-3 text-xs">
           <li><Link href="/search"><a>Stock</a></Link></li>
-          <li>&raquo; <Link href={`/tag/${tag}`}><a className="capitalize">{tag}</a></Link></li>
+          <li>&raquo; <Link href={`/tag/${tagLink}`}><a className="capitalize">{tag}</a></Link></li>
         </ul>
         <h1 className="my-5 text-white text-lg md:text-5xl text-center">{title}</h1>
       </div>

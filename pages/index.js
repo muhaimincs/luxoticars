@@ -12,7 +12,7 @@ import Layout from '../components/layout.homepage'
 import Header from '../components/header.homepage'
 import YoutubeList from '../components/youtube-homepage'
 // import Pagination from '../components/pagination'
-// import Tags from '../components/tags'
+import Tags from '../components/tags'
 // import Cars from '../components/cars.post'
 
 const Carousel = dynamic(
@@ -77,7 +77,10 @@ export default function Home ({ postsToShow, page, showNext, tags }) {
       <h1 className="text-white text-xs md:text-5xl md:text-center">The Syndicate Carlifestyle Cartel</h1>
     </div>
     <YoutubeList />
-    {/* <Tags tags={tags} currentTag={currentTag} /> */}
+    <h3
+      className="uppercase text-xl text-gray-400 px-3 font-semibold py-6 flex items-center justify-center text-center before:border-4 before:w-[10%] before:border-red-600 before:flex-grow before:transform before:-skew-x-12 before:mr-10 after:border-4 after:w-[10%] after:border-red-600 after:flex-grow after:transform after:skew-x-12 after:ml-10"
+    >Features</h3>
+    <Tags tags={tags} className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-7 lg:py-3 gap-0 place-items-center place-content-center grid-rows-3 md:grid-rows-1" />
     {/* <Cars currentTag={currentTag} posts={data} /> */}
     {/* {showNext && <Pagination page={page} showNext={showNext} />} */}
     <div className="max-w-7xl text-white mx-auto w-full px-3 py-6">
