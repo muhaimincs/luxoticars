@@ -46,24 +46,22 @@ export default function ClientPage ({ post, blockMap }) {
           content="https://ipfs.fleek.co/ipfs/bafybeiefqbyugqurya5gqqlk6ez2hbbu7xxidj3vugmhvqhjsz2fml6f3y"
         />
       </Head>
-      <div className="absolute top-0 overflow-hidden z-[-100] inset-x-0">
-        <article className="max-w-7xl mx-auto">
-          {blockMap && (
-            <NotionRenderer
-              recordMap={blockMap}
-              components={{
-                equation: Equation,
-                code: Code,
-                collectionRow: CollectionRow,
-                collection: Collection
-              }}
-              // mapPageUrl={mapPageUrl}
-              fullPage={true} darkMode={true}
-              className="bg-black"
-            />
-          )}
-        </article>
-      </div>
+      <article className="max-w-7xl mx-auto">
+        {blockMap && (
+          <NotionRenderer
+            recordMap={blockMap}
+            components={{
+              equation: Equation,
+              code: Code,
+              collectionRow: CollectionRow,
+              collection: Collection
+            }}
+            // mapPageUrl={mapPageUrl}
+            fullPage={true} darkMode={true}
+            className="bg-black"
+          />
+        )}
+      </article>
     </>
   )
 }
