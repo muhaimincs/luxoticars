@@ -28,6 +28,7 @@ const Tags = ({ tags, currentTag, className }) => {
               <Link
                 key={key}
                 href={selected ? '/search' : `/tag/${encodeURIComponent(key)}`}
+                replace
               >
                 <a className="block capitalize text-xs text-center">
                   {title}

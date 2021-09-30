@@ -8,12 +8,8 @@ import Image from 'next/image'
 import WEB from '../web.config'
 import LuxoticarsWhiteFont from '../public/LUXOTICARS_WHITE_FONT.svg'
 import { getAllPosts, getAllTagsFromPosts } from '../lib/notion'
-import Layout from '../components/layout.homepage'
-import Header from '../components/header.homepage'
 import YoutubeList from '../components/youtube-homepage'
-// import Pagination from '../components/pagination'
 import Tags from '../components/tags'
-// import Cars from '../components/cars.post'
 
 const Carousel = dynamic(
   () => import('../components/carousel.homepage'),
@@ -87,22 +83,23 @@ export default function Home ({ postsToShow, page, showNext, tags }) {
       <h1 className="text-3xl">Why Us?</h1>
       <p>Luxoticars, we pride ourselves through the industry’s recognition as one of the pioneer retailers of classic, rare, collectible & exotic cars. With an extensive international network & experience in sourcing, purchasing and selling vehicles to customers worldwide, our team is well prepared to provide fully tailored services for buyers on their next acquisition.</p>
     </div>
-    <footer className="md:hidden flex items-center justify-center w-full h-24">
-      <a
-        className="flex items-center justify-center font-sans text-white"
-        href="https://mcstech.dev"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Powered by{' '}
-        MCS DEV RESOURCES
-      </a>
-    </footer>
     </>
   )
 }
 
 Home.getLayout = function getLayout (page) {
+  const Header = dynamic(
+    () => import('../components/header.homepage'),
+    { ssr: false }
+  )
+  const Footer = dynamic(
+    () => import('../components/footer'),
+    { ssr: false }
+  )
+  const Layout = dynamic(
+    () => import('../components/layout.homepage'),
+    { ssr: false }
+  )
   return (
     <>
       <Head>
@@ -133,6 +130,7 @@ Home.getLayout = function getLayout (page) {
       <Layout>
         <Header />
         {page}
+        <Footer />
       </Layout>
     </>
   )

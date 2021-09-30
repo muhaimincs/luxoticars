@@ -1,10 +1,9 @@
 import Head from 'next/head'
+import dynamic from 'next/dynamic'
 import { NotionRenderer, Equation, Code, CollectionRow, Collection } from 'react-notion-x'
 
 import WEB from '../web.config'
 import { getAllPosts, getPostBlocks } from '../lib/notion'
-import Layout from '../components/layout.homepage'
-import Header from '../components/header.homepage'
 
 import 'rc-dropdown/assets/index.css'
 import 'prismjs/themes/prism.css'
@@ -83,6 +82,18 @@ export default function GalleryPage ({ post, blockMap }) {
 }
 
 GalleryPage.getLayout = function getLayout (page) {
+  const Header = dynamic(
+    () => import('../components/header.homepage'),
+    { ssr: false }
+  )
+  const Footer = dynamic(
+    () => import('../components/footer'),
+    { ssr: false }
+  )
+  const Layout = dynamic(
+    () => import('../components/layout.homepage'),
+    { ssr: false }
+  )
   return (
     <>
       <Head>
@@ -93,6 +104,7 @@ GalleryPage.getLayout = function getLayout (page) {
       <Layout>
         <Header />
         {page}
+        <Footer />
       </Layout>
     </>
   )

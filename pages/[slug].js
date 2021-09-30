@@ -5,6 +5,7 @@ import 'react-notion-x/src/styles.css'
 import 'katex/dist/katex.min.css'
 
 import Head from 'next/head'
+import dynamic from 'next/dynamic'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import SwiperCore, {
   Zoom,
@@ -16,8 +17,6 @@ import Link from 'next/link'
 
 import WEB from '../web.config'
 import { getAllPosts, getPostBlocks } from '../lib/notion'
-import Layout from '../components/layout.homepage'
-import Header from '../components/header.homepage'
 
 import 'swiper/css/bundle'
 import 'swiper/css'
@@ -146,6 +145,18 @@ export default function CarPage ({ post, blockMap, emailHash }) {
 }
 
 CarPage.getLayout = function getLayout (page) {
+  const Header = dynamic(
+    () => import('../components/header.homepage'),
+    { ssr: false }
+  )
+  const Footer = dynamic(
+    () => import('../components/footer'),
+    { ssr: false }
+  )
+  const Layout = dynamic(
+    () => import('../components/layout.homepage'),
+    { ssr: false }
+  )
   return (
     <>
       <Head>
@@ -156,6 +167,7 @@ CarPage.getLayout = function getLayout (page) {
       <Layout>
         <Header />
         {page}
+        <Footer />
       </Layout>
     </>
   )
