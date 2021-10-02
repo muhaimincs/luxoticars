@@ -1,5 +1,5 @@
 .notion {
-  @apply text-gray-300;
+  @apply text-gray-300 !important;
   overflow-wrap: break-word;
 }
 .notion-app, .notion-header {

@@ -3,7 +3,7 @@ import Car from './car.post'
 const CarsPost = ({ posts }) => {
   return (
     <>
-      <div className="max-w-7xl mx-auto space-y-8">
+      <div className="max-w-7xl mx-auto space-y-8 pb-20">
         <section className="divide-y divide-gray-200">
           {!posts.length && (
             <p className="text-gray-500 dark:text-gray-300">No cars found.</p>

@@ -9,7 +9,7 @@ export default function Footer () {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 box-border text-white">
         <div>
           <h3 className="uppercase text-red-800 text-xs font-bold mb-2">{'// Business'}</h3>
-          <div className="grid grid-cols-2 md:grid-cols-1 gap-3 md:gap-1">
+          <div className="grid grid-cols-3 md:grid-cols-1 gap-3 md:gap-1">
             {navigation.map((item) => (
               <a
                 key={item.name}
@@ -50,20 +50,21 @@ export default function Footer () {
             </div>
           </div>
         </div>
-      </div>
-      <div className="flex flex-col justify-center items-center mt-8">
-        <span className="text-xs font-sans text-gray-700">FROM</span>
-        <a href="https://www.youtube.com/channel/UCi2Ca9_6t9trKeJOugAbRng">
-          <Image src={RedShoes} />
-        </a>
-        <a
-          className="flex items-center justify-center font-sans text-gray-500 text-sm"
-          href="https://mcstech.dev"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          MCS DEV RESOURCES
-        </a>
+        <div className="flex flex-col justify-center items-center">
+          <span className="text-xs font-sans text-gray-700">FROM</span>
+          <a
+            className="flex items-center justify-center font-sans text-gray-500 text-sm"
+            href="https://mcstech.dev"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            MCS DEV RESOURCES
+          </a>
+          <p className="text-xs font-sans text-gray-700">&</p>
+          <a className="w-28" href="https://www.youtube.com/channel/UCi2Ca9_6t9trKeJOugAbRng">
+            <Image src={RedShoes} layout="intrinsic" />
+          </a>
+        </div>
       </div>
     </footer>
   )
