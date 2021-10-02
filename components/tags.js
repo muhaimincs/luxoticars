@@ -16,7 +16,7 @@ const Tags = ({ tags, currentTag, className }) => {
           return (
             <li
               key={key}
-              className={`flex-shrink-0 w-32 font-sans font-medium shadow-xl rounded flex flex-col justify-center items-center px-2 py-3 ${
+              className={`flex-shrink-0 w-32 font-sans font-medium rounded flex flex-col justify-center items-center px-2 py-3 ${
                 selected
                   ? 'text-white bg-gradient-to-t from-gray-500 border-red-600 text-red-600'
                   : 'bg-gradient-to-t from-gray-700 text-gray-200'

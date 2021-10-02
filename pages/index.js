@@ -1,7 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { useEffect, useState } from 'react'
 import Head from 'next/head'
-import { useRouter } from 'next/router'
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
 
@@ -9,50 +7,29 @@ import WEB from '../web.config'
 import LuxoticarsWhiteFont from '../public/LUXOTICARS_WHITE_FONT.svg'
 import { getAllPosts, getAllTagsFromPosts } from '../lib/notion'
 import YoutubeList from '../components/youtube-homepage'
-import Tags from '../components/tags'
+// import BrandsCarousel from '../components/brands.carousel'
 
 export async function getStaticProps () {
   const posts = await getAllPosts({ includePages: false })
   const tags = getAllTagsFromPosts(posts)
-  // const postsToShow = posts.slice(0, WEB.postsPerPage)
-  const postsToShow = posts
-  const totalPosts = posts.length
-  const showNext = totalPosts > WEB.postsPerPage
   return {
     props: {
-      page: 1, // current page is 1
-      postsToShow,
-      showNext,
       tags
     },
     revalidate: 1
   }
 }
 
-export default function Home ({ postsToShow, page, showNext, tags }) {
-  const router = useRouter()
-  const [, setData] = useState(() => postsToShow)
-  const [, setCurrentTag] = useState('All')
+export default function Home ({ tags }) {
   const Carousel = dynamic(
     () => import('../components/carousel.homepage'),
     { ssr: false }
   )
 
-  useEffect(() => {
-    if (!router.isReady) return
-    const query = router.query
-    if (query.tag) {
-      const filteredPosts = postsToShow.filter(
-        post => post && post.tags && post.tags.includes(query.tag)
-      )
-      setData(filteredPosts)
-    }
-  }, [router.isReady, router.query])
-
-  useEffect(() => {
-    const query = router.query
-    setCurrentTag(query.tag)
-  }, [router.query])
+  const BrandsCarousel = dynamic(
+    () => import('../components/brands.carousel'),
+    { ssr: false }
+  )
 
   return (
     <>
@@ -67,8 +44,12 @@ export default function Home ({ postsToShow, page, showNext, tags }) {
       <h1 className="text-white text-xs md:text-5xl md:text-center">The Syndicate Carlifestyle Cartel</h1>
     </div>
     <YoutubeList />
-    <div className="max-w-7xl mx-auto w-screen flex flex-col items-center justify-center px-6">
-      <h4 className="text-xl text-gray-300 text-center">The brands you love. From a place you can trust.</h4>
+    <div className="max-w-7xl mx-auto w-screen px-3">
+      <div className="px-3 border border border-gray-600 rounded-xl bg-gray-900 overflow-hidden">
+        <p className="text-sm uppercase text-gray-500 mx-6 mt-10">for enthusiast</p>
+        <h4 className="text-xl text-gray-300 mx-6 font-semibold mb-8">The brands you love. From a place you can trust.</h4>
+        <BrandsCarousel tags={tags} />
+      </div>
     </div>
     <div className="max-w-7xl mx-auto bg-white w-28 h-1 rounded-xl my-6" />
     {/* <h3
@@ -76,11 +57,8 @@ export default function Home ({ postsToShow, page, showNext, tags }) {
     >
       Features
     </h3> */}
-    <Tags tags={tags} className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-7 lg:py-3 gap-6 place-items-center place-content-center grid-rows-3 md:grid-rows-1" />
-    {/* <Cars currentTag={currentTag} posts={data} /> */}
-    {/* {showNext && <Pagination page={page} showNext={showNext} />} */}
     <div className="max-w-7xl text-white mx-auto w-full px-3 py-6">
-      <h1 className="text-3xl">Why Us?</h1>
+      <h1 className="text-3xl mb-3">Why Us?</h1>
       <p>Luxoticars, we pride ourselves through the industry’s recognition as one of the pioneer retailers of classic, rare, collectible & exotic cars. With an extensive international network & experience in sourcing, purchasing and selling vehicles to customers worldwide, our team is well prepared to provide fully tailored services for buyers on their next acquisition.</p>
     </div>
     </>

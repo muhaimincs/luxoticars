@@ -62,7 +62,7 @@ export default function GalleryPage ({ post, blockMap }) {
             />
           )}
         </article>
-        <div className="pb-52 max-w-sm mx-auto clear-both">
+        <div className="pb-52 max-w-sm mx-auto px-3">
           <div className="flex items-center rounded-md shadow">
             <a
               href="https://www.youtube.com/luxoticars"
@@ -86,10 +86,6 @@ GalleryPage.getLayout = function getLayout (page) {
     () => import('../components/header.homepage'),
     { ssr: false }
   )
-  const Footer = dynamic(
-    () => import('../components/footer'),
-    { ssr: false }
-  )
   const Layout = dynamic(
     () => import('../components/layout.homepage'),
     { ssr: false }
@@ -104,7 +100,6 @@ GalleryPage.getLayout = function getLayout (page) {
       <Layout>
         <Header />
         {page}
-        <Footer />
       </Layout>
     </>
   )
