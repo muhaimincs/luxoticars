@@ -11,11 +11,6 @@ import { getAllPosts, getAllTagsFromPosts } from '../lib/notion'
 import YoutubeList from '../components/youtube-homepage'
 import Tags from '../components/tags'
 
-const Carousel = dynamic(
-  () => import('../components/carousel.homepage'),
-  { ssr: false }
-)
-
 export async function getStaticProps () {
   const posts = await getAllPosts({ includePages: false })
   const tags = getAllTagsFromPosts(posts)
@@ -38,6 +33,10 @@ export default function Home ({ postsToShow, page, showNext, tags }) {
   const router = useRouter()
   const [, setData] = useState(() => postsToShow)
   const [, setCurrentTag] = useState('All')
+  const Carousel = dynamic(
+    () => import('../components/carousel.homepage'),
+    { ssr: false }
+  )
 
   useEffect(() => {
     if (!router.isReady) return
@@ -58,25 +57,22 @@ export default function Home ({ postsToShow, page, showNext, tags }) {
   return (
     <>
     <Carousel />
-    <div className="max-w-7xl mx-auto w-screen flex flex-col items-center justify-center my-14">
+    <div className="max-w-7xl mx-auto w-screen flex flex-col items-center justify-center my-14 lg:my-36 xl:my-52">
       <img
         className="h-32 hidden md:block"
         src="/LUXOTICARS.svg"
         alt="luxoticars"
       />
-      {/* <img
-        className="w-72 max-w-xs"
-        src="/LUXOTICARS_WHITE_FONT.svg"
-        alt="luxoticars"
-      /> */}
       <Image src={LuxoticarsWhiteFont} alt="Luxoticars" width={240} />
       <h1 className="text-white text-xs md:text-5xl md:text-center">The Syndicate Carlifestyle Cartel</h1>
     </div>
     <YoutubeList />
     <h3
       className="uppercase text-xl text-gray-400 px-3 font-semibold py-6 flex items-center justify-center text-center before:border-4 before:w-[10%] before:border-red-600 before:flex-grow before:transform before:-skew-x-12 before:mr-10 after:border-4 after:w-[10%] after:border-red-600 after:flex-grow after:transform after:skew-x-12 after:ml-10"
-    >Features</h3>
-    <Tags tags={tags} className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-7 lg:py-3 gap-0 place-items-center place-content-center grid-rows-3 md:grid-rows-1" />
+    >
+      Features
+    </h3>
+    <Tags tags={tags} className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-7 lg:py-3 gap-6 place-items-center place-content-center grid-rows-3 md:grid-rows-1" />
     {/* <Cars currentTag={currentTag} posts={data} /> */}
     {/* {showNext && <Pagination page={page} showNext={showNext} />} */}
     <div className="max-w-7xl text-white mx-auto w-full px-3 py-6">

@@ -61,9 +61,9 @@ const callouts = [
 
 export default function YoutubePage () {
   return (
-    <div className="lg:bg-white">
+    <div>
       <div className="max-w-7xl mx-auto w-full sm:px-0 px-3">
-        <div className="max-w-2xl mx-auto lg:max-w-none md:bg-white md:p-3 md:rounded flex items-center flex-col">
+        <div className="max-w-2xl mx-auto lg:max-w-none md:p-3 md:rounded flex items-center flex-col">
           <span className="z-10 shadow-xl md:bg-black md:-mt-6 md:mb-6 whitespace-pre text-white text-center text-xs sm:text-md lg:text-lg font-bold border-2 border rounded-md py-1 px-1 md:px-2">
             Delivery Stories
           </span>

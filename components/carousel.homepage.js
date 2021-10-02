@@ -20,12 +20,11 @@ const Carousel = () => {
       <Swiper
         style={{ '--swiper-navigation-color': '#fff', '--swiper-pagination-color': '#fff' }}
         autoHeight={true}
-        spaceBetween={50}
+        // spaceBetween={50}
         pagination={{
           clickable: true
         }}
         loop
-        className="bg-gradient-to-t from-black"
         effect={'fade'}
         centeredSlides={true}
         autoplay={{
@@ -38,7 +37,7 @@ const Carousel = () => {
               width={1280}
               height={720}
               layout="responsive"
-              objectFit="cover"
+              objectFit="contain"
               // placeholder="blur"
               src="https://images.ctfassets.net/ijuxqf6x1pz2/1N8YjfxoUBbnIdKnQtsZ0k/98bf4396c6cc3c4a323a33fae9accb49/photo_2021-09-24_09.31.08.jpeg" alt="Luxoticars Ferrari"
             />
@@ -63,7 +62,7 @@ const Carousel = () => {
           </video>
         </SwiperSlide>
         <SwiperSlide data-swiper-autoplay="5500">
-          <div className="relativew-full h-1/2">
+          <div className="relative w-full h-1/2">
             <Image
               width={1280}
               height={720}
