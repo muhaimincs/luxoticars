@@ -129,17 +129,6 @@ export default function CarPage ({ post, blockMap, emailHash }) {
         />
       )}
     </article>
-    <footer className="md:hidden flex items-center justify-center w-full h-24 text-white">
-      <a
-        className="flex items-center justify-center font-sans"
-        href="https://mcstech.dev"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Powered by{' '}
-        MCS DEV RESOURCES
-      </a>
-    </footer>
     </>
   )
 }
