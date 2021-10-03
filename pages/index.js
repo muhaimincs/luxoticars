@@ -45,7 +45,7 @@ export default function Home ({ tags }) {
     </div>
     <YoutubeList />
     <div className="max-w-7xl mx-auto w-screen px-3">
-      <div className="px-3 border border border-gray-600 rounded-xl bg-gray-900 overflow-hidden">
+      <div className="border border border-gray-600 rounded-xl bg-gray-900 overflow-hidden">
         <p className="text-sm uppercase text-gray-500 mx-6 mt-10">for enthusiast</p>
         <h4 className="text-xl text-gray-300 mx-6 font-semibold mb-8">The brands you love. From a place you can trust.</h4>
         <BrandsCarousel tags={tags} />
