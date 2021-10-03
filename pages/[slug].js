@@ -107,13 +107,14 @@ export default function CarPage ({ post, blockMap, emailHash }) {
             </SwiperSlide>
           ))}
       </Swiper>
-      <div className="absolute top-0 left-0 right-0 z-10 bg-gradient-to-b from-black h-32">
+      <div className="absolute top-0 inset-x-0 z-10 bg-gradient-to-b from-black">
         <ul className="max-w-7xl mx-auto px-3 text-gray-400 flex space-x-3 text-xs">
           <li><Link href="/search"><a>Stock</a></Link></li>
           <li>&raquo; <Link href={`/tag/${tagLink}`}><a className="capitalize">{tag}</a></Link></li>
         </ul>
-        <h1 className="my-5 text-white text-lg md:text-5xl text-center">{title}</h1>
+        <h1 className="my-5 text-white text-lg md:text-5xl text-center mx-10">{title}</h1>
       </div>
+      <div className="absolute bottom-0 inset-x-0 bg-black text-gray-400">{summary}</div>
     </div>
     <article className="max-w-7xl mx-auto px-3 lg:px-0 mb-10">
       {blockMap && (
