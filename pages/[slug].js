@@ -114,7 +114,7 @@ export default function CarPage ({ post, blockMap, emailHash }) {
         </ul>
         <h1 className="my-5 text-white text-lg md:text-5xl text-center mx-10">{title}</h1>
       </div>
-      <div className="absolute bottom-0 inset-x-0 bg-black text-gray-400">{summary}</div>
+      <div className="absolute bottom-0 inset-x-0 bg-black text-gray-400 z-10 px-4 md:px-24 uppercase text-xs">{summary}</div>
     </div>
     <article className="max-w-7xl mx-auto px-3 lg:px-0 mb-10">
       {blockMap && (
