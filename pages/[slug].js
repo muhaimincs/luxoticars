@@ -93,7 +93,11 @@ export default function CarPage ({ post, blockMap, emailHash }) {
         content={firstPhoto}
       />
     </Head>
-    <div className="relative my-8">
+    <ul className="max-w-7xl mx-auto px-3 text-gray-400 flex space-x-3 text-xs">
+      <li><Link href="/search"><a>Stock</a></Link></li>
+      <li>&raquo; <Link href={`/tag/${tagLink}`}><a className="capitalize">{tag}</a></Link></li>
+    </ul>
+    <div className="relative mt-3 mb-8">
       <Swiper
         style={{ '--swiper-navigation-color': '#fff', '--swiper-pagination-color': '#fff' }}
         zoom={true}
@@ -101,7 +105,8 @@ export default function CarPage ({ post, blockMap, emailHash }) {
         autoHeight={true}
         spaceBetween={20}
         pagination={{
-          clickable: true
+          clickable: true,
+          dynamicBullets: true
         }} className="bg-gradient-to-t from-black">
           {photoGallery.map((photo) => (
             <SwiperSlide key={photo}>
@@ -112,10 +117,6 @@ export default function CarPage ({ post, blockMap, emailHash }) {
           ))}
       </Swiper>
       <div className="absolute top-0 inset-x-0 z-10 bg-gradient-to-b from-black">
-        <ul className="max-w-7xl mx-auto px-3 text-gray-400 flex space-x-3 text-xs">
-          <li><Link href="/search"><a>Stock</a></Link></li>
-          <li>&raquo; <Link href={`/tag/${tagLink}`}><a className="capitalize">{tag}</a></Link></li>
-        </ul>
         <h1 className="my-5 text-white text-lg md:text-5xl text-center mx-10">{title}</h1>
       </div>
       <div className="py-3 bg-black text-gray-400 z-10 px-4 md:px-24 uppercase text-xs">{summary}</div>

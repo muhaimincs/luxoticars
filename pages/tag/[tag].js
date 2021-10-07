@@ -4,8 +4,25 @@ import Head from 'next/head'
 import { getAllPosts, getAllTagsFromPosts } from '../../lib/notion'
 import SearchLayout from '../../layout/search'
 
+const makeupTitle = ([first, ...rest], locale = navigator.language) =>
+  first.toLocaleUpperCase(locale) + rest.join('')
 export default function TagPage ({ tags, posts, currentTag }) {
-  return <SearchLayout tags={tags} posts={posts} currentTag={currentTag} />
+  let title = currentTag ? currentTag.replace(/-/g, ' ') : currentTag
+  title = currentTag ? makeupTitle(title.replace(/_/g, ' ')) : ''
+
+  return (
+    <>
+    <Head>
+      <title>{title} • Luxoticars</title>
+      <meta property="og:title" content={`${title} on Luxoticars`} />
+      <meta name="og:description" content={`Luxoticars has a decade of experience selling reconditioned ${title} cars.`} />
+      <meta name="description" content={`Luxoticars has a decade of experience selling reconditioned ${title} cars.`} />
+      <meta name="twitter:description" content={`Luxoticars has a decade of experience selling reconditioned ${title} cars.`} />
+      <meta name="twitter:title" content={`${title} on Luxoticars`} />
+    </Head>
+    <SearchLayout tags={tags} posts={posts} currentTag={currentTag} />
+    </>
+  )
 }
 
 export async function getStaticProps ({ params }) {
@@ -46,20 +63,15 @@ TagPage.getLayout = function getLayout (page) {
   return (
     <>
       <Head>
-        <title>Stock • Luxoticars</title>
-        <meta name="description" content="Luxoticars has a decade of experience selling reconditioned cars. An influencer of luxury and exotic cars" />
         <meta property="og:locale" content="en-GB" />
-        <meta property="og:title" content="Luxoticars Stock" />
         <meta property="og:description" content="Luxoticars has a decade of experience selling reconditioned cars. An influencer of luxury and exotic cars" />
-        <meta property="og:url" content="https://luxoticars.my/stock" />
+        <meta property="og:url" content="https://luxoticars.my/search" />
         <meta
           property="og:image"
           content="https://images.ctfassets.net/ijuxqf6x1pz2/4Ybp8mYNmbsNWy2JdtpPrV/896c5652069d5ba2d7bece9e194e84be/photo_2021-09-09_22.07.56.jpeg"
         />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:description" content="Luxoticars has a decade of experience selling reconditioned cars. An influencer of luxury and exotic cars" />
-        <meta name="twitter:title" content="Luxoticars Stock" />
         <meta
           name="twitter:image"
           content="https://images.ctfassets.net/ijuxqf6x1pz2/4Ybp8mYNmbsNWy2JdtpPrV/896c5652069d5ba2d7bece9e194e84be/photo_2021-09-09_22.07.56.jpeg"
