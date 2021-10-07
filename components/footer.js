@@ -3,9 +3,9 @@ import { navigation } from './header.homepage'
 
 import RedShoes from '../public/redshoes.jpeg'
 
-export default function Footer () {
+export default function Footer ({ className }) {
   return (
-    <footer className="max-w-7xl mx-auto px-4 lg:px-8 mt-10 mb-32 md:mb-10">
+    <footer className={className || 'max-w-7xl mx-auto px-4 lg:px-8 mt-10 mb-32 md:mb-10'}>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 box-border text-white">
         <div>
           <h3 className="uppercase text-red-800 text-xs font-bold mb-2">{'// Business'}</h3>

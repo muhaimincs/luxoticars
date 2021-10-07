@@ -7,7 +7,6 @@ import WEB from '../web.config'
 import LuxoticarsWhiteFont from '../public/LUXOTICARS_WHITE_FONT.svg'
 import { getAllPosts, getAllTagsFromPosts } from '../lib/notion'
 import YoutubeList from '../components/youtube-homepage'
-// import BrandsCarousel from '../components/brands.carousel'
 
 export async function getStaticProps () {
   const posts = await getAllPosts({ includePages: false })

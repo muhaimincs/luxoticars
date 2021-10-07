@@ -36,8 +36,8 @@ const Carousel = () => {
             <Image
               width={1280}
               height={720}
-              layout="responsive"
-              objectFit="contain"
+              layout="fill"
+              objectFit="center"
               // placeholder="blur"
               src="https://images.ctfassets.net/ijuxqf6x1pz2/1N8YjfxoUBbnIdKnQtsZ0k/98bf4396c6cc3c4a323a33fae9accb49/photo_2021-09-24_09.31.08.jpeg" alt="Luxoticars Ferrari"
             />
