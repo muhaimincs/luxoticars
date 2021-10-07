@@ -30,7 +30,7 @@ const HistoryComponent = () => {
     <div className="absolute top-0 w-screen h-screen overflow-hidden z-[-100]">
       <div className="relative">
         <Swiper
-          style={{ '--swiper-navigation-color': '#fff', '--swiper-pagination-color': '#fff' }}
+          style={{ '--swiper-pagination-color': '#ff0000' }}
           direction="vertical"
           pagination={{
             clickable: true
