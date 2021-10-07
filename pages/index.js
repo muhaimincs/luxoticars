@@ -29,8 +29,13 @@ export default function Home ({ tags }) {
     () => import('../components/brands.carousel'),
     { ssr: false }
   )
-
-  const tags2 = [...tags].splice(3, 0, [...tags].splice(0, 1)[0])
+  const tags2 = Object.keys(tags).sort().reduce(
+    (obj, key) => {
+      obj[key] = tags[key]
+      return obj
+    },
+    {}
+  )
 
   return (
     <>
@@ -46,11 +51,11 @@ export default function Home ({ tags }) {
     </div>
     <YoutubeList />
     <div className="max-w-7xl mx-auto w-screen px-3">
-      <div className="border border border-gray-600 rounded-xl bg-gray-900 overflow-hidden">
+      <div className="border border border-gray-600 rounded-xl bg-gray-900 overflow-hidden pb-16">
         <p className="text-sm uppercase text-gray-500 mx-6 mt-10">for enthusiast</p>
         <h4 className="text-xl text-gray-300 mx-6 font-semibold mb-8">The brands you love. From a place you can trust.</h4>
         <BrandsCarousel tags={tags} />
-        <BrandsCarousel tags={tags2} />
+        <BrandsCarousel tags={tags2} dur={50} />
       </div>
     </div>
     <div className="max-w-7xl mx-auto bg-white w-28 h-1 rounded-xl my-6" />

@@ -31,10 +31,10 @@ function Tags ({ tag, base, index, total }) {
   )
 }
 
-export default function Brands ({ tags }) {
+export default function Brands ({ tags, dur = 150 }) {
   const x = useMotionValue(0)
   const { inView, ref: inViewRef } = useInView({ threshold: 0, rootMargin: '100px' })
-  const [duration, setDuration] = useState(150)
+  const [duration, setDuration] = useState(dur)
 
   useEffect(() => {
     if (!inView) return
@@ -52,7 +52,7 @@ export default function Brands ({ tags }) {
   return (
     <div
       ref={inViewRef}
-      className="relative mb-16"
+      className="relative"
       onMouseEnter={() => setDuration(250)}
       onMouseLeave={() => setDuration(150)}
     >
