@@ -30,7 +30,7 @@ export default function Home ({ tags }) {
     { ssr: false }
   )
 
-  const tags2 = { ...tags }.splice(3, 0, { ...tags }.splice(0, 1)[0])
+  const tags2 = [...tags].splice(3, 0, [...tags].splice(0, 1)[0])
 
   return (
     <>
