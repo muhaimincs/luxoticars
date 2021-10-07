@@ -60,7 +60,7 @@ export default function CarPage ({ post, blockMap, emailHash }) {
   const title = post ? post.title : ''
   const summary = post ? post.summary : ''
   const slug = post ? post.slug : ''
-  const date = post ? post.date : new Date()
+  // const date = post ? post.date : new Date()
   const tag = post ? post.tags[0].replace(/-/g, ' ') : ''
   const tagLink = post ? post.tags[0] : '#'
   return (
@@ -71,12 +71,11 @@ export default function CarPage ({ post, blockMap, emailHash }) {
       <meta property="og:locale" content={WEB.lang} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={summary} />
+      <meta property="og:exterior_color" content={post.exterior_color} />
       <meta
         property="og:url"
         content={`${WEB.link}/${slug}`}
       />
-      <meta property="og:type" content="article" />
-      <meta property="article:published_time" content={date} />
       <meta
         property="og:image"
         content={firstPhoto}
@@ -158,6 +157,7 @@ CarPage.getLayout = function getLayout (page) {
         <link rel="icon" href="/LUXOTICARS_GRADIENT_SKULL.svg" />
         <meta name="robots" content="follow, index" />
         <meta charSet="UTF-8" />
+        <meta property="product:category" content="Vehicle" />
       </Head>
       <Layout>
         <Header />

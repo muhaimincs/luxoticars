@@ -37,7 +37,7 @@ HistoryPage.getLayout = function getLayout (page) {
           property="og:image"
           content="https://images.ctfassets.net/ijuxqf6x1pz2/4Ybp8mYNmbsNWy2JdtpPrV/896c5652069d5ba2d7bece9e194e84be/photo_2021-09-09_22.07.56.jpeg"
         />
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="profile" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:description" content="A TIMELESS INTERPRETATION OF THE AUTOMOTIVE SALES ART" />
         <meta name="twitter:title" content="Luxoticars History" />

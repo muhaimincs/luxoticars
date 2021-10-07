@@ -77,7 +77,7 @@ const Hero = () => {
             originIndex={26}
             originOffset={originOffset}
             delayPerPixel={delayPerPixel}
-            className={i === 1 ? 'block font-semibold bg-clip-text text-transparent bg-gradient-to-l from-pink-500 via-red-400 to-red-600' : ''}>
+            className={i === 1 ? 'block font-semibold bg-clip-text text-transparent bg-gradient-to-l from-red-500 via-red-700 to-red-600' : ''}>
               {text}
             </TextHero>
         ))}
