@@ -111,6 +111,10 @@ Home.getLayout = function getLayout (page) {
           property="twitter:image"
           content="https://ipfs.fleek.co/ipfs/bafybeiefqbyugqurya5gqqlk6ez2hbbu7xxidj3vugmhvqhjsz2fml6f3y"
         />
+        <meta property="business:contact_data:street_address" content="No 253 Jalan Ampang Hilir Off Jalan U-Thant 50450 Kuala Lumpur" />
+        <meta property="business:contact_data:locality" content="Kuala Lumpur" />
+        <meta property="business:contact_data:region" content="Kuala Lumpur" />
+        <meta property="business:contact_data:country_name" content="Malaysia" />
       </Head>
       <Layout>
         <Header />

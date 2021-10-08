@@ -34,14 +34,27 @@ export async function getStaticProps ({ params: { slug } }) {
   const posts = await getAllPosts({ includePages: false })
   const post = posts.find(t => t.slug === slug)
   const blockMap = await getPostBlocks(post.id)
-  const crypto = require('crypto')
-  const emailHash = crypto.createHash('md5')
-    .update('enquiry@luxoticars.my')
-    .digest('hex')
-    .trim()
-    .toLowerCase()
+  // const crypto = require('crypto')
+  // const emailHash = crypto.createHash('md5')
+  //   .update('enquiry@luxoticars.my')
+  //   .digest('hex')
+  //   .trim()
+  //   .toLowerCase()
+  const jsonLD = {
+    '@context': 'https://schema.org',
+    '@type': 'Car',
+    name: post.title,
+    brand: post.tags[0],
+    description: post.summary,
+    color: [post.exterior_color],
+    manufacturer: {
+      '@type': 'Organization',
+      name: post.tags[0]
+    },
+    fuelType: 'Available in Petrol'
+  }
   return {
-    props: { post, blockMap, emailHash },
+    props: { post, blockMap, jsonLD: JSON.stringify(jsonLD) },
     revalidate: 1
   }
 }
@@ -54,7 +67,7 @@ export async function getStaticPaths () {
   }
 }
 
-export default function CarPage ({ post, blockMap, emailHash }) {
+export default function CarPage ({ post, blockMap, jsonLD }) {
   const photoGallery = post ? post['Photo Gallery'].split(',') : []
   const firstPhoto = photoGallery[0]
   const title = post ? post.title : ''
@@ -69,14 +82,15 @@ export default function CarPage ({ post, blockMap, emailHash }) {
       <title>{title} • {WEB.name}</title>
       <meta name="description" content={summary} />
       <meta property="og:locale" content={WEB.lang} />
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={summary} />
+      <meta name="title" property="og:title" content={title} />
+      <meta name="shareDiscription" property="og:description" content={summary} />
       <meta property="og:exterior_color" content={post.exterior_color} />
       <meta
         property="og:url"
         content={`${WEB.link}/${slug}`}
       />
       <meta
+        name="image"
         property="og:image"
         content={firstPhoto}
       />
@@ -91,6 +105,7 @@ export default function CarPage ({ post, blockMap, emailHash }) {
         property="twitter:image"
         content={firstPhoto}
       />
+      <script type="application/ld+json">{jsonLD}</script>
     </Head>
     <ul className="max-w-7xl mx-auto px-3 text-gray-400 flex space-x-3 text-xs">
       <li><Link href="/search"><a>Stock</a></Link></li>
@@ -158,6 +173,7 @@ CarPage.getLayout = function getLayout (page) {
         <meta name="robots" content="follow, index" />
         <meta charSet="UTF-8" />
         <meta property="product:category" content="Vehicle" />
+        <meta property="og:type" content="website" />
       </Head>
       <Layout>
         <Header />
