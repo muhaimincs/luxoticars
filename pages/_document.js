@@ -20,6 +20,15 @@ class MyDocument extends Document {
             rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,700;1,300&display=optional"
           />
+          <link
+            rel="preload"
+            as="style"
+            href="https://fonts.googleapis.com/css2?family=Bonheur+Royale&display=swap"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Bonheur+Royale&display=swap"
+            rel="stylesheet"
+          />
           {/* <noscript>
             <link
               rel="stylesheet"
