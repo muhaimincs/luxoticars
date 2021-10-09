@@ -2,7 +2,11 @@
 import { Fragment, useRef, useEffect, useMemo } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { Menu, Transition, Popover } from '@headlessui/react'
+import {
+  // Menu,
+  Transition,
+  Popover
+} from '@headlessui/react'
 import {
   disableBodyScroll,
   clearAllBodyScrollLocks,
@@ -169,7 +173,7 @@ export default function Example () {
                   </button> */}
 
                   {/* Profile dropdown */}
-                  <Menu as="div" className="ml-3 relative">
+                  {/* <Menu as="div" className="ml-3 relative">
                     <div>
                       <Menu.Button className="bg-gray-500 px-3 py-2 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                         <span className="sr-only">Open user menu</span>
@@ -221,7 +225,7 @@ export default function Example () {
                         </Menu.Item>
                       </Menu.Items>
                     </Transition>
-                  </Menu>
+                  </Menu> */}
                 </div>
               </div>
             </div>
