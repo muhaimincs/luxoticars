@@ -1,4 +1,6 @@
+/* eslint-disable @next/next/no-page-custom-font */
 import Image from 'next/image'
+import Head from 'next/head'
 import { navigation } from './header.homepage'
 
 import RedShoes from '../public/redshoes.jpeg'
@@ -66,6 +68,38 @@ export default function Footer ({ className }) {
           </a>
         </div>
       </div>
+      <Head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          as="style"
+          href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,700;1,300&display=optional"
+        />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,700;1,300&display=optional"
+        />
+        <link
+          rel="preload"
+          as="style"
+          href="https://fonts.googleapis.com/css2?family=Bonheur+Royale&display=swap"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Bonheur+Royale&display=swap"
+          rel="stylesheet"
+        />
+        {/* <noscript>
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,700;1,300&display=optional"
+          />
+        </noscript> */}
+      </Head>
     </footer>
   )
 }
