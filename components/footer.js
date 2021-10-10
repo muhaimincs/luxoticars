@@ -99,6 +99,9 @@ export default function Footer ({ className }) {
             href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,700;1,300&display=optional"
           />
         </noscript> */}
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+        <meta property="og:type" content="website" />
       </Head>
     </footer>
   )

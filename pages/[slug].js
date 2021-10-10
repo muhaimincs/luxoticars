@@ -80,9 +80,10 @@ export default function CarPage ({ post, blockMap, jsonLD }) {
     <>
     <Head>
       <title>{title} • {WEB.name}</title>
+      <meta name="title" property="og:title" content={title} />
+      <meta name="twitter:title" content={`${title} • ${WEB.name}`} />
       <meta name="description" content={summary} />
       <meta property="og:locale" content={WEB.lang} />
-      <meta name="title" property="og:title" content={title} />
       <meta name="shareDiscription" property="og:description" content={summary} />
       <meta property="og:exterior_color" content={post.exterior_color} />
       <meta
@@ -100,7 +101,6 @@ export default function CarPage ({ post, blockMap, jsonLD }) {
         content={`${WEB.link}/${slug}`}
       />
       <meta name="twitter:description" content={summary} />
-      <meta name="twitter:title" content={`${title} • ${WEB.name}`} />
       <meta
         property="twitter:image"
         content={firstPhoto}
@@ -110,7 +110,6 @@ export default function CarPage ({ post, blockMap, jsonLD }) {
       <meta name="robots" content="follow, index" />
       <meta charSet="UTF-8" />
       <meta property="product:category" content="Vehicle" />
-      <meta property="og:type" content="website" />
     </Head>
     <ul className="max-w-7xl mx-auto px-3 text-gray-400 flex space-x-3 text-xs pt-10">
       <li><Link href="/search"><a>Stock</a></Link></li>

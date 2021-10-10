@@ -89,9 +89,6 @@ Home.getLayout = function getLayout (page) {
     <>
       <Head>
         <title>LUXOTICARS</title>
-        <link rel="icon" href="/LUXOTICARS_GRADIENT_SKULL.svg" />
-        <meta name="robots" content="follow, index" />
-        <meta charSet="UTF-8" />
         <meta name="description" content="Luxoticars has a decade of experience selling reconditioned cars. An influencer of luxury and exotic cars" />
         <meta property="og:locale" content={WEB.lang} />
         <meta property="og:title" content="LUXOTICARS" />
@@ -115,6 +112,9 @@ Home.getLayout = function getLayout (page) {
         <meta property="business:contact_data:locality" content="Kuala Lumpur" />
         <meta property="business:contact_data:region" content="Kuala Lumpur" />
         <meta property="business:contact_data:country_name" content="Malaysia" />
+        <link rel="icon" href="/LUXOTICARS_GRADIENT_SKULL.svg" />
+        <meta name="robots" content="follow, index" />
+        <meta charSet="UTF-8" />
       </Head>
       <Layout>
         <Header />
