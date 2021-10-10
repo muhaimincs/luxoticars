@@ -47,7 +47,7 @@ export default function Home ({ tags }) {
         alt="luxoticars"
       />
       <Image src={LuxoticarsWhiteFont} alt="Luxoticars" width={240} />
-      <h1 className="text-white text-xs md:text-5xl md:text-center">The Syndicate <span className="font-bonheur-royale lg:text-7xl">Carlifestyle</span> Cartel</h1>
+      <h1 className="text-white text-xs md:text-5xl md:text-center">The Syndicate <span className="font-bonheur-royale text-2xl lg:text-7xl">Carlifestyle</span> Cartel</h1>
     </div>
     <YoutubeList />
     <div className="max-w-7xl mx-auto w-screen px-3">
