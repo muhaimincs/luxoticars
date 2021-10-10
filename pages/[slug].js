@@ -128,7 +128,7 @@ export default function CarPage ({ post, blockMap, jsonLD }) {
       <meta charSet="UTF-8" />
       <meta property="product:category" content="Vehicle" />
     </Head>
-    <ul className="max-w-7xl mx-auto px-3 text-gray-400 flex space-x-3 text-xs pt-10">
+    <ul className="max-w-7xl mx-auto px-[calc(min(12px,8vw))] w-[var(--notion-max-width)] text-gray-400 flex space-x-3 text-xs pt-10">
       <li><Link href="/search"><a>Stock</a></Link></li>
       <li>&raquo;</li>
       <li><Link href={`/tag/${tagLink}`}><a className="capitalize">{tag}</a></Link></li>
@@ -154,11 +154,11 @@ export default function CarPage ({ post, blockMap, jsonLD }) {
           ))}
       </Swiper>
       <div className="absolute top-0 inset-x-0 z-10 bg-gradient-to-b from-black">
-        <h1 className="my-5 text-white text-lg md:text-5xl text-center mx-10">{title}</h1>
+        <h1 className="my-5 text-white text-lg md:text-5xl text-center w-[var(--notion-max-width)] px-[calc(min(12px,8vw))] mx-auto">{title}</h1>
       </div>
-      <div className="py-3 bg-black text-gray-400 z-10 px-4 md:px-24 uppercase text-xs">{summary}</div>
+      <div className="max-w-7xl py-3 bg-black text-gray-400 z-10 uppercase text-xs px-[calc(min(12px,8vw))] w-[var(--notion-max-width)] mx-auto">{summary}</div>
     </div>
-    <div className="max-w-7xl mx-auto px-3">
+    <div className="max-w-7xl mx-auto px-[calc(min(12px,8vw))] w-[var(--notion-max-width)]">
       <span className="text-gray-500 text-xs">Published on {formatDate(post?.date?.start_date || post.createdTime, 'en')}</span>
       <h4 className="font-semibold uppercase font-sans text-white text-3xl">OVERVIEW</h4>
       <ul className="text-gray-400 flex space-x-3 text-xs my-6">
@@ -168,7 +168,7 @@ export default function CarPage ({ post, blockMap, jsonLD }) {
       </ul>
     </div>
     {(!router.query.tab || router.query.tab === 'key-features') && (
-      <article className="max-w-7xl mx-auto px-3 lg:px-0 mb-10">
+      <article className="max-w-7xl mx-auto mb-10">
         {blockMap && (
           <NotionRenderer
             recordMap={blockMap}
@@ -184,7 +184,7 @@ export default function CarPage ({ post, blockMap, jsonLD }) {
       </article>
     )}
     {router.query.tab === 'trims-specs' && (
-      <article className="max-w-7xl mx-auto px-3 lg:px-0 mb-10">
+      <article className="max-w-7xl mx-auto mb-10 px-[calc(min(12px,8vw))] w-[var(--notion-max-width)]">
         <table className="w-full text-left border-collapse">
           <tbody className="align-baseline divide-y divide-gray-400">
             {post.exterior_color && (
