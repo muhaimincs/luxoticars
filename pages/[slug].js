@@ -16,6 +16,7 @@ import SwiperCore, {
 import { NotionRenderer, Equation, Code, CollectionRow, Collection } from 'react-notion-x'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { useMediaQuery } from 'beautiful-react-hooks'
 
 import WEB from '../web.config'
 import { getAllPosts, getPostBlocks } from '../lib/notion'
@@ -88,7 +89,8 @@ export default function CarPage ({ post, blockMap, jsonLD }) {
       }
     }
   }, [router.query])
-  console.log(router.query.tab)
+  const isLarge = useMediaQuery('(min-width: 48rem)')
+
   return (
     <>
     <Head>
@@ -128,18 +130,20 @@ export default function CarPage ({ post, blockMap, jsonLD }) {
       <meta charSet="UTF-8" />
       <meta property="product:category" content="Vehicle" />
     </Head>
-    <ul className="max-w-7xl mx-auto px-[calc(min(12px,8vw))] w-[var(--notion-max-width)] text-gray-400 flex space-x-3 text-xs pt-10">
-      <li><Link href="/search"><a>Stock</a></Link></li>
-      <li>&raquo;</li>
-      <li><Link href={`/tag/${tagLink}`}><a className="capitalize">{tag}</a></Link></li>
-    </ul>
+    <div className="max-w-7xl mx-auto pt-10 px-3">
+      <ul className="px-[2vw] xl:px-[calc(min(12px,8vw))] w-[var(--notion-max-width)] max-w-full text-gray-400 flex space-x-3 text-xs">
+        <li><Link href="/search"><a>Stock</a></Link></li>
+        <li>&raquo;</li>
+        <li><Link href={`/tag/${tagLink}`}><a className="capitalize">{tag}</a></Link></li>
+      </ul>
+    </div>
     <div className="relative mt-3 mb-8">
       <Swiper
         style={{ '--swiper-navigation-color': '#fff', '--swiper-pagination-color': '#fff' }}
         zoom={true}
         navigation={true}
         autoHeight={true}
-        spaceBetween={20}
+        slidesPerView={isLarge ? 3 : 1}
         pagination={{
           clickable: true,
           dynamicBullets: true
@@ -153,19 +157,23 @@ export default function CarPage ({ post, blockMap, jsonLD }) {
             </SwiperSlide>
           ))}
       </Swiper>
-      <div className="absolute top-0 inset-x-0 z-10 bg-gradient-to-b from-black">
-        <h1 className="my-5 text-white text-lg md:text-5xl text-center w-[var(--notion-max-width)] px-[calc(min(12px,8vw))] mx-auto">{title}</h1>
+      <div className="absolute top-0 inset-x-0 z-10 bg-gradient-to-b from-black max-w-7xl mx-auto">
+        <h1 className="my-5 text-white text-lg md:text-5xl text-center w-[var(--notion-max-width)] px-[2vw] xl:px-[calc(min(12px,8vw))] mx-auto max-w-full">{title}</h1>
       </div>
-      <div className="max-w-7xl py-3 bg-black text-gray-400 z-10 uppercase text-xs px-[calc(min(12px,8vw))] w-[var(--notion-max-width)] mx-auto">{summary}</div>
+      <div className="max-w-7xl mx-auto">
+        <div className="max-w-full py-3 bg-black text-gray-400 z-10 uppercase text-xs px-[2vw] xl:px-[calc(min(12px,8vw))] w-[var(--notion-max-width)] mx-auto">{summary}</div>
+      </div>
     </div>
-    <div className="max-w-7xl mx-auto px-[calc(min(12px,8vw))] w-[var(--notion-max-width)]">
-      <span className="text-gray-500 text-xs">Published on {formatDate(post?.date?.start_date || post.createdTime, 'en')}</span>
-      <h4 className="font-semibold uppercase font-sans text-white text-3xl">OVERVIEW</h4>
-      <ul className="text-gray-400 flex space-x-3 text-xs my-6">
-        <li className={renderKeyFeaturesClassname}><Link href={`/${post.slug}?tab=key-features`}><a>Key Features</a></Link></li>
-        <li>|</li>
-        <li className={renderTrimsSpecsClassname}><Link href={`/${post.slug}?tab=trims-specs`}><a>Trims & Specs</a></Link></li>
-      </ul>
+    <div className="max-w-7xl mx-auto">
+      <div className="max-w-full mx-auto px-[2vw] xl:px-[calc(min(12px,8vw))] w-[var(--notion-max-width)]">
+        <span className="text-gray-500 text-xs">Published on {formatDate(post?.date?.start_date || post.createdTime, 'en')}</span>
+        <h4 className="font-semibold uppercase font-sans text-white text-3xl">OVERVIEW</h4>
+        <ul className="text-gray-400 flex space-x-3 text-xs my-6">
+          <li className={renderKeyFeaturesClassname}><Link href={`/${post.slug}?tab=key-features`}><a>Key Features</a></Link></li>
+          <li>|</li>
+          <li className={renderTrimsSpecsClassname}><Link href={`/${post.slug}?tab=trims-specs`}><a>Trims & Specs</a></Link></li>
+        </ul>
+      </div>
     </div>
     {(!router.query.tab || router.query.tab === 'key-features') && (
       <article className="max-w-7xl mx-auto mb-10">
@@ -184,60 +192,62 @@ export default function CarPage ({ post, blockMap, jsonLD }) {
       </article>
     )}
     {router.query.tab === 'trims-specs' && (
-      <article className="max-w-7xl mx-auto mb-10 px-[calc(min(12px,8vw))] w-[var(--notion-max-width)]">
-        <table className="w-full text-left border-collapse">
-          <tbody className="align-baseline divide-y divide-gray-400">
-            {post.exterior_color && (
-              <tr>
-                <td className="py-2 font-mono text-xs text-gray-500 whitespace-nowrap uppercase font-semibold">Exterior Color</td>
-                <td className="py-2 pl-2 font-mono text-xs text-white whitespace-pre-line text-right">{post.exterior_color}</td>
-              </tr>
-            )}
-            {post['Leather Seat'] && (
-              <tr>
-                <td className="py-2 font-mono text-xs text-gray-500 whitespace-nowrap uppercase font-semibold">Leather Seat</td>
-                <td className="py-2 pl-2 font-mono text-xs text-white whitespace-pre-line text-right">{post['Leather Seat']}</td>
-              </tr>
-            )}
-            {post['Heated Front Seat(s)'] && (
-              <tr>
-                <td className="py-2 font-mono text-xs text-gray-500 whitespace-nowrap uppercase font-semibold">Heated Front Seat(s)</td>
-                <td className="py-2 pl-2 font-mono text-xs text-white whitespace-pre-line text-right">{post['Heated Front Seat(s)']}</td>
-              </tr>
-            )}
-            {post['Premium Sound System'] && (
-              <tr>
-                <td className="py-2 font-mono text-xs text-gray-500 whitespace-nowrap uppercase font-semibold">Premium Sound System</td>
-                <td className="py-2 pl-2 font-mono text-xs text-white whitespace-pre-line text-right">{post['Premium Sound System']}</td>
-              </tr>
-            )}
-            {post['Bluetooth Connection'] && (
-              <tr>
-                <td className="py-2 font-mono text-xs text-gray-500 whitespace-nowrap uppercase font-semibold">Bluetooth Connection</td>
-                <td className="py-2 pl-2 font-mono text-xs text-white whitespace-pre-line text-right">{post['Bluetooth Connection']}</td>
-              </tr>
-            )}
-            {post['Navigation System'] && (
-              <tr>
-                <td className="py-2 font-mono text-xs text-gray-500 whitespace-nowrap uppercase font-semibold">Navigation System</td>
-                <td className="py-2 pl-2 font-mono text-xs text-white whitespace-pre-line text-right">{post['Navigation System']}</td>
-              </tr>
-            )}
-            {post['Smart Device Integration'] && (
-              <tr>
-                <td className="py-2 font-mono text-xs text-gray-500 whitespace-nowrap uppercase font-semibold">Smart Device Integration</td>
-                <td className="py-2 pl-2 font-mono text-xs text-white whitespace-pre-line text-right">{post['Smart Device Integration']}</td>
-              </tr>
-            )}
-            {post.Mileage && (
-              <tr>
-                <td className="py-2 font-mono text-xs text-gray-500 whitespace-nowrap uppercase font-semibold">Mileage</td>
-                <td className="py-2 pl-2 font-mono text-xs text-white whitespace-pre-line text-right">{post.Mileage}</td>
-              </tr>
-            )}
-          </tbody>
-        </table>
-      </article>
+      <div className="max-w-7xl mx-auto">
+        <article className="max-w-full mx-auto mb-10 px-[2vw] xl:px-[calc(min(12px,8vw))] w-[var(--notion-max-width)]">
+          <table className="w-full text-left border-collapse">
+            <tbody className="align-baseline divide-y divide-gray-400">
+              {post.exterior_color && (
+                <tr>
+                  <td className="py-2 font-mono text-xs text-gray-500 whitespace-nowrap uppercase font-semibold">Exterior Color</td>
+                  <td className="py-2 pl-2 font-mono text-xs text-white whitespace-pre-line text-right">{post.exterior_color}</td>
+                </tr>
+              )}
+              {post['Leather Seat'] && (
+                <tr>
+                  <td className="py-2 font-mono text-xs text-gray-500 whitespace-nowrap uppercase font-semibold">Leather Seat</td>
+                  <td className="py-2 pl-2 font-mono text-xs text-white whitespace-pre-line text-right">{post['Leather Seat']}</td>
+                </tr>
+              )}
+              {post['Heated Front Seat(s)'] && (
+                <tr>
+                  <td className="py-2 font-mono text-xs text-gray-500 whitespace-nowrap uppercase font-semibold">Heated Front Seat(s)</td>
+                  <td className="py-2 pl-2 font-mono text-xs text-white whitespace-pre-line text-right">{post['Heated Front Seat(s)']}</td>
+                </tr>
+              )}
+              {post['Premium Sound System'] && (
+                <tr>
+                  <td className="py-2 font-mono text-xs text-gray-500 whitespace-nowrap uppercase font-semibold">Premium Sound System</td>
+                  <td className="py-2 pl-2 font-mono text-xs text-white whitespace-pre-line text-right">{post['Premium Sound System']}</td>
+                </tr>
+              )}
+              {post['Bluetooth Connection'] && (
+                <tr>
+                  <td className="py-2 font-mono text-xs text-gray-500 whitespace-nowrap uppercase font-semibold">Bluetooth Connection</td>
+                  <td className="py-2 pl-2 font-mono text-xs text-white whitespace-pre-line text-right">{post['Bluetooth Connection']}</td>
+                </tr>
+              )}
+              {post['Navigation System'] && (
+                <tr>
+                  <td className="py-2 font-mono text-xs text-gray-500 whitespace-nowrap uppercase font-semibold">Navigation System</td>
+                  <td className="py-2 pl-2 font-mono text-xs text-white whitespace-pre-line text-right">{post['Navigation System']}</td>
+                </tr>
+              )}
+              {post['Smart Device Integration'] && (
+                <tr>
+                  <td className="py-2 font-mono text-xs text-gray-500 whitespace-nowrap uppercase font-semibold">Smart Device Integration</td>
+                  <td className="py-2 pl-2 font-mono text-xs text-white whitespace-pre-line text-right">{post['Smart Device Integration']}</td>
+                </tr>
+              )}
+              {post.Mileage && (
+                <tr>
+                  <td className="py-2 font-mono text-xs text-gray-500 whitespace-nowrap uppercase font-semibold">Mileage</td>
+                  <td className="py-2 pl-2 font-mono text-xs text-white whitespace-pre-line text-right">{post.Mileage}</td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </article>
+      </div>
     )}
     </>
   )
