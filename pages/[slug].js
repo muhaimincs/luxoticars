@@ -4,6 +4,7 @@ import 'prismjs/themes/prism.css'
 import 'react-notion-x/src/styles.css'
 import 'katex/dist/katex.min.css'
 
+import { useMemo } from 'react'
 import Head from 'next/head'
 import dynamic from 'next/dynamic'
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -14,9 +15,11 @@ import SwiperCore, {
 } from 'swiper'
 import { NotionRenderer, Equation, Code, CollectionRow, Collection } from 'react-notion-x'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 import WEB from '../web.config'
 import { getAllPosts, getPostBlocks } from '../lib/notion'
+import formatDate from '../lib/formatDate'
 
 import 'swiper/css/bundle'
 import 'swiper/css'
@@ -34,12 +37,6 @@ export async function getStaticProps ({ params: { slug } }) {
   const posts = await getAllPosts({ includePages: false })
   const post = posts.find(t => t.slug === slug)
   const blockMap = await getPostBlocks(post.id)
-  // const crypto = require('crypto')
-  // const emailHash = crypto.createHash('md5')
-  //   .update('enquiry@luxoticars.my')
-  //   .digest('hex')
-  //   .trim()
-  //   .toLowerCase()
   const jsonLD = {
     '@context': 'https://schema.org',
     '@type': 'Car',
@@ -73,9 +70,25 @@ export default function CarPage ({ post, blockMap, jsonLD }) {
   const title = post ? post.title : ''
   const summary = post ? post.summary : ''
   const slug = post ? post.slug : ''
-  // const date = post ? post.date : new Date()
   const tag = post ? post.tags[0].replace(/-/g, ' ') : ''
   const tagLink = post ? post.tags[0] : '#'
+  const router = useRouter()
+  const renderKeyFeaturesClassname = useMemo(() => {
+    if (!router.query.tab) {
+      return 'border-b border-red-600 border-b-4'
+    }
+    if (router.query.tab === 'key-features') {
+      return 'border-b border-red-600 border-b-4'
+    }
+  }, [router.query])
+  const renderTrimsSpecsClassname = useMemo(() => {
+    if (router.query.tab) {
+      if (router.query.tab === 'trims-specs') {
+        return 'border-b border-red-600 border-b-4'
+      }
+    }
+  }, [router.query])
+  console.log(router.query.tab)
   return (
     <>
     <Head>
@@ -85,7 +98,6 @@ export default function CarPage ({ post, blockMap, jsonLD }) {
       <meta name="description" content={summary} />
       <meta property="og:locale" content={WEB.lang} />
       <meta name="shareDiscription" property="og:description" content={summary} />
-      <meta property="og:exterior_color" content={post.exterior_color} />
       <meta
         property="og:url"
         content={`${WEB.link}/${slug}`}
@@ -105,6 +117,11 @@ export default function CarPage ({ post, blockMap, jsonLD }) {
         property="twitter:image"
         content={firstPhoto}
       />
+      <meta
+        property="article:published_time"
+        content={post.createdTime}
+      />
+      <meta property="og:type" content="article" />
       <script type="application/ld+json">{jsonLD}</script>
       <link rel="icon" href="/LUXOTICARS_GRADIENT_SKULL.svg" />
       <meta name="robots" content="follow, index" />
@@ -113,7 +130,8 @@ export default function CarPage ({ post, blockMap, jsonLD }) {
     </Head>
     <ul className="max-w-7xl mx-auto px-3 text-gray-400 flex space-x-3 text-xs pt-10">
       <li><Link href="/search"><a>Stock</a></Link></li>
-      <li>&raquo; <Link href={`/tag/${tagLink}`}><a className="capitalize">{tag}</a></Link></li>
+      <li>&raquo;</li>
+      <li><Link href={`/tag/${tagLink}`}><a className="capitalize">{tag}</a></Link></li>
     </ul>
     <div className="relative mt-3 mb-8">
       <Swiper
@@ -125,11 +143,12 @@ export default function CarPage ({ post, blockMap, jsonLD }) {
         pagination={{
           clickable: true,
           dynamicBullets: true
-        }} className="bg-gradient-to-t from-black">
+        }}
+        className="min-h-full h-72">
           {photoGallery.map((photo) => (
             <SwiperSlide key={photo}>
-              <div className='swiper-zoom-container'>
-                <img src={photo} />
+              <div className="swiper-zoom-container">
+                <img src={photo} className="min-h-full" />
               </div>
             </SwiperSlide>
           ))}
@@ -139,20 +158,87 @@ export default function CarPage ({ post, blockMap, jsonLD }) {
       </div>
       <div className="py-3 bg-black text-gray-400 z-10 px-4 md:px-24 uppercase text-xs">{summary}</div>
     </div>
-    <article className="max-w-7xl mx-auto px-3 lg:px-0 mb-10">
-      {blockMap && (
-        <NotionRenderer
-          recordMap={blockMap}
-          components={{
-            equation: Equation,
-            code: Code,
-            collectionRow: CollectionRow,
-            Collection: Collection
-          }}
-          mapPageUrl={mapPageUrl}
-        />
-      )}
-    </article>
+    <div className="max-w-7xl mx-auto px-3">
+      <span className="text-gray-500 text-xs">Published on {formatDate(post?.date?.start_date || post.createdTime, 'en')}</span>
+      <h4 className="font-semibold uppercase font-sans text-white text-3xl">OVERVIEW</h4>
+      <ul className="text-gray-400 flex space-x-3 text-xs my-6">
+        <li className={renderKeyFeaturesClassname}><Link href={`/${post.slug}?tab=key-features`}><a>Key Features</a></Link></li>
+        <li>|</li>
+        <li className={renderTrimsSpecsClassname}><Link href={`/${post.slug}?tab=trims-specs`}><a>Trims & Specs</a></Link></li>
+      </ul>
+    </div>
+    {(!router.query.tab || router.query.tab === 'key-features') && (
+      <article className="max-w-7xl mx-auto px-3 lg:px-0 mb-10">
+        {blockMap && (
+          <NotionRenderer
+            recordMap={blockMap}
+            components={{
+              equation: Equation,
+              code: Code,
+              collectionRow: CollectionRow,
+              Collection: Collection
+            }}
+            mapPageUrl={mapPageUrl}
+          />
+        )}
+      </article>
+    )}
+    {router.query.tab === 'trims-specs' && (
+      <article className="max-w-7xl mx-auto px-3 lg:px-0 mb-10">
+        <table className="w-full text-left border-collapse">
+          <tbody className="align-baseline divide-y divide-gray-400">
+            {post.exterior_color && (
+              <tr>
+                <td className="py-2 font-mono text-xs text-gray-500 whitespace-nowrap uppercase font-semibold">Exterior Color</td>
+                <td className="py-2 pl-2 font-mono text-xs text-white whitespace-pre-line text-right">{post.exterior_color}</td>
+              </tr>
+            )}
+            {post['Leather Seat'] && (
+              <tr>
+                <td className="py-2 font-mono text-xs text-gray-500 whitespace-nowrap uppercase font-semibold">Leather Seat</td>
+                <td className="py-2 pl-2 font-mono text-xs text-white whitespace-pre-line text-right">{post['Leather Seat']}</td>
+              </tr>
+            )}
+            {post['Heated Front Seat(s)'] && (
+              <tr>
+                <td className="py-2 font-mono text-xs text-gray-500 whitespace-nowrap uppercase font-semibold">Heated Front Seat(s)</td>
+                <td className="py-2 pl-2 font-mono text-xs text-white whitespace-pre-line text-right">{post['Heated Front Seat(s)']}</td>
+              </tr>
+            )}
+            {post['Premium Sound System'] && (
+              <tr>
+                <td className="py-2 font-mono text-xs text-gray-500 whitespace-nowrap uppercase font-semibold">Premium Sound System</td>
+                <td className="py-2 pl-2 font-mono text-xs text-white whitespace-pre-line text-right">{post['Premium Sound System']}</td>
+              </tr>
+            )}
+            {post['Bluetooth Connection'] && (
+              <tr>
+                <td className="py-2 font-mono text-xs text-gray-500 whitespace-nowrap uppercase font-semibold">Bluetooth Connection</td>
+                <td className="py-2 pl-2 font-mono text-xs text-white whitespace-pre-line text-right">{post['Bluetooth Connection']}</td>
+              </tr>
+            )}
+            {post['Navigation System'] && (
+              <tr>
+                <td className="py-2 font-mono text-xs text-gray-500 whitespace-nowrap uppercase font-semibold">Navigation System</td>
+                <td className="py-2 pl-2 font-mono text-xs text-white whitespace-pre-line text-right">{post['Navigation System']}</td>
+              </tr>
+            )}
+            {post['Smart Device Integration'] && (
+              <tr>
+                <td className="py-2 font-mono text-xs text-gray-500 whitespace-nowrap uppercase font-semibold">Smart Device Integration</td>
+                <td className="py-2 pl-2 font-mono text-xs text-white whitespace-pre-line text-right">{post['Smart Device Integration']}</td>
+              </tr>
+            )}
+            {post.Mileage && (
+              <tr>
+                <td className="py-2 font-mono text-xs text-gray-500 whitespace-nowrap uppercase font-semibold">Mileage</td>
+                <td className="py-2 pl-2 font-mono text-xs text-white whitespace-pre-line text-right">{post.Mileage}</td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+      </article>
+    )}
     </>
   )
 }
