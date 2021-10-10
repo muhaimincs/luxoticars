@@ -35,9 +35,9 @@ SearchPage.getLayout = function getLayout (page) {
         <title>Stock • Luxoticars</title>
         <meta name="description" content="Luxoticars has a decade of experience selling reconditioned cars. An influencer of luxury and exotic cars" />
         <meta property="og:locale" content="en-GB" />
-        <meta property="og:title" content="Luxoticars Stock" />
+        <meta property="og:title" content="Stock • Luxoticars" />
         <meta property="og:description" content="Luxoticars has a decade of experience selling reconditioned cars. An influencer of luxury and exotic cars" />
-        <meta property="og:url" content="https://luxoticars.my/stock" />
+        <meta property="og:url" content="https://luxoticars.my/search" />
         <meta
           property="og:image"
           content="https://images.ctfassets.net/ijuxqf6x1pz2/4Ybp8mYNmbsNWy2JdtpPrV/896c5652069d5ba2d7bece9e194e84be/photo_2021-09-09_22.07.56.jpeg"
@@ -45,7 +45,7 @@ SearchPage.getLayout = function getLayout (page) {
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:description" content="Luxoticars has a decade of experience selling reconditioned cars. An influencer of luxury and exotic cars" />
-        <meta name="twitter:title" content="Luxoticars Stock" />
+        <meta name="twitter:title" content="Stock • Luxoticars" />
         <meta
           name="twitter:image"
           content="https://images.ctfassets.net/ijuxqf6x1pz2/4Ybp8mYNmbsNWy2JdtpPrV/896c5652069d5ba2d7bece9e194e84be/photo_2021-09-09_22.07.56.jpeg"

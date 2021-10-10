@@ -16,7 +16,7 @@ const CarPost = ({ post }) => {
     <Link href={`/${post.slug}`} passHref={true}>
       <motion.a
         variants={item}
-        className="group relative h-40 rounded-lg overflow-hidden">
+        className="group relative h-40 rounded-lg overflow-hidden border border-gray-700">
         <header className="relative z-10 px-4 pt-6 pb-10 bg-gradient-to-b from-black">
           <span className="text-white text-xs">{post.Year}</span>
           <h2 className="text-lg font-semibold text-gray-300">
