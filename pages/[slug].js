@@ -106,8 +106,13 @@ export default function CarPage ({ post, blockMap, jsonLD }) {
         content={firstPhoto}
       />
       <script type="application/ld+json">{jsonLD}</script>
+      <link rel="icon" href="/LUXOTICARS_GRADIENT_SKULL.svg" />
+      <meta name="robots" content="follow, index" />
+      <meta charSet="UTF-8" />
+      <meta property="product:category" content="Vehicle" />
+      <meta property="og:type" content="website" />
     </Head>
-    <ul className="max-w-7xl mx-auto px-3 text-gray-400 flex space-x-3 text-xs">
+    <ul className="max-w-7xl mx-auto px-3 text-gray-400 flex space-x-3 text-xs pt-10">
       <li><Link href="/search"><a>Stock</a></Link></li>
       <li>&raquo; <Link href={`/tag/${tagLink}`}><a className="capitalize">{tag}</a></Link></li>
     </ul>
@@ -167,19 +172,10 @@ CarPage.getLayout = function getLayout (page) {
     { ssr: false }
   )
   return (
-    <>
-      <Head>
-        <link rel="icon" href="/LUXOTICARS_GRADIENT_SKULL.svg" />
-        <meta name="robots" content="follow, index" />
-        <meta charSet="UTF-8" />
-        <meta property="product:category" content="Vehicle" />
-        <meta property="og:type" content="website" />
-      </Head>
-      <Layout>
-        <Header />
-        {page}
-        <Footer />
-      </Layout>
-    </>
+    <Layout>
+      <Header />
+      {page}
+      <Footer />
+    </Layout>
   )
 }
