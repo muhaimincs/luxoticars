@@ -95,20 +95,16 @@ export default function CarPage ({ post, blockMap, jsonLD }) {
     <>
     <Head>
       <title>{title} • {WEB.name}</title>
-      <meta name="title" property="og:title" content={title} />
+      <meta property="og:title" content={title} />
       <meta name="twitter:title" content={`${title} • ${WEB.name}`} />
       <meta name="description" content={summary} />
       <meta property="og:locale" content={WEB.lang} />
-      <meta name="shareDiscription" property="og:description" content={summary} />
+      <meta property="og:description" content={summary} />
       <meta
         property="og:url"
         content={`${WEB.link}/${slug}`}
       />
-      <meta
-        name="image"
-        property="og:image"
-        content={firstPhoto}
-      />
+      <meta property="og:image" content={firstPhoto} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta
         property="twitter:url"
@@ -145,7 +141,7 @@ export default function CarPage ({ post, blockMap, jsonLD }) {
         autoHeight={true}
         slidesPerView={isLarge ? 'auto' : 1}
         centeredSlides={true}
-        spaceBetween={30}
+        spaceBetween={10}
         loop={true}
         loopFillGroupWithBlank={true}
         pagination={{
