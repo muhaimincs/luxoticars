@@ -68,8 +68,8 @@ export async function getStaticPaths () {
 export default function CarPage ({ post, blockMap, jsonLD }) {
   const photoGallery = post ? post['Photo Gallery'].split(',') : []
   const firstPhoto = photoGallery[0]
-  const title = post ? post.title : ''
-  const summary = post ? post.summary : ''
+  const title = post ? post.title : 'Loading'
+  const summary = post ? post.summary : 'Loading'
   const slug = post ? post.slug : ''
   const tag = post ? post.tags[0].replace(/-/g, ' ') : ''
   const tagLink = post ? post.tags[0] : '#'
