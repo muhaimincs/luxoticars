@@ -143,7 +143,9 @@ export default function CarPage ({ post, blockMap, jsonLD }) {
         zoom={true}
         navigation={true}
         autoHeight={true}
-        slidesPerView={isLarge ? 3 : 1}
+        slidesPerView={isLarge ? 'auto' : 1}
+        centeredSlides={true}
+        spaceBetween={30}
         pagination={{
           clickable: true,
           dynamicBullets: true
