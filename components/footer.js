@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Head from 'next/head'
 import { navigation } from './header.homepage'
 
-import RedShoes from '../public/redshoes.jpeg'
+import RedShoes from '../public/RS_002.svg'
 
 export default function Footer ({ className }) {
   return (
