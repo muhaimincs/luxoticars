@@ -94,10 +94,10 @@ export default function CarPage ({ post, blockMap, jsonLD }) {
   return (
     <>
     <Head>
-      <title>{title} • {WEB.name}</title>
-      <meta property="og:title" content={title} />
-      <meta name="twitter:title" content={`${title} • ${WEB.name}`} />
-      <meta name="description" content={summary} />
+      <title>{post.title} • {WEB.name}</title>
+      <meta property="og:title" content={post.title} />
+      <meta name="twitter:title" content={`${post.title} • ${WEB.name}`} />
+      <meta name="description" content={post.summary} />
       <meta property="og:locale" content={WEB.lang} />
       <meta property="og:description" content={summary} />
       <meta
