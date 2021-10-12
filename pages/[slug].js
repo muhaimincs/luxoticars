@@ -7,6 +7,7 @@ import 'katex/dist/katex.min.css'
 import { useMemo } from 'react'
 import Head from 'next/head'
 import dynamic from 'next/dynamic'
+import { NextSeo } from 'next-seo'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import SwiperCore, {
   Zoom,
@@ -67,7 +68,6 @@ export async function getStaticPaths () {
 
 export default function CarPage ({ post, blockMap, jsonLD }) {
   const photoGallery = post ? post['Photo Gallery'].split(',') : []
-  const firstPhoto = photoGallery[0]
   const title = post ? post.title : 'Loading'
   const summary = post ? post.summary : 'Loading'
   const slug = post ? post.slug : ''
@@ -93,28 +93,24 @@ export default function CarPage ({ post, blockMap, jsonLD }) {
 
   return (
     <>
+    <NextSeo
+      title={`${post.title} • ${WEB.name}`}
+      description={summary}
+      canonical={`${WEB.link}/${slug}`}
+      openGraph={{
+        url: `${WEB.link}/${slug}`,
+        title,
+        description: summary,
+        images: photoGallery.map(photo => ({
+          url: photo,
+          type: 'image/jpeg'
+        })),
+        site_name: WEB.name
+      }}
+    />
     <Head>
       <title>{post.title} • {WEB.name}</title>
-      <meta property="og:title" content={post.title} />
-      <meta name="twitter:title" content={`${post.title} • ${WEB.name}`} />
-      <meta name="description" content={post.summary} />
       <meta property="og:locale" content={WEB.lang} />
-      <meta property="og:description" content={summary} />
-      <meta
-        property="og:url"
-        content={`${WEB.link}/${slug}`}
-      />
-      <meta property="og:image" content={firstPhoto} />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta
-        property="twitter:url"
-        content={`${WEB.link}/${slug}`}
-      />
-      <meta name="twitter:description" content={summary} />
-      <meta
-        property="twitter:image"
-        content={firstPhoto}
-      />
       <meta
         property="article:published_time"
         content={post.createdTime}
