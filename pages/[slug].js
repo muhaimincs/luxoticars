@@ -7,7 +7,7 @@ import 'katex/dist/katex.min.css'
 import { useMemo } from 'react'
 import Head from 'next/head'
 import dynamic from 'next/dynamic'
-import { NextSeo } from 'next-seo'
+import { NextSeo, BreadcrumbJsonLd } from 'next-seo'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import SwiperCore, {
   Zoom,
@@ -105,19 +105,29 @@ export default function CarPage ({ post, blockMap, jsonLD }) {
           url: photo,
           type: 'image/jpeg'
         })),
-        site_name: WEB.name
+        type: 'article',
+        article: {
+          publishedTime: post.createdTime,
+          section: post.tags[0]
+        }
       }}
     />
+    <BreadcrumbJsonLd
+      itemListElements={[
+        {
+          position: 1,
+          name: 'Stocks',
+          item: `${WEB.link}/search`
+        },
+        {
+          position: 2,
+          name: post.tags[0].replace(/-/g, ' ').replace(/_/g, ' '),
+          item: `${WEB.link}/tag/${post.tags[0]}`
+        }
+      ]}
+    />
     <Head>
-      <title>{post.title} • {WEB.name}</title>
-      <meta property="og:locale" content={WEB.lang} />
-      <meta
-        property="article:published_time"
-        content={post.createdTime}
-      />
-      <meta property="og:type" content="article" />
       <script type="application/ld+json">{jsonLD}</script>
-      <link rel="icon" href="/LUXOTICARS_GRADIENT_SKULL.svg" />
     </Head>
     <div className="max-w-7xl mx-auto pt-10 px-3">
       <ul className="px-[2vw] xl:px-[calc(min(12px,8vw))] w-[var(--notion-max-width)] max-w-full text-gray-400 flex space-x-3 text-xs">

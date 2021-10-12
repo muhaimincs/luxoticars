@@ -1,13 +1,14 @@
-import Head from 'next/head'
+import { LogoJsonLd } from 'next-seo'
 
 import WEB from '../web.config'
 
 export default function Layout ({ children }) {
   return (
     <>
-    <Head>
-      <meta property="og:site_name" content={WEB.name} />
-    </Head>
+    <LogoJsonLd
+      logo={`${WEB.link}/LUXOTICARS.svg`}
+      url={WEB.link}
+    />
     <section>{children}</section>
     </>
   )
