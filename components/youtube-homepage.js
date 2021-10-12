@@ -33,7 +33,7 @@ function Yt ({ data }) {
       <h3 className="mt-6 text-sm text-gray-500">
         {data.name}
       </h3>
-      <p className="text-base text-gray-100 md:text-gray-900">{data.description}</p>
+      <p className="text-base text-gray-100">{data.description}</p>
     </div>
   )
 }
