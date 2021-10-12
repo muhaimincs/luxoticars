@@ -141,7 +141,7 @@ export default function CarPage ({ post, blockMap, jsonLD }) {
         autoHeight={true}
         slidesPerView={isLarge ? 'auto' : 1}
         centeredSlides={true}
-        spaceBetween={10}
+        // spaceBetween={}
         loop={true}
         loopFillGroupWithBlank={true}
         pagination={{
