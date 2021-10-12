@@ -5,9 +5,8 @@ import 'react-notion-x/src/styles.css'
 import 'katex/dist/katex.min.css'
 
 import { useMemo } from 'react'
-import Head from 'next/head'
 import dynamic from 'next/dynamic'
-import { NextSeo, BreadcrumbJsonLd } from 'next-seo'
+import { NextSeo, BreadcrumbJsonLd, ProductJsonLd } from 'next-seo'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import SwiperCore, {
   Zoom,
@@ -39,21 +38,8 @@ export async function getStaticProps ({ params: { slug } }) {
   const posts = await getAllPosts({ includePages: false })
   const post = posts.find(t => t.slug === slug)
   const blockMap = await getPostBlocks(post.id)
-  const jsonLD = {
-    '@context': 'https://schema.org',
-    '@type': 'Car',
-    name: post.title,
-    brand: post.tags[0],
-    description: post.summary,
-    color: [post.exterior_color],
-    manufacturer: {
-      '@type': 'Organization',
-      name: post.tags[0]
-    },
-    fuelType: 'Available in Petrol'
-  }
   return {
-    props: { post, blockMap, jsonLD: JSON.stringify(jsonLD) },
+    props: { post, blockMap },
     revalidate: 1
   }
 }
@@ -66,7 +52,7 @@ export async function getStaticPaths () {
   }
 }
 
-export default function CarPage ({ post, blockMap, jsonLD }) {
+export default function CarPage ({ post, blockMap }) {
   const photoGallery = post ? post['Photo Gallery'].split(',') : []
   const title = post ? post.title : 'Loading'
   const summary = post ? post.summary : 'Loading'
@@ -126,9 +112,14 @@ export default function CarPage ({ post, blockMap, jsonLD }) {
         }
       ]}
     />
-    <Head>
-      <script type="application/ld+json">{jsonLD}</script>
-    </Head>
+    <ProductJsonLd
+      productName={title}
+      images={photoGallery.map(photo => photo)}
+      description={summary}
+      color={post.exterior_color}
+      manufacturerName={post.tags[0].replace(/-/g, ' ').replace(/_/g, ' ')}
+      manufacturerLogo={`${WEB.link}/brands/colors/${post.tags[0]}.svg`}
+    />
     <div className="max-w-7xl mx-auto pt-10 px-3">
       <ul className="px-[2vw] xl:px-[calc(min(12px,8vw))] w-[var(--notion-max-width)] max-w-full text-gray-400 flex space-x-3 text-xs">
         <li><Link href="/search"><a>Stock</a></Link></li>
