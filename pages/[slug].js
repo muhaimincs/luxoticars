@@ -152,7 +152,7 @@ export default function CarPage ({ post, blockMap, jsonLD }) {
           {photoGallery.map((photo) => (
             <SwiperSlide key={photo}>
               <div className="swiper-zoom-container">
-                <img src={photo} className="min-h-full" />
+                <img src={photo} className="min-h-full" loading="lazy" />
               </div>
             </SwiperSlide>
           ))}
