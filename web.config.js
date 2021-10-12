@@ -1,7 +1,7 @@
 const WEB = {
   name: 'LUXOTICARS',
   lang: 'en-US',
-  link: 'https://luxoticars.my',
+  link: 'https://luxoticars.cc',
   postsPerPage: 7,
   sortByDate: false,
   notionPageId: process.env.NOTION_PAGE_ID,
