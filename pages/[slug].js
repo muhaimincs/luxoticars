@@ -118,9 +118,6 @@ export default function CarPage ({ post, blockMap, jsonLD }) {
       <meta property="og:type" content="article" />
       <script type="application/ld+json">{jsonLD}</script>
       <link rel="icon" href="/LUXOTICARS_GRADIENT_SKULL.svg" />
-      <meta name="robots" content="follow, index" />
-      <meta charSet="UTF-8" />
-      <meta property="product:category" content="Vehicle" />
     </Head>
     <div className="max-w-7xl mx-auto pt-10 px-3">
       <ul className="px-[2vw] xl:px-[calc(min(12px,8vw))] w-[var(--notion-max-width)] max-w-full text-gray-400 flex space-x-3 text-xs">
