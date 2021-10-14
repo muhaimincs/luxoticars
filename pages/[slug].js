@@ -143,7 +143,7 @@ export default function CarPage ({ post, blockMap }) {
     </div>
     <div className="max-w-7xl mx-auto px-3 flex items-center justify-center">
       {post['Interior Photos'] && (
-        <ul className="text-gray-400 flex space-x-3 text-xs my-6 text-center mx-auto">
+        <ul className="text-gray-400 flex space-x-3 text-xs">
           <li className="text-gray-500 font-semibold">View:</li>
           <li className={renderExteriorGalleryClassname}><Link href={`/${post.slug}?gallery=exterior`}><a>Exterior</a></Link></li>
           <li>|</li>
