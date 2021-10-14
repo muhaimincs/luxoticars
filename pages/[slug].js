@@ -177,7 +177,7 @@ export default function CarPage ({ post, blockMap }) {
             ))}
         </Swiper>
       )}
-      {(router.query.gallery || router.query.gallery === 'interior') && (
+      {(router.query.gallery === 'interior') && (
         <Swiper
           style={{ '--swiper-navigation-color': '#fff', '--swiper-pagination-color': '#fff' }}
           zoom={true}
