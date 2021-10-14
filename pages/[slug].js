@@ -184,12 +184,12 @@ export default function CarPage ({ post, blockMap }) {
           style={{ '--swiper-navigation-color': '#fff', '--swiper-pagination-color': '#fff' }}
           zoom={true}
           navigation={true}
-          // autoHeight={true}
-          slidesPerView={isLarge ? 2 : 'auto'}
+          autoHeight={true}
+          slidesPerView={isLarge ? 1 : 'auto'}
           centeredSlides={true}
           // spaceBetween={}
           loop={true}
-          loopFillGroupWithBlank={true}
+          // loopFillGroupWithBlank={true}
           pagination={{
             clickable: true,
             dynamicBullets: true
