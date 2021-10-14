@@ -183,7 +183,7 @@ export default function CarPage ({ post, blockMap }) {
           zoom={true}
           navigation={true}
           autoHeight={true}
-          slidesPerView={isLarge ? 2 : 1}
+          slidesPerView={isLarge ? 2 : 'auto'}
           centeredSlides={true}
           // spaceBetween={}
           loop={true}
