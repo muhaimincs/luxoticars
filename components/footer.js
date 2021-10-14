@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-page-custom-font */
 import Image from 'next/image'
-import Head from 'next/head'
 import { navigation } from './header.homepage'
 import { LogoJsonLd, SocialProfileJsonLd } from 'next-seo'
 
@@ -84,39 +83,6 @@ export default function Footer ({ className }) {
           'http://www.tiktok.com/@luxoticars'
         ]}
       />
-      <Head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          as="style"
-          href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,700;1,300&display=optional"
-        />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,700;1,300&display=optional"
-        />
-        <link
-          rel="preload"
-          as="style"
-          href="https://fonts.googleapis.com/css2?family=Bonheur+Royale&display=swap"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Bonheur+Royale&display=swap"
-          rel="stylesheet"
-        />
-        {/* <noscript>
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,700;1,300&display=optional"
-          />
-        </noscript> */}
-        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-      </Head>
     </footer>
   )
 }

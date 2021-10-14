@@ -22,11 +22,34 @@ function MyApp ({ Component, pageProps }) {
         additionalMetaTags={[{
           httpEquiv: 'x-ua-compatible',
           content: 'IE=edge; chrome=1'
+        }, {
+          name: 'viewport',
+          content: 'width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no'
         }]}
         additionalLinkTags={[
           {
             rel: 'icon',
             href: '/LUXOTICARS_GRADIENT_SKULL.svg'
+          }, {
+            rel: 'preconnect',
+            href: 'https://fonts.googleapis.com'
+          },
+          {
+            rel: 'preconnect',
+            href: 'https://fonts.gstatic.com',
+            crossorigin: true
+          }, {
+            rel: 'preload',
+            href: 'https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,700;1,300&display=optional'
+          }, {
+            rel: 'stylesheet',
+            href: 'https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,700;1,300&display=optional'
+          }, {
+            rel: 'preload',
+            href: 'https://fonts.googleapis.com/css2?family=Bonheur+Royale&display=swap'
+          }, {
+            rel: 'stylesheet',
+            href: 'https://fonts.googleapis.com/css2?family=Bonheur+Royale&display=swap'
           }
         ]}
       />
