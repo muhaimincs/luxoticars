@@ -182,7 +182,7 @@ export default function CarPage ({ post, blockMap }) {
           style={{ '--swiper-navigation-color': '#fff', '--swiper-pagination-color': '#fff' }}
           zoom={true}
           navigation={true}
-          autoHeight={true}
+          // autoHeight={true}
           slidesPerView={isLarge ? 2 : 'auto'}
           centeredSlides={true}
           // spaceBetween={}
