@@ -141,7 +141,7 @@ export default function CarPage ({ post, blockMap }) {
         <li><Link href={`/tag/${tagLink}`}><a className="capitalize">{tag}</a></Link></li>
       </ul>
     </div>
-    <div className="max-w-7xl mx-auto pt-10 px-3 flex items-center justify-center">
+    <div className="max-w-7xl mx-auto px-3 flex items-center justify-center">
       {post['Interior Photos'] && (
         <ul className="text-gray-400 flex space-x-3 text-xs my-6 text-center mx-auto">
           <li className="text-gray-500 font-semibold">View:</li>
