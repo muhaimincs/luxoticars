@@ -141,6 +141,16 @@ export default function CarPage ({ post, blockMap }) {
         <li><Link href={`/tag/${tagLink}`}><a className="capitalize">{tag}</a></Link></li>
       </ul>
     </div>
+    <div className="max-w-7xl mx-auto pt-10 px-3 flex items-center justify-center">
+      {post['Interior Photos'] && (
+        <ul className="text-gray-400 flex space-x-3 text-xs my-6 text-center mx-auto">
+          <li className="text-gray-500 font-semibold">View:</li>
+          <li className={renderExteriorGalleryClassname}><Link href={`/${post.slug}?gallery=exterior`}><a>Exterior</a></Link></li>
+          <li>|</li>
+          <li className={renderInteriorGalleryClassname}><Link href={`/${post.slug}?gallery=interior`}><a>Interior</a></Link></li>
+        </ul>
+      )}
+    </div>
     <div className="relative mt-3 mb-8">
       {(!router.query.gallery || router.query.gallery === 'exterior') && (
         <Swiper
@@ -193,13 +203,6 @@ export default function CarPage ({ post, blockMap }) {
         </Swiper>
       )}
       <div className="absolute top-0 inset-x-0 z-10 bg-gradient-to-b from-black max-w-7xl xl:max-w-screen-2xl mx-auto">
-        {post['Interior Photos'] && (
-          <ul className="text-gray-400 flex space-x-3 text-xs my-6 text-center">
-            <li className={renderExteriorGalleryClassname}><Link href={`/${post.slug}?gallery=exterior`}><a>Exterior</a></Link></li>
-            <li>|</li>
-            <li className={renderInteriorGalleryClassname}><Link href={`/${post.slug}?gallery=interior`}><a>Trims & Specs</a></Link></li>
-          </ul>
-        )}
         <h1 className="my-5 text-white text-lg md:text-5xl text-center w-[var(--notion-max-width)] px-[2vw] xl:px-[calc(min(12px,8vw))] mx-auto max-w-full">{title}</h1>
       </div>
       <div className="max-w-7xl mx-auto">
