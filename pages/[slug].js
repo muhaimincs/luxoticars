@@ -54,7 +54,7 @@ export async function getStaticPaths () {
 
 export default function CarPage ({ post, blockMap }) {
   const photoGallery = post ? post['Photo Gallery'].split(',') : []
-  const interiorGallery = post ? post['Interior Photos'].split(',') : []
+  const interiorGallery = post && post['Interior Photos'] ? post['Interior Photos'].split(',') : []
   const title = post ? post.title : 'Loading'
   const summary = post ? post.summary : 'Loading'
   const slug = post ? post.slug : ''
