@@ -71,10 +71,10 @@ export default function CarPage ({ post, blockMap }) {
   }, [router.query])
   const renderExteriorGalleryClassname = useMemo(() => {
     if (!router.query.gallery) {
-      return 'border-b border-red-600 border-b-2'
+      return 'border-b border-red-600 border-b-2 text-white'
     }
     if (router.query.gallery === 'exterior') {
-      return 'border-b border-red-600 border-b-2'
+      return 'border-b border-red-600 border-b-2 text-white'
     }
   }, [router.query])
   const renderTrimsSpecsClassname = useMemo(() => {
@@ -86,8 +86,9 @@ export default function CarPage ({ post, blockMap }) {
   }, [router.query])
   const renderInteriorGalleryClassname = useMemo(() => {
     if (router.query.gallery === 'interior') {
-      return 'border-b border-red-600 border-b-2'
+      return 'border-b border-red-600 border-b-2 text-white'
     }
+    return ''
   }, [router.query])
   const isLarge = useMediaQuery('(min-width: 48rem)')
 
