@@ -142,18 +142,19 @@ export default function CarPage ({ post, blockMap }) {
         <li><Link href={`/tag/${tagLink}`}><a className="capitalize">{tag}</a></Link></li>
       </ul>
     </div>
-    <div className="max-w-7xl mx-auto px-3 flex items-center justify-center">
-      {post['Interior Photos'] && (
+    {post['Interior Photos'] && (
+      <div className="max-w-7xl mx-auto px-3 flex items-center justify-center">
         <ul className="text-gray-400 flex space-x-3 text-xs">
           <li className="text-gray-500 font-semibold">View:</li>
           <li className={renderExteriorGalleryClassname}><Link href={`/${post.slug}?gallery=exterior`}><a>Exterior</a></Link></li>
           <li>|</li>
           <li className={renderInteriorGalleryClassname}><Link href={`/${post.slug}?gallery=interior`}><a>Interior</a></Link></li>
         </ul>
-      )}
-    </div>
+      </div>
+    )}
     <div className="relative mt-3 mb-8">
-      {(!router.query.gallery || router.query.gallery === 'exterior') && (
+      {(!router.query.gallery || router.query.gallery === 'exterior')
+        ? (
         <Swiper
           style={{ '--swiper-navigation-color': '#fff', '--swiper-pagination-color': '#fff' }}
           zoom={true}
@@ -177,8 +178,8 @@ export default function CarPage ({ post, blockMap }) {
               </SwiperSlide>
             ))}
         </Swiper>
-      )}
-      {(router.query.gallery === 'interior') && (
+          )
+        : (
         <Swiper
           style={{ '--swiper-navigation-color': '#fff', '--swiper-pagination-color': '#fff' }}
           zoom={true}
@@ -202,7 +203,7 @@ export default function CarPage ({ post, blockMap }) {
               </SwiperSlide>
             ))}
         </Swiper>
-      )}
+          )}
       <div className="absolute top-0 inset-x-0 z-10 bg-gradient-to-b from-black max-w-7xl xl:max-w-screen-2xl mx-auto">
         <h1 className="my-5 text-white text-lg md:text-5xl text-center w-[var(--notion-max-width)] px-[2vw] xl:px-[calc(min(12px,8vw))] mx-auto max-w-full">{title}</h1>
       </div>
