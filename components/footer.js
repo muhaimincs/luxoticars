@@ -2,8 +2,10 @@
 import Image from 'next/image'
 import Head from 'next/head'
 import { navigation } from './header.homepage'
+import { LogoJsonLd, SocialProfileJsonLd } from 'next-seo'
 
 import RedShoes from '../public/RS_002.svg'
+import WEB from '../web.config'
 
 export default function Footer ({ className }) {
   return (
@@ -68,6 +70,20 @@ export default function Footer ({ className }) {
           </a>
         </div>
       </div>
+      <LogoJsonLd
+        logo={`${WEB.link}/LUXOTICARS.svg`}
+        url={WEB.link}
+      />
+      <SocialProfileJsonLd
+        type="Person"
+        name="luxoticars"
+        url={WEB.link}
+        sameAs={[
+          'http://www.facebook.com/luxoticars',
+          'http://instagram.com/luxoticars',
+          'http://www.tiktok.com/@luxoticars'
+        ]}
+      />
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link

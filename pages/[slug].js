@@ -54,6 +54,7 @@ export async function getStaticPaths () {
 
 export default function CarPage ({ post, blockMap }) {
   const photoGallery = post ? post['Photo Gallery'].split(',') : []
+  const interiorGallery = post ? post['Interior Photos'].split(',') : []
   const title = post ? post.title : 'Loading'
   const summary = post ? post.summary : 'Loading'
   const slug = post ? post.slug : ''
@@ -68,11 +69,24 @@ export default function CarPage ({ post, blockMap }) {
       return 'border-b border-red-600 border-b-4'
     }
   }, [router.query])
+  const renderExteriorGalleryClassname = useMemo(() => {
+    if (!router.query.gallery) {
+      return 'border-b border-red-600 border-b-2'
+    }
+    if (router.query.gallery === 'exterior') {
+      return 'border-b border-red-600 border-b-2'
+    }
+  }, [router.query])
   const renderTrimsSpecsClassname = useMemo(() => {
     if (router.query.tab) {
       if (router.query.tab === 'trims-specs') {
         return 'border-b border-red-600 border-b-4'
       }
+    }
+  }, [router.query])
+  const renderInteriorGalleryClassname = useMemo(() => {
+    if (router.query.gallery === 'interior') {
+      return 'border-b border-red-600 border-b-2'
     }
   }, [router.query])
   const isLarge = useMediaQuery('(min-width: 48rem)')
@@ -128,30 +142,64 @@ export default function CarPage ({ post, blockMap }) {
       </ul>
     </div>
     <div className="relative mt-3 mb-8">
-      <Swiper
-        style={{ '--swiper-navigation-color': '#fff', '--swiper-pagination-color': '#fff' }}
-        zoom={true}
-        navigation={true}
-        autoHeight={true}
-        slidesPerView={isLarge ? 'auto' : 1}
-        centeredSlides={true}
-        // spaceBetween={}
-        loop={true}
-        loopFillGroupWithBlank={true}
-        pagination={{
-          clickable: true,
-          dynamicBullets: true
-        }}
-        className="min-h-full h-72">
-          {photoGallery.map((photo) => (
-            <SwiperSlide key={photo}>
-              <div className="swiper-zoom-container">
-                <img src={photo} className="min-h-full" loading="lazy" />
-              </div>
-            </SwiperSlide>
-          ))}
-      </Swiper>
-      <div className="absolute top-0 inset-x-0 z-10 bg-gradient-to-b from-black max-w-7xl mx-auto">
+      {(!router.query.gallery || router.query.gallery === 'exterior') && (
+        <Swiper
+          style={{ '--swiper-navigation-color': '#fff', '--swiper-pagination-color': '#fff' }}
+          zoom={true}
+          navigation={true}
+          autoHeight={true}
+          slidesPerView={isLarge ? 'auto' : 1}
+          centeredSlides={true}
+          // spaceBetween={}
+          loop={true}
+          loopFillGroupWithBlank={true}
+          pagination={{
+            clickable: true,
+            dynamicBullets: true
+          }}
+          className="min-h-full h-72">
+            {photoGallery.map((photo) => (
+              <SwiperSlide key={photo}>
+                <div className="swiper-zoom-container">
+                  <img src={photo} className="min-h-full" loading="lazy" />
+                </div>
+              </SwiperSlide>
+            ))}
+        </Swiper>
+      )}
+      {(router.query.gallery || router.query.gallery === 'interior') && (
+        <Swiper
+          style={{ '--swiper-navigation-color': '#fff', '--swiper-pagination-color': '#fff' }}
+          zoom={true}
+          navigation={true}
+          autoHeight={true}
+          slidesPerView={isLarge ? 2 : 1}
+          centeredSlides={true}
+          // spaceBetween={}
+          loop={true}
+          loopFillGroupWithBlank={true}
+          pagination={{
+            clickable: true,
+            dynamicBullets: true
+          }}
+          className="min-h-full h-72">
+            {interiorGallery.map((photo) => (
+              <SwiperSlide key={photo}>
+                <div className="swiper-zoom-container">
+                  <img src={photo} className="min-h-full" loading="lazy" />
+                </div>
+              </SwiperSlide>
+            ))}
+        </Swiper>
+      )}
+      <div className="absolute top-0 inset-x-0 z-10 bg-gradient-to-b from-black max-w-7xl xl:max-w-screen-2xl mx-auto">
+        {post['Interior Photos'] && (
+          <ul className="text-gray-400 flex space-x-3 text-xs my-6 text-center">
+            <li className={renderExteriorGalleryClassname}><Link href={`/${post.slug}?gallery=exterior`}><a>Exterior</a></Link></li>
+            <li>|</li>
+            <li className={renderInteriorGalleryClassname}><Link href={`/${post.slug}?gallery=interior`}><a>Trims & Specs</a></Link></li>
+          </ul>
+        )}
         <h1 className="my-5 text-white text-lg md:text-5xl text-center w-[var(--notion-max-width)] px-[2vw] xl:px-[calc(min(12px,8vw))] mx-auto max-w-full">{title}</h1>
       </div>
       <div className="max-w-7xl mx-auto">
