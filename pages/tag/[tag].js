@@ -19,7 +19,7 @@ export default function TagPage ({ tags, posts, currentTag }) {
       <meta name="description" content={`Luxoticars has a decade of experience selling reconditioned ${title} cars.`} />
       <meta
         property="og:image"
-        content={`/brands/colors/${currentTag}.svg`}
+        content={`/brands/cover/${currentTag}.webp`}
       />
       <meta name="twitter:description" content={`Luxoticars has a decade of experience selling reconditioned ${title} cars.`} />
       <meta name="twitter:title" content={`${title} on Luxoticars`} />
