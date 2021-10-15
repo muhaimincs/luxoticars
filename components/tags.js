@@ -90,7 +90,7 @@ const Tags = ({ tags, currentTag, className }) => {
               }`}
             >
               <div className="w-8 h-8">
-                <Image src={`/brands/${key}.svg`} width={32} height={32} />
+                <Image src={`/brands/${key}.svg`} width={64} height={64} />
               </div>
               <Link
                 key={key}
