@@ -3,7 +3,6 @@ import Head from 'next/head'
 
 import { getAllPosts, getAllTagsFromPosts } from '../../lib/notion'
 import SearchLayout from '../../layout/search'
-// import Header from '../../components/header.homepage'
 import Layout from '../../components/layout.homepage'
 
 const makeupTitle = ([first, ...rest], locale = 'en-GB') =>
@@ -67,10 +66,6 @@ TagPage.getLayout = function getLayout (page) {
     () => import('../../components/header.homepage'),
     { ssr: false }
   )
-  // const Layout = dynamic(
-  // () => import('../../components/layout.homepage')
-  // { ssr: false }
-  // )
   return (
     <Layout>
       <Header />
