@@ -133,7 +133,7 @@ export default function CarPage ({ post, blockMap }) {
       productName={title}
       images={photoGallery.map(photo => photo)}
       description={summary}
-      color={post.exterior_color}
+      color={post?.exterior_color}
       manufacturerName={tagLink.replace(/-/g, ' ').replace(/_/g, ' ')}
       manufacturerLogo={`${WEB.link}/brands/colors/${tagLink}.svg`}
     />
@@ -245,10 +245,10 @@ export default function CarPage ({ post, blockMap }) {
         <article className="max-w-full mx-auto mb-10 px-[2vw] xl:px-[calc(min(12px,8vw))] w-[var(--notion-max-width)]">
           <table className="w-full text-left border-collapse">
             <tbody className="align-baseline divide-y divide-gray-400">
-              {post.exterior_color && (
+              {post?.exterior_color && (
                 <tr>
                   <td className="py-2 font-mono text-xs text-gray-500 whitespace-nowrap uppercase font-semibold">Exterior Color</td>
-                  <td className="py-2 pl-2 font-mono text-xs text-white whitespace-pre-line text-right">{post.exterior_color}</td>
+                  <td className="py-2 pl-2 font-mono text-xs text-white whitespace-pre-line text-right">{post?.exterior_color}</td>
                 </tr>
               )}
               {post['Leather Seat'] && (
