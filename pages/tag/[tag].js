@@ -69,22 +69,9 @@ TagPage.getLayout = function getLayout (page) {
     { ssr: false }
   )
   return (
-    <>
-      <Head>
-        <meta property="og:locale" content="en-GB" />
-        <meta property="og:description" content="Luxoticars has a decade of experience selling reconditioned cars. An influencer of luxury and exotic cars" />
-        <meta property="og:url" content="https://luxoticars.my/search" />
-        <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta content="#000" name="theme-color" />
-        <meta name="robots" content="follow, index" />
-        <meta charSet="UTF-8" />
-        <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/e/e3/Skull-Icon.svg" />
-      </Head>
-      <Layout>
-        <Header />
-        {page}
-      </Layout>
-    </>
+    <Layout>
+      <Header />
+      {page}
+    </Layout>
   )
 }
