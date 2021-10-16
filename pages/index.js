@@ -2,6 +2,7 @@
 import Head from 'next/head'
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
+import Link from 'next/link'
 
 import WEB from '../web.config'
 import LuxoticarsWhiteFont from '../public/LUXOTICARS_WHITE_FONT.svg'
@@ -53,9 +54,16 @@ export default function Home ({ tags }) {
     <div className="max-w-7xl mx-auto w-screen px-3">
       <div className="border border border-gray-600 rounded-xl bg-gray-900 overflow-hidden pb-16">
         <p className="text-sm uppercase text-gray-500 mx-6 mt-10">for enthusiast</p>
-        <h4 className="text-xl text-gray-300 mx-6 font-semibold mb-8">The brands you love. From a place you can trust.</h4>
+        <h4 className="text-3xl text-gray-300 mx-6 font-semibold mb-8 tracking-wide">The brands you love. From a place you can trust.</h4>
         <BrandsCarousel tags={tags} />
         <BrandsCarousel tags={tags2} dur={50} />
+        <Link href="/search">
+          <a
+            className="block w-full py-3 px-5 text-center bg-white border border-transparent rounded-md shadow-md text-base font-medium text-indigo-700 hover:bg-gray-50 sm:inline-block sm:w-auto"
+          >
+            Explore &rarr;
+          </a>
+        </Link>
       </div>
     </div>
     <div className="max-w-7xl mx-auto bg-white w-28 h-1 rounded-xl my-6" />
@@ -83,6 +91,10 @@ Home.getLayout = function getLayout (page) {
   )
   const Layout = dynamic(
     () => import('../components/layout.homepage'),
+    { ssr: false }
+  )
+  const SaleSection = dynamic(
+    () => import('../components/sale-section'),
     { ssr: false }
   )
   return (
@@ -119,6 +131,7 @@ Home.getLayout = function getLayout (page) {
       <Layout>
         <Header />
         {page}
+        <SaleSection />
         <Footer />
       </Layout>
     </>
