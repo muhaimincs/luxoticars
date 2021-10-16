@@ -6,8 +6,9 @@ import SearchLayout from '../../layout/search'
 // import Header from '../../components/header.homepage'
 import Layout from '../../components/layout.homepage'
 
-const makeupTitle = ([first, ...rest], locale = navigator.language) =>
+const makeupTitle = ([first, ...rest], locale = 'en-GB') =>
   first.toLocaleUpperCase(locale) + rest.join('')
+
 export default function TagPage ({ tags, posts, currentTag }) {
   let title = currentTag ? currentTag.replace(/-/g, ' ') : currentTag
   title = currentTag ? makeupTitle(title.replace(/_/g, ' ')) : ''
