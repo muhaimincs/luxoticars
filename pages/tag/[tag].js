@@ -61,12 +61,12 @@ export async function getStaticPaths () {
 
 TagPage.getLayout = function getLayout (page) {
   const Header = dynamic(
-    () => import('../../components/header.homepage'),
-    { ssr: false }
+    () => import('../../components/header.homepage')
+    // { ssr: false }
   )
   const Layout = dynamic(
-    () => import('../../components/layout.homepage'),
-    { ssr: false }
+    () => import('../../components/layout.homepage')
+    // { ssr: false }
   )
   return (
     <Layout>
