@@ -124,7 +124,7 @@ export default function CarPage ({ post, blockMap }) {
         },
         {
           position: 2,
-          name: post.tags[0].replace(/-/g, ' ').replace(/_/g, ' '),
+          name: post?.tags[0]?.replace(/-/g, ' ').replace(/_/g, ' '),
           item: `${WEB.link}/tag/${tagLink}`
         }
       ]}
