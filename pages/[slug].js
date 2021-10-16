@@ -21,6 +21,7 @@ import { useMediaQuery } from 'beautiful-react-hooks'
 import WEB from '../web.config'
 import { getAllPosts, getPostBlocks } from '../lib/notion'
 import formatDate from '../lib/formatDate'
+import Layout from '../components/layout.homepage'
 
 import 'swiper/css/bundle'
 import 'swiper/css'
@@ -302,15 +303,10 @@ export default function CarPage ({ post, blockMap }) {
 
 CarPage.getLayout = function getLayout (page) {
   const Header = dynamic(
-    () => import('../components/header.homepage'),
-    { ssr: false }
+    () => import('../components/header.homepage')
   )
   const Footer = dynamic(
     () => import('../components/footer'),
-    { ssr: false }
-  )
-  const Layout = dynamic(
-    () => import('../components/layout.homepage'),
     { ssr: false }
   )
   return (
