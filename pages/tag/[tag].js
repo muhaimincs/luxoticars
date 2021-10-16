@@ -1,8 +1,10 @@
-import dynamic from 'next/dynamic'
+// import dynamic from 'next/dynamic'
 import Head from 'next/head'
 
 import { getAllPosts, getAllTagsFromPosts } from '../../lib/notion'
 import SearchLayout from '../../layout/search'
+import Header from '../../components/header.homepage'
+import Layout from '../../components/layout.homepage'
 
 const makeupTitle = ([first, ...rest], locale = navigator.language) =>
   first.toLocaleUpperCase(locale) + rest.join('')
@@ -60,14 +62,14 @@ export async function getStaticPaths () {
 }
 
 TagPage.getLayout = function getLayout (page) {
-  const Header = dynamic(
-    () => import('../../components/header.homepage')
-    // { ssr: false }
-  )
-  const Layout = dynamic(
-    () => import('../../components/layout.homepage')
-    // { ssr: false }
-  )
+  // const Header = dynamic(
+  // () => import('../../components/header.homepage')
+  // { ssr: false }
+  // )
+  // const Layout = dynamic(
+  // () => import('../../components/layout.homepage')
+  // { ssr: false }
+  // )
   return (
     <Layout>
       <Header />
