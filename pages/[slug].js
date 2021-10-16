@@ -134,7 +134,7 @@ export default function CarPage ({ post, blockMap }) {
       images={photoGallery.map(photo => photo)}
       description={summary}
       color={post?.exterior_color}
-      manufacturerName={tagLink.replace(/-/g, ' ').replace(/_/g, ' ')}
+      manufacturerName={tagLink?.replace(/-/g, ' ').replace(/_/g, ' ')}
       manufacturerLogo={`${WEB.link}/brands/colors/${tagLink}.svg`}
     />
     <div className="max-w-7xl mx-auto pt-10 px-3">
