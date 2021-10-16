@@ -29,6 +29,10 @@ SearchPage.getLayout = function getLayout (page) {
     () => import('../components/layout.homepage'),
     { ssr: false }
   )
+  const Footer = dynamic(
+    () => import('../components/footer'),
+    { ssr: false }
+  )
   return (
     <>
       <Head>
@@ -50,14 +54,11 @@ SearchPage.getLayout = function getLayout (page) {
           name="twitter:image"
           content="https://images.ctfassets.net/ijuxqf6x1pz2/4Ybp8mYNmbsNWy2JdtpPrV/896c5652069d5ba2d7bece9e194e84be/photo_2021-09-09_22.07.56.jpeg"
         />
-        <meta content="#000" name="theme-color" />
-        <meta name="robots" content="follow, index" />
-        <meta charSet="UTF-8" />
-        <link rel="icon" href="/LUXOTICARS_GRADIENT_SKULL.svg" />
       </Head>
       <Layout>
         <Header />
         {page}
+        <Footer />
       </Layout>
     </>
   )

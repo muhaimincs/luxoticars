@@ -60,15 +60,21 @@ const SearchLayout = ({ tags, posts, currentTag }) => {
     <>
     <div className="absolute top-0 inset-x-0 z-[-10]" ref={sentinalRef}>
       <div className="relative h-64 xl:h-96 w-screen">
-        <Image src={bg} objectFit="cover" layout="fill" />
+        <Image src={bg} objectFit="cover" layout="fill" objectPosition="30%" />
       </div>
     </div>
-    {currentTag && (
+    {currentTag
+      ? (
       <div className="flex flex-col-reverse justify-center items-center">
         <h1 className="text-white capitalize text-2xl">{title}</h1>
-        <Image src={`/brands/${currentTag}.svg`} width={96} height={96} />
+        <div className="relative w-32 h-32 xl:w-52 xl:h-52">
+          <Image src={`/brands/${currentTag}.svg`} layout="fill" />
+        </div>
       </div>
-    )}
+        )
+      : (
+      <div className="bg-transparent h-32 h-32 xl:h-64" />
+        )}
     <div className="bg-transparent observer-element h-4" ref={sentinalRef} />
     <div className="sticky top-0 md:relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transform transition-colors transition-opacity backdrop-filter" ref={navRef}>
       <div className="relative">

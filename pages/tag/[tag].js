@@ -15,7 +15,7 @@ export default function TagPage ({ tags, posts, currentTag }) {
   return (
     <>
     <Head>
-      <title>{title} • Luxoticars</title>
+      <title>{title} on Luxoticars</title>
       <meta property="og:title" content={`${title} on Luxoticars`} />
       <meta name="og:description" content={`Luxoticars has a decade of experience selling reconditioned ${title} cars.`} />
       <meta name="description" content={`Luxoticars has a decade of experience selling reconditioned ${title} cars.`} />
@@ -66,10 +66,15 @@ TagPage.getLayout = function getLayout (page) {
     () => import('../../components/header.homepage'),
     { ssr: false }
   )
+  const Footer = dynamic(
+    () => import('../../components/footer'),
+    { ssr: false }
+  )
   return (
     <Layout>
       <Header />
       {page}
+      <Footer />
     </Layout>
   )
 }

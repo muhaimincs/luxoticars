@@ -62,7 +62,7 @@ const Tags = ({ tags, currentTag, className }) => {
   const controls = useAnimation()
 
   const ulClassName = !className
-    ? 'flex max-w-full mt-4 overflow-x-auto space-x-3'
+    ? 'flex space-x-3 absolute'
     : className
 
   useEffect(() => {
@@ -70,41 +70,43 @@ const Tags = ({ tags, currentTag, className }) => {
   }, [])
 
   return (
-    <div>
-      <motion.ul className={ulClassName} variants={{}} initial="hidden" animate={controls}>
-        {Object.keys(tags).map((key, i) => {
-          const selected = key === currentTag
-          let title = key.replace(/-/g, ' ')
-          title = title.replace(/_/g, ' ')
-          return (
-            <Tag
-              key={key}
-              i={i}
-              originIndex={26}
-              originOffset={originOffset}
-              delayPerPixel={delayPerPixel}
-              className={`flex-shrink-0 w-32 font-sans font-medium rounded flex flex-col justify-center items-center px-2 py-3 ${
-                selected
-                  ? 'text-white bg-gradient-to-t from-gray-500 border-red-600 text-red-600'
-                  : 'bg-gradient-to-t from-gray-700 text-gray-200'
-              }`}
-            >
-              <div className="w-8 h-8">
-                <Image src={`/brands/${key}.svg`} width={64} height={64} />
-              </div>
-              <Link
+    <div className="mt-4 flow-root">
+      <div className="box-content relative overflow-x-auto h-24">
+        <motion.ul className={ulClassName} variants={{}} initial="hidden" animate={controls}>
+          {Object.keys(tags).map((key, i) => {
+            const selected = key === currentTag
+            let title = key.replace(/-/g, ' ')
+            title = title.replace(/_/g, ' ')
+            return (
+              <Tag
                 key={key}
-                href={selected ? '/search' : `/tag/${encodeURIComponent(key)}`}
-                replace
+                i={i}
+                originIndex={26}
+                originOffset={originOffset}
+                delayPerPixel={delayPerPixel}
+                className={`flex-shrink-0 w-32 font-sans font-medium rounded flex flex-col justify-center items-center px-2 py-3 ${
+                  selected
+                    ? 'text-white bg-gradient-to-t from-gray-500 border-red-600 text-red-600'
+                    : 'bg-gradient-to-t from-gray-700 text-gray-200'
+                }`}
               >
-                <a className="block capitalize text-xs text-center">
-                  {title}
-                </a>
-              </Link>
-            </Tag>
-          )
-        })}
-      </motion.ul>
+                <div className="w-8 h-8">
+                  <Image src={`/brands/${key}.svg`} width={64} height={64} />
+                </div>
+                <Link
+                  key={key}
+                  href={selected ? '/search' : `/tag/${encodeURIComponent(key)}`}
+                  replace
+                >
+                  <a className="block capitalize text-xs text-center">
+                    {title}
+                  </a>
+                </Link>
+              </Tag>
+            )
+          })}
+        </motion.ul>
+      </div>
     </div>
   )
 }
