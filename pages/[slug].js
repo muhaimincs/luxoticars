@@ -56,12 +56,13 @@ export async function getStaticPaths () {
 export default function CarPage ({ post, blockMap }) {
   const photoGallery = post ? post['Photo Gallery'].split(',') : []
   const interiorGallery = post && post['Interior Photos'] ? post['Interior Photos'].split(',') : []
-  const title = post ? post.title : 'Loading'
-  const summary = post ? post.summary : 'Loading'
-  const slug = post ? post.slug : ''
-  const tag = post ? post.tags[0].replace(/-/g, ' ') : ''
-  const tagLink = post ? post.tags[0] : '#'
+  const title = post?.title
+  const summary = post?.summary
+  const slug = post?.slug
+  const tag = post?.tags[0]?.replace(/-/g, ' ')
+  const tagLink = post?.tags[0]
   const router = useRouter()
+  const publishedTime = post?.createdTime
   const renderKeyFeaturesClassname = useMemo(() => {
     if (!router.query.tab) {
       return 'border-b border-red-600 border-b-4'
@@ -96,7 +97,7 @@ export default function CarPage ({ post, blockMap }) {
   return (
     <>
     <NextSeo
-      title={`${post.title} • ${WEB.name}`}
+      title={`${title} • ${WEB.name}`}
       description={summary}
       canonical={`${WEB.link}/${slug}`}
       openGraph={{
@@ -109,8 +110,8 @@ export default function CarPage ({ post, blockMap }) {
         })),
         type: 'article',
         article: {
-          publishedTime: post.createdTime,
-          section: post.tags[0]
+          publishedTime,
+          section: tagLink
         }
       }}
     />
@@ -124,7 +125,7 @@ export default function CarPage ({ post, blockMap }) {
         {
           position: 2,
           name: post.tags[0].replace(/-/g, ' ').replace(/_/g, ' '),
-          item: `${WEB.link}/tag/${post.tags[0]}`
+          item: `${WEB.link}/tag/${tagLink}`
         }
       ]}
     />
@@ -133,8 +134,8 @@ export default function CarPage ({ post, blockMap }) {
       images={photoGallery.map(photo => photo)}
       description={summary}
       color={post.exterior_color}
-      manufacturerName={post.tags[0].replace(/-/g, ' ').replace(/_/g, ' ')}
-      manufacturerLogo={`${WEB.link}/brands/colors/${post.tags[0]}.svg`}
+      manufacturerName={tagLink.replace(/-/g, ' ').replace(/_/g, ' ')}
+      manufacturerLogo={`${WEB.link}/brands/colors/${tagLink}.svg`}
     />
     <div className="max-w-7xl mx-auto pt-10 px-3">
       <ul className="px-[2vw] xl:px-[calc(min(12px,8vw))] w-[var(--notion-max-width)] max-w-full text-gray-400 flex space-x-3 text-xs">
@@ -147,9 +148,9 @@ export default function CarPage ({ post, blockMap }) {
       <div className="max-w-7xl mx-auto px-3 flex items-center justify-center">
         <ul className="text-gray-400 flex space-x-3 text-xs">
           <li className="text-gray-500 font-semibold">View:</li>
-          <li className={renderExteriorGalleryClassname}><Link href={`/${post.slug}?gallery=exterior`}><a>Exterior</a></Link></li>
+          <li className={renderExteriorGalleryClassname}><Link href={`/${slug}?gallery=exterior`}><a>Exterior</a></Link></li>
           <li>|</li>
-          <li className={renderInteriorGalleryClassname}><Link href={`/${post.slug}?gallery=interior`}><a>Interior</a></Link></li>
+          <li className={renderInteriorGalleryClassname}><Link href={`/${slug}?gallery=interior`}><a>Interior</a></Link></li>
         </ul>
       </div>
     )}
@@ -214,12 +215,12 @@ export default function CarPage ({ post, blockMap }) {
     </div>
     <div className="max-w-7xl mx-auto">
       <div className="max-w-full mx-auto px-[2vw] xl:px-[calc(min(12px,8vw))] w-[var(--notion-max-width)]">
-        <span className="text-gray-500 text-xs">Published on {formatDate(post?.date?.start_date || post.createdTime, 'en')}</span>
+        <span className="text-gray-500 text-xs">Published on {formatDate(post?.date?.start_date || post?.createdTime, 'en')}</span>
         <h4 className="font-semibold uppercase font-sans text-white text-3xl">OVERVIEW</h4>
         <ul className="text-gray-400 flex space-x-3 text-xs my-6">
-          <li className={renderKeyFeaturesClassname}><Link href={`/${post.slug}?tab=key-features`}><a>Key Features</a></Link></li>
+          <li className={renderKeyFeaturesClassname}><Link href={`/${slug}?tab=key-features`}><a>Key Features</a></Link></li>
           <li>|</li>
-          <li className={renderTrimsSpecsClassname}><Link href={`/${post.slug}?tab=trims-specs`}><a>Trims & Specs</a></Link></li>
+          <li className={renderTrimsSpecsClassname}><Link href={`/${slug}?tab=trims-specs`}><a>Trims & Specs</a></Link></li>
         </ul>
       </div>
     </div>
