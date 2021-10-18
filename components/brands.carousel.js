@@ -62,13 +62,13 @@ export default function Brands ({ tags, dur = 150 }) {
       />
       <div className="flex overflow-hidden -my-8">
         <ul className="flex items-center w-full py-8">
-          {Object.keys(tags).map((tag, i) => (
+          {tags.map((tag, i) => (
             <Tags
               key={i}
               tag={tag}
               base={x}
               index={i}
-              total={Object.keys(tags).length}
+              total={tags.length}
             />
           ))}
         </ul>

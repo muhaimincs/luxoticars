@@ -32,12 +32,10 @@ export default function Home ({ tags }) {
     () => import('../components/welcomeText'),
     { ssr: false }
   )
-  const tags2 = Object.keys(tags).sort().reduce(
-    (obj, key) => {
-      obj[key] = tags[key]
-      return obj
-    },
-    {}
+  const slice1 = Object.keys(tags).slice(0, WEB.postsPerPage)
+  const slice2 = Object.keys(tags).slice(
+    WEB.postsPerPage * (2 - 1),
+    WEB.postsPerPage * 2
   )
 
   return (
@@ -49,9 +47,9 @@ export default function Home ({ tags }) {
       <div className="border border border-gray-600 rounded-xl bg-gray-900 overflow-hidden pb-16">
         <p className="text-sm uppercase text-gray-500 mx-6 mt-10">for enthusiast</p>
         <h4 className="text-3xl text-gray-300 mx-6 font-semibold mb-8 tracking-wide">The brands you love. From a place you can trust.</h4>
-        <BrandsCarousel tags={tags} />
+        <BrandsCarousel tags={slice1} />
         <div className="h-16 bg-transparent" />
-        <BrandsCarousel tags={tags2} dur={50} />
+        <BrandsCarousel tags={slice2} dur={50} />
         <Link href="/search">
           <a
             className="mt-10 mx-6 block w-full py-3 px-5 text-center bg-white border border-transparent rounded-md shadow-md text-base font-medium text-red-700 hover:bg-gray-50 sm:inline-block sm:w-auto"
