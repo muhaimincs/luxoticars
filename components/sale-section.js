@@ -11,18 +11,18 @@ export default function SalesSection () {
   return (
     <section aria-labelledby="sale-heading">
       <div className="pt-32 overflow-hidden sm:pt-14">
-        <div className="bg-gray-800">
+        <div className="bg-white md:bg-gray-900">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="relative pt-48 pb-16 sm:pb-24">
               <div>
-                <h2 id="sale-heading" className="text-4xl font-extrabold tracking-tight text-white md:text-5xl">
+                <h2 id="sale-heading" className="text-4xl font-extrabold tracking-tight text-gray-800 md:text-gray-100 md:text-5xl">
                   Shop Carlifestyle.
                   <br />
                   Gear Up
                 </h2>
                 <div className="mt-6 text-base">
-                  <a href="https://shop.luxoticars.my" className="font-semibold text-white">
-                    Shop the sale<span aria-hidden="true"> &rarr;</span>
+                  <a href="https://shop.luxoticars.my" className="font-semibold text-gray-400 md:text-red-600">
+                    Get them now<span aria-hidden="true"> &rarr;</span>
                   </a>
                 </div>
               </div>
@@ -34,7 +34,7 @@ export default function SalesSection () {
                       <div className="relative h-64 w-64 rounded-lg object-cover md:h-72 md:w-72 overflow-hidden">
                         <Image
                           src={Img1}
-                          alt=""
+                          alt="Luxoticars Carlifestyle Cartel"
                           layout="fill"
                           objectFit="cover"
                         />
@@ -42,10 +42,10 @@ export default function SalesSection () {
                     </div>
 
                     <div className="mt-6 flex-shrink-0 sm:mt-0">
-                      <div className="relative h-64 w-64 rounded-lg object-cover md:h-72 md:w-72 overflow-hidden">
+                      <div className="relative h-128 w-128 rounded-lg object-cover md:h-72 md:w-72 overflow-hidden">
                         <Image
                           src={Img2}
-                          alt=""
+                          alt="Luxoticars Carlifestyle Cartel"
                           layout="fill"
                           objectFit="cover"
                         />
@@ -57,7 +57,7 @@ export default function SalesSection () {
                       <div className="relative h-64 w-64 rounded-lg object-cover md:h-72 md:w-72 overflow-hidden">
                         <Image
                           src={Img3}
-                          alt=""
+                          alt="Luxoticars Carlifestyle Cartel"
                           layout="fill"
                           objectFit="cover"
                         />
@@ -68,7 +68,7 @@ export default function SalesSection () {
                       <div className="relative h-64 w-64 rounded-lg object-cover md:h-72 md:w-72 overflow-hidden">
                         <Image
                           src={Img4}
-                          alt=""
+                          alt="Luxoticars Carlifestyle Cartel"
                           layout="fill"
                           objectFit="cover"
                         />
@@ -80,7 +80,7 @@ export default function SalesSection () {
                       <div className="relative h-64 w-64 rounded-lg object-cover md:h-72 md:w-72 overflow-hidden">
                         <Image
                           src={Img5}
-                          alt=""
+                          alt="Luxoticars Carlifestyle Cartel"
                           layout="fill"
                           objectFit="cover"
                         />
@@ -91,7 +91,7 @@ export default function SalesSection () {
                       <div className="relative h-64 w-64 rounded-lg object-cover md:h-72 md:w-72 overflow-hidden">
                         <Image
                           src={Img6}
-                          alt=""
+                          alt="Luxoticars Carlifestyle Cartel"
                           layout="fill"
                           objectFit="cover"
                         />

@@ -16,10 +16,10 @@ SwiperCore.use([Navigation, EffectFade, Autoplay])
 
 const Carousel = () => {
   return (
-    <div className="absolute top-0 w-screen overflow-hidden z-[-100]">
+    <div className="absolute inset-0 w-screen overflow-hidden z-[-100]">
       <Swiper
         style={{ '--swiper-navigation-color': '#fff', '--swiper-pagination-color': '#fff' }}
-        autoHeight={true}
+        // autoHeight={true}
         // spaceBetween={50}
         pagination={{
           clickable: true
@@ -30,19 +30,8 @@ const Carousel = () => {
         autoplay={{
           disableOnInteraction: false
         }}
+        className="w-full h-3/4"
       >
-        <SwiperSlide data-swiper-autoplay="10500">
-          <div className="relative">
-            <Image
-              width={1280}
-              height={720}
-              layout="fill"
-              objectFit="center"
-              // placeholder="blur"
-              src="https://images.ctfassets.net/ijuxqf6x1pz2/1N8YjfxoUBbnIdKnQtsZ0k/98bf4396c6cc3c4a323a33fae9accb49/photo_2021-09-24_09.31.08.jpeg" alt="Luxoticars Ferrari"
-            />
-          </div>
-        </SwiperSlide>
         <SwiperSlide data-swiper-autoplay="30000">
           <video
             autoPlay
@@ -50,7 +39,7 @@ const Carousel = () => {
             muted
             playsInline="playsinline"
             preload="metadata"
-            className="bg-cover object-cover bg-center w-full h-52 md:h-full bg-gradient-to-t from-black"
+            className="absolute top-0 bg-cover object-cover w-full h-full"
             poster="https://ipfs.fleek.co/ipfs/bafybeid7kualxhp3emamgkk2xbf2djyadbkl4u2onlcskmsudeucousm5m"
             data-object-fit="cover"
           >
@@ -60,18 +49,35 @@ const Carousel = () => {
             />
             Your browser does not support the video tag.
           </video>
+          <div className="absolute inset-0 bg-gradient-to-t from-black z-50" />
+        </SwiperSlide>
+        <SwiperSlide data-swiper-autoplay="10500">
+          <div className="transform translate-y-[-137px] md:translate-y-[-346px] iphone5:translate-y-[-10px]">
+            <div className="relative h-screen w-screen">
+              <Image
+                width={1280}
+                height={720}
+                layout="fill"
+                objectFit="cover"
+                src="https://images.ctfassets.net/ijuxqf6x1pz2/1N8YjfxoUBbnIdKnQtsZ0k/98bf4396c6cc3c4a323a33fae9accb49/photo_2021-09-24_09.31.08.jpeg"
+                alt="Luxoticars Ferrari"
+              />
+            </div>
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black z-50" />
         </SwiperSlide>
         <SwiperSlide data-swiper-autoplay="5500">
-          <div className="relative w-full h-1/2">
+          <div className="relative w-screen h-screen">
             <Image
               width={1280}
               height={720}
-              layout="responsive"
+              layout="fill"
               objectFit="cover"
-              // placeholder="blur"
-              src="https://images.ctfassets.net/ijuxqf6x1pz2/15nQQBgBkiECSSQznnm5lV/1178ec83805376fbad23be545a9c7503/photo_2021-09-24_09.31.11.jpeg" alt="Luxoticars Ferrari"
+              src="https://images.ctfassets.net/ijuxqf6x1pz2/15nQQBgBkiECSSQznnm5lV/1178ec83805376fbad23be545a9c7503/photo_2021-09-24_09.31.11.jpeg"
+              alt="Luxoticars Ferrari"
             />
           </div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black z-50" />
         </SwiperSlide>
       </Swiper>
     </div>

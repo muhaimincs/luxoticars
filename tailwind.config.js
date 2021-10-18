@@ -9,6 +9,10 @@ module.exports = {
       fontFamily: {
         'bonheur-royale': ['Bonheur Royale', 'cursive'],
         sans: ['Ubuntu', ...defaultTheme.fontFamily.sans]
+      },
+      screens: {
+        iphone5: { min: '320px', max: '374px' },
+        ...defaultTheme.screens
       }
     }
   },

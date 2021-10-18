@@ -8,6 +8,7 @@ import WEB from '../web.config'
 import LuxoticarsWhiteFont from '../public/LUXOTICARS_WHITE_FONT.svg'
 import { getAllPosts, getAllTagsFromPosts } from '../lib/notion'
 import YoutubeList from '../components/youtube-homepage'
+import LogoOfficial from '../public/LUXOTICARS.svg'
 
 export async function getStaticProps () {
   const posts = await getAllPosts({ includePages: false })
@@ -41,14 +42,18 @@ export default function Home ({ tags }) {
   return (
     <>
     <Carousel />
-    <div className="max-w-7xl mx-auto w-screen flex flex-col items-center justify-center my-14 lg:my-36 xl:my-52">
-      <img
-        className="h-32 hidden md:block"
-        src="/LUXOTICARS.svg"
-        alt="luxoticars"
-      />
+    <div className="max-w-7xl mx-auto w-screen flex flex-col items-center justify-center mt-32 mb-40 iphone5:mb-28">
+      <div className="relative h-32 w-32 hidden md:block">
+        <Image
+          layout="fill"
+          src={LogoOfficial}
+          alt="luxoticars logo official"
+        />
+      </div>
       <Image src={LuxoticarsWhiteFont} alt="Luxoticars" width={240} />
-      <h1 className="text-white text-xs md:text-5xl md:text-center">The Syndicate <span className="font-bonheur-royale text-2xl lg:text-7xl">Carlifestyle</span> Cartel</h1>
+      <h1 className="text-white text-xs md:text-5xl md:text-center px-6 text-center">The Syndicate</h1>
+      <span className="text-white font-bonheur-royale sm:text-2xl text-7xl">Carlifestyle</span>
+      <span className="text-white text-xs md:text-5xl md:text-center px-6 text-center">Cartel</span>
     </div>
     <YoutubeList />
     <div className="max-w-7xl mx-auto w-screen px-3">
@@ -56,10 +61,11 @@ export default function Home ({ tags }) {
         <p className="text-sm uppercase text-gray-500 mx-6 mt-10">for enthusiast</p>
         <h4 className="text-3xl text-gray-300 mx-6 font-semibold mb-8 tracking-wide">The brands you love. From a place you can trust.</h4>
         <BrandsCarousel tags={tags} />
+        <div className="h-16 bg-transparent" />
         <BrandsCarousel tags={tags2} dur={50} />
         <Link href="/search">
           <a
-            className="block w-full py-3 px-5 text-center bg-white border border-transparent rounded-md shadow-md text-base font-medium text-indigo-700 hover:bg-gray-50 sm:inline-block sm:w-auto"
+            className="mt-10 mx-6 block w-full py-3 px-5 text-center bg-white border border-transparent rounded-md shadow-md text-base font-medium text-red-700 hover:bg-gray-50 sm:inline-block sm:w-auto"
           >
             Explore &rarr;
           </a>
@@ -74,7 +80,7 @@ export default function Home ({ tags }) {
     </h3> */}
     <div className="max-w-7xl text-white mx-auto w-full px-3 py-6">
       <h1 className="text-3xl mb-3">Why Us?</h1>
-      <p>Luxoticars, we pride ourselves through the industry’s recognition as one of the pioneer retailers of classic, rare, collectible & exotic cars. With an extensive international network & experience in sourcing, purchasing and selling vehicles to customers worldwide, our team is well prepared to provide fully tailored services for buyers on their next acquisition.</p>
+      <p className="text-xs">Luxoticars, we pride ourselves through the industry’s recognition as one of the pioneer retailers of classic, rare, collectible & exotic cars. With an extensive international network & experience in sourcing, purchasing and selling vehicles to customers worldwide, our team is well prepared to provide fully tailored services for buyers on their next acquisition.</p>
     </div>
     </>
   )
