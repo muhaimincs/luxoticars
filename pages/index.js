@@ -1,14 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 import Head from 'next/head'
 import dynamic from 'next/dynamic'
-import Image from 'next/image'
 import Link from 'next/link'
 
 import WEB from '../web.config'
-import LuxoticarsWhiteFont from '../public/LUXOTICARS_WHITE_FONT.svg'
 import { getAllPosts, getAllTagsFromPosts } from '../lib/notion'
 import YoutubeList from '../components/youtube-homepage'
-import LogoOfficial from '../public/LUXOTICARS.svg'
 
 export async function getStaticProps () {
   const posts = await getAllPosts({ includePages: false })
@@ -31,6 +28,10 @@ export default function Home ({ tags }) {
     () => import('../components/brands.carousel'),
     { ssr: false }
   )
+  const WelcomeText = dynamic(
+    () => import('../components/welcomeText'),
+    { ssr: false }
+  )
   const tags2 = Object.keys(tags).sort().reduce(
     (obj, key) => {
       obj[key] = tags[key]
@@ -42,19 +43,7 @@ export default function Home ({ tags }) {
   return (
     <>
     <Carousel />
-    <div className="max-w-7xl mx-auto w-screen flex flex-col items-center justify-center mt-32 mb-40 iphone5:mb-28">
-      <div className="relative h-32 w-32 hidden md:block">
-        <Image
-          layout="fill"
-          src={LogoOfficial}
-          alt="luxoticars logo official"
-        />
-      </div>
-      <Image src={LuxoticarsWhiteFont} alt="Luxoticars" width={240} />
-      <h1 className="text-white text-xs md:text-5xl md:text-center px-6 text-center">The Syndicate</h1>
-      <span className="text-white font-bonheur-royale sm:text-2xl text-7xl">Carlifestyle</span>
-      <span className="text-white text-xs md:text-5xl md:text-center px-6 text-center">Cartel</span>
-    </div>
+    <WelcomeText />
     <YoutubeList />
     <div className="max-w-7xl mx-auto w-screen px-3">
       <div className="border border border-gray-600 rounded-xl bg-gray-900 overflow-hidden pb-16">
