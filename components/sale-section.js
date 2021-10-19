@@ -11,17 +11,17 @@ export default function SalesSection () {
   return (
     <section aria-labelledby="sale-heading">
       <div className="pt-32 overflow-hidden sm:pt-14">
-        <div className="bg-white md:bg-gray-900">
+        <div className="bg-gradient-to-r from-[#21252999] via-[#2125293d] to-gray-900">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="relative pt-48 pb-16 sm:pb-24">
               <div>
-                <h2 id="sale-heading" className="text-4xl font-extrabold tracking-tight text-gray-800 md:text-gray-100 md:text-5xl">
+                <h2 id="sale-heading" className="text-4xl font-extrabold tracking-tight text-gray-100 md:text-5xl">
                   Shop Carlifestyle.
                   <br />
                   Gear Up
                 </h2>
                 <div className="mt-6 text-base">
-                  <a href="https://shop.luxoticars.my" className="font-semibold text-gray-400 md:text-red-600">
+                  <a href="https://shop.luxoticars.my" className="font-semibold text-red-600">
                     Get them now<span aria-hidden="true"> &rarr;</span>
                   </a>
                 </div>

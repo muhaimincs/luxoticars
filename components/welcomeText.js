@@ -15,9 +15,9 @@ export default function WelcomeText () {
         />
       </div>
       <Image src={LuxoticarsWhiteFont} alt="Luxoticars" width={240} />
-      <h1 className="text-white text-xs md:text-5xl md:text-center px-6 text-center">The Syndicate</h1>
+      <h1 className="text-white text-lg md:text-5xl md:text-center px-6 text-center mt-3">The Syndicate</h1>
       <span className={s.neonText}>Carlifestyle</span>
-      <span className="text-white text-xs md:text-5xl md:text-center px-6 text-center">Cartel</span>
+      <span className="text-white text-lg md:text-5xl md:text-center px-6 text-center mt-3">Cartel</span>
     </div>
   )
 }
