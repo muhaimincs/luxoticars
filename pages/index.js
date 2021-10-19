@@ -43,7 +43,7 @@ export default function Home ({ tags }) {
     <Carousel />
     <WelcomeText />
     <YoutubeList />
-    <div className="max-w-7xl mx-auto w-screen px-3">
+    <div className="max-w-7xl lg:max-w-3xl mx-auto w-screen px-3">
       <div className="border border border-gray-600 rounded-xl bg-gray-900 overflow-hidden pb-16">
         <p className="text-sm uppercase text-gray-500 mx-6 mt-10">for enthusiast</p>
         <h4 className="text-3xl text-gray-300 mx-6 font-semibold mb-8 tracking-wide">The brands you love. From a place you can trust.</h4>
@@ -52,7 +52,7 @@ export default function Home ({ tags }) {
         <BrandsCarousel tags={slice2} dur={50} />
         <Link href="/search">
           <a
-            className="mt-10 mx-6 block w-full py-3 px-5 text-center bg-white border border-transparent rounded-md shadow-md text-base font-medium text-red-700 hover:bg-gray-50 sm:inline-block sm:w-auto"
+            className="uppercase text-xs mt-10 mx-6 block py-3 px-5 bg-white border border-transparent rounded-md text-red-700 hover:bg-gray-50 font-semibold ring ring-gray-200 ring-opacity-50 ring-offset-4 ring-offset-gray-700"
           >
             Explore &rarr;
           </a>
