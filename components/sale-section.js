@@ -11,7 +11,7 @@ export default function SalesSection () {
   return (
     <section aria-labelledby="sale-heading">
       <div className="pt-32 overflow-hidden sm:pt-14">
-        <div className="bg-gradient-to-r from-[#21252999] via-[#2125293d] to-gray-900">
+        <div className="bg-gradient-to-r from-gray-900 via-[#2125293d] to-[#21252999]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="relative pt-48 pb-16 sm:pb-24">
               <div>
