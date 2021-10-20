@@ -1,7 +1,6 @@
-/* eslint-disable @next/next/no-img-element */
-import Head from 'next/head'
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
+import { LocalBusinessJsonLd } from 'next-seo'
 
 import WEB from '../web.config'
 import { getAllPosts, getAllTagsFromPosts } from '../lib/notion'
@@ -92,35 +91,14 @@ Home.getLayout = function getLayout (page) {
   )
   return (
     <>
-      <Head>
-        <title>LUXOTICARS</title>
-        <meta name="description" content="Luxoticars has a decade of experience selling reconditioned cars. An influencer of luxury and exotic cars" />
-        <meta property="og:locale" content={WEB.lang} />
-        <meta property="og:title" content="LUXOTICARS" />
-        <meta property="og:description" content="Luxoticars has a decade of experience selling reconditioned cars. An influencer of luxury and exotic cars" />
-        <meta
-          property="og:url"
-          content={`${WEB.link}/gallery`}
-        />
-        <meta
-          property="og:image"
-          content="https://ipfs.fleek.co/ipfs/bafybeiefqbyugqurya5gqqlk6ez2hbbu7xxidj3vugmhvqhjsz2fml6f3y"
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:description" content="Luxoticars has a decade of experience selling reconditioned cars. An influencer of luxury and exotic cars" />
-        <meta name="twitter:title" content="LUXOTICARS" />
-        <meta
-          property="twitter:image"
-          content="https://ipfs.fleek.co/ipfs/bafybeiefqbyugqurya5gqqlk6ez2hbbu7xxidj3vugmhvqhjsz2fml6f3y"
-        />
-        <meta property="business:contact_data:street_address" content="No 253 Jalan Ampang Hilir Off Jalan U-Thant 50450 Kuala Lumpur" />
-        <meta property="business:contact_data:locality" content="Kuala Lumpur" />
-        <meta property="business:contact_data:region" content="Kuala Lumpur" />
-        <meta property="business:contact_data:country_name" content="Malaysia" />
-        <link rel="icon" href="/LUXOTICARS_GRADIENT_SKULL.svg" />
-        <meta name="robots" content="follow, index" />
-        <meta charSet="UTF-8" />
-      </Head>
+      <LocalBusinessJsonLd
+        type="Store"
+        id={WEB.link}
+        name={WEB.name}
+        description={WEB.description}
+        telephone={WEB.telephone}
+        address={WEB.address}
+      />
       <Layout>
         <Header />
         {page}

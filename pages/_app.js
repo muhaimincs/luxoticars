@@ -13,11 +13,22 @@ function MyApp ({ Component, pageProps }) {
   return getLayout(
     <>
       <DefaultSeo
+        title={WEB.name}
+        description={WEB.description}
         openGraph={{
           type: 'website',
           locale: WEB.lang,
           url: WEB.link,
-          site_name: WEB.name
+          site_name: WEB.name,
+          images: [{
+            url: 'https://ipfs.fleek.co/ipfs/bafybeiefqbyugqurya5gqqlk6ez2hbbu7xxidj3vugmhvqhjsz2fml6f3y',
+            width: 1024,
+            height: 512,
+            alt: WEB.name
+          }]
+        }}
+        twitter={{
+          cardType: 'summary_large_image'
         }}
         additionalMetaTags={[{
           httpEquiv: 'x-ua-compatible',
