@@ -1,5 +1,6 @@
 import { useMemo } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 import formatDate from '../lib/formatDate'
 import WEB from '../web.config'
@@ -8,8 +9,8 @@ export default function LatestPublish ({ post }) {
   const brand = require(`../public/brands/colors/${post?.tags[0]}.svg`)
   const name = `${post?.Year} ${post?.title}`
   const photos = post?.['Photo Gallery'].split(',')
-  const mileage = post?.Mileage
-  const exteriorColor = post?.exterior_color
+  const mileage = post?.Mileage || '-'
+  const exteriorColor = post?.exterior_color || '-'
   const renderSubPhotosClassnames = useMemo(() => {
     if (photos[3]) {
       return 'grid grid-cols-3 gap-0'
@@ -95,12 +96,17 @@ export default function LatestPublish ({ post }) {
             <p className="text-white tabular-nums box-content border-b pb-3">
               {formatDate(post?.date?.start_date || post?.createdTime, 'en')}
             </p>
-            <p className="text-white tabular-nums ordinal slashed-zero box-content border-b pb-3">
-              {mileage.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')} km
+            <p className="text-white tabular-nums box-content border-b pb-3">
+              {mileage.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')} <span className="text-gray-600">km</span>
             </p>
             <p className="text-white tabular-nums ordinal slashed-zero box-content border-b pb-3">
               {exteriorColor}
             </p>
+          </div>
+          <div className="my-8 px-2">
+            <Link href={post?.slug}>
+              <a className="bg-white text-gray-800 py-4 text-lg px-3 ring ring-gray-200 ring-opacity-50 ring-offset-4 ring-offset-gray-700">&rsaquo; Show Details</a>
+            </Link>
           </div>
         </div>
       </div>

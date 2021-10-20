@@ -38,7 +38,7 @@ export async function getStaticProps () {
 
   const posts = await getAllPosts({ includePages: false })
   const tags = getAllTagsFromPosts(posts)
-  const post = posts.sortBy((o) => -new Date(o.createdTime))[0]
+  const post = posts.sortBy((o) => -new Date(o.date.start_date))[0]
   return {
     props: {
       tags,

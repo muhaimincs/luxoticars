@@ -16,13 +16,11 @@ export default function BrandsHomepage ({ tags }) {
       <Brands tags={slice1} />
       <div className="h-16 bg-transparent" />
       <Brands tags={slice2} dur={50} />
-      <Link href="/search">
-        <a
-          className="uppercase text-xs mt-10 mx-6 block py-3 px-5 bg-white border border-transparent rounded-md text-red-700 hover:bg-gray-50 font-semibold ring ring-gray-200 ring-opacity-50 ring-offset-4 ring-offset-gray-700"
-        >
-          Explore &rarr;
-        </a>
-      </Link>
+      <div className="my-12 mx-6">
+        <Link href="/search">
+          <a className="bg-white text-gray-800 py-4 text-lg px-3 ring ring-gray-200 ring-opacity-50 ring-offset-4 ring-offset-gray-700">&rsaquo; Explore</a>
+        </Link>
+      </div>
     </div>
   )
 }
