@@ -66,18 +66,20 @@ const Carousel = () => {
           </div>
           <div className="absolute inset-0 bg-gradient-to-b from-black z-50" />
         </SwiperSlide>
-        <SwiperSlide data-swiper-autoplay="5500">
-          <div className="relative w-screen h-screen">
-            <Image
-              width={1280}
-              height={720}
-              layout="fill"
-              objectFit="cover"
-              src="https://images.ctfassets.net/ijuxqf6x1pz2/15nQQBgBkiECSSQznnm5lV/1178ec83805376fbad23be545a9c7503/photo_2021-09-24_09.31.11.jpeg"
-              alt="Luxoticars Ferrari"
-            />
+        <SwiperSlide data-swiper-autoplay="10500">
+          <div className="transform translate-y-[-137px] md:translate-y-[-346px] iphone5:translate-y-[-10px]">
+            <div className="relative w-screen h-screen">
+              <Image
+                width={1280}
+                height={720}
+                layout="fill"
+                objectFit="cover"
+                src="https://images.ctfassets.net/ijuxqf6x1pz2/15nQQBgBkiECSSQznnm5lV/1178ec83805376fbad23be545a9c7503/photo_2021-09-24_09.31.11.jpeg"
+                alt="Luxoticars Ferrari"
+              />
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black z-50" />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-b from-black z-50" />
         </SwiperSlide>
       </Swiper>
     </div>
