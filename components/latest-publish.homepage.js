@@ -53,7 +53,7 @@ export default function LatestPublish ({ post }) {
               objectFit="cover"
             />
           </div>
-          <div className="absolute bottom-[20px] left-0 m-3 h-12">
+          <div className="absolute bottom-[20px] left-0 m-3 h-12 shadow-xl">
             <Image
               src={brand}
               alt="Workcation"

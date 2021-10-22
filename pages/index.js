@@ -66,6 +66,10 @@ export default function Home ({ tags, post }) {
     () => import('../components/latest-publish.homepage'),
     { ssr: false }
   )
+  const SocialLife = dynamic(
+    () => import('../components/clients.homepage'),
+    { ssr: false }
+  )
 
   return (
     <>
@@ -78,6 +82,7 @@ export default function Home ({ tags, post }) {
         <BrandsCarousel tags={tags} />
       </div>
     </div>
+    <SocialLife />
     <div className="max-w-7xl text-white mx-auto w-full px-3 py-6">
       <h1 className="text-3xl mb-3">Why Us?</h1>
       <p className="text-xs">Luxoticars, we pride ourselves through the industry’s recognition as one of the pioneer retailers of classic, rare, collectible & exotic cars. With an extensive international network & experience in sourcing, purchasing and selling vehicles to customers worldwide, our team is well prepared to provide fully tailored services for buyers on their next acquisition.</p>

@@ -13,6 +13,9 @@ module.exports = {
       screens: {
         iphone5: { min: '320px', max: '374px' },
         ...defaultTheme.screens
+      },
+      gridTemplateRows: {
+        '[auto,auto,1fr]': 'auto auto 1fr'
       }
     }
   },

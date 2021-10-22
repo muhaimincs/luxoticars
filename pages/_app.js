@@ -1,5 +1,7 @@
 import 'tailwindcss/tailwind.css'
 import '../styles/notion.css'
+import 'swiper/css/bundle'
+import 'swiper/css'
 
 import dynamic from 'next/dynamic'
 import { DefaultSeo } from 'next-seo'

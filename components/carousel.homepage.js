@@ -1,36 +1,32 @@
 import { Swiper, SwiperSlide } from 'swiper/react'
 import SwiperCore, {
-  Navigation,
   EffectFade,
   Autoplay
 } from 'swiper'
 import Image from 'next/image'
 
-import 'swiper/css/bundle'
-import 'swiper/css'
 import 'swiper/css/zoom'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 
-SwiperCore.use([Navigation, EffectFade, Autoplay])
+SwiperCore.use([EffectFade, Autoplay])
 
 const Carousel = () => {
   return (
     <div className="absolute inset-0 w-screen overflow-hidden z-[-100]">
       <Swiper
+        // onSwiper={setSwiperRef}
         style={{ '--swiper-navigation-color': '#fff', '--swiper-pagination-color': '#fff' }}
         // autoHeight={true}
         // spaceBetween={50}
-        pagination={{
-          clickable: true
-        }}
+        // pagination={{
+        //   type: 'fraction'
+        // }}
         loop
         effect={'fade'}
         centeredSlides={true}
-        autoplay={{
-          disableOnInteraction: false
-        }}
         className="w-full h-3/4"
+        // virtual
       >
         <SwiperSlide data-swiper-autoplay="30000">
           <video
@@ -64,7 +60,7 @@ const Carousel = () => {
               />
             </div>
           </div>
-          <div className="absolute inset-0 bg-gradient-to-b from-black z-50" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent z-50" />
         </SwiperSlide>
         <SwiperSlide data-swiper-autoplay="10500">
           <div className="transform translate-y-[-137px] md:translate-y-[-346px] iphone5:translate-y-[-10px]">
@@ -78,7 +74,7 @@ const Carousel = () => {
                 alt="Luxoticars Ferrari"
               />
             </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-black z-50" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent z-50" />
           </div>
         </SwiperSlide>
       </Swiper>

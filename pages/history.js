@@ -2,7 +2,7 @@
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
 // import Image from 'next/image'
-
+import Layout from '../components/layout.homepage'
 export default function HistoryPage () {
   const History = dynamic(
     () => import('../components/history'),
@@ -20,10 +20,7 @@ HistoryPage.getLayout = function getLayout (page) {
     () => import('../components/header.homepage'),
     { ssr: false }
   )
-  const Layout = dynamic(
-    () => import('../components/layout.homepage'),
-    { ssr: false }
-  )
+
   return (
     <>
       <Head>
@@ -45,10 +42,6 @@ HistoryPage.getLayout = function getLayout (page) {
           name="twitter:image"
           content="https://images.ctfassets.net/ijuxqf6x1pz2/4Ybp8mYNmbsNWy2JdtpPrV/896c5652069d5ba2d7bece9e194e84be/photo_2021-09-09_22.07.56.jpeg"
         />
-        <meta content="#000" name="theme-color" />
-        <meta name="robots" content="follow, index" />
-        <meta charSet="UTF-8" />
-        <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/e/e3/Skull-Icon.svg" />
       </Head>
       <Layout>
         <Header />
