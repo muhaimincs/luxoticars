@@ -17,14 +17,12 @@ import { NotionRenderer, Equation, Code, CollectionRow, Collection } from 'react
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useMediaQuery } from 'beautiful-react-hooks'
-import Image from 'next/image'
 
 import WEB from '../web.config'
 import { getAllPosts, getPostBlocks } from '../lib/notion'
 import formatDate from '../lib/formatDate'
 import Layout from '../components/layout.homepage'
 
-import 'swiper/css/bundle'
 import 'swiper/css'
 import 'swiper/css/zoom'
 import 'swiper/css/navigation'
@@ -54,6 +52,21 @@ export async function getStaticPaths () {
   }
 }
 
+const ComfortAssistance = dynamic(
+  () => import('../components/comfort-assistance.car'), {
+    ssr: false
+  }
+)
+const Interior = dynamic(
+  () => import('../components/interior.car'), {
+    ssr: false
+  }
+)
+const AudioCommunication = dynamic(
+  () => import('../components/audio-communication.car'), {
+    ssr: false
+  }
+)
 export default function CarPage ({ post, blockMap }) {
   const photoGallery = post ? post['Photo Gallery'].split(',') : []
   const interiorGallery = post && post['Interior Photos'] ? post['Interior Photos'].split(',') : []
@@ -93,36 +106,6 @@ export default function CarPage ({ post, blockMap }) {
     }
     return ''
   }, [router.query])
-  const renderComforAssistance = useMemo(() => {
-    if (post?.comfort_assistance_1 && post?.comfort_assistance_1_img) {
-      return (
-        <>
-          <tr>
-            <td colSpan="2" className="text-xl font-semibold text-white pt-8">Comfort Assistance</td>
-          </tr>
-          <tr>
-            <td className="py-2 font-mono text-xs text-gray-500 whitespace-nowrap uppercase font-semibold" valign="middle">{post?.comfort_assistance_1}</td>
-            <td className="pt-2 pr-2 flex justify-end">
-              <div className="relative w-16 h-16">
-                <Image src={post?.comfort_assistance_1_img} layout="fill" objectFit="cover" />
-              </div>
-            </td>
-          </tr>
-          {post?.comfort_assistance_2 && (
-            <tr>
-              <td className="py-2 font-mono text-xs text-gray-500 whitespace-nowrap uppercase font-semibold" valign="middle">{post?.comfort_assistance_2}</td>
-              <td className="pt-2 pr-2 flex justify-end pb-8">
-                <div className="relative w-16 h-16">
-                  <Image src={post?.comfort_assistance_2_img} layout="fill" objectFit="cover" />
-                </div>
-              </td>
-            </tr>
-          )}
-        </>
-      )
-    }
-    return null
-  }, [post])
   const isLarge = useMediaQuery('(min-width: 48rem)')
 
   return (
@@ -176,7 +159,7 @@ export default function CarPage ({ post, blockMap }) {
       </ul>
     </div>
     {interiorGallery.length && (
-      <div className="max-w-7xl mx-auto px-3 flex items-center justify-center">
+      <div className="max-w-7xl mx-auto px-3 flex lg:items-center justify-end lg:justify-center">
         <ul className="text-gray-400 flex space-x-3 text-xs">
           <li className="text-gray-500 font-semibold">View:</li>
           <li className={renderExteriorGalleryClassname}><Link href={`/${slug}?gallery=exterior`}><a>Exterior</a></Link></li>
@@ -291,40 +274,12 @@ export default function CarPage ({ post, blockMap }) {
               {post?.Mileage && (
                 <tr>
                   <td className="py-2 font-mono text-xs text-gray-500 whitespace-nowrap uppercase font-semibold">Mileage</td>
-                  <td className="py-2 pl-2 font-mono text-xs text-white whitespace-pre-line text-right">{post?.Mileage || '-/-'}</td>
+                  <td className="py-2 pl-2 font-mono text-xs text-white whitespace-pre-line text-right proportional-nums">{post?.Mileage || '-/-'}</td>
                 </tr>
               )}
-              {renderComforAssistance}
-              {post?.['Leather Seat'] && (
-                <tr>
-                  <td className="py-2 font-mono text-xs text-gray-500 whitespace-nowrap uppercase font-semibold">Leather Seat</td>
-                  <td className="py-2 pl-2 font-mono text-xs text-white whitespace-pre-line text-right">{post['Leather Seat']}</td>
-                </tr>
-              )}
-              {post?.['Premium Sound System'] && (
-                <tr>
-                  <td className="py-2 font-mono text-xs text-gray-500 whitespace-nowrap uppercase font-semibold">Premium Sound System</td>
-                  <td className="py-2 pl-2 font-mono text-xs text-white whitespace-pre-line text-right">{post['Premium Sound System']}</td>
-                </tr>
-              )}
-              {post?.['Bluetooth Connection'] && (
-                <tr>
-                  <td className="py-2 font-mono text-xs text-gray-500 whitespace-nowrap uppercase font-semibold">Bluetooth Connection</td>
-                  <td className="py-2 pl-2 font-mono text-xs text-white whitespace-pre-line text-right">{post?.['Bluetooth Connection']}</td>
-                </tr>
-              )}
-              {post?.['Navigation System'] && (
-                <tr>
-                  <td className="py-2 font-mono text-xs text-gray-500 whitespace-nowrap uppercase font-semibold">Navigation System</td>
-                  <td className="py-2 pl-2 font-mono text-xs text-white whitespace-pre-line text-right">{post?.['Navigation System']}</td>
-                </tr>
-              )}
-              {post?.['Smart Device Integration'] && (
-                <tr>
-                  <td className="py-2 font-mono text-xs text-gray-500 whitespace-nowrap uppercase font-semibold">Smart Device Integration</td>
-                  <td className="py-2 pl-2 font-mono text-xs text-white whitespace-pre-line text-right">{post?.['Smart Device Integration']}</td>
-                </tr>
-              )}
+              <ComfortAssistance post={post} />
+              <Interior post={post} />
+              <AudioCommunication post={post} />
             </tbody>
           </table>
         </article>
