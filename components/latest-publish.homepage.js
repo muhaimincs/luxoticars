@@ -93,13 +93,13 @@ export default function LatestPublish ({ post }) {
             <p className="relative text-xl font-medium text-white md:flex-grow border-b box-content pb-5">{name}</p>
           </blockquote>
           <div className="my-3 grid grid-cols-3 gap-2">
-            <p className="text-white tabular-nums box-content border-b pb-3">
+            <p className="text-white tabular-nums box-content border-b pb-3 text-xs">
               {formatDate(post?.date?.start_date || post?.createdTime, 'en')}
             </p>
-            <p className="text-white tabular-nums box-content border-b pb-3">
+            <p className="text-white tabular-nums box-content border-b pb-3 text-xs">
               {mileage.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')} {post?.Mileage && <span className="text-gray-600">km</span>}
             </p>
-            <p className="text-white box-content border-b pb-3">
+            <p className="text-white box-content border-b pb-3 text-xs">
               {exteriorColor}
             </p>
           </div>

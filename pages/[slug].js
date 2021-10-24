@@ -262,7 +262,7 @@ export default function CarPage ({ post, blockMap }) {
     {router.query.tab === 'trims-specs' && (
       <div className="max-w-7xl mx-auto">
         <article className="max-w-full mx-auto mb-10 px-[2vw] xl:px-[calc(min(12px,8vw))] w-[var(--notion-max-width)]">
-          <table className="w-full text-left border-collapse">
+          <table className="text-left border-collapse">
             <tbody className="align-baseline divide-y divide-gray-400">
               {post?.exterior_color && (
                 <tr>
