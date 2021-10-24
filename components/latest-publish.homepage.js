@@ -9,7 +9,7 @@ export default function LatestPublish ({ post }) {
   const brand = require(`../public/brands/colors/${post?.tags[0]}.svg`)
   const name = `${post?.Year} ${post?.title}`
   const photos = post?.['Photo Gallery'].split(',')
-  const mileage = post?.Mileage || '-'
+  const mileage = post?.Mileage || '-/-'
   const exteriorColor = post?.exterior_color || '-'
   const renderSubPhotosClassnames = useMemo(() => {
     if (photos[3]) {
@@ -97,9 +97,9 @@ export default function LatestPublish ({ post }) {
               {formatDate(post?.date?.start_date || post?.createdTime, 'en')}
             </p>
             <p className="text-white tabular-nums box-content border-b pb-3">
-              {mileage.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')} <span className="text-gray-600">km</span>
+              {mileage.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')} {post?.Mileage && <span className="text-gray-600">km</span>}
             </p>
-            <p className="text-white tabular-nums ordinal slashed-zero box-content border-b pb-3">
+            <p className="text-white box-content border-b pb-3">
               {exteriorColor}
             </p>
           </div>

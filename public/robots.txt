@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://luxoticars.my
+Host: https://luxoticars.cc
 
 # Sitemaps
-Sitemap: https://luxoticars.my/sitemap.xml
+Sitemap: https://luxoticars.cc/sitemap.xml

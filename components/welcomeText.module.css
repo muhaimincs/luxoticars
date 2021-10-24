@@ -1,5 +1,5 @@
 .neonText {
-  @apply text-white text-3xl md:text-8xl;
+  @apply text-white text-5xl md:text-8xl;
   @apply font-bonheur-royale;
   animation: flicker 1.5s infinite alternate;
 }
