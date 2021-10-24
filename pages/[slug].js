@@ -67,6 +67,11 @@ const AudioCommunication = dynamic(
     ssr: false
   }
 )
+const Wheels = dynamic(
+  () => import('../components/wheels.car'), {
+    ssr: false
+  }
+)
 export default function CarPage ({ post, blockMap }) {
   const photoGallery = post ? post['Photo Gallery'].split(',') : []
   const interiorGallery = post && post['Interior Photos'] ? post['Interior Photos'].split(',') : []
@@ -280,6 +285,7 @@ export default function CarPage ({ post, blockMap }) {
               <ComfortAssistance post={post} />
               <Interior post={post} />
               <AudioCommunication post={post} />
+              <Wheels post={post} />
             </tbody>
           </table>
         </article>

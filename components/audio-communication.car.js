@@ -1,5 +1,5 @@
 export default function ComfortAssistance ({ post }) {
-  if (!post?.['Premium Sound System'] || post?.['Bluetooth Connection']) {
+  if (!post?.['Premium Sound System'] || !post?.['Bluetooth Connection']) {
     return null
   }
   return (
