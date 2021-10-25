@@ -103,12 +103,12 @@ export default function ClientHomepage () {
           </div>
         </div>
       </div>
-      <div className="flex items-center py-8 px-6 md:px-0">
+      <div className="flex items-center py-8 px-6 md:px-96">
         <Link href="/client">
           <a
             className="inline-flex w-full items-center justify-center px-5 py-3 border border-transparent bg-white text-gray-800 py-4 text-lg px-3 ring ring-gray-200 ring-opacity-50 ring-offset-4 ring-offset-gray-700"
           >
-            Meet our clients
+            &rsaquo; Meet our clients
           </a>
         </Link>
       </div>
