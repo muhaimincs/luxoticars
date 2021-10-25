@@ -1,9 +1,11 @@
 import Head from 'next/head'
 import { NotionRenderer, Equation, Code, CollectionRow, Collection } from 'react-notion-x'
 import dynamic from 'next/dynamic'
+import { NextSeo } from 'next-seo'
 
 import WEB from '../web.config'
 import { getAllPosts, getPostBlocks } from '../lib/notion'
+import Layout from '../components/layout.homepage'
 
 import 'rc-dropdown/assets/index.css'
 import 'prismjs/themes/prism.css'
@@ -23,28 +25,16 @@ export async function getStaticProps () {
 export default function ClientPage ({ post, blockMap }) {
   return (
     <>
-      <Head>
-        <title>{post.title} • {WEB.name}</title>
-        <meta name="description" content="Clients of LUXOTICARS" />
-        <meta property="og:locale" content={WEB.lang} />
-        <meta property="og:title" content={`Client • ${WEB.name}`} />
-        <meta property="og:description" content="Clients of LUXOTICARS" />
-        <meta
-          property="og:url"
-          content={`${WEB.link}/client`}
-        />
-        <meta
-          property="og:image"
-          content="https://ipfs.fleek.co/ipfs/bafybeiefqbyugqurya5gqqlk6ez2hbbu7xxidj3vugmhvqhjsz2fml6f3y"
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:description" content="Clients of LUXOTICARS" />
-        <meta name="twitter:title" content={`Clients • ${WEB.name}`} />
-        <meta
-          property="twitter:image"
-          content="https://ipfs.fleek.co/ipfs/bafybeiefqbyugqurya5gqqlk6ez2hbbu7xxidj3vugmhvqhjsz2fml6f3y"
-        />
-      </Head>
+      <NextSeo
+        title={`${post?.title} • ${WEB.name}`}
+        description="Photo gallery of LUXOTICARS"
+        canonical={`${WEB.link}/gallery`}
+        openGraph={{
+          url: `${WEB.link}/gallery`,
+          title: `${post?.title} • ${WEB.name}`,
+          description: 'Photo gallery of LUXOTICARS'
+        }}
+      />
       <article className="max-w-7xl mx-auto">
         {blockMap && (
           <NotionRenderer
@@ -72,10 +62,6 @@ ClientPage.getLayout = function getLayout (page) {
   )
   const Footer = dynamic(
     () => import('../components/footer'),
-    { ssr: false }
-  )
-  const Layout = dynamic(
-    () => import('../components/layout.homepage'),
     { ssr: false }
   )
   return (

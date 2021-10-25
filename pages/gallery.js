@@ -1,6 +1,6 @@
-import Head from 'next/head'
 import dynamic from 'next/dynamic'
 import { NotionRenderer, Equation, Code, CollectionRow, Collection } from 'react-notion-x'
+import { NextSeo } from 'next-seo'
 
 import WEB from '../web.config'
 import { getAllPosts, getPostBlocks } from '../lib/notion'
@@ -23,28 +23,16 @@ export async function getStaticProps () {
 export default function GalleryPage ({ post, blockMap }) {
   return (
     <>
-      <Head>
-        <title>{post.title} • {WEB.name}</title>
-        <meta name="description" content="Photo gallery of LUXOTICARS" />
-        <meta property="og:locale" content={WEB.lang} />
-        <meta property="og:title" content={`Gallery • ${WEB.name}`} />
-        <meta property="og:description" content="Photo gallery of LUXOTICARS" />
-        <meta
-          property="og:url"
-          content={`${WEB.link}/gallery`}
-        />
-        <meta
-          property="og:image"
-          content="https://ipfs.fleek.co/ipfs/bafybeiefqbyugqurya5gqqlk6ez2hbbu7xxidj3vugmhvqhjsz2fml6f3y"
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:description" content="Photo gallery of LUXOTICARS" />
-        <meta name="twitter:title" content={`Gallery • ${WEB.name}`} />
-        <meta
-          property="twitter:image"
-          content="https://ipfs.fleek.co/ipfs/bafybeiefqbyugqurya5gqqlk6ez2hbbu7xxidj3vugmhvqhjsz2fml6f3y"
-        />
-      </Head>
+      <NextSeo
+        title={`${post?.title} • ${WEB.name}`}
+        description="Photo gallery of LUXOTICARS"
+        canonical={`${WEB.link}/gallery`}
+        openGraph={{
+          url: `${WEB.link}/gallery`,
+          title: `${post?.title} • ${WEB.name}`,
+          description: 'Photo gallery of LUXOTICARS'
+        }}
+      />
       <div className="absolute top-0 overflow-hidden z-[-100] inset-x-0">
         <article className="max-w-7xl mx-auto">
           {blockMap && (
@@ -91,16 +79,9 @@ GalleryPage.getLayout = function getLayout (page) {
     { ssr: false }
   )
   return (
-    <>
-      <Head>
-        <link rel="icon" href="/LUXOTICARS_GRADIENT_SKULL.svg" />
-        <meta name="robots" content="follow, index" />
-        <meta charSet="UTF-8" />
-      </Head>
-      <Layout>
-        <Header />
-        {page}
-      </Layout>
-    </>
+    <Layout>
+      <Header />
+      {page}
+    </Layout>
   )
 }
