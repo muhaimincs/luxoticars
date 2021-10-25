@@ -123,7 +123,7 @@ export default function CarPage ({ post, blockMap }) {
         url: `${WEB.link}/${slug}`,
         title,
         description: summary,
-        images: photoGallery.map(photo => ({
+        images: photoGallery.sort().reverse().map(photo => ({
           url: photo,
           type: 'image/jpeg'
         })),
@@ -237,9 +237,9 @@ export default function CarPage ({ post, blockMap }) {
         <span className="text-gray-500 text-xs">Published on {formatDate(post?.date?.start_date || post?.createdTime, 'en')}</span>
         <h4 className="font-semibold uppercase font-sans text-white text-3xl">OVERVIEW</h4>
         <ul className="text-gray-400 flex space-x-3 text-xs my-6">
-          <li className={renderKeyFeaturesClassname}><Link href={`/${slug}?tab=key-features`}><a>Key Features</a></Link></li>
+          <li className={renderKeyFeaturesClassname}><Link href={`/${slug}?tab=key-features`} scroll={false}><a>Key Features</a></Link></li>
           <li>|</li>
-          <li className={renderTrimsSpecsClassname}><Link href={`/${slug}?tab=trims-specs`}><a>Trims & Specs</a></Link></li>
+          <li className={renderTrimsSpecsClassname}><Link href={`/${slug}?tab=trims-specs`} scroll={false}><a>Trims & Specs</a></Link></li>
         </ul>
       </div>
     </div>
