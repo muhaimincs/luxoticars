@@ -9,7 +9,7 @@ export default function ComfortAssistance ({ post }) {
       </tr>
       <tr>
         <td className="py-2 font-mono text-xs text-gray-500 whitespace-nowrap uppercase font-semibold">Premium Sound System</td>
-        <td className="py-2 pl-2 font-mono text-xs text-white whitespace-pre-line text-right">{post['Premium Sound System']}</td>
+        <td className="py-2 pl-2 font-mono text-xs text-white whitespace-pre-line text-right">{post?.['Premium Sound System']}</td>
       </tr>
       {post?.['Bluetooth Connection'] && (
         <tr>

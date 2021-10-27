@@ -14,9 +14,11 @@ export default function Wheels ({ post }) {
           {post?.wheels_1}
         </td>
         <td className="pt-2 pr-2 flex justify-end">
+        {post?.wheels_1_img && (
           <div className="relative w-16 h-16">
             <Image src={post?.wheels_1_img} layout="fill" objectFit="cover" />
           </div>
+        )}
         </td>
       </tr>
     </>

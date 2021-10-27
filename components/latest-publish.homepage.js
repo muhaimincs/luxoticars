@@ -57,6 +57,7 @@ export default function LatestPublish ({ post }) {
             <Image
               src={brand}
               alt="Workcation"
+              layout="fixed"
             />
           </div>
         </div>
