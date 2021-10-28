@@ -45,7 +45,7 @@ const Carousel = () => {
             />
             Your browser does not support the video tag.
           </video>
-          <div className="absolute inset-0 bg-gradient-to-t from-black z-50" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black z-50" aria-hidden="true" />
         </SwiperSlide>
         <SwiperSlide data-swiper-autoplay="10500">
           <div className="transform translate-y-[-137px] md:translate-y-[-346px] iphone5:translate-y-[-10px]">
