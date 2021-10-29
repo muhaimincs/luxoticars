@@ -3,6 +3,14 @@ import { NextSeo } from 'next-seo'
 
 import WEB from '../web.config'
 
+const Mission = dynamic(
+  () => import('../components/mission.about'),
+  { ssr: false }
+)
+const P1 = dynamic(
+  () => import('../components/p1.about'),
+  { ssr: false }
+)
 const Parallex = dynamic(
   () => import('../components/parallex.about'),
   { ssr: false }
@@ -10,6 +18,8 @@ const Parallex = dynamic(
 export default function HistoryPage () {
   return (
     <>
+      <Mission />
+      <P1 />
       <Parallex />
       {/* <div className="mt-6 prose prose-indigo prose-lg text-gray-300 mx-auto">
         <blockquote>
@@ -57,7 +67,7 @@ HistoryPage.getLayout = function getLayout (page) {
       <Hero />
       <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl">
         <section
-          className="relative py-16 lg:pt-96"
+          className="relative py-36 lg:pt-96"
           aria-labelledby="about-heading"
         >
           {page}
