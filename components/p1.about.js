@@ -26,17 +26,19 @@ export default function P1About () {
             opacity
           }}
           className="bg-[rgba(43,43,43,.2)] border border-[rgba(151,151,151,.16)] backdrop-filter backdrop-blur-lg rounded-xl overflow-hidden">
-          <p className="px-3 py-10  text-xs lg:text-sm text-gray-300 leading-snug md:leading-8">
+          <p className="px-3 py-10 text-xs lg:text-sm text-gray-300 leading-snug lg:leading-8">
             We are driven to create on-demand buying experience and financing with transparency and nearly seamless end-to-end service.
             Founded and led by Abu Garciá, the company is renowned for its world-class
           </p>
-          <div className="rounded-b-xl overflow-hidden">
-            <Image
-              src={AboutImage}
-              alt={`About ${WEB.name}`}
-              objectFit="cover"
-              objectPosition="center"
-            />
+          <div>
+            <div className="rounded-b-xl relative w-full h-full">
+              <Image
+                src={AboutImage}
+                alt={`About ${WEB.name}`}
+                objectFit="cover"
+                objectPosition="center"
+              />
+            </div>
           </div>
         </motion.div>
         <motion.p
