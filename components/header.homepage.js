@@ -22,7 +22,7 @@ function classNames (...classes) {
 }
 
 export const navigation = [
-  { name: 'History', href: '/history', current: false },
+  { name: 'About', href: '/history', current: false },
   { name: 'Stock', href: '/search', current: false },
   { name: 'Gallery', href: '/gallery', current: false },
   { name: 'Client', href: '/client', current: false },
