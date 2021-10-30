@@ -30,15 +30,13 @@ export default function P1About () {
             We are driven to create on-demand buying experience and financing with transparency and nearly seamless end-to-end service.
             Founded and led by Abu Garciá, the company is renowned for its world-class
           </p>
-          <div>
-            <div className="rounded-b-xl relative w-full h-full">
-              <Image
-                src={AboutImage}
-                alt={`About ${WEB.name}`}
-                objectFit="cover"
-                objectPosition="center"
-              />
-            </div>
+          <div className="rounded-b-xl relative w-full h-auto">
+            <Image
+              src={AboutImage}
+              alt={`About ${WEB.name}`}
+              objectFit="cover"
+              objectPosition="center"
+            />
           </div>
         </motion.div>
         <motion.p
@@ -48,7 +46,7 @@ export default function P1About () {
             opacity,
             filter
           }}>
-          {WEB.name} is reimagining luxory car platform to make it easier to own life long dream car.
+          {WEB.name} is reimagining luxury car platform to make it easier to own life long dream car.
         </motion.p>
     </section>
   )
