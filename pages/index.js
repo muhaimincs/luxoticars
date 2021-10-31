@@ -3,9 +3,10 @@ import { LocalBusinessJsonLd } from 'next-seo'
 
 import WEB from '../web.config'
 import { getAllPosts, getAllTagsFromPosts } from '../lib/notion'
+import { getCarPhotos } from '../lib/contentful'
 import YoutubeList from '../components/youtube-homepage'
 
-export async function getStaticProps () {
+export async function getStaticProps ({ preview = false }) {
   function arraySort (f) {
     for (let i = this.length; i;) {
       const o = this[--i]
@@ -39,10 +40,14 @@ export async function getStaticProps () {
   const posts = await getAllPosts({ includePages: false })
   const tags = getAllTagsFromPosts(posts)
   const post = posts.sortBy((o) => -new Date(o.date.start_date))[0]
+  const externalSource = await getCarPhotos(post.slug, preview);
   return {
     props: {
       tags,
-      post
+      post: {
+        ...post,
+        externalSource: externalSource
+      }
     },
     revalidate: 1
   }

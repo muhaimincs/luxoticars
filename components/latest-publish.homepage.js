@@ -1,6 +1,7 @@
 import { useMemo } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { CarouselJsonLd, NewsArticleJsonLd } from 'next-seo';
 
 import formatDate from '../lib/formatDate'
 import WEB from '../web.config'
@@ -8,8 +9,19 @@ import WEB from '../web.config'
 export default function LatestPublish ({ post }) {
   const brand = require(`../public/brands/colors/${post?.tags[0]}.svg`)
   const name = `${post?.Year} ${post?.title}`
-  const photos = post?.['Photo Gallery'].split(',')
-  const mileage = post?.Mileage || '-/-'
+  const photos = useMemo(() => {
+    if (post?.externalSource) {
+      console.log(post.externalSource)
+      if (post.externalSource.length) {
+        const images = post.externalSource[0].photos.map((photo) => {
+          return `https:${photo.fields.file.url}`
+        })
+        return images
+      }
+    }
+    return post?.['Photo Gallery'].split(',')
+  }, [post])
+  const mileage = post?.Mileage || '- / -'
   const exteriorColor = post?.exterior_color || '-'
   const renderSubPhotosClassnames = useMemo(() => {
     if (photos[3]) {
@@ -81,7 +93,7 @@ export default function LatestPublish ({ post }) {
           {photos[3] && (
             <div className="relative h-32 w-auto">
               <Image
-                src={photos[0]}
+                src={photos[3]}
                 alt={`Latest car on ${WEB.name}`}
                 layout="fill"
                 objectFit="cover"
@@ -111,6 +123,26 @@ export default function LatestPublish ({ post }) {
           </div>
         </div>
       </div>
+      <NewsArticleJsonLd
+        url={`https://${WEB.link}/${post?.slug}`}
+        title={post?.title}
+        images={photos}
+        section="stock"
+        keywords="prayuth,taksin"
+        datePublished={post?.date?.start_date || post.createdTime}
+        dateModified={post?.date?.start_date || post.createdTime}
+        authorName="Abu Garciá"
+        publisherName="Luxoticars"
+        publisherLogo="https://ipfs.fleek.co/ipfs/bafybeiefqbyugqurya5gqqlk6ez2hbbu7xxidj3vugmhvqhjsz2fml6f3y"
+        description={post?.summary}
+        body={post?.summary}
+      />
+      <CarouselJsonLd
+        type="default"
+        data={[
+          { url: `https://${WEB.link}/${post?.slug}` },
+        ]}
+      />
     </div>
   )
 }
