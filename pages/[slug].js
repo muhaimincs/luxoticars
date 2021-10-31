@@ -44,9 +44,9 @@ export async function getStaticProps ({ params: { slug }, preview }) {
   const brandName = post.tags[0]?.replace(/-/g, ' ')
   if (externalSource.length) {
     exteriorPhotos = externalSource[0].photos.map((img) => ({
-      url: `https:${img.fields.file.url}`,
-      details: img.fields.file.details,
-      contentType: img.fields.file.contentType
+      url: `https:${img?.fields?.file?.url}`,
+      details: img?.fields?.file?.details,
+      contentType: img?.fields?.file?.contentType
     }))
   }
   return {
