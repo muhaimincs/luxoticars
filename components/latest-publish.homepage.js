@@ -11,7 +11,6 @@ export default function LatestPublish ({ post }) {
   const name = `${post?.Year} ${post?.title}`
   const photos = useMemo(() => {
     if (post?.externalSource) {
-      console.log(post.externalSource)
       if (post.externalSource.length) {
         const images = post.externalSource[0].photos.map((photo) => {
           return `https:${photo.fields.file.url}`

@@ -20,6 +20,7 @@ import { useMediaQuery } from 'beautiful-react-hooks'
 
 import WEB from '../web.config'
 import { getAllPosts, getPostBlocks } from '../lib/notion'
+import { getCarPhotos } from '../lib/contentful'
 import formatDate from '../lib/formatDate'
 import Layout from '../components/layout.homepage'
 
@@ -34,12 +35,30 @@ const mapPageUrl = id => {
   return 'https://www.notion.so/' + id.replace(/-/g, '')
 }
 
-export async function getStaticProps ({ params: { slug } }) {
+export async function getStaticProps ({ params: { slug }, preview }) {
   const posts = await getAllPosts({ includePages: false })
   const post = posts.find(t => t.slug === slug)
   const blockMap = await getPostBlocks(post.id)
+  const externalSource = await getCarPhotos(slug, preview)
+  let exteriorPhotos = post?.['Photo Gallery'].split(',') || []
+  const brandName = post.tags[0]?.replace(/-/g, ' ')
+  if (externalSource.length) {
+    exteriorPhotos = externalSource[0].photos.map((img) => ({
+      url: `https:${img.fields.file.url}`,
+      details: img.fields.file.details,
+      contentType: img.fields.file.contentType
+    }))
+  }
   return {
-    props: { post, blockMap },
+    props: {
+      post: {
+        ...post,
+        brandName,
+        externalSource,
+        exteriorPhotos,
+      },
+      blockMap
+    },
     revalidate: 1
   }
 }
@@ -73,15 +92,8 @@ const Wheels = dynamic(
   }
 )
 export default function CarPage ({ post, blockMap }) {
-  const photoGallery = post ? post['Photo Gallery'].split(',') : []
   const interiorGallery = post && post['Interior Photos'] ? post['Interior Photos'].split(',') : []
-  const title = post?.title
-  const summary = post?.summary
-  const slug = post?.slug
-  const tag = post?.tags[0]?.replace(/-/g, ' ')
-  const tagLink = post?.tags[0]
   const router = useRouter()
-  const publishedTime = post?.createdTime
   const renderKeyFeaturesClassname = useMemo(() => {
     if (!router.query.tab) {
       return 'border-b border-red-600 border-b-4'
@@ -116,21 +128,23 @@ export default function CarPage ({ post, blockMap }) {
   return (
     <>
     <NextSeo
-      title={`${title} • ${WEB.name}`}
-      description={summary}
-      canonical={`${WEB.link}/${slug}`}
+      title={`${post?.title} • ${WEB.name}`}
+      description={post?.summary}
+      canonical={`${WEB.link}/${post?.slug}`}
       openGraph={{
-        url: `${WEB.link}/${slug}`,
-        title,
-        description: summary,
-        images: photoGallery.sort().reverse().map(photo => ({
-          url: photo,
-          type: 'image/jpeg'
+        url: `${WEB.link}/${post?.slug}`,
+        title: post?.title,
+        description: post?.summary,
+        images: post?.exteriorPhotos.map(photo => ({
+          url: photo?.url,
+          type: photo?.contentType,
+          width: photo?.details?.image?.width,
+          height: photo?.details?.image?.height
         })),
         type: 'article',
         article: {
-          publishedTime,
-          section: tagLink
+          publishedTime: post?.date?.start_date,
+          section: post?.tags[0]
         }
       }}
     />
@@ -144,35 +158,33 @@ export default function CarPage ({ post, blockMap }) {
         {
           position: 2,
           name: post?.tags[0]?.replace(/-/g, ' ').replace(/_/g, ' '),
-          item: `${WEB.link}/tag/${tagLink}`
+          item: `${WEB.link}/tag/${post?.tags[0]}`
         }
       ]}
     />
     <ProductJsonLd
-      productName={title}
-      images={photoGallery.map(photo => photo)}
-      description={summary}
+      productName={post?.title}
+      images={post?.exteriorPhotos.map(photo => photo?.url)}
+      description={post?.summary}
       color={post?.exterior_color}
-      manufacturerName={tagLink?.replace(/-/g, ' ').replace(/_/g, ' ')}
-      manufacturerLogo={`${WEB.link}/brands/colors/${tagLink}.svg`}
+      manufacturerName={post?.tags[0]?.replace(/-/g, ' ').replace(/_/g, ' ')}
+      manufacturerLogo={`${WEB.link}/brands/colors/${post?.tags[0]}.svg`}
     />
-    <div className="max-w-7xl mx-auto pt-10 px-3">
-      <ul className="px-[2vw] xl:px-[calc(min(12px,8vw))] w-[var(--notion-max-width)] max-w-full text-gray-400 flex space-x-3 text-xs">
+    <div className="max-w-7xl mx-auto pt-10 px-3 flex justify-between">
+      <ul className="px-[2vw] xl:px-[calc(min(12px,8vw))] w-[var(--notion-max-width)] max-w-full text-gray-400 flex space-x-3 text-xs flex-shrink">
         <li><Link href="/search"><a>Stock</a></Link></li>
         <li>&raquo;</li>
-        <li><Link href={`/tag/${tagLink}`}><a className="capitalize">{tag}</a></Link></li>
+        <li><Link href={`/tag/${post?.tags[0]}`}><a className="capitalize">{post?.brandName}</a></Link></li>
       </ul>
-    </div>
-    {interiorGallery.length && (
-      <div className="max-w-7xl mx-auto px-3 flex lg:items-center justify-end lg:justify-center">
+      {interiorGallery.length && (
         <ul className="text-gray-400 flex space-x-3 text-xs">
           <li className="text-gray-500 font-semibold">View:</li>
-          <li className={renderExteriorGalleryClassname}><Link href={`/${slug}?gallery=exterior`}><a>Exterior</a></Link></li>
+          <li className={renderExteriorGalleryClassname}><Link href={`/${post?.slug}?gallery=exterior`}><a>Exterior</a></Link></li>
           <li>|</li>
-          <li className={renderInteriorGalleryClassname}><Link href={`/${slug}?gallery=interior`}><a>Interior</a></Link></li>
+          <li className={renderInteriorGalleryClassname}><Link href={`/${post?.slug}?gallery=interior`}><a>Interior</a></Link></li>
         </ul>
-      </div>
-    )}
+      )}
+    </div>
     <div className="relative mt-3 mb-8">
       {(!router.query.gallery || router.query.gallery === 'exterior')
         ? (
@@ -181,7 +193,7 @@ export default function CarPage ({ post, blockMap }) {
           zoom={true}
           navigation={true}
           autoHeight={true}
-          slidesPerView={isLarge ? 'auto' : 1}
+          slidesPerView={isLarge ? '3' : 1}
           centeredSlides={true}
           // spaceBetween={}
           loop={true}
@@ -190,14 +202,17 @@ export default function CarPage ({ post, blockMap }) {
             clickable: true,
             dynamicBullets: true
           }}
-          className="min-h-full h-72">
-            {photoGallery.map((photo) => (
-              <SwiperSlide key={photo}>
-                <div className="swiper-zoom-container">
-                  <img src={photo} className="min-h-full" loading="lazy" />
-                </div>
-              </SwiperSlide>
-            ))}
+          className="min-h-full">
+            {post?.exteriorPhotos.map((photo) => {
+              const url = photo?.url ? photo.url : photo
+              return (
+                <SwiperSlide key={url}>
+                  <div className="swiper-zoom-container">
+                    <img src={url} className="min-h-full" loading="lazy" />
+                  </div>
+                </SwiperSlide>
+              )
+            })}
         </Swiper>
           )
         : (
@@ -226,10 +241,10 @@ export default function CarPage ({ post, blockMap }) {
         </Swiper>
           )}
       <div className="absolute top-0 inset-x-0 z-10 bg-gradient-to-b from-black max-w-7xl xl:max-w-screen-2xl mx-auto">
-        <h1 className="my-5 text-white text-lg md:text-5xl text-center w-[var(--notion-max-width)] px-[2vw] xl:px-[calc(min(12px,8vw))] mx-auto max-w-full">{title}</h1>
+        <h1 className="my-5 text-white text-lg md:text-5xl text-center w-[var(--notion-max-width)] px-[2vw] xl:px-[calc(min(12px,8vw))] mx-auto max-w-full">{post?.title}</h1>
       </div>
       <div className="max-w-7xl mx-auto">
-        <div className="max-w-full py-3 bg-black text-gray-400 z-10 uppercase text-xs px-[2vw] xl:px-[calc(min(12px,8vw))] w-[var(--notion-max-width)] mx-auto">{summary}</div>
+        <div className="max-w-full py-3 bg-black text-gray-400 z-10 uppercase text-xs px-[2vw] xl:px-[calc(min(12px,8vw))] w-[var(--notion-max-width)] mx-auto">{post?.summary}</div>
       </div>
     </div>
     <div className="max-w-7xl mx-auto">
@@ -237,9 +252,9 @@ export default function CarPage ({ post, blockMap }) {
         <span className="text-gray-500 text-xs">Published on {formatDate(post?.date?.start_date || post?.createdTime, 'en')}</span>
         <h4 className="font-semibold uppercase font-sans text-white text-3xl">OVERVIEW</h4>
         <ul className="text-gray-400 flex space-x-3 text-xs my-6">
-          <li className={renderKeyFeaturesClassname}><Link href={`/${slug}?tab=key-features`} scroll={false}><a>Key Features</a></Link></li>
+          <li className={renderKeyFeaturesClassname}><Link href={`/${post?.slug}?tab=key-features`} scroll={false}><a>Key Features</a></Link></li>
           <li>|</li>
-          <li className={renderTrimsSpecsClassname}><Link href={`/${slug}?tab=trims-specs`} scroll={false}><a>Trims & Specs</a></Link></li>
+          <li className={renderTrimsSpecsClassname}><Link href={`/${post?.slug}?tab=trims-specs`} scroll={false}><a>Trims & Specs</a></Link></li>
         </ul>
       </div>
     </div>

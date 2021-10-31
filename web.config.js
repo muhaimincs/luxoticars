@@ -17,7 +17,7 @@ const WEB = {
   notionAccessToken: process.env.NOTION_ACCESS_TOKEN,
   analytics: {
     gaConfig: {
-      measurementId: '' // e.g: G-XXXXXXXXXX
+      measurementId: 'G-E645Q3EN3H' // e.g: G-XXXXXXXXXX
     }
   },
   isProd: process.env.VERCEL_ENV === 'production'
