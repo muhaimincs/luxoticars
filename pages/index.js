@@ -4,7 +4,6 @@ import { LocalBusinessJsonLd } from 'next-seo'
 import WEB from '../web.config'
 import { getAllPosts, getAllTagsFromPosts } from '../lib/notion'
 import { getCarPhotos } from '../lib/contentful'
-import YoutubeList from '../components/youtube-homepage'
 
 export async function getStaticProps ({ preview = false }) {
   function arraySort (f) {
@@ -75,6 +74,10 @@ export default function Home ({ tags, post }) {
     () => import('../components/clients.homepage'),
     { ssr: false }
   )
+  const YoutubeList = dynamic(
+    () => import('../components/youtube-homepage'),
+    { ssr: false }
+  )
 
   return (
     <>
@@ -99,7 +102,6 @@ export default function Home ({ tags, post }) {
 Home.getLayout = function getLayout (page) {
   const Header = dynamic(
     () => import('../components/header.homepage'),
-    { ssr: false }
   )
   const Footer = dynamic(
     () => import('../components/footer'),
@@ -107,7 +109,6 @@ Home.getLayout = function getLayout (page) {
   )
   const Layout = dynamic(
     () => import('../components/layout.homepage'),
-    { ssr: false }
   )
   const SaleSection = dynamic(
     () => import('../components/sale-section'),
