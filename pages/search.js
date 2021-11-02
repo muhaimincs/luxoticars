@@ -2,15 +2,32 @@ import dynamic from 'next/dynamic'
 import Head from 'next/head'
 
 import { getAllPosts, getAllTagsFromPosts } from '../lib/notion'
+import { getCarPhotos } from '../../lib/contentful'
 import SearchLayout from '../layout/search'
 
 export async function getStaticProps () {
   const posts = await getAllPosts({ includePages: false })
   const tags = getAllTagsFromPosts(posts)
+  const withExternalSource = await Promise.all(posts.map(async (post) => {
+    const externalSource = await getCarPhotos(post.slug, preview);
+    return {
+      ...post,
+      externalSource: externalSource.reduce((acc, item) => {
+        for (const photo of item.photos) {
+          acc.push({
+            url: `https:${photo?.fields?.file?.url}`,
+            details: photo?.fields?.file?.details,
+            contentType: photo?.fields?.file?.contentType
+          })
+        }
+        return acc
+      }, [])
+    }
+  }));
   return {
     props: {
       tags,
-      posts
+      posts: withExternalSource
     },
     revalidate: 1
   }

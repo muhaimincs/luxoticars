@@ -40,7 +40,9 @@ export async function getStaticProps ({ params: { slug }, preview }) {
   const post = posts.find(t => t.slug === slug)
   const blockMap = await getPostBlocks(post.id)
   const externalSource = await getCarPhotos(slug, preview)
-  let exteriorPhotos = post?.['Photo Gallery'].split(',') || []
+  let exteriorPhotos = post?.['Photo Gallery'] 
+    ? post?.['Photo Gallery'].split(',')
+    : []
   const brandName = post.tags[0]?.replace(/-/g, ' ')
   if (externalSource.length) {
     exteriorPhotos = externalSource[0].photos.map((img) => ({

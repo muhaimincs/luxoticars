@@ -2,6 +2,8 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 
+import s from './car.post.module.css'
+
 const item = {
   hidden: { y: 20, opacity: 0 },
   visible: {
@@ -11,7 +13,7 @@ const item = {
 }
 
 const CarPost = ({ post }) => {
-  const firstPhoto = post['Photo Gallery'].split(',')[0]
+  const firstPhoto = post?.['Photo Gallery'] ? post?.['Photo Gallery'].split(',')[0] : post?.externalSource[0].url
   return (
     <Link href={`/${post.slug}`} passHref={true}>
       <motion.a

@@ -2,6 +2,7 @@ import dynamic from 'next/dynamic'
 import Head from 'next/head'
 
 import { getAllPosts, getAllTagsFromPosts } from '../../lib/notion'
+import { getCarPhotos } from '../../lib/contentful'
 import SearchLayout from '../../layout/search'
 import Layout from '../../components/layout.homepage'
 
@@ -11,7 +12,6 @@ const makeupTitle = ([first, ...rest], locale = 'en-GB') =>
 export default function TagPage ({ tags, posts, currentTag }) {
   let title = currentTag ? currentTag.replace(/-/g, ' ') : currentTag
   title = currentTag ? makeupTitle(title.replace(/_/g, ' ')) : ''
-
   return (
     <>
     <Head>
@@ -35,17 +35,33 @@ export default function TagPage ({ tags, posts, currentTag }) {
   )
 }
 
-export async function getStaticProps ({ params }) {
+export async function getStaticProps ({ params, preview }) {
   const currentTag = params.tag
   const posts = await getAllPosts({ includePages: false })
   const tags = getAllTagsFromPosts(posts)
   const filteredPosts = posts.filter(
     post => post && post.tags && post.tags.includes(currentTag)
   )
+  const withExternalSource = await Promise.all(filteredPosts.map(async (post) => {
+    const externalSource = await getCarPhotos(post.slug, preview);
+    return {
+      ...post,
+      externalSource: externalSource.reduce((acc, item) => {
+        for (const photo of item.photos) {
+          acc.push({
+            url: `https:${photo?.fields?.file?.url}`,
+            details: photo?.fields?.file?.details,
+            contentType: photo?.fields?.file?.contentType
+          })
+        }
+        return acc
+      }, [])
+    }
+  }));
   return {
     props: {
       tags,
-      posts: filteredPosts,
+      posts: withExternalSource,
       currentTag
     },
     revalidate: 1
