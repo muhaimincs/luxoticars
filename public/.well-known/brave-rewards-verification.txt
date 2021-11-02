@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: luxoticars.cc
+Token: a2ca5e7a0b8805bd8860b41d90f5e40a3fdc8e9125c36d513424a3a643faa17f
