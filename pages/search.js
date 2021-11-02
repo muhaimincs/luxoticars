@@ -5,7 +5,7 @@ import { getAllPosts, getAllTagsFromPosts } from '../lib/notion'
 import { getCarPhotos } from '../lib/contentful'
 import SearchLayout from '../layout/search'
 
-export async function getStaticProps () {
+export async function getStaticProps ({ preview }) {
   const posts = await getAllPosts({ includePages: false })
   const tags = getAllTagsFromPosts(posts)
   const withExternalSource = await Promise.all(posts.map(async (post) => {
