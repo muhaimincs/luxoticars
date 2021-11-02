@@ -1,7 +1,12 @@
 module.exports = {
   webpack5: true,
   images: {
-    domains: ['images.ctfassets.net', 'res.cloudinary.com', 's3.us-west-2.amazonaws.com']
+    domains: [
+      'images.ctfassets.net',
+      'res.cloudinary.com',
+      's3.us-west-2.amazonaws.com',
+      'img.rnudah.com'
+    ]
   },
   eslint: {
     dirs: [
