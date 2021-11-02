@@ -2,7 +2,7 @@ import dynamic from 'next/dynamic'
 import Head from 'next/head'
 
 import { getAllPosts, getAllTagsFromPosts } from '../lib/notion'
-import { getCarPhotos } from '../../lib/contentful'
+import { getCarPhotos } from '../lib/contentful'
 import SearchLayout from '../layout/search'
 
 export async function getStaticProps () {
