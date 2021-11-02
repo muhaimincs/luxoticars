@@ -1,9 +1,10 @@
-/* eslint-disable @next/next/no-page-custom-font */
 import Image from 'next/image'
 import { navigation } from './header.homepage'
 import { LogoJsonLd, SocialProfileJsonLd } from 'next-seo'
 
 import RedShoes from '../public/RS_002.svg'
+import Mudah from '../public/img/props/mudah.gif'
+import Telegram from '../public/img/props/telegram.svg'
 import WEB from '../web.config'
 
 export default function Footer ({ className }) {
@@ -97,9 +98,11 @@ export default function Footer ({ className }) {
               </g>
             </svg>
           </a>
-          <a href="https://www.mudah.my/luxoticars"><img src="https://www.mudah.my/img/icon_info.gif" /></a>
+          <a href="https://www.mudah.my/luxoticars">
+            <Image src={Mudah} width={33} height={28} alt={`${WEB.name} on Mudah.my`} />
+          </a>
           <a href="https://t.me/luxoticars">
-            <img className="h-6 w-6" src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Telegram_X_2019_Logo.svg" alt="telegram" />
+            <Image width={28} height={28} src={Telegram} alt={`Join ${WEB.name} on Telegram`} />
           </a>
         </div>
       </div>
