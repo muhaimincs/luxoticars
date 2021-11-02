@@ -11,8 +11,8 @@ const WEB = {
     postalCode: '50450',
     addressCountry: 'MY'
   },
-  postsPerPage: 6,
-  sortByDate: false,
+  postsPerPage: 12,
+  sortByDate: true,
   notionPageId: process.env.NOTION_PAGE_ID,
   notionAccessToken: process.env.NOTION_ACCESS_TOKEN,
   analytics: {

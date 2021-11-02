@@ -1,9 +1,10 @@
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
 
-import { getAllPosts, getAllTagsFromPosts } from '../lib/notion'
-import { getCarPhotos } from '../lib/contentful'
-import SearchLayout from '../layout/search'
+import { getAllPosts, getAllTagsFromPosts } from '../../lib/notion'
+import { getCarPhotos } from '../../lib/contentful'
+import SearchLayout from '../../layout/search'
+import WEB from '../../web.config'
 
 export async function getStaticProps ({ preview }) {
   const posts = await getAllPosts({ includePages: false })
@@ -24,30 +25,36 @@ export async function getStaticProps ({ preview }) {
       }, [])
     }
   }));
+  const postsToShow = withExternalSource.slice(
+    0,
+    WEB.postsPerPage
+  )
+  const showNext = withExternalSource.length > WEB.postsPerPage
   return {
     props: {
       tags,
-      posts: withExternalSource
+      posts: postsToShow,
+      showNext,
     },
     revalidate: 1
   }
 }
 
-export default function SearchPage ({ tags, posts }) {
-  return <SearchLayout tags={tags} posts={posts} />
+export default function SearchPage ({ tags, posts, showNext }) {
+  return <SearchLayout tags={tags} posts={posts} showNext={showNext} page={1} />
 }
 
 SearchPage.getLayout = function getLayout (page) {
   const Header = dynamic(
-    () => import('../components/header.homepage'),
+    () => import('../../components/header.homepage'),
     { ssr: false }
   )
   const Layout = dynamic(
-    () => import('../components/layout.homepage'),
+    () => import('../../components/layout.homepage'),
     { ssr: false }
   )
   const Footer = dynamic(
-    () => import('../components/footer'),
+    () => import('../../components/footer'),
     { ssr: false }
   )
   return (

@@ -14,7 +14,6 @@ const item = {
 }
 
 const CarPost = ({ post }) => {
-  console.log(post)
   const firstPhoto = post?.['Photo Gallery'] ? post?.['Photo Gallery'].split(',')[0] : post?.externalSource[0].url
   return (
     <Link href={`/${post.slug}`} passHref={true}>

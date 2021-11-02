@@ -71,7 +71,7 @@ const Tags = ({ tags, currentTag, className }) => {
 
   return (
     <div className="mt-4 flow-root">
-      <div className="box-content relative overflow-x-auto h-24">
+      <div className="box-content relative overflow-x-auto h-20">
         <motion.ul className={ulClassName} variants={{}} initial="hidden" animate={controls}>
           {Object.keys(tags).map((key, i) => {
             const selected = key === currentTag

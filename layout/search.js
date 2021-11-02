@@ -5,9 +5,10 @@ import Link from 'next/link'
 
 import Cars from '../components/cars.post'
 import Tags from '../components/tags'
+import Pagination from '../components/pagination'
 import bg from '../public/img/black_yellow.jpeg'
 
-const SearchLayout = ({ tags, posts, currentTag }) => {
+const SearchLayout = ({ tags, posts, currentTag, showNext = false, page = 1 }) => {
   const sentinalRef = useRef([])
   const navRef = useRef(null)
   const [searchValue, setSearchValue] = useState('')
@@ -108,6 +109,7 @@ const SearchLayout = ({ tags, posts, currentTag }) => {
     </div>
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 space-y-8">
       <Cars currentTag={currentTag} posts={filteredBlogPosts} />
+      <Pagination page={page} showNext={showNext} />
       {currentTag && (
         <div className="flex items-center justify-center">
           <Link href="/search">
@@ -115,7 +117,6 @@ const SearchLayout = ({ tags, posts, currentTag }) => {
           </Link>
         </div>
       )}
-      <div className="py-10 h-px bg-transparent rounded-md" />
     </div>
     </>
   )
