@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import { Fragment, useRef, useEffect, useMemo } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -14,8 +13,11 @@ import {
 } from 'body-scroll-lock'
 import Image from 'next/image'
 
+import WEB from '../web.config'
 import LuxoticarsLogo from '../public/LUXOTICARS.svg'
 import LuxoticarsWhiteFont from '../public/LUXOTICARS_WHITE_FONT.svg'
+import Mudah from '../public/img/props/mudah.gif'
+import Telegram from '../public/img/props/telegram.svg'
 
 function classNames (...classes) {
   return classes.filter(Boolean).join(' ')
@@ -119,26 +121,16 @@ export default function Example () {
                   <div className="flex-shrink-0 flex items-center">
                     <Link href="/">
                       <a className={logoClassName}>
-                        <img
-                          className="h-12 w-auto"
-                          src="/LUXOTICARS.svg"
-                          alt="luxoticars"
-                        />
+                        <Image src={LuxoticarsLogo} alt="Luxoticars" height={52} width={34} />
                       </a>
                     </Link>
                     <div className="hidden lg:block w-auto">
                       <Link href="/">
                         <a className="flex items-center text-white space-x-4">
-                          <img
-                            className="h-8"
-                            src="/LUXOTICARS.svg"
-                            alt="luxoticars"
-                          />
-                          <img
-                            className="h-8 max-w-xs"
-                            src="/LUXOTICARS_WHITE_FONT.svg"
-                            alt="luxoticars"
-                          />
+                          <Image src={LuxoticarsLogo} alt="Luxoticars" height={52} width={34} />
+                          <div className="relative">
+                            <Image src={LuxoticarsWhiteFont} alt="Luxoticars" height={19} width={300} />
+                          </div>
                         </a>
                       </Link>
                     </div>
@@ -243,11 +235,9 @@ export default function Example () {
               </div>
               <div className="flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 space-x-3">
                 <Image src={LuxoticarsLogo} alt="Luxoticars" height={52} width={34} />
-                <img
-                  className="w-32 h-8 max-w-xs"
-                  src="/LUXOTICARS_WHITE_FONT.svg"
-                  alt="Luxoticars"
-                />
+                <div className="relative">
+                  <Image src={LuxoticarsWhiteFont} alt="Luxoticars" height={10} width={158} />
+                </div>
               </div>
             </div>
             <div className="text-gray-100 text-xs bg-black text-center pt-2 pb-3">
@@ -364,9 +354,11 @@ export default function Example () {
                         </g>
                       </svg>
                     </a>
-                    <a href="https://www.mudah.my/luxoticars"><img src="https://www.mudah.my/img/icon_info.gif" /></a>
+                    <a href="https://www.mudah.my/luxoticars">
+                      <Image src={Mudah} width={33} height={28} alt={`${WEB.name} on Mudah.my`} />
+                    </a>
                     <a href="https://t.me/luxoticars">
-                      <img className="h-6 w-6" src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Telegram_X_2019_Logo.svg" alt="telegram" />
+                      <Image width={28} height={28} src={Telegram} alt={`Join ${WEB.name} on Telegram`} />
                     </a>
                   </div>
                 </div>
