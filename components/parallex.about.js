@@ -23,7 +23,7 @@ export default function ParallexAbout () {
   return (
     <>
     <ParallaxItem scroll={scroll} className="overflow-hidden w-full lg:max-w-prose mx-auto">
-      <dl className="shadow-lg grid grid-cols-2 gap-8">
+      <dl className="shadow-lg grid grid-cols-2 gap-2">
         <div className={`bg-black/50 rounded-xl flex flex-col p-6 bg-cover bg-center ${s['r-gradient']}`}>
           <dt className="order-2 text-xs md:text-lg leading-6 font-medium text-[#93d3f0]">Luxoticars launched</dt>
           <dd className="order-1 text-xl font-extrabold text-white">2008</dd>

@@ -11,10 +11,11 @@ export default function HeroAbout () {
   const opacity = useTransform(scrollY, [0, scrollAmount], [1, 0.75])
   const filter = useTransform(
     scrollY,
-    [0, scrollAmount],
+    [0, 380],
     ['blur(0px)', 'blur(16px)']
   )
   const opacityBottom = useTransform(scrollY, [0, scrollAmount], [1, 0])
+  const opacityBg = useTransform(scrollY, [0, scrollAmount], ['rgba(0, 0, 0, 1)', 'rgba(0, 0, 0, 0)'])
 
   return (
     <>
@@ -36,8 +37,8 @@ export default function HeroAbout () {
     </div>
     <motion.div
       animate={controls}
-      style={{ opacity: opacityBottom, filter }}
-      className="absolute bottom-0 py-10 inset-x-0 max-w-7xl mx-auto flex flex-col items-center justify-center bg-gradient-to-t from-black">
+      style={{ opacity: opacityBottom, filter, '---tw-gradient-from': opacityBg }}
+      className="absolute bottom-0 py-10 inset-x-0 max-w-7xl mx-auto flex flex-col items-center justify-center bg-gradient-to-t">
       <span className="text-center text-gray-400">Scroll down</span>
       <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />

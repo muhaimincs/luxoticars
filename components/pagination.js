@@ -8,7 +8,7 @@ const Pagination = ({ page, showNext }) => {
   if (currentPage === 1 && showNext) additionalClassName = 'justify-end'
   if (currentPage !== 1 && !showNext) additionalClassName = 'justify-start'
   return (
-    <div className={`sticky bottom-[13vh] z-50 lg:z-auto lg:relative flex font-medium text-gray-100 ${additionalClassName}`}>
+    <div className={`sticky bottom-[15vh] z-50 lg:z-auto lg:relative flex font-medium text-gray-100 ${additionalClassName}`}>
       {currentPage !== 1 && (
       <Link
         href={
@@ -17,7 +17,7 @@ const Pagination = ({ page, showNext }) => {
             : `/search/${currentPage - 1}`
         }
       >
-        <a className="bg-gradient-to-r from-green-400 to-blue-500 p-1">
+        <a className="bg-gradient-to-r from-[#21252999] via-[#2125293d] to-gray-900 backdrop-blur-lg p-1">
           <button
             rel="prev"
             className="block cursor-pointer px-3 py-4 bg-gray-900"
@@ -29,7 +29,7 @@ const Pagination = ({ page, showNext }) => {
       )}
       {showNext && (
         <Link href={`/search/${currentPage + 1}`}>
-          <a className="bg-gradient-to-r from-green-400 to-blue-500 p-1">
+          <a className="bg-gradient-to-r from-[#21252999] via-[#2125293d] to-gray-900 backdrop-blur-lg p-1">
             <button rel="next" className="block cursor-pointer px-3 py-4 bg-gray-900">
               NEXT &rsaquo;
             </button>
