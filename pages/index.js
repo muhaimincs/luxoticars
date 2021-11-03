@@ -24,28 +24,28 @@ export async function getStaticProps ({ preview = false }) {
   }
 }
 
-export default function Home ({ tags, post }) {
-  const Carousel = dynamic(
-    () => import('../components/carousel.homepage'),
-    { ssr: false }
-  )
-  const BrandsCarousel = dynamic(
-    () => import('../components/brands.homepage'),
-    { ssr: false }
-  )
-  const LatestPublish = dynamic(
-    () => import('../components/latest-publish.homepage'),
-    { ssr: false }
-  )
-  const SocialLife = dynamic(
-    () => import('../components/clients.homepage'),
-    { ssr: false }
-  )
-  const YoutubeList = dynamic(
-    () => import('../components/youtube-homepage'),
-    { ssr: false }
-  )
+const Carousel = dynamic(
+  () => import('../components/carousel.homepage'),
+  { ssr: true }
+)
+const BrandsCarousel = dynamic(
+  () => import('../components/brands.homepage'),
+  { ssr: false }
+)
+const LatestPublish = dynamic(
+  () => import('../components/latest-publish.homepage'),
+  { ssr: false }
+)
+const SocialLife = dynamic(
+  () => import('../components/clients.homepage'),
+  { ssr: false }
+)
+const YoutubeList = dynamic(
+  () => import('../components/youtube-homepage'),
+  { ssr: false }
+)
 
+export default function Home ({ tags, post }) {
   return (
     <>
     <Carousel />
@@ -62,6 +62,14 @@ export default function Home ({ tags, post }) {
       <h1 className="text-3xl mb-3">Why Us?</h1>
       <p className="text-xs">Luxoticars, we pride ourselves through the industry’s recognition as one of the pioneer retailers of classic, rare, collectible & exotic cars. With an extensive international network & experience in sourcing, purchasing and selling vehicles to customers worldwide, our team is well prepared to provide fully tailored services for buyers on their next acquisition.</p>
     </div>
+    <LocalBusinessJsonLd
+      type="Store"
+      id={WEB.link}
+      name={WEB.name}
+      description={WEB.description}
+      telephone={WEB.telephone}
+      address={WEB.address}
+    />
     </>
   )
 }
@@ -76,21 +84,11 @@ Home.getLayout = function getLayout (page) {
     { ssr: false }
   )
   return (
-    <>
-      <LocalBusinessJsonLd
-        type="Store"
-        id={WEB.link}
-        name={WEB.name}
-        description={WEB.description}
-        telephone={WEB.telephone}
-        address={WEB.address}
-      />
-      <Layout>
-        <Header />
-        {page}
-        <SaleSection />
-        <Footer />
-      </Layout>
-    </>
+    <Layout>
+      <Header />
+      {page}
+      <SaleSection />
+      <Footer />
+    </Layout>
   )
 }
