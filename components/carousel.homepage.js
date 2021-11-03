@@ -1,9 +1,11 @@
+import { useEffect } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import SwiperCore, {
   EffectFade,
   Autoplay
 } from 'swiper'
 import Image from 'next/image'
+import { useDimensions } from 'react-hook-dimensions'
 
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
@@ -11,8 +13,21 @@ import 'swiper/css/pagination'
 SwiperCore.use([EffectFade, Autoplay])
 
 const Carousel = () => {
+  const [elementRef, elementDimensions, updateElementDimensions] = useDimensions({
+    dependencies: [],
+    defaults: {
+      height: 300,
+      scrollY: 150
+    },
+    layoutEffect: true
+  })
+
+  useEffect(() => {
+    updateElementDimensions()
+  }, [])
+
   return (
-    <div className="absolute inset-0 w-screen overflow-hidden z-[-100]">
+    <div className="absolute inset-0 w-screen overflow-hidden z-[-100]" ref={elementRef}>
       <Swiper
         // onSwiper={setSwiperRef}
         style={{ '--swiper-navigation-color': '#fff', '--swiper-pagination-color': '#fff' }}
@@ -35,13 +50,19 @@ const Carousel = () => {
             playsInline="playsinline"
             preload="metadata"
             className="absolute top-0 bg-cover object-cover w-full h-full"
-            poster="https://ipfs.fleek.co/ipfs/bafybeid7kualxhp3emamgkk2xbf2djyadbkl4u2onlcskmsudeucousm5m"
+            poster={`https://res.cloudinary.com/dkgbrdmj4/image/upload/c_crop,g_face,w_${elementDimensions.width}/v1635906737/LUXOTICARS/bafybeid7kualxhp3emamgkk2xbf2djyadbkl4u2onlcskmsudeucousm5m_m2ug9j.webp`}
             data-object-fit="cover"
+            width={elementDimensions.width}
+            height={elementDimensions.height}
           >
             <source
-              src="https://ipfs.fleek.co/ipfs/bafybeidvysen4oi7su3owebwge5aof7b6ljemtmsyuzbytowdkh5kkpova"
+              src={`https://res.cloudinary.com/dkgbrdmj4/video/upload/c_crop,h_${elementDimensions.height}/v1635907269/LUXOTICARS/bafybeidvysen4oi7su3owebwge5aof7b6ljemtmsyuzbytowdkh5kkpova_k2ud3d.webm`}
               type="video/mp4"
             />
+            {/* <source
+              src={`https://res.cloudinary.com/dkgbrdmj4/video/upload/c_crop,h_${elementDimensions.height}/v1635907269/LUXOTICARS/bafybeidvysen4oi7su3owebwge5aof7b6ljemtmsyuzbytowdkh5kkpova_k2ud3d.mp4`}
+              type="video/mp4"
+            /> */}
             Your browser does not support the video tag.
           </video>
           <div className="absolute inset-0 bg-gradient-to-t from-black z-50" aria-hidden="true" />

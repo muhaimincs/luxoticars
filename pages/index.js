@@ -4,6 +4,9 @@ import { LocalBusinessJsonLd } from 'next-seo'
 import WEB from '../web.config'
 import { getAllPosts, getAllTagsFromPosts } from '../lib/notion'
 import { getCarPhotos } from '../lib/contentful'
+import WelcomeText from '../components/welcomeText'
+import Header from '../components/header.homepage'
+import Layout from '../components/layout.homepage'
 
 export async function getStaticProps ({ preview = false }) {
   function arraySort (f) {
@@ -57,13 +60,8 @@ export default function Home ({ tags, post }) {
     () => import('../components/carousel.homepage'),
     { ssr: false }
   )
-
   const BrandsCarousel = dynamic(
     () => import('../components/brands.homepage'),
-    { ssr: false }
-  )
-  const WelcomeText = dynamic(
-    () => import('../components/welcomeText'),
     { ssr: false }
   )
   const LatestPublish = dynamic(
@@ -100,15 +98,9 @@ export default function Home ({ tags, post }) {
 }
 
 Home.getLayout = function getLayout (page) {
-  const Header = dynamic(
-    () => import('../components/header.homepage'),
-  )
   const Footer = dynamic(
     () => import('../components/footer'),
     { ssr: false }
-  )
-  const Layout = dynamic(
-    () => import('../components/layout.homepage'),
   )
   const SaleSection = dynamic(
     () => import('../components/sale-section'),
