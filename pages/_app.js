@@ -23,7 +23,7 @@ function MyApp ({ Component, pageProps }) {
           url: WEB.link,
           site_name: WEB.name,
           images: [{
-            url: 'https://ipfs.fleek.co/ipfs/bafybeiefqbyugqurya5gqqlk6ez2hbbu7xxidj3vugmhvqhjsz2fml6f3y',
+            url: `${WEB.link}/img/default.png`,
             width: 1024,
             height: 512,
             alt: WEB.name
@@ -50,7 +50,7 @@ function MyApp ({ Component, pageProps }) {
           {
             rel: 'preconnect',
             href: 'https://fonts.gstatic.com',
-            crossorigin: true
+            crossOrigin: true
           }, {
             rel: 'preload',
             href: 'https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,700;1,300&display=optional'

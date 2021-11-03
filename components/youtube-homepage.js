@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { useDimensions } from 'react-hook-dimensions'
 import Link from 'next/link'
+import { useInView } from 'react-intersection-observer'
 
 function Yt ({ data }) {
   const [elementRef, elementDimensions, updateElementDimensions] = useDimensions({
@@ -11,6 +12,7 @@ function Yt ({ data }) {
     },
     layoutEffect: true
   })
+  const { inView, ref: inViewRef } = useInView({ threshold: 0, rootMargin: '100px' })
 
   useEffect(() => {
     updateElementDimensions()
@@ -18,17 +20,19 @@ function Yt ({ data }) {
 
   return (
     <div className="group relative" ref={elementRef}>
-      <div className="relative w-full h-80 rounded-lg overflow-hidden group-hover:opacity-75 sm:h-64">
-        <iframe
-          className="h-full w-full"
-          src={`${data.href}?controls=0`}
-          title={data.name}
-          frameBorder="0"
-          width={elementDimensions.width}
-          height={elementDimensions.height}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        />
+      <div ref={inViewRef} className="relative w-full h-80 rounded-lg overflow-hidden group-hover:opacity-75 sm:h-64">
+        {inView && (
+          <iframe
+            className="h-full w-full"
+            src={`${data.href}?controls=0`}
+            title={data.name}
+            frameBorder="0"
+            width={elementDimensions.width}
+            height={elementDimensions.height}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        )}
       </div>
       <h3 className="mt-6 text-sm text-gray-500">
         {data.name}

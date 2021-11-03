@@ -6,7 +6,8 @@ module.exports = {
       'res.cloudinary.com',
       's3.us-west-2.amazonaws.com',
       'img.rnudah.com'
-    ]
+    ],
+    formats: ['image/avif', 'image/webp'],
   },
   eslint: {
     dirs: [

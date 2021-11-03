@@ -5,7 +5,6 @@ import SwiperCore, {
 } from 'swiper'
 import Image from 'next/image'
 
-import 'swiper/css/zoom'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 
