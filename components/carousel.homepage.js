@@ -56,13 +56,13 @@ const Carousel = () => {
             height={elementDimensions.height}
           >
             <source
-              src={`https://res.cloudinary.com/dkgbrdmj4/video/upload/c_crop,h_${elementDimensions.height}/v1635907269/LUXOTICARS/bafybeidvysen4oi7su3owebwge5aof7b6ljemtmsyuzbytowdkh5kkpova_k2ud3d.webm`}
+              src={`https://res.cloudinary.com/dkgbrdmj4/video/upload/ac_none,c_fit,e_deshake:16,h_${elementDimensions.height},q_70/g_north,c_scale,l_LUXOTICARS:watermark,w_230,y_250/v1635907269/LUXOTICARS/bafybeidvysen4oi7su3owebwge5aof7b6ljemtmsyuzbytowdkh5kkpova_k2ud3d.webm`}
+              type="video/webm"
+            />
+            <source
+              src={`https://res.cloudinary.com/dkgbrdmj4/video/upload/ac_none,c_fit,e_deshake:16,h_${elementDimensions.height},q_70/g_north,c_scale,l_LUXOTICARS:watermark,w_230,y_250/v1635907269/LUXOTICARS/bafybeidvysen4oi7su3owebwge5aof7b6ljemtmsyuzbytowdkh5kkpova_k2ud3d.mp4`}
               type="video/mp4"
             />
-            {/* <source
-              src={`https://res.cloudinary.com/dkgbrdmj4/video/upload/c_crop,h_${elementDimensions.height}/v1635907269/LUXOTICARS/bafybeidvysen4oi7su3owebwge5aof7b6ljemtmsyuzbytowdkh5kkpova_k2ud3d.mp4`}
-              type="video/mp4"
-            /> */}
             Your browser does not support the video tag.
           </video>
           <div className="absolute inset-0 bg-gradient-to-t from-black z-50" aria-hidden="true" />

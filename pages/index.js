@@ -9,45 +9,14 @@ import Header from '../components/header.homepage'
 import Layout from '../components/layout.homepage'
 
 export async function getStaticProps ({ preview = false }) {
-  function arraySort (f) {
-    for (let i = this.length; i;) {
-      const o = this[--i]
-      this[i] = [].concat(f.call(o, o, i), o)
-    }
-    this.sort(function (a, b) {
-      for (let i = 0, len = a.length; i < len; ++i) {
-        if (a[i] !== b[i]) return a[i] < b[i] ? -1 : 1
-      }
-      return 0
-    })
-    for (let i = this.length; i;) {
-      this[--i] = this[i][this[i].length - 1]
-    }
-    return this
-  }
-
-  if (typeof Object.defineProperty === 'function') {
-    try {
-      // eslint-disable-next-line no-extend-native
-      Object.defineProperty(Array.prototype, 'sortBy', { value: arraySort })
-    } catch (e) {
-
-    }
-  }
-  if (!Array.prototype.sortBy) {
-    // eslint-disable-next-line no-extend-native
-    Array.prototype.sortBy = arraySort
-  }
-
   const posts = await getAllPosts({ includePages: false })
   const tags = getAllTagsFromPosts(posts)
-  const post = posts.sortBy((o) => -new Date(o.date.start_date))[0]
-  const externalSource = await getCarPhotos(post.slug, preview);
+  const externalSource = await getCarPhotos(posts[0].slug, preview);
   return {
     props: {
       tags,
       post: {
-        ...post,
+        ...posts[0],
         externalSource: externalSource
       }
     },
@@ -82,7 +51,7 @@ export default function Home ({ tags, post }) {
     <Carousel />
     <WelcomeText />
     <YoutubeList />
-    <div className="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:gap-24 lg:items-start">
+    <div className="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:gap-24 lg:items-start min-h-full">
       <LatestPublish post={post} />
       <div className="px-3 mt-3 md:px-0 md:mt-0">
         <BrandsCarousel tags={tags} />

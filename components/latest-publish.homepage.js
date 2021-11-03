@@ -82,6 +82,8 @@ export default function LatestPublish ({ post }) {
               alt={`Latest car on ${WEB.name}`}
               layout="fill"
               objectFit="cover"
+              width={300}
+              height={300}
             />
           </div>
           <div className="relative h-32 w-auto">
@@ -90,6 +92,8 @@ export default function LatestPublish ({ post }) {
               alt={`Latest car on ${WEB.name}`}
               layout="fill"
               objectFit="cover"
+              width={300}
+              height={300}
             />
           </div>
           {photos[3] && (
@@ -99,6 +103,8 @@ export default function LatestPublish ({ post }) {
                 alt={`Latest car on ${WEB.name}`}
                 layout="fill"
                 objectFit="cover"
+                width={300}
+                height={300}
               />
             </div>
           )}
@@ -130,7 +136,6 @@ export default function LatestPublish ({ post }) {
         title={post?.title}
         images={photos}
         section="stock"
-        keywords="prayuth,taksin"
         datePublished={post?.date?.start_date || post.createdTime}
         dateModified={post?.date?.start_date || post.createdTime}
         authorName="Abu Garciá"
