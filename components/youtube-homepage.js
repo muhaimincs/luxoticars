@@ -1,32 +1,13 @@
-import { useEffect } from 'react'
-import { useDimensions } from 'react-hook-dimensions'
 import Link from 'next/link'
-import { useInView } from 'react-intersection-observer'
 import LiteYouTubeEmbed from 'react-lite-youtube-embed'
 
 import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css'
 
 function Yt ({ data }) {
-  const [elementRef, elementDimensions, updateElementDimensions] = useDimensions({
-    dependencies: [],
-    defaults: {
-      height: 300,
-      scrollY: 123
-    },
-    layoutEffect: true
-  })
-  const { inView, ref: inViewRef } = useInView({ threshold: 0, rootMargin: '100px' })
-
-  useEffect(() => {
-    updateElementDimensions()
-  }, [])
-
   return (
-    <div className="group relative" ref={elementRef}>
-      <div ref={inViewRef} className="relative w-full h-80 rounded-lg overflow-hidden group-hover:opacity-75 sm:h-64">
-        {inView && (
-          <LiteYouTubeEmbed id={data.id} title={data.name} />
-        )}
+    <div className="group relative">
+      <div className="relative w-full h-80 rounded-lg overflow-hidden group-hover:opacity-75 sm:h-64">
+        <LiteYouTubeEmbed id={data.id} title={data.name} />
       </div>
       <h3 className="mt-6 text-sm text-gray-500">
         {data.name}
