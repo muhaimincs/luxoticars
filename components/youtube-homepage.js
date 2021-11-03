@@ -2,6 +2,9 @@ import { useEffect } from 'react'
 import { useDimensions } from 'react-hook-dimensions'
 import Link from 'next/link'
 import { useInView } from 'react-intersection-observer'
+import LiteYouTubeEmbed from 'react-lite-youtube-embed'
+
+import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css'
 
 function Yt ({ data }) {
   const [elementRef, elementDimensions, updateElementDimensions] = useDimensions({
@@ -22,16 +25,7 @@ function Yt ({ data }) {
     <div className="group relative" ref={elementRef}>
       <div ref={inViewRef} className="relative w-full h-80 rounded-lg overflow-hidden group-hover:opacity-75 sm:h-64">
         {inView && (
-          <iframe
-            className="h-full w-full"
-            src={`${data.href}?controls=0`}
-            title={data.name}
-            frameBorder="0"
-            width={elementDimensions.width}
-            height={elementDimensions.height}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
+          <LiteYouTubeEmbed id={data.id} title={data.name} />
         )}
       </div>
       <h3 className="mt-6 text-sm text-gray-500">
@@ -44,18 +38,21 @@ function Yt ({ data }) {
 
 const callouts = [
   {
+    id: 'Qwh7N_ecZe8',
     name: 'RM5,000,000 FERRARI SF90 STRADALE | PART 1',
     description: 'Allow me to introduce a good friend of mine; Mr. Weng Kee. Owner of Victoria Motorsport and has been in motorsport industry for more than a decade. Well, today he lend me one of his new "toys"',
     imageSrc: 'https://i.ytimg.com/vi/Qwh7N_ecZe8/maxresdefault.jpg',
     href: 'https://www.youtube.com/embed/Qwh7N_ecZe8'
   },
   {
+    id: 'pmwe3A2ScCc',
     name: 'MERCEDES AMG E300 COUPE\' MILIK SI DIA // #WEDelivery',
     description: 'To Daiyan Trisha, may success be with you with your big laughter and sweet smile. Enjoy your dream car and drive safely and jangan lupa CHAI!',
     imageSrc: 'https://i.ytimg.com/vi/pmwe3A2ScCc/maxresdefault.jpg',
     href: 'https://www.youtube.com/embed/pmwe3A2ScCc'
   },
   {
+    id: 'oXWWgw2HIO4',
     name: 'MCLAREN 600LT TRACK ORIENTED CAR',
     description: 'For the 600LT it’s simple. A focus on pure driving exhilaration. Nothing more. From the top-exit exhausts to the race car-inspired carbon fibre bodywork, we have pushed the boundaries to set a new sportscar benchmark.',
     imageSrc: 'https://i.ytimg.com/vi/oXWWgw2HIO4/maxresdefault.jpg',
@@ -79,7 +76,7 @@ export default function YoutubePage () {
         </div>
         <div className="py-8 max-w-sm mx-auto">
           <div className="flex items-center rounded-md shadow">
-            <Link href="/gallery">
+            <Link href="/gallery" prefetch={false}>
               <a
                 className="inline-flex w-full items-center justify-center px-5 py-3 border border-transparent bg-white text-gray-800 py-4 text-lg px-3 ring ring-gray-200 ring-opacity-50 ring-offset-4 ring-offset-gray-700"
               >

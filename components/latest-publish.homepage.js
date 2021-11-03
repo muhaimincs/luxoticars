@@ -80,7 +80,6 @@ export default function LatestPublish ({ post }) {
             <Image
               src={photos[1]}
               alt={`Latest car on ${WEB.name}`}
-              layout="fill"
               objectFit="cover"
               width={300}
               height={300}
@@ -90,7 +89,6 @@ export default function LatestPublish ({ post }) {
             <Image
               src={photos[2]}
               alt={`Latest car on ${WEB.name}`}
-              layout="fill"
               objectFit="cover"
               width={300}
               height={300}
@@ -101,7 +99,6 @@ export default function LatestPublish ({ post }) {
               <Image
                 src={photos[3]}
                 alt={`Latest car on ${WEB.name}`}
-                layout="fill"
                 objectFit="cover"
                 width={300}
                 height={300}
