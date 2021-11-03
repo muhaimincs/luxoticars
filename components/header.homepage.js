@@ -13,6 +13,7 @@ import {
 } from 'body-scroll-lock'
 import Image from 'next/image'
 
+import s from './header.homepage.module.css'
 import WEB from '../web.config'
 import LuxoticarsLogo from '../public/LUXOTICARS.svg'
 import LuxoticarsWhiteFont from '../public/LUXOTICARS_WHITE_FONT.svg'
@@ -46,35 +47,19 @@ export default function Example () {
   const handler = ([entry]) => {
     if (navRef && navRef.current) {
       if (!entry.isIntersecting && entry !== undefined) {
-        navRef.current.classList.add('backdrop-blur-lg')
-        navRef.current.classList.add('bg-gradient-to-r')
-        navRef.current.classList.add('from-[#21252999]')
-        navRef.current.classList.add('via-[#2125293d]')
-        navRef.current.classList.add('to-gray-900')
-        navRef.current.classList.add('bg-opacity-25')
+        navRef.current.classList.add(s.glass)
+        navRef.current.classList.add(s['navref-glass'])
         navRef.current.classList.add('translate-y-0')
         navRef.current.classList.remove('translate-y-full')
 
-        mainNav.current.classList.add('backdrop-blur-lg')
-        mainNav.current.classList.add('bg-gradient-to-r')
-        mainNav.current.classList.add('from-[#21252999]')
-        mainNav.current.classList.add('via-[#2125293d]')
-        mainNav.current.classList.add('to-gray-900')
+        mainNav.current.classList.add(s.glass)
       } else {
-        navRef.current.classList.remove('backdrop-blur-lg')
-        navRef.current.classList.remove('bg-gradient-to-r')
-        navRef.current.classList.remove('from-[#21252999]')
-        navRef.current.classList.remove('via-[#2125293d]')
-        navRef.current.classList.remove('to-gray-900')
-        navRef.current.classList.remove('bg-opacity-25')
+        navRef.current.classList.remove(s.glass)
+        navRef.current.classList.remove(s['navref-glass'])
         navRef.current.classList.remove('translate-y-0')
         navRef.current.classList.add('translate-y-full')
 
-        mainNav.current.classList.remove('backdrop-blur-lg')
-        mainNav.current.classList.remove('bg-gradient-to-r')
-        mainNav.current.classList.remove('from-[#21252999]')
-        mainNav.current.classList.remove('via-[#2125293d]')
-        mainNav.current.classList.remove('to-gray-900')
+        mainNav.current.classList.remove(s.glass)
       }
     }
   }
@@ -101,11 +86,11 @@ export default function Example () {
 
   return (
     <>
-    <div className="bg-transparent observer-element h-4" ref={sentinalRef} />
-    <Popover className="md:sticky md:top-0 z-50">
+    <div className={`observer-element ${s.sentinel}`} ref={sentinalRef} />
+    <Popover className={s.nav}>
       {({ open }) => (
         <>
-          <div ref={mainNav} className="transition-colors transition-opacity transition-shadow backdrop-filter">
+          <div ref={mainNav} className={s['main-nav']}>
             <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
               <div className="relative flex items-center justify-between h-16">
                 <div className="absolute inset-y-0 left-0 flex items-center sm:hidden pl-2 pr-5">
@@ -222,11 +207,11 @@ export default function Example () {
               </div>
             </div>
           </div>
-          <div id="bottom" ref={navRef} className="fixed z-40 md:hidden bottom-0 left-0 right-0 max-w-7xl mx-auto transform backdrop-filter">
+          <div id="bottom" ref={navRef} className={s['bottom-nav']}>
             <div className="relative flex items-center justify-between h-16 sm:px-6 lg:px-8">
               <div className="bg-transparent flex items-center pl-2 pr-5">
                 {/* Mobile menu button */}
-                <Popover.Button className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                <Popover.Button className={s['popover-button']}>
                   <span className="sr-only">Open main menu</span>
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h8m-8 6h16" />
@@ -240,7 +225,7 @@ export default function Example () {
                 </div>
               </div>
             </div>
-            <div className="text-gray-100 text-xs bg-black text-center pt-2 pb-3">
+            <div className={s.copyright}>
               Copyright © 2021 Luxoticars Sdn. Bhd. All rights reserved.
             </div>
           </div>
@@ -266,7 +251,7 @@ export default function Example () {
                       <Image src={LuxoticarsWhiteFont} alt="Luxoticars" width={140} layout="intrinsic" />
                     </div>
                     <div>
-                      <Popover.Button className="bg-gray-700 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                      <Popover.Button className={s['popover-button']}>
                         <span className="sr-only">Close menu</span>
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -293,7 +278,7 @@ export default function Example () {
                   <address className="text-xs font-sans text-white pb-3">No 253 Jalan Ampang Hilir Off Jalan U-Thant 50450 Kuala Lumpur</address>
                   <p className="text-white text-xs">Copyright © 2021 Luxoticars Sdn. Bhd. All rights reserved.</p>
                   <ul className="text-white text-xs flex items-center space-x-2 pt-0 py-6">
-                    <li className="flex items-center">
+                    <li className={s['flex-items-center']}>
                       <a>Terms & Conditions</a>
                       <svg
                         width={16}
@@ -307,7 +292,7 @@ export default function Example () {
                         <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
                       </svg>
                     </li>
-                    <li className="flex items-center">
+                    <li className={s['flex-items-center']}>
                       <a>Privacy</a>
                       <svg
                         width={16}
@@ -321,7 +306,7 @@ export default function Example () {
                         <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
                       </svg>
                     </li>
-                    <li className="flex items-center">
+                    <li className={s['flex-items-center']}>
                       <a>Cookie Preference</a>
                     </li>
                   </ul>
