@@ -5,14 +5,11 @@ import 'swiper/css'
 
 import { useEffect } from 'react'
 import Script from 'next/script'
-import dynamic from 'next/dynamic'
 import { DefaultSeo } from 'next-seo'
 import { useRouter } from 'next/router'
 
 import WEB from '../web.config'
 import { GTM_ID, pageview } from '../lib/gtm'
-
-const Gtag = dynamic(() => import('../components/Gtag'), { ssr: false })
 
 function MyApp ({ Component, pageProps }) {
   const getLayout = Component.getLayout || ((page) => page)
@@ -79,7 +76,6 @@ function MyApp ({ Component, pageProps }) {
           }
         ]}
       />
-      <Gtag />
       <Script
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
