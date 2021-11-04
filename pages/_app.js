@@ -63,10 +63,10 @@ function MyApp ({ Component, pageProps }) {
             crossOrigin: true
           }, {
             rel: 'preload',
-            href: 'https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,700;1,300&display=optional'
+            href: 'https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,700;1,300&display=swap'
           }, {
             rel: 'stylesheet',
-            href: 'https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,700;1,300&display=optional'
+            href: 'https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,700;1,300&display=swap'
           }, {
             rel: 'preload',
             href: 'https://fonts.googleapis.com/css2?family=Bonheur+Royale&display=swap'
