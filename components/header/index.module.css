@@ -33,3 +33,15 @@
 .copyright {
   @apply text-gray-100 text-xs bg-black text-center pt-2 pb-3;
 }
+
+.mobile-nav {
+  @apply grid grid-cols-3 gap-4;
+}
+
+.mobile-footer {
+  @apply px-6 py-4;
+}
+
+.svg-icon {
+  @apply h-6 w-6;
+}

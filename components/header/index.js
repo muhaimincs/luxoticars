@@ -12,13 +12,15 @@ import {
   enableBodyScroll
 } from 'body-scroll-lock'
 import Image from 'next/image'
+import { useMediaQuery } from 'beautiful-react-hooks'
 
-import s from './header.homepage.module.css'
-import WEB from '../web.config'
-import LuxoticarsLogo from '../public/LUXOTICARS.svg'
-import LuxoticarsWhiteFont from '../public/LUXOTICARS_WHITE_FONT.svg'
-import Mudah from '../public/img/props/mudah.gif'
-import Telegram from '../public/img/props/telegram.svg'
+import s from './index.module.css'
+import WEB from '../../web.config'
+import LuxoticarsLogo from '../../public/LUXOTICARS.svg'
+import LuxoticarsWhiteFont from '../../public/LUXOTICARS_WHITE_FONT.svg'
+import Mudah from '../../public/img/props/mudah.gif'
+import Telegram from '../../public/img/props/telegram.svg'
+import BottomNav from './bottom-nav'
 
 function classNames (...classes) {
   return classes.filter(Boolean).join(' ')
@@ -38,6 +40,7 @@ export default function Example () {
   const mainNav = useRef(null)
   const contentRef = useRef()
   const router = useRouter()
+  const isSmall = useMediaQuery('(max-width: 48rem)')
   const logoClassName = useMemo(() => {
     if (router.pathname === '/gallery') {
       return 'hidden md:block lg:hidden'
@@ -97,7 +100,7 @@ export default function Example () {
                   {/* Mobile menu button */}
                   <Popover.Button className="bg-gray-700/50 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                     <span className="sr-only">Open main menu</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className={s['svg-icon']} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h8m-8 6h16" />
                     </svg>
                   </Popover.Button>
@@ -208,26 +211,7 @@ export default function Example () {
             </div>
           </div>
           <div id="bottom" ref={navRef} className={s['bottom-nav']}>
-            <div className="relative flex items-center justify-between h-16 sm:px-6 lg:px-8">
-              <div className="bg-transparent flex items-center pl-2 pr-5">
-                {/* Mobile menu button */}
-                <Popover.Button className={s['popover-button']}>
-                  <span className="sr-only">Open main menu</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h8m-8 6h16" />
-                  </svg>
-                </Popover.Button>
-              </div>
-              <div className="flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 space-x-3">
-                <Image src={LuxoticarsLogo} alt="Luxoticars" height={52} width={34} />
-                <div className="relative">
-                  <Image src={LuxoticarsWhiteFont} alt="Luxoticars" height={10} width={158} />
-                </div>
-              </div>
-            </div>
-            <div className={s.copyright}>
-              Copyright © 2021 Luxoticars Sdn. Bhd. All rights reserved.
-            </div>
+            {isSmall && <BottomNav />}
           </div>
           <Transition
             as={Fragment}
@@ -253,14 +237,14 @@ export default function Example () {
                     <div>
                       <Popover.Button className={s['popover-button']}>
                         <span className="sr-only">Close menu</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg xmlns="http://www.w3.org/2000/svg" className={s['svg-icon']} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                         </svg>
                       </Popover.Button>
                     </div>
                   </div>
                   <div className="mt-6">
-                    <nav className="grid gap-y-8">
+                    <nav className={s['mobile-nav']}>
                       {navigation.map((item) => (
                         <Link key={item.name} href={item.href}>
                         <a
@@ -273,7 +257,7 @@ export default function Example () {
                     </nav>
                   </div>
                 </div>
-                <div className="px-3 pt-4 pb-28">
+                <div className={s['mobile-footer']}>
                   <p className="font-sans font-semibold text-white">Visit us:</p>
                   <address className="text-xs font-sans text-white pb-3">No 253 Jalan Ampang Hilir Off Jalan U-Thant 50450 Kuala Lumpur</address>
                   <p className="text-white text-xs">Copyright © 2021 Luxoticars Sdn. Bhd. All rights reserved.</p>

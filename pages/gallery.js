@@ -71,7 +71,7 @@ export default function GalleryPage ({ post, blockMap }) {
 
 GalleryPage.getLayout = function getLayout (page) {
   const Header = dynamic(
-    () => import('../components/header.homepage'),
+    () => import('../components/header'),
     { ssr: false }
   )
   const Layout = dynamic(

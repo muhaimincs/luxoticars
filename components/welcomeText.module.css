@@ -4,6 +4,9 @@
   animation: flicker 1.5s infinite alternate;
 }
 
+.wrapper {
+  @apply max-w-7xl mx-auto w-screen flex flex-col items-center justify-center mt-72 mb-40 iphone5:mb-28;
+}
 @media screen and (prefers-reduced-motion) { 
   .neonText {
     animation: none;

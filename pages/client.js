@@ -57,7 +57,7 @@ export default function ClientPage ({ post, blockMap }) {
 
 ClientPage.getLayout = function getLayout (page) {
   const Header = dynamic(
-    () => import('../components/header.homepage'),
+    () => import('../components/header'),
     { ssr: false }
   )
   const Footer = dynamic(

@@ -6,9 +6,7 @@ import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css'
 function Yt ({ data }) {
   return (
     <div className="group relative">
-      <div className="relative w-full h-80 rounded-lg overflow-hidden group-hover:opacity-75 sm:h-64">
-        <LiteYouTubeEmbed id={data.id} title={data.name} />
-      </div>
+      <LiteYouTubeEmbed id={data.id} title={data.name} wrapperClass="relative w-full h-80 rounded-lg overflow-hidden group-hover:opacity-75 sm:h-64" />
       <h3 className="mt-6 text-sm text-gray-500">
         {data.name}
       </h3>

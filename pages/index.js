@@ -5,7 +5,7 @@ import WEB from '../web.config'
 import { getAllPosts, getAllTagsFromPosts } from '../lib/notion'
 import { getCarPhotos } from '../lib/contentful'
 import WelcomeText from '../components/welcomeText'
-import Header from '../components/header.homepage'
+import Header from '../components/header'
 import Layout from '../components/layout.homepage'
 
 export async function getStaticProps ({ preview = false }) {

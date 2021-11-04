@@ -17,7 +17,7 @@ function Tags ({ tag, base, index, total }) {
       className="flex-none"
       style={{ x }}
     >
-      <Link href={`/tag/${tag}`}>
+      <Link href={`/tag/${tag}`} prefetch={false}>
         <a
           className="flex-none"
           initial={false}

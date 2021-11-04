@@ -1,7 +1,8 @@
-import { useMemo } from 'react'
+import { useMemo, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { CarouselJsonLd, NewsArticleJsonLd } from 'next-seo';
+import { CarouselJsonLd, NewsArticleJsonLd } from 'next-seo'
+import { useDimensions } from 'react-hook-dimensions'
 
 import formatDate from '../lib/formatDate'
 import WEB from '../web.config'
@@ -28,6 +29,19 @@ export default function LatestPublish ({ post }) {
     }
     return 'grid grid-cols-2 gap-0'
   }, [photos])
+  const [elementRef, elementDimensions, updateElementDimensions] = useDimensions({
+    dependencies: [],
+    defaults: {
+      height: 300,
+      scrollY: 150
+    },
+    layoutEffect: true
+  })
+
+  useEffect(() => {
+    updateElementDimensions()
+  }, [])
+
   return (
     <div className="relative sm:py-16 lg:py-0">
       <div aria-hidden="true" className="hidden sm:block lg:absolute lg:inset-y-0 lg:right-0 lg:w-screen">
@@ -56,12 +70,13 @@ export default function LatestPublish ({ post }) {
       </div>
       <div className="relative mx-auto max-w-md px-3 sm:max-w-3xl sm:px-6 lg:px-0 lg:max-w-none lg:py-20">
         <div className="relative rounded-t-xl overflow-hidden">
-          <div className="relative h-64 w-auto">
+          <div className="relative h-64 w-auto" ref={elementRef}>
             <Image
               src={photos[0]}
               alt={`Latest car on ${WEB.name}`}
-              layout="fill"
               objectFit="cover"
+              width={elementDimensions.width}
+              height={elementDimensions.height}
             />
           </div>
           <div className="absolute bottom-[5px] left-0 m-3 overflow-hidden">
@@ -122,7 +137,7 @@ export default function LatestPublish ({ post }) {
             </p>
           </div>
           <div className="my-8 px-2">
-            <Link href={post?.slug}>
+            <Link href={post?.slug} prefetch={false}>
               <a className="bg-white text-gray-800 py-4 text-lg px-3 ring ring-gray-200 ring-opacity-50 ring-offset-4 ring-offset-gray-700">&rsaquo; Show Details</a>
             </Link>
           </div>

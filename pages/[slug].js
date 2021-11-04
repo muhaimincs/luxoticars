@@ -314,7 +314,7 @@ export default function CarPage ({ post, blockMap }) {
 
 CarPage.getLayout = function getLayout (page) {
   const Header = dynamic(
-    () => import('../components/header.homepage')
+    () => import('../components/header')
   )
   const Footer = dynamic(
     () => import('../components/footer'),

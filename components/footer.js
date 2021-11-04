@@ -1,7 +1,7 @@
 import Image from 'next/image'
-import { navigation } from './header.homepage'
 import { LogoJsonLd, SocialProfileJsonLd } from 'next-seo'
 
+import { navigation } from './header/index'
 import RedShoes from '../public/RS_002.svg'
 import Mudah from '../public/img/props/mudah.gif'
 import Telegram from '../public/img/props/telegram.svg'

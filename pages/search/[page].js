@@ -64,7 +64,7 @@ export async function getStaticPaths () {
 
 Page.getLayout = function getLayout (page) {
   const Header = dynamic(
-    () => import('../../components/header.homepage'),
+    () => import('../../components/header'),
     { ssr: false }
   )
   const Layout = dynamic(

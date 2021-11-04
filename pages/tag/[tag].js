@@ -79,7 +79,7 @@ export async function getStaticPaths () {
 
 TagPage.getLayout = function getLayout (page) {
   const Header = dynamic(
-    () => import('../../components/header.homepage'),
+    () => import('../../components/header'),
     { ssr: false }
   )
   const Footer = dynamic(
