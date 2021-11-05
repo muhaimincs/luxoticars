@@ -45,7 +45,7 @@ export async function getStaticProps ({ params: { slug }, preview }) {
     : []
   let interiorPhotos = post?.['Interior Photos']
     ? post?.['Interior Photos'].split(',')
-    : []
+    : ''
   const brandName = post.tags[0]?.replace(/-/g, ' ')
   if (externalSource.length) {
     exteriorPhotos = externalSource[0].photos.map((img) => ({
@@ -53,9 +53,11 @@ export async function getStaticProps ({ params: { slug }, preview }) {
       details: img?.fields?.file?.details,
       contentType: img?.fields?.file?.contentType
     }))
-    interiorPhotos = externalSource[0].interiorPhotos.map((img) => 
-      `https:${img?.fields?.file?.url}`
-    )
+    if (externalSource[0].interiorPhotos) { 
+      interiorPhotos = externalSource[0].interiorPhotos.map((img) => 
+        `https:${img?.fields?.file?.url}`
+      )
+    }
   }
   return {
     props: {
@@ -64,7 +66,7 @@ export async function getStaticProps ({ params: { slug }, preview }) {
         brandName,
         externalSource,
         exteriorPhotos,
-        'Interior Photos': interiorPhotos,
+        'Interior Photos': interiorPhotos.toString(),
       },
       blockMap
     },
