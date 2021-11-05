@@ -6,7 +6,7 @@ import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css'
 function Yt ({ data }) {
   return (
     <div className="group relative">
-      <LiteYouTubeEmbed id={data.id} title={data.name} wrapperClass="relative w-full h-80 rounded-lg overflow-hidden group-hover:opacity-75 sm:h-64" />
+      <LiteYouTubeEmbed id={data.id} title={data.name} wrapperClass="relative w-full h-64 rounded-lg overflow-hidden group-hover:opacity-75" />
       <h3 className="mt-6 text-sm text-gray-500">
         {data.name}
       </h3>
@@ -47,7 +47,7 @@ export default function YoutubePage () {
           <span className="z-10 shadow-xl md:bg-black md:-mt-6 md:mb-6 whitespace-pre text-white text-center text-xs sm:text-md lg:text-lg font-bold border-2 border rounded-md py-1 px-1 md:px-2">
             Delivery Stories
           </span>
-          <div className="-mt-3 space-y-12 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-x-6">
+          <div className="-mt-3 space-y-12 md:space-y-0 md:grid md:grid-cols-3 md:gap-x-6">
             {callouts.map((callout) => (
               <Yt key={callout.name} data={callout} />
             ))}
