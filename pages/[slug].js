@@ -64,7 +64,6 @@ export async function getStaticProps ({ params: { slug }, preview }) {
       post: {
         ...post,
         brandName,
-        externalSource,
         exteriorPhotos,
         'Interior Photos': interiorPhotos.toString(),
       },
