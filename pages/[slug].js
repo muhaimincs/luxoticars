@@ -64,7 +64,7 @@ export async function getStaticProps ({ params: { slug }, preview }) {
         brandName,
         externalSource,
         exteriorPhotos,
-        ['Interior Photos']: interiorPhotos,
+        'Interior Photos': interiorPhotos,
       },
       blockMap
     },
