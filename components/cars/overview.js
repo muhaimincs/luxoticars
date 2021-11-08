@@ -3,14 +3,11 @@ import { Dialog, Transition } from '@headlessui/react'
 import Image from 'next/image'
 import dynamic from 'next/dynamic'
 
-// import Swiper from './swiper'
-
 const Swiper = dynamic(
   () => import('./swiper')
 )
 
-const CarOverview = ({ photos, isLarge = true, defaultAlt }) => {
-  console.log(photos)
+const CarOverview = ({ photos = [], isLarge = true, defaultAlt }) => {
   let [isOpen, setIsOpen] = useState(null)
 
   const closeDialog = () => setIsOpen(null)

@@ -177,7 +177,7 @@ export default function CarPage ({ post, blockMap }) {
         <li>&raquo;</li>
         <li><Link href={`/tag/${post?.tags[0]}`}><a className="capitalize">{post?.brandName}</a></Link></li>
       </ul>
-      {interiorGallery.length && (
+      {interiorGallery?.length && (
         <ul className="text-gray-400 flex space-x-3 text-xs">
           <li className="text-gray-500 font-semibold">View:</li>
           <li className={renderExteriorGalleryClassname}><Link href={`/${post?.slug}?gallery=exterior`}><a>Exterior</a></Link></li>
@@ -200,7 +200,7 @@ export default function CarPage ({ post, blockMap }) {
           )
         : (
         <PhotoBigLayout
-          photos={interiorGallery.map((photo) => photo)}
+          photos={interiorGallery?.map((photo) => photo)}
           isLarge={isLarge}
           defaultAlt={post?.title}
         />
