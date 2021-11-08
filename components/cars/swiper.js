@@ -23,19 +23,16 @@ const SwiperComponent = ({ photos, initialSlide = 0 }) => {
       slidesPerView={1}
       centeredSlides={true}
       initialSlide={initialSlide}
-      // spaceBetween={}
       loop={true}
-      // loopFillGroupWithBlank={true}
       pagination={{
         clickable: true,
         dynamicBullets: true
       }}
-      className="min-h-full rounded-2xl">
+      className="rounded-2xl">
         {photos.map((photo) => (
           <SwiperSlide key={photo}>
             <div className="swiper-zoom-container">
-              {/* <img src={photo} className="min-h-full" loading="lazy" /> */}
-              <div className="relative w-full h-[70vh]">
+              <div className="relative w-96 h-auto">
                 <Image src={photo} layout="fill" objectFit="cover" />
               </div>
             </div>

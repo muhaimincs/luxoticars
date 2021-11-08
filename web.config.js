@@ -1,7 +1,7 @@
 const WEB = {
   name: 'LUXOTICARS',
   lang: 'en-US',
-  link: 'https://luxoticars.cc',
+  link: 'https://www.luxoticars.cc',
   description: 'The Syndicate Carlifestyle Cartel',
   telephone: '+6017 328 3839',
   address: {
@@ -17,7 +17,7 @@ const WEB = {
   notionAccessToken: process.env.NOTION_ACCESS_TOKEN,
   analytics: {
     gaConfig: {
-      measurementId: 'G-E645Q3EN3H' // e.g: G-XXXXXXXXXX
+      measurementId: 'G-E645Q3EN3H'
     }
   },
   isProd: process.env.VERCEL_ENV === 'production'

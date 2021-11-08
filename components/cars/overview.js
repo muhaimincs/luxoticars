@@ -17,42 +17,40 @@ const CarOverview = ({ photos = [], isLarge = true, defaultAlt }) => {
 
   return (
     <>
-    <div className={`mt-3 max-w-2xl mx-auto sm:px-6 lg:max-w-7xl lg:px-0 lg:grid ${photos[3] ? 'lg:grid-cols-3' : 'lg:grid-cols-2'} lg:gap-x-8`}>
-      {isLarge ? (
+    {!isLarge ? (
+      <Swiper photos={photos} initialSlide={0} />
+    ) : (
+      <div className={`mt-3 max-w-2xl mx-auto sm:px-6 lg:max-w-7xl lg:px-0 lg:grid ${photos[3] ? 'lg:grid-cols-3' : 'lg:grid-cols-2'} lg:gap-x-8`}>
         <div className="aspect-w-4 aspect-h-5 sm:rounded-lg sm:overflow-hidden lg:aspect-w-3 lg:aspect-h-4">
           <div className="w-full h-full cursor-pointer" onClick={() => openModal(true)}>
             <Image src={photos[0]} objectFit="cover" objectPosition="center" layout="fill" alt={defaultAlt} />
           </div>
         </div>
-      ) : (
-        <div className="">
-          <Swiper photos={photos} initialSlide={0} />
-        </div>
-      )}
-      {isLarge && (
-        <>
-          <div className="hidden lg:grid lg:grid-cols-1 lg:gap-y-8">
-            <div className="aspect-w-3 aspect-h-2 rounded-lg overflow-hidden">
-              <div className="w-full h-full cursor-pointer" onClick={() => openModal(1)}>
-                <Image src={photos[1]} objectFit="cover" objectPosition="center" layout="fill" alt={defaultAlt} />
+        {isLarge && (
+          <>
+            <div className="hidden lg:grid lg:grid-cols-1 lg:gap-y-8">
+              <div className="aspect-w-3 aspect-h-2 rounded-lg overflow-hidden">
+                <div className="w-full h-full cursor-pointer" onClick={() => openModal(1)}>
+                  <Image src={photos[1]} objectFit="cover" objectPosition="center" layout="fill" alt={defaultAlt} />
+                </div>
+              </div>
+              <div className="aspect-w-3 aspect-h-2 rounded-lg overflow-hidden">
+                <div className="w-full h-full cursor-pointer" onClick={() => openModal(2)}>
+                  <Image src={photos[2]} objectFit="cover" objectPosition="center" layout="fill" alt={defaultAlt} />
+                </div>
               </div>
             </div>
-            <div className="aspect-w-3 aspect-h-2 rounded-lg overflow-hidden">
-              <div className="w-full h-full cursor-pointer" onClick={() => openModal(2)}>
-                <Image src={photos[2]} objectFit="cover" objectPosition="center" layout="fill" alt={defaultAlt} />
+            {photos[3] && (
+              <div className="hidden aspect-w-3 aspect-h-4 rounded-lg overflow-hidden lg:block">
+                <div className="w-full h-full cursor-pointer" onClick={() => openModal(3)}>
+                  <Image src={photos[3]} objectFit="cover" objectPosition="center" layout="fill" alt={defaultAlt} />
+                </div>
               </div>
-            </div>
-          </div>
-          {photos[3] && (
-            <div className="hidden aspect-w-3 aspect-h-4 rounded-lg overflow-hidden lg:block">
-              <div className="w-full h-full cursor-pointer" onClick={() => openModal(3)}>
-                <Image src={photos[3]} objectFit="cover" objectPosition="center" layout="fill" alt={defaultAlt} />
-              </div>
-            </div>
-          )}
-        </>
-      )}
-    </div>
+            )}
+          </>
+        )}
+      </div>
+    )}
     {isLarge && (
       <Transition
         show={!!isOpen}
@@ -86,7 +84,7 @@ const CarOverview = ({ photos = [], isLarge = true, defaultAlt }) => {
               leaveFrom="opacity-100"
               leaveTo="opacity-0"
             >
-              <div className="w-full h-[70vh] max-w-md md:max-w-2xl lg:max-w-7xl transition-all transform bg-gray-100 shadow-xl rounded-2xl">
+              <div className="w-full h-full max-w-md md:max-w-2xl lg:max-w-5xl transition-all transform bg-gray-100 shadow-xl rounded-2xl">
                 {!!isOpen && <Swiper photos={photos} initialSlide={isOpen} />}
               </div>
             </Transition.Child>
