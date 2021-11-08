@@ -32,7 +32,7 @@ const SwiperComponent = ({ photos, initialSlide = 0 }) => {
         {photos.map((photo) => (
           <SwiperSlide key={photo}>
             <div className="swiper-zoom-container">
-              <div className="relative w-96 h-auto">
+              <div className="relative w-full h-96">
                 <Image src={photo} layout="fill" objectFit="cover" />
               </div>
             </div>
