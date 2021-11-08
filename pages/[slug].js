@@ -7,12 +7,6 @@ import 'katex/dist/katex.min.css'
 import { useMemo } from 'react'
 import dynamic from 'next/dynamic'
 import { NextSeo, BreadcrumbJsonLd, ProductJsonLd } from 'next-seo'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import SwiperCore, {
-  Zoom,
-  Navigation,
-  Pagination
-} from 'swiper'
 import { NotionRenderer, Equation, Code, CollectionRow, Collection } from 'react-notion-x'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -23,13 +17,6 @@ import { getAllPosts, getPostBlocks } from '../lib/notion'
 import { getCarPhotos } from '../lib/contentful'
 import formatDate from '../lib/formatDate'
 import Layout from '../components/layout.homepage'
-
-import 'swiper/css'
-import 'swiper/css/zoom'
-import 'swiper/css/navigation'
-import 'swiper/css/pagination'
-
-SwiperCore.use([Zoom, Navigation, Pagination])
 
 const mapPageUrl = id => {
   return 'https://www.notion.so/' + id.replace(/-/g, '')
@@ -100,6 +87,10 @@ const Wheels = dynamic(
   () => import('../components/wheels.car'), {
     ssr: false
   }
+)
+
+const PhotoBigLayout = dynamic(
+  () => import('../components/cars/overview')
 )
 export default function CarPage ({ post, blockMap }) {
   const interiorGallery = post && post['Interior Photos'] ? post['Interior Photos'].split(',') : []
@@ -198,57 +189,21 @@ export default function CarPage ({ post, blockMap }) {
     <div className="relative mt-3 mb-8">
       {(!router.query.gallery || router.query.gallery === 'exterior')
         ? (
-        <Swiper
-          style={{ '--swiper-navigation-color': '#fff', '--swiper-pagination-color': '#fff' }}
-          zoom={true}
-          navigation={true}
-          autoHeight={true}
-          slidesPerView={isLarge ? '3' : 1}
-          centeredSlides={true}
-          // spaceBetween={}
-          loop={true}
-          loopFillGroupWithBlank={true}
-          pagination={{
-            clickable: true,
-            dynamicBullets: true
-          }}
-          className="min-h-full">
-            {post?.exteriorPhotos.map((photo) => {
+          <PhotoBigLayout
+            photos={post?.exteriorPhotos.map((photo) => {
               const url = photo?.url ? photo.url : photo
-              return (
-                <SwiperSlide key={url}>
-                  <div className="swiper-zoom-container">
-                    <img src={url} className="min-h-full" loading="lazy" />
-                  </div>
-                </SwiperSlide>
-              )
+              return url
             })}
-        </Swiper>
+            isLarge={isLarge}
+            defaultAlt={post?.title}
+          />
           )
         : (
-        <Swiper
-          style={{ '--swiper-navigation-color': '#fff', '--swiper-pagination-color': '#fff' }}
-          zoom={true}
-          navigation={true}
-          autoHeight={true}
-          slidesPerView={isLarge ? 1 : 'auto'}
-          centeredSlides={true}
-          // spaceBetween={}
-          loop={true}
-          // loopFillGroupWithBlank={true}
-          pagination={{
-            clickable: true,
-            dynamicBullets: true
-          }}
-          className="min-h-full h-72">
-            {interiorGallery.map((photo) => (
-              <SwiperSlide key={photo}>
-                <div className="swiper-zoom-container">
-                  <img src={photo} className="min-h-full" loading="lazy" />
-                </div>
-              </SwiperSlide>
-            ))}
-        </Swiper>
+        <PhotoBigLayout
+          photos={interiorGallery.map((photo) => photo)}
+          isLarge={isLarge}
+          defaultAlt={post?.title}
+        />
           )}
       <div className="absolute top-0 inset-x-0 z-10 bg-gradient-to-b from-black max-w-7xl xl:max-w-screen-2xl mx-auto">
         <h1 className="my-5 text-white text-lg md:text-5xl text-center w-[var(--notion-max-width)] px-[2vw] xl:px-[calc(min(12px,8vw))] mx-auto max-w-full">{post?.title}</h1>
