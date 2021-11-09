@@ -29,18 +29,11 @@ const Carousel = () => {
   return (
     <div className="absolute inset-0 w-screen overflow-hidden z-[-100]" ref={elementRef}>
       <Swiper
-        // onSwiper={setSwiperRef}
         style={{ '--swiper-navigation-color': '#fff', '--swiper-pagination-color': '#fff' }}
-        // autoHeight={true}
-        // spaceBetween={50}
-        // pagination={{
-        //   type: 'fraction'
-        // }}
         loop
         effect={'fade'}
         centeredSlides={true}
         className="w-full h-3/4"
-        // virtual
       >
         <SwiperSlide data-swiper-autoplay="30000">
           <video
@@ -56,11 +49,11 @@ const Carousel = () => {
             height={elementDimensions.height}
           >
             <source
-              src={`https://res.cloudinary.com/dkgbrdmj4/video/upload/ac_none,c_fit,e_deshake:16,h_${elementDimensions.height},q_70/g_north,c_scale,l_LUXOTICARS:watermark,w_230,y_250/v1635907269/LUXOTICARS/bafybeidvysen4oi7su3owebwge5aof7b6ljemtmsyuzbytowdkh5kkpova_k2ud3d.webm`}
+              src={`https://res.cloudinary.com/dkgbrdmj4/video/upload/ac_none,c_fit,e_deshake:16,h_${elementDimensions.height},q_70/g_north,c_scale,l_LUXOTICARS:watermark,w_180,y_180/v1635907269/LUXOTICARS/bafybeidvysen4oi7su3owebwge5aof7b6ljemtmsyuzbytowdkh5kkpova_k2ud3d.webm`}
               type="video/webm"
             />
             <source
-              src={`https://res.cloudinary.com/dkgbrdmj4/video/upload/ac_none,c_fit,e_deshake:16,h_${elementDimensions.height},q_70/g_north,c_scale,l_LUXOTICARS:watermark,w_230,y_250/v1635907269/LUXOTICARS/bafybeidvysen4oi7su3owebwge5aof7b6ljemtmsyuzbytowdkh5kkpova_k2ud3d.mp4`}
+              src={`https://res.cloudinary.com/dkgbrdmj4/video/upload/ac_none,c_fit,e_deshake:16,h_${elementDimensions.height},q_70/g_north,c_scale,l_LUXOTICARS:watermark,w_180,y_180/v1635907269/LUXOTICARS/bafybeidvysen4oi7su3owebwge5aof7b6ljemtmsyuzbytowdkh5kkpova_k2ud3d.mp4`}
               type="video/mp4"
             />
             Your browser does not support the video tag.

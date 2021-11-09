@@ -26,23 +26,18 @@ export async function getStaticProps ({ preview = false }) {
 
 const Carousel = dynamic(
   () => import('../components/carousel.homepage'),
-  { ssr: true }
 )
 const BrandsCarousel = dynamic(
   () => import('../components/brands.homepage'),
-  { ssr: false }
 )
 const LatestPublish = dynamic(
   () => import('../components/latest-publish.homepage'),
-  { ssr: false }
 )
 const SocialLife = dynamic(
   () => import('../components/clients.homepage'),
-  { ssr: false }
 )
 const YoutubeList = dynamic(
   () => import('../components/youtube-homepage'),
-  { ssr: false }
 )
 
 export default function Home ({ tags, post }) {
