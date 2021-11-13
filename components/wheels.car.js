@@ -1,7 +1,7 @@
 import Image from 'next/image'
 
 export default function Wheels ({ post }) {
-  if (!post?.wheels_1 || !post?.wheels_1_img) {
+  if (!post?.wheels_1) {
     return null
   }
   return (
