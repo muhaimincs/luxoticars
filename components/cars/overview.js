@@ -69,7 +69,7 @@ const CarOverview = ({ photos = [], isLarge = true, defaultAlt }) => {
               leaveFrom="opacity-100"
               leaveTo="opacity-0"
             >
-              <Dialog.Overlay className="fixed inset-0 bg-white/70" />
+              <Dialog.Overlay className="fixed inset-0 backdrop-blur-lg bg-gradient-to-r to-gray-900 via-[#2125293d] from-[#21252999] bg-opacity-25" />
             </Transition.Child>
             <Transition.Child
               as={Fragment}
