@@ -66,11 +66,6 @@ ClientPage.getLayout = function getLayout (page) {
   )
   return (
     <>
-      <Head>
-        <link rel="icon" href="/LUXOTICARS_GRADIENT_SKULL.svg" />
-        <meta name="robots" content="follow, index" />
-        <meta charSet="UTF-8" />
-      </Head>
       <Layout>
         <Header />
         {page}
