@@ -35,7 +35,7 @@ export default function Example () {
   const router = useRouter()
   const isSmall = useMediaQuery('(max-width: 48rem)')
   const logoClassName = useMemo(() => {
-    if (router.pathname === '/gallery') {
+    if (['/', '/gallery'].includes(router.pathname)) {
       return 'hidden md:block lg:hidden'
     }
     return 'block lg:hidden'
