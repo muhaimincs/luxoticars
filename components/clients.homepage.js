@@ -55,6 +55,7 @@ const slide3 = [
   'https://images.ctfassets.net/ijuxqf6x1pz2/c6BWaRqJIFg6a3JRJHyvC/8e370dd89e438d2d293ddf2ccc4f66ce/photo_2021-10-20_10.40.21.jpeg'
 ]
 const slide4 = [
+  'https://images.ctfassets.net/ijuxqf6x1pz2/6wtLyzxPmcFf4bIDWN1Vh6/99e0269558d865c2fe4857f085d0accd/photo_2021-11-17_04.58.08.jpeg',
   'https://images.ctfassets.net/ijuxqf6x1pz2/2HB9iJ5jKo0XkQFgfQmMnx/e73b20a930abbd814592122ca9accece/photo_2021-10-22_21.31.03.jpeg',
   'https://images.ctfassets.net/ijuxqf6x1pz2/4y04gUPOUUAUxZAoZCquYt/691c2e3decc848ea51b3c77fb5007ccb/photo_2021-10-22_21.31.38.jpeg',
   'https://images.ctfassets.net/ijuxqf6x1pz2/5Q4ZS1hwqvv0WEDzynLyzi/f9d6a74aaf9d0cb697ff89732bb5a245/photo_2021-10-22_21.31.42.jpeg'
