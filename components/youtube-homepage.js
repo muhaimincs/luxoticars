@@ -17,6 +17,13 @@ function Yt ({ data }) {
 
 const callouts = [
   {
+    id: 'lkHd5FvHD7U',
+    name: 'MEET THE STAFF | DTC CARLIFESTYLE | SPECIAL ORDER SHORT CLIP',
+    description: 'DTC MOTORS is among the best recond car dealer and specialize in “SPECIAL ORDERS” to fulfil customer preference.  Through the “SPECIAL ORDER” system that we offer, you can choose your car directly from Japan and the United Kingdom and most importantly the price that we offer is transparent. Hence, share your dream  with us and we will  realize it for you.',
+    imageSrc: 'https://i.ytimg.com/vi/lkHd5FvHD7U/maxresdefault.jpg',
+    href: 'https://www.youtube.com/embed/lkHd5FvHD7U'
+  },
+  {
     id: 'ND7Am2zqi0M',
     name: 'SPECIAL ORDER DTC CARLIFETYLE | FERRARI 488 PISTA NAJIB ASSADOK Edition',
     description: 'DTC MOTORS is among the best recond car dealer and specialize in “SPECIAL ORDERS” to fulfil customer preference.  Through the “SPECIAL ORDER” system that we offer, you can choose your car directly from Japan and the United Kingdom and most importantly the price that we offer is transparent. Hence, share your dream  with us and we will  realize it for you.',
@@ -29,13 +36,6 @@ const callouts = [
     description: 'Allow me to introduce a good friend of mine; Mr. Weng Kee. Owner of Victoria Motorsport and has been in motorsport industry for more than a decade. Well, today he lend me one of his new "toys"',
     imageSrc: 'https://i.ytimg.com/vi/Qwh7N_ecZe8/maxresdefault.jpg',
     href: 'https://www.youtube.com/embed/Qwh7N_ecZe8'
-  },
-  {
-    id: 'pmwe3A2ScCc',
-    name: 'MERCEDES AMG E300 COUPE\' MILIK SI DIA // #WEDelivery',
-    description: 'To Daiyan Trisha, may success be with you with your big laughter and sweet smile. Enjoy your dream car and drive safely and jangan lupa CHAI!',
-    imageSrc: 'https://i.ytimg.com/vi/pmwe3A2ScCc/maxresdefault.jpg',
-    href: 'https://www.youtube.com/embed/pmwe3A2ScCc'
   },
 ]
 
