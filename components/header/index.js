@@ -69,9 +69,9 @@ export default function Example () {
 
   return (
     <>
-    <div className={`observer-element ${s.sentinel}`} ref={sentinalRef} />
-    <Popover className={s.nav}>
-      <div ref={mainNav} className={s['main-nav']}>
+    <header className={`observer-element ${s.sentinel}`} ref={sentinalRef} />
+    <Popover className={s.nav} as="header">
+      <nav ref={mainNav} className={s['main-nav']} aria-label="Primary Navigation">
         <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
           <div className="relative flex items-center justify-between h-16">
             <div className="absolute inset-y-0 left-0 flex items-center sm:hidden pl-2 pr-5">
@@ -187,10 +187,10 @@ export default function Example () {
             </div>
           </div>
         </div>
-      </div>
-      <div id="bottom" ref={navRef} className={s['bottom-nav']}>
+      </nav>
+      <nav id="bottom" ref={navRef} className={s['bottom-nav']} aria-label="Primary Navigation">
         {isSmall && <BottomNav />}
-      </div>
+      </nav>
       {isSmall && <MobileNav navigation={navigation} />}
     </Popover>
     </>

@@ -171,7 +171,7 @@ export default function CarPage ({ post, blockMap }) {
       manufacturerName={post?.tags[0]?.replace(/-/g, ' ').replace(/_/g, ' ')}
       manufacturerLogo={`${WEB.link}/brands/colors/${post?.tags[0]}.svg`}
     />
-    <div className="max-w-7xl mx-auto pt-10 px-3 flex justify-between">
+    <aside className="max-w-7xl mx-auto pt-10 px-3 flex justify-between">
       <ul className="px-[2vw] xl:px-[calc(min(12px,8vw))] w-[var(--notion-max-width)] max-w-full text-gray-400 flex space-x-3 text-xs flex-shrink">
         <li><Link href="/search"><a>Stock</a></Link></li>
         <li>&raquo;</li>
@@ -185,7 +185,7 @@ export default function CarPage ({ post, blockMap }) {
           <li className={renderInteriorGalleryClassname}><Link href={`/${post?.slug}?gallery=interior`}><a>Interior</a></Link></li>
         </ul>
       )}
-    </div>
+    </aside>
     <div className="relative mt-3 mb-8">
       {(!router.query.gallery || router.query.gallery === 'exterior')
         ? (
@@ -208,9 +208,9 @@ export default function CarPage ({ post, blockMap }) {
       <div className="absolute top-0 inset-x-0 z-10 bg-gradient-to-b from-black max-w-7xl xl:max-w-screen-2xl mx-auto">
         <h1 className="my-5 text-white text-lg md:text-5xl text-center w-[var(--notion-max-width)] px-[2vw] xl:px-[calc(min(12px,8vw))] mx-auto max-w-full">{post?.title}</h1>
       </div>
-      <div className="max-w-7xl mx-auto">
-        <div className="max-w-full py-3 bg-black text-gray-400 z-10 uppercase text-xs px-[2vw] xl:px-[calc(min(12px,8vw))] w-[var(--notion-max-width)] mx-auto">{post?.summary}</div>
-      </div>
+      <details className="max-w-7xl mx-auto">
+        <summary className="max-w-full py-3 bg-black text-gray-400 z-10 uppercase text-xs px-[2vw] xl:px-[calc(min(12px,8vw))] w-[var(--notion-max-width)] mx-auto">{post?.summary}</summary>
+      </details>
     </div>
     <div className="max-w-7xl mx-auto">
       <div className="max-w-full mx-auto px-[2vw] xl:px-[calc(min(12px,8vw))] w-[var(--notion-max-width)]">
@@ -240,7 +240,7 @@ export default function CarPage ({ post, blockMap }) {
       </article>
     )}
     {router.query.tab === 'trims-specs' && (
-      <div className="max-w-7xl mx-auto">
+      <main className="max-w-7xl mx-auto">
         <article className="max-w-full mx-auto mb-10 px-[2vw] xl:px-[calc(min(12px,8vw))] w-[var(--notion-max-width)]">
           <table className="text-left border-collapse">
             <tbody className="align-baseline divide-y divide-gray-400">
@@ -269,7 +269,7 @@ export default function CarPage ({ post, blockMap }) {
             </tbody>
           </table>
         </article>
-      </div>
+      </main>
     )}
     </>
   )
