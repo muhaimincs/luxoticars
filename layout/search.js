@@ -14,6 +14,7 @@ const SearchLayout = ({ tags, posts, currentTag, showNext = false, page = 1 }) =
   const navRef = useRef(null)
   const [searchValue, setSearchValue] = useState('')
   const coverImg = require(`../public/brands/cover/${currentTag}.jpeg`).default
+  const logo = require(`../public/brands/colors/${currentTag}.svg`).default
   let filteredBlogPosts = []
   let title = currentTag ? currentTag.replace(/-/g, ' ') : currentTag
   title = currentTag ? title.replace(/_/g, ' ') : ''
@@ -70,8 +71,8 @@ const SearchLayout = ({ tags, posts, currentTag, showNext = false, page = 1 }) =
       ? (
       <div className="flex flex-col-reverse justify-center items-center">
         <h1 className="text-white capitalize text-2xl">{title}</h1>
-        <div className="relative w-32 h-32 xl:w-52 xl:h-52">
-          <Image src={`/brands/${currentTag}.svg`} layout="fill" />
+        <div className="w-32 h-32 flex items-center justify-center">
+          <Image src={logo} alt={`${currentTag} logo on ${WEB.name}`} />
         </div>
       </div>
         )
