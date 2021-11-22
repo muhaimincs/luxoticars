@@ -1,36 +1,38 @@
 import dynamic from 'next/dynamic'
-import Head from 'next/head'
+import { NextSeo } from 'next-seo'
 
 import { getAllPosts, getAllTagsFromPosts } from '../../lib/notion'
 import { getCarPhotos } from '../../lib/contentful'
 import SearchLayout from '../../layout/search'
 import Layout from '../../components/layout.homepage'
+import WEB from '../../web.config'
 
 const makeupTitle = ([first, ...rest], locale = 'en-GB') =>
   first.toLocaleUpperCase(locale) + rest.join('')
 
-export default function TagPage ({ tags, posts, currentTag }) {
+export default function TagPage ({ tags, posts, currentTag, coverImg }) {
   let title = currentTag ? currentTag.replace(/-/g, ' ') : currentTag
   title = currentTag ? makeupTitle(title.replace(/_/g, ' ')) : ''
   return (
     <>
-    <Head>
-      <title>{title} on Luxoticars</title>
-      <meta property="og:title" content={`${title} on Luxoticars`} />
-      <meta name="og:description" content={`Luxoticars has a decade of experience selling reconditioned ${title} cars.`} />
-      <meta name="description" content={`Luxoticars has a decade of experience selling reconditioned ${title} cars.`} />
-      <meta
-        property="og:image"
-        content={`/brands/cover/${currentTag}.jpeg`}
-      />
-      <meta name="twitter:description" content={`Luxoticars has a decade of experience selling reconditioned ${title} cars.`} />
-      <meta name="twitter:title" content={`${title} on Luxoticars`} />
-      <meta
-        name="twitter:image"
-        content={`/brands/colors/${currentTag}.svg`}
-      />
-    </Head>
-    <SearchLayout tags={tags} posts={posts} currentTag={currentTag} />
+    <NextSeo
+      title={`${title} on ${WEB.name}`}
+      description={`${WEB.name} has a decade of experience selling reconditioned ${title} cars.`}
+      canonical={`${WEB.link}/tag/${currentTag}`}
+      openGraph={{
+        url: `${WEB.link}/tag/${currentTag}`,
+        title,
+        description: `${WEB.name} has a decade of experience selling reconditioned ${title} cars.`,
+        images: [{
+          url: `${WEB.link}/brands/cover/${currentTag}.jpeg`,
+          type: 'image/jpeg',
+          width: coverImg.width,
+          height: coverImg.height
+        }],
+        type: 'article',
+      }}
+    />
+    <SearchLayout tags={tags} posts={posts} currentTag={currentTag} coverImg={coverImg} />
     </>
   )
 }
@@ -38,6 +40,7 @@ export default function TagPage ({ tags, posts, currentTag }) {
 export async function getStaticProps ({ params, preview }) {
   const currentTag = params.tag
   const posts = await getAllPosts({ includePages: false })
+  const coverImg = require(`../../public/brands/cover/${currentTag}.jpeg`).default
   const tags = getAllTagsFromPosts(posts)
   const filteredPosts = posts.filter(
     post => post && post.tags && post.tags.includes(currentTag)
@@ -62,7 +65,8 @@ export async function getStaticProps ({ params, preview }) {
     props: {
       tags,
       posts: withExternalSource,
-      currentTag
+      currentTag,
+      coverImg
     },
     revalidate: 1
   }
@@ -80,7 +84,6 @@ export async function getStaticPaths () {
 TagPage.getLayout = function getLayout (page) {
   const Header = dynamic(
     () => import('../../components/header'),
-    { ssr: false }
   )
   const Footer = dynamic(
     () => import('../../components/footer'),

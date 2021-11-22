@@ -20,9 +20,7 @@ const CarOverview = ({ photos = [], isLarge = true, defaultAlt }) => {
     <div className={`mt-3 max-w-2xl mx-auto sm:px-6 lg:max-w-7xl lg:px-0 lg:grid ${photos[3] ? 'lg:grid-cols-3' : 'lg:grid-cols-2'} lg:gap-x-8`}>
       <div className="aspect-w-4 aspect-h-5 sm:rounded-lg sm:overflow-hidden lg:aspect-w-3 lg:aspect-h-4">
         <div className="w-full h-full cursor-pointer" onClick={() => openModal("0")}>
-        {isLarge && (
           <Image src={photos[0]?.url} objectFit="cover" objectPosition="center" layout="fill" alt={defaultAlt} />
-        )}
         </div>
       </div>
       <div className="hidden lg:grid lg:grid-cols-1 lg:gap-y-8">

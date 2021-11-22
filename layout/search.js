@@ -8,7 +8,7 @@ import Tags from '../components/tags'
 import Pagination from '../components/pagination'
 import bg from '../public/img/black_yellow.jpeg'
 
-const SearchLayout = ({ tags, posts, currentTag, showNext = false, page = 1 }) => {
+const SearchLayout = ({ tags, posts, currentTag, showNext = false, page = 1, coverImg }) => {
   const sentinalRef = useRef([])
   const navRef = useRef(null)
   const [searchValue, setSearchValue] = useState('')
@@ -61,7 +61,7 @@ const SearchLayout = ({ tags, posts, currentTag, showNext = false, page = 1 }) =
     <>
     <div className="absolute top-0 inset-x-0 z-[-10]" ref={sentinalRef}>
       <div className="relative h-64 xl:h-96 w-screen">
-        <Image src={bg} objectFit="cover" layout="fill" objectPosition="30%" />
+        <Image src={coverImg || bg} objectFit="cover" layout="fill" objectPosition="30%" />
       </div>
     </div>
     {currentTag
