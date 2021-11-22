@@ -47,7 +47,6 @@ const CarOverview = ({ photos = [], isLarge = true, defaultAlt }) => {
         </div>
       )}
     </div>
-    {isLarge && (
       <Transition
         show={!!isOpen}
         as={Fragment}
@@ -87,7 +86,6 @@ const CarOverview = ({ photos = [], isLarge = true, defaultAlt }) => {
           </div>
         </Dialog>
       </Transition>
-    )}
     </>
   )
 }

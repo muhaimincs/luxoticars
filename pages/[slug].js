@@ -239,7 +239,12 @@ export default function CarPage ({ post, blockMap, relatedPosts, currentTag }) {
           )
         : (
         <PhotoBigLayout
-          photos={interiorGallery?.map((photo) => ({ url: photo }))}
+          photos={interiorGallery?.map((photo) => ({
+            url: photo?.url || photo,
+            width: photo?.details?.image?.width,
+            height: photo?.details?.image?.height,
+            name: post?.title
+          }))}
           isLarge={isLarge}
           defaultAlt={post?.title}
         />
