@@ -26,8 +26,8 @@ export default function TagPage ({ tags, posts, currentTag, coverImg }) {
         images: [{
           url: `${WEB.link}/brands/cover/${currentTag}.jpeg`,
           type: 'image/jpeg',
-          width: coverImg.width,
-          height: coverImg.height
+          width: coverImg?.width,
+          height: coverImg?.height
         }],
         type: 'article',
       }}
