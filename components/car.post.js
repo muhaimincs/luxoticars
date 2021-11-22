@@ -15,19 +15,20 @@ const item = {
 
 const CarPost = ({ post }) => {
   const firstPhoto = post?.['Photo Gallery'] ? post?.['Photo Gallery'].split(',')[0] : post?.externalSource[0].url
+
   return (
     <Link href={`/${post.slug}`} passHref={true}>
       <motion.a
         variants={item}
         className={`group ${s.a}`}>
-        <header className={s.header}>
-          <small class="text-xs">
+        <div className={s.header}>
+          <small className="text-xs">
             <span className={s.year}>{post?.Year}</span>
           </small>
           <h2 className={s.h2}>
             {post?.title}
           </h2>
-        </header>
+        </div>
         <div className={s.img}>
           <Image src={firstPhoto} alt={post?.title} layout="fill" objectFit="cover" />
         </div>
