@@ -17,6 +17,7 @@ import { getAllPosts, getPostBlocks } from '../lib/notion'
 import { getCarPhotos } from '../lib/contentful'
 import formatDate from '../lib/formatDate'
 import Layout from '../components/layout.homepage'
+import Cars from '../components/cars.post'
 
 const mapPageUrl = id => {
   return 'https://www.notion.so/' + id.replace(/-/g, '')
@@ -25,6 +26,37 @@ const mapPageUrl = id => {
 export async function getStaticProps ({ params: { slug }, preview }) {
   const posts = await getAllPosts({ includePages: false })
   const post = posts.find(t => t.slug === slug)
+  const currentTag = post.tags[0]
+  let filteredPosts = posts.filter(
+    post => post && post.tags && post.tags.includes(currentTag)
+  )
+  filteredPosts = filteredPosts.filter((p) => p.id !== post.id)
+  const withExternalSource = await Promise.all(filteredPosts.map(async (p) => {
+    const externalSource = await getCarPhotos(p.slug, preview);
+    return {
+      ...p,
+      externalSource: externalSource.reduce((acc, item) => {
+        for (const photo of item.photos) {
+          acc.push({
+            url: `https:${photo?.fields?.file?.url}`,
+            details: photo?.fields?.file?.details,
+            contentType: photo?.fields?.file?.contentType
+          })
+        }
+        return acc
+      }, [])
+    }
+  }))
+  const postWithExternalSource = withExternalSource.slice(0, 3);
+  // const coverImage = require(`../public/brands/cover/${currentTag}.jpeg`).default
+  postWithExternalSource.unshift({
+    id: 'UNRELATED',
+    title: 'Related Car',
+    slug: `tag/${currentTag}`,
+    status: ['Published'],
+    Year: 'CHECK OUT',
+    'Photo Gallery': `/brands/cover/${currentTag}.jpeg`
+  })
   const blockMap = await getPostBlocks(post.id)
   const externalSource = await getCarPhotos(slug, preview)
   let exteriorPhotos = post?.['Photo Gallery'] 
@@ -54,7 +86,9 @@ export async function getStaticProps ({ params: { slug }, preview }) {
         exteriorPhotos,
         'Interior Photos': interiorPhotos,
       },
-      blockMap
+      relatedPosts: postWithExternalSource,
+      blockMap,
+      currentTag
     },
     revalidate: 1
   }
@@ -92,7 +126,7 @@ const Wheels = dynamic(
 const PhotoBigLayout = dynamic(
   () => import('../components/cars/overview')
 )
-export default function CarPage ({ post, blockMap }) {
+export default function CarPage ({ post, blockMap, relatedPosts, currentTag }) {
   const interiorGallery = post && post['Interior Photos'] ? post['Interior Photos'] : []
   const router = useRouter()
   const renderKeyFeaturesClassname = useMemo(() => {
@@ -276,6 +310,7 @@ export default function CarPage ({ post, blockMap }) {
         </article>
       </main>
     )}
+    <Cars currentTag={currentTag} posts={relatedPosts} />
     </>
   )
 }
