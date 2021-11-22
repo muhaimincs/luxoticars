@@ -40,7 +40,7 @@ export default function TagPage ({ tags, posts, currentTag, coverImg }) {
 export async function getStaticProps ({ params, preview }) {
   const currentTag = params.tag
   const posts = await getAllPosts({ includePages: false })
-  const coverImg = require(`../../public/brands/cover/${currentTag}.jpeg`).default
+  const coverImg = require(`../../public/brands/cover/${currentTag}.jpeg`)?.default
   const tags = getAllTagsFromPosts(posts)
   const filteredPosts = posts.filter(
     post => post && post.tags && post.tags.includes(currentTag)
