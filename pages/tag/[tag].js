@@ -32,7 +32,7 @@ export default function TagPage ({ tags, posts, currentTag, coverImg }) {
         type: 'article',
       }}
     />
-    <SearchLayout tags={tags} posts={posts} currentTag={currentTag} coverImg={coverImg} />
+    <SearchLayout tags={tags} posts={posts} currentTag={currentTag} />
     </>
   )
 }

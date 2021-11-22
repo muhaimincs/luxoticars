@@ -7,11 +7,13 @@ import Cars from '../components/cars.post'
 import Tags from '../components/tags'
 import Pagination from '../components/pagination'
 import bg from '../public/img/black_yellow.jpeg'
+import WEB from '../web.config'
 
-const SearchLayout = ({ tags, posts, currentTag, showNext = false, page = 1, coverImg }) => {
+const SearchLayout = ({ tags, posts, currentTag, showNext = false, page = 1 }) => {
   const sentinalRef = useRef([])
   const navRef = useRef(null)
   const [searchValue, setSearchValue] = useState('')
+  const coverImg = require(`../public/brands/cover/${currentTag}.jpeg`).default
   let filteredBlogPosts = []
   let title = currentTag ? currentTag.replace(/-/g, ' ') : currentTag
   title = currentTag ? title.replace(/_/g, ' ') : ''
@@ -61,7 +63,7 @@ const SearchLayout = ({ tags, posts, currentTag, showNext = false, page = 1, cov
     <>
     <div className="absolute top-0 inset-x-0 z-[-10]" ref={sentinalRef}>
       <div className="relative h-64 xl:h-96 w-screen">
-        <Image src={coverImg || bg} objectFit="cover" layout="fill" objectPosition="30%" />
+        <Image src={coverImg || bg} objectFit="cover" layout="fill" objectPosition="30%" alt={`${currentTag} on ${WEB.name}`} />
       </div>
     </div>
     {currentTag
