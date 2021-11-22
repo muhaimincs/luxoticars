@@ -4,7 +4,8 @@ import SwiperCore, {
   Navigation,
   Pagination
 } from 'swiper'
-import Image from 'next/image'
+
+import WEB from '../../web.config'
 
 SwiperCore.use([Zoom, Navigation, Pagination])
 
@@ -30,11 +31,17 @@ const SwiperComponent = ({ photos, initialSlide = 0 }) => {
       }}
       className="rounded-2xl">
         {photos.map((photo) => (
-          <SwiperSlide key={photo}>
+          <SwiperSlide key={photo.url}>
             <div className="swiper-zoom-container">
-              <div className="relative w-full h-96">
-                <Image src={photo} layout="fill" objectFit="cover" />
-              </div>
+              {/* <div className="aspect-w-16 aspect-h-9 overflow-hidden"> */}
+                <img 
+                  src={photo.url} 
+                  width={`${photo.width}px`}
+                  height={`${photo.height}px`} 
+                  className="w-full h-full object-cover object-center" 
+                  alt={`${WEB?.name} - ${photo?.name}`}
+                />
+              {/* </div> */}
             </div>
           </SwiperSlide>
         ))}

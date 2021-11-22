@@ -42,7 +42,7 @@ export async function getStaticProps ({ params: { slug }, preview }) {
     }))
     if (externalSource[0].interiorPhotos) { 
       interiorPhotos = externalSource[0].interiorPhotos.map((img) => 
-        `https:${img?.fields?.file?.url}`
+        ({ url: `https:${img?.fields?.file?.url}` })
       )
     }
   }
@@ -52,7 +52,7 @@ export async function getStaticProps ({ params: { slug }, preview }) {
         ...post,
         brandName,
         exteriorPhotos,
-        'Interior Photos': interiorPhotos.toString(),
+        'Interior Photos': interiorPhotos,
       },
       blockMap
     },
@@ -93,7 +93,7 @@ const PhotoBigLayout = dynamic(
   () => import('../components/cars/overview')
 )
 export default function CarPage ({ post, blockMap }) {
-  const interiorGallery = post && post['Interior Photos'] ? post['Interior Photos'].split(',') : []
+  const interiorGallery = post && post['Interior Photos'] ? post['Interior Photos'] : []
   const router = useRouter()
   const renderKeyFeaturesClassname = useMemo(() => {
     if (!router.query.tab) {
@@ -192,7 +192,12 @@ export default function CarPage ({ post, blockMap }) {
           <PhotoBigLayout
             photos={post?.exteriorPhotos.map((photo) => {
               const url = photo?.url ? photo.url : photo
-              return url
+              return { 
+                width: photo?.details?.image?.width,
+                height: photo?.details?.image?.height,
+                name: post?.title,
+                url
+              }
             })}
             isLarge={isLarge}
             defaultAlt={post?.title}
@@ -200,7 +205,7 @@ export default function CarPage ({ post, blockMap }) {
           )
         : (
         <PhotoBigLayout
-          photos={interiorGallery?.map((photo) => photo)}
+          photos={interiorGallery?.map((photo) => ({ url: photo }))}
           isLarge={isLarge}
           defaultAlt={post?.title}
         />
