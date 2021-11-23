@@ -69,12 +69,14 @@ const SearchLayout = ({ tags, posts, currentTag, showNext = false, page = 1 }) =
     </div>
     {currentTag
       ? (
-      <div className="flex flex-col-reverse justify-center items-center">
-        <h1 className="text-white capitalize text-2xl">{title}</h1>
-        <div className="w-32 h-32 flex items-center justify-center">
-          <Image src={logo} alt={`${currentTag} logo on ${WEB.name}`} />
+        <div className="max-w-7xl mx-auto p-10">
+          <div className="flex flex-col-reverse justify-center items-start gap-y-10">
+            <h1 className="text-white capitalize text-2xl">{title}</h1>
+            <div className="w-24 h-24 flex items-center justify-center">
+              <Image src={logo} alt={`${currentTag} logo on ${WEB.name}`} />
+            </div>
+          </div>
         </div>
-      </div>
         )
       : (
       <div className="bg-transparent h-32 h-32 xl:h-64" />
