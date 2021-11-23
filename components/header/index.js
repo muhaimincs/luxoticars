@@ -12,6 +12,7 @@ import dynamic from 'next/dynamic'
 import s from './index.module.css'
 import LuxoticarsLogo from '../../public/LUXOTICARS.svg'
 import LuxoticarsWhiteFont from '../../public/LUXOTICARS_WHITE_FONT.svg'
+import Shopee from '../../public/img/props/shopee.svg'
 
 const BottomNav = dynamic(() => import('./bottom-nav'))
 const MobileNav = dynamic(() => import('./mobile-nav'))
@@ -25,7 +26,7 @@ export const navigation = [
   { name: 'Stock', href: '/search', current: false },
   { name: 'Gallery', href: '/gallery', current: false },
   { name: 'Client', href: '/client', current: false },
-  { name: 'Lifestyle', href: 'https://shop.luxoticars.my', current: false }
+  // { name: 'Lifestyle', href: 'https://shop.luxoticars.my', current: false }
 ]
 
 export default function Example () {
@@ -116,6 +117,9 @@ export default function Example () {
                       {item.name}
                     </a>
                   ))}
+                  <a href="https://shopee.com.my/bigbadassboys" className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium flex items-center space-x-3">
+                    <Image src={Shopee} width={16} height={16} /> <span>Lifestyle</span>
+                  </a>
                 </div>
               </div>
             </div>

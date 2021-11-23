@@ -17,6 +17,7 @@ import LuxoticarsLogo from '../../public/LUXOTICARS.svg'
 import LuxoticarsWhiteFont from '../../public/LUXOTICARS_WHITE_FONT.svg'
 import Mudah from '../../public/img/props/mudah.gif'
 import Telegram from '../../public/img/props/telegram.svg'
+import Shopee from '../../public/img/props/shopee.svg'
 
 export default function BottomNav ({ navigation }) {
   const contentRef = useRef()
@@ -150,6 +151,9 @@ export default function BottomNav ({ navigation }) {
               </a>
               <a href="https://t.me/luxoticars">
                 <Image width={28} height={28} src={Telegram} alt={`Join ${WEB.name} on Telegram`} />
+              </a>
+              <a href="https://shopee.com.my/bigbadassboys">
+                <Image width={28} height={28} src={Shopee} alt={`Join ${WEB.name} on Shopee`} />
               </a>
             </div>
           </div>
