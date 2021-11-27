@@ -17,6 +17,13 @@ function Yt ({ data }) {
 
 const callouts = [
   {
+    id: 'g5sSm2CCGq0',
+    name: 'MERCEDES AMG G63 GENTLEMEN CAR',
+    description: 'What a monster machine to be driven on the road.  This is a 2018 MERCEDES AMG G 63 powered by 4.0l V8 Bi-Turbo with a suspension system that makes many things possible. And with the AMG design that never fails to impress.',
+    imageSrc: 'https://i.ytimg.com/vi/g5sSm2CCGq0/maxresdefault.jpg',
+    href: 'https://www.youtube.com/embed/g5sSm2CCGq0'
+  },
+  {
     id: 'lkHd5FvHD7U',
     name: 'MEET THE STAFF | DTC CARLIFESTYLE | SPECIAL ORDER SHORT CLIP',
     description: 'DTC MOTORS is among the best recond car dealer and specialize in “SPECIAL ORDERS” to fulfil customer preference.  Through the “SPECIAL ORDER” system that we offer, you can choose your car directly from Japan and the United Kingdom and most importantly the price that we offer is transparent. Hence, share your dream  with us and we will  realize it for you.',
@@ -29,13 +36,6 @@ const callouts = [
     description: 'DTC MOTORS is among the best recond car dealer and specialize in “SPECIAL ORDERS” to fulfil customer preference.  Through the “SPECIAL ORDER” system that we offer, you can choose your car directly from Japan and the United Kingdom and most importantly the price that we offer is transparent. Hence, share your dream  with us and we will  realize it for you.',
     imageSrc: 'https://i.ytimg.com/vi/ND7Am2zqi0M/maxresdefault.jpg',
     href: 'https://www.youtube.com/embed/ND7Am2zqi0M'
-  },
-  {
-    id: 'Qwh7N_ecZe8',
-    name: 'RM5,000,000 FERRARI SF90 STRADALE | PART 1',
-    description: 'Allow me to introduce a good friend of mine; Mr. Weng Kee. Owner of Victoria Motorsport and has been in motorsport industry for more than a decade. Well, today he lend me one of his new "toys"',
-    imageSrc: 'https://i.ytimg.com/vi/Qwh7N_ecZe8/maxresdefault.jpg',
-    href: 'https://www.youtube.com/embed/Qwh7N_ecZe8'
   },
 ]
 
