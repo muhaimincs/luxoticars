@@ -204,6 +204,25 @@ export default function CarPage ({ post, blockMap, relatedPosts, currentTag }) {
       color={post?.exterior_color}
       manufacturerName={post?.tags[0]?.replace(/-/g, ' ').replace(/_/g, ' ')}
       manufacturerLogo={`${WEB.link}/brands/colors/${post?.tags[0]}.svg`}
+      aggregateRating={{
+        ratingValue: '4.4',
+        reviewCount: '89',
+      }}
+      offers={[
+        {
+          price: 'x,xxx,xx.xx',
+          priceCurrency: 'MYR',
+          priceValidUntil: post?.date?.start_date,
+          itemCondition: 'https://schema.org/RefurbishedCondition',
+          availability: post?.status[0] === 'Published'
+            ? 'https://schema.org/InStock'
+            : 'https://schema.org/SoldOut',
+          url: `${WEB.link}/${post?.slug}`,
+          seller: {
+            name: 'Abu Garciá',
+          },
+        }
+      ]}
     />
     <aside className="max-w-7xl mx-auto pt-10 px-3 flex justify-between">
       <ul className="px-[2vw] xl:px-[calc(min(12px,8vw))] w-[var(--notion-max-width)] max-w-full text-gray-400 flex space-x-3 text-xs flex-shrink">
