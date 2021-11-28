@@ -6,6 +6,7 @@ import Img3 from '../public/img/commerce/img3.jpeg'
 import Img4 from '../public/img/commerce/img4.jpeg'
 import Img5 from '../public/img/commerce/img5.jpeg'
 import Img6 from '../public/img/commerce/img6.jpeg'
+import Shopee from '../public/img/props/shopee.svg'
 
 export default function SalesSection () {
   return (
@@ -15,13 +16,14 @@ export default function SalesSection () {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="relative pt-48 pb-16 sm:pb-24">
               <div>
+                <Image src={Shopee} width={64} height={64} />
                 <h2 id="sale-heading" className="text-4xl font-extrabold tracking-tight text-gray-100 md:text-5xl">
                   Shop Carlifestyle.
                   <br />
                   Gear Up
                 </h2>
                 <div className="mt-6 text-base">
-                  <a href="https://shop.luxoticars.my" className="font-semibold text-red-600">
+                  <a href="https://shopee.com.my/bigbadassboys?smtt=0.0.9" className="font-semibold text-red-600">
                     Get them now<span aria-hidden="true"> &rarr;</span>
                   </a>
                 </div>
