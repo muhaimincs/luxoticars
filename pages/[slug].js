@@ -210,7 +210,7 @@ export default function CarPage ({ post, blockMap, relatedPosts, currentTag }) {
       }}
       offers={[
         {
-          price: 'x,xxx,xx.xx',
+          price: post?.price,
           priceCurrency: 'MYR',
           priceValidUntil: post?.date?.start_date,
           itemCondition: 'https://schema.org/RefurbishedCondition',
