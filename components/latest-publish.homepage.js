@@ -84,8 +84,8 @@ export default function LatestPublish ({ post }) {
               <Image
                 src={brand}
                 alt={post?.tags[0]}
-                width={80}
-                height={80}
+                // width={80}
+                // height={80}
               />
             </div>
           </div>
