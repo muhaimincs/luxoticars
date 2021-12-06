@@ -80,7 +80,7 @@ export default function LatestPublish ({ post }) {
             />
           </div>
           <div className="absolute bottom-[5px] left-0 m-3 overflow-hidden">
-            <div className="relative flex items-center justify-center filter drop-shadow-lg contrast-125">
+            <div className="max-w-xs relative flex items-center justify-center filter drop-shadow-lg contrast-125">
               <Image
                 src={brand}
                 alt={post?.tags[0]}
