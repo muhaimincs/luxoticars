@@ -17,7 +17,7 @@ import Shopee from '../../public/img/props/shopee.svg'
 const BottomNav = dynamic(() => import('./bottom-nav'))
 const MobileNav = dynamic(() => import('./mobile-nav'))
 
-function classNames (...classes) {
+function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
@@ -29,7 +29,7 @@ export const navigation = [
   // { name: 'Lifestyle', href: 'https://shop.luxoticars.my', current: false }
 ]
 
-export default function Example () {
+export default function Example() {
   const sentinalRef = useRef([])
   const navRef = useRef(null)
   const mainNav = useRef(null)
@@ -45,17 +45,19 @@ export default function Example () {
     if (navRef && navRef.current) {
       if (!entry.isIntersecting && entry !== undefined) {
         navRef.current.classList.add(s.glass)
+        navRef.current.classList.add('backdrop-blur-md')
         navRef.current.classList.add(s['navref-glass'])
         navRef.current.classList.add('translate-y-0')
         navRef.current.classList.remove('translate-y-full')
-
+        mainNav.current.classList.add('backdrop-blur-md')
         mainNav.current.classList.add(s.glass)
       } else {
         navRef.current.classList.remove(s.glass)
+        navRef.current.classList.remove('backdrop-blur-md')
         navRef.current.classList.remove(s['navref-glass'])
         navRef.current.classList.remove('translate-y-0')
         navRef.current.classList.add('translate-y-full')
-
+        mainNav.current.classList.remove('backdrop-blur-md')
         mainNav.current.classList.remove(s.glass)
       }
     }
@@ -70,61 +72,61 @@ export default function Example () {
 
   return (
     <>
-    <header className={`observer-element ${s.sentinel}`} ref={sentinalRef} />
-    <Popover className={s.nav} as="header">
-      <nav ref={mainNav} className={s['main-nav']} aria-label="Primary Navigation">
-        <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-          <div className="relative flex items-center justify-between h-16">
-            <div className="absolute inset-y-0 left-0 flex items-center sm:hidden pl-2 pr-5">
-              {/* Mobile menu button */}
-              <Popover.Button className="bg-gray-700/50 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-                <span className="sr-only">Open main menu</span>
-                <svg xmlns="http://www.w3.org/2000/svg" className={s['svg-icon']} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h8m-8 6h16" />
-                </svg>
-              </Popover.Button>
-            </div>
-            <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-              <div className="flex-shrink-0 flex items-center">
-                <Link href="/">
-                  <a className={logoClassName}>
-                    <Image src={LuxoticarsLogo} alt="Luxoticars" height={52} width={34} />
-                  </a>
-                </Link>
-                <div className="hidden lg:block w-auto">
+      <header className={`observer-element ${s.sentinel}`} ref={sentinalRef} />
+      <Popover className={s.nav} as="header">
+        <nav ref={mainNav} className={s['main-nav']} aria-label="Primary Navigation">
+          <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div className="relative flex items-center justify-between h-16">
+              <div className="absolute inset-y-0 left-0 flex items-center sm:hidden pl-2 pr-5">
+                {/* Mobile menu button */}
+                <Popover.Button className="bg-gray-700/50 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                  <span className="sr-only">Open main menu</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" className={s['svg-icon']} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h8m-8 6h16" />
+                  </svg>
+                </Popover.Button>
+              </div>
+              <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+                <div className="flex-shrink-0 flex items-center">
                   <Link href="/">
-                    <a className="flex items-center text-white space-x-4">
+                    <a className={logoClassName}>
                       <Image src={LuxoticarsLogo} alt="Luxoticars" height={52} width={34} />
-                      <div className="relative">
-                        <Image src={LuxoticarsWhiteFont} alt="Luxoticars" height={19} width={300} />
-                      </div>
                     </a>
                   </Link>
+                  <div className="hidden lg:block w-auto">
+                    <Link href="/">
+                      <a className="flex items-center text-white space-x-4">
+                        <Image src={LuxoticarsLogo} alt="Luxoticars" height={52} width={34} />
+                        <div className="relative">
+                          <Image src={LuxoticarsWhiteFont} alt="Luxoticars" height={19} width={300} />
+                        </div>
+                      </a>
+                    </Link>
+                  </div>
                 </div>
-              </div>
-              <div className="hidden sm:flex sm:ml-6">
-                <div className="flex items-center space-x-4">
-                  {navigation.map((item) => (
-                    <a
-                      key={item.name}
-                      href={item.href}
-                      className={classNames(
-                        item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                        'px-3 py-2 rounded-md text-sm font-medium'
-                      )}
-                      aria-current={item.current ? 'page' : undefined}
-                    >
-                      {item.name}
+                <div className="hidden sm:flex sm:ml-6">
+                  <div className="flex items-center space-x-4">
+                    {navigation.map((item) => (
+                      <a
+                        key={item.name}
+                        href={item.href}
+                        className={classNames(
+                          item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                          'px-3 py-2 rounded-md text-sm font-medium'
+                        )}
+                        aria-current={item.current ? 'page' : undefined}
+                      >
+                        {item.name}
+                      </a>
+                    ))}
+                    <a href="https://shopee.com.my/bigbadassboys" className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium flex items-center space-x-3">
+                      <Image src={Shopee} width={16} height={16} /> <span>Lifestyle</span>
                     </a>
-                  ))}
-                  <a href="https://shopee.com.my/bigbadassboys" className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium flex items-center space-x-3">
-                    <Image src={Shopee} width={16} height={16} /> <span>Lifestyle</span>
-                  </a>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-              {/* <button
+              <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                {/* <button
                 type="button"
                 className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
               >
@@ -134,8 +136,8 @@ export default function Example () {
                 </svg>
               </button> */}
 
-              {/* Profile dropdown */}
-              {/* <Menu as="div" className="ml-3 relative">
+                {/* Profile dropdown */}
+                {/* <Menu as="div" className="ml-3 relative">
                 <div>
                   <Menu.Button className="bg-gray-500 px-3 py-2 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                     <span className="sr-only">Open user menu</span>
@@ -188,15 +190,15 @@ export default function Example () {
                   </Menu.Items>
                 </Transition>
               </Menu> */}
+              </div>
             </div>
           </div>
-        </div>
-      </nav>
-      <nav id="bottom" ref={navRef} className={s['bottom-nav']} aria-label="Primary Navigation">
-        {isSmall && <BottomNav />}
-      </nav>
-      {isSmall && <MobileNav navigation={navigation} />}
-    </Popover>
+        </nav>
+        <nav id="bottom" ref={navRef} className={s['bottom-nav']} aria-label="Primary Navigation">
+          {isSmall && <BottomNav />}
+        </nav>
+        {isSmall && <MobileNav navigation={navigation} />}
+      </Popover>
     </>
   )
 }
