@@ -7,7 +7,7 @@ import { useDimensions } from 'react-hook-dimensions'
 import formatDate from '../lib/formatDate'
 import WEB from '../web.config'
 
-export default function LatestPublish ({ post }) {
+export default function LatestPublish({ post }) {
   const brand = require(`../public/brands/colors/${post?.tags[0]}.svg`)
   const name = `${post?.Year} ${post?.title}`
   const photos = useMemo(() => {
@@ -84,8 +84,8 @@ export default function LatestPublish ({ post }) {
               <Image
                 src={brand}
                 alt={post?.tags[0]}
-                // width={80}
-                // height={80}
+              // width={80}
+              // height={80}
               />
             </div>
           </div>
@@ -137,14 +137,14 @@ export default function LatestPublish ({ post }) {
             </p>
           </div>
           <div className="my-8 px-2">
-            <Link href={post?.slug} prefetch={false}>
+            <Link href={`${post?.slug}/`} prefetch={false}>
               <a className="bg-white text-gray-800 py-4 text-lg px-3 ring ring-gray-200 ring-opacity-50 ring-offset-4 ring-offset-gray-700">&rsaquo; Show Details</a>
             </Link>
           </div>
         </div>
       </div>
       <NewsArticleJsonLd
-        url={`https://${WEB.link}/${post?.slug}`}
+        url={`${WEB.link}/${post?.slug}/`}
         title={post?.title}
         images={photos}
         section="stock"
@@ -159,7 +159,7 @@ export default function LatestPublish ({ post }) {
       <CarouselJsonLd
         type="default"
         data={[
-          { url: `https://${WEB.link}/${post?.slug}` },
+          { url: `${WEB.link}/${post?.slug}/` },
         ]}
       />
     </div>
