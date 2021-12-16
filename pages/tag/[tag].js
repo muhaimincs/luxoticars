@@ -10,34 +10,34 @@ import WEB from '../../web.config'
 const makeupTitle = ([first, ...rest], locale = 'en-GB') =>
   first.toLocaleUpperCase(locale) + rest.join('')
 
-export default function TagPage ({ tags, posts, currentTag, coverImg }) {
+export default function TagPage({ tags, posts, currentTag, coverImg }) {
   let title = currentTag ? currentTag.replace(/-/g, ' ') : currentTag
   title = currentTag ? makeupTitle(title.replace(/_/g, ' ')) : ''
   return (
     <>
-    <NextSeo
-      title={`${title} on ${WEB.name}`}
-      description={`${WEB.name} has a decade of experience selling reconditioned ${title} cars.`}
-      canonical={`${WEB.link}/tag/${currentTag}`}
-      openGraph={{
-        url: `${WEB.link}/tag/${currentTag}`,
-        title,
-        description: `${WEB.name} has a decade of experience selling reconditioned ${title} cars.`,
-        images: [{
-          url: `${WEB.link}/brands/cover/${currentTag}.jpeg`,
-          type: 'image/jpeg',
-          width: coverImg?.width,
-          height: coverImg?.height
-        }],
-        type: 'article',
-      }}
-    />
-    <SearchLayout tags={tags} posts={posts} currentTag={currentTag} />
+      <NextSeo
+        title={`${title} on ${WEB.name}`}
+        description={`${WEB.name} has a decade of experience selling reconditioned ${title} cars.`}
+        canonical={`${WEB.link}/tag/${currentTag}/`}
+        openGraph={{
+          url: `${WEB.link}/tag/${currentTag}/`,
+          title,
+          description: `${WEB.name} has a decade of experience selling reconditioned ${title} cars.`,
+          images: [{
+            url: `${WEB.link}/brands/cover/${currentTag}.jpeg`,
+            type: 'image/jpeg',
+            width: coverImg?.width,
+            height: coverImg?.height
+          }],
+          type: 'article',
+        }}
+      />
+      <SearchLayout tags={tags} posts={posts} currentTag={currentTag} />
     </>
   )
 }
 
-export async function getStaticProps ({ params, preview }) {
+export async function getStaticProps({ params, preview }) {
   const currentTag = params.tag
   const posts = await getAllPosts({ includePages: false })
   const coverImg = require(`../../public/brands/cover/${currentTag}.jpeg`)?.default
@@ -72,7 +72,7 @@ export async function getStaticProps ({ params, preview }) {
   }
 }
 
-export async function getStaticPaths () {
+export async function getStaticPaths() {
   const posts = await getAllPosts({ includePages: false })
   const tags = getAllTagsFromPosts(posts)
   return {
@@ -81,7 +81,7 @@ export async function getStaticPaths () {
   }
 }
 
-TagPage.getLayout = function getLayout (page) {
+TagPage.getLayout = function getLayout(page) {
   const Header = dynamic(
     () => import('../../components/header'),
   )

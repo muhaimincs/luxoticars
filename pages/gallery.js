@@ -10,7 +10,7 @@ import 'prismjs/themes/prism.css'
 import 'react-notion-x/src/styles.css'
 import 'katex/dist/katex.min.css'
 
-export async function getStaticProps () {
+export async function getStaticProps() {
   const posts = await getAllPosts({ includePages: true })
   const post = posts.find(t => t.slug === 'gallery')
   const blockMap = await getPostBlocks(post.id)
@@ -20,13 +20,13 @@ export async function getStaticProps () {
   }
 }
 
-export default function GalleryPage ({ post, blockMap }) {
+export default function GalleryPage({ post, blockMap }) {
   return (
     <>
       <NextSeo
         title={`${post?.title} • ${WEB.name}`}
         description="Photo gallery of LUXOTICARS"
-        canonical={`${WEB.link}/gallery`}
+        canonical={`${WEB.link}/gallery/`}
         openGraph={{
           url: `${WEB.link}/gallery`,
           title: `${post?.title} • ${WEB.name}`,
@@ -69,7 +69,7 @@ export default function GalleryPage ({ post, blockMap }) {
   )
 }
 
-GalleryPage.getLayout = function getLayout (page) {
+GalleryPage.getLayout = function getLayout(page) {
   const Header = dynamic(
     () => import('../components/header'),
     { ssr: false }
