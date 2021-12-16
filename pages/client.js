@@ -28,9 +28,9 @@ export default function ClientPage({ post, blockMap }) {
       <NextSeo
         title={`${post?.title} • ${WEB.name}`}
         description="Photo gallery of LUXOTICARS"
-        canonical={`${WEB.link}/client/`}
+        canonical={`${WEB.link}/client`}
         openGraph={{
-          url: `${WEB.link}/gallery`,
+          url: `${WEB.link}/client`,
           title: `${post?.title} • ${WEB.name}`,
           description: 'Photo gallery of LUXOTICARS'
         }}

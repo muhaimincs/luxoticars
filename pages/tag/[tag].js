@@ -18,9 +18,9 @@ export default function TagPage({ tags, posts, currentTag, coverImg }) {
       <NextSeo
         title={`${title} on ${WEB.name}`}
         description={`${WEB.name} has a decade of experience selling reconditioned ${title} cars.`}
-        canonical={`${WEB.link}/tag/${currentTag}/`}
+        canonical={`${WEB.link}/tag/${currentTag}`}
         openGraph={{
-          url: `${WEB.link}/tag/${currentTag}/`,
+          url: `${WEB.link}/tag/${currentTag}`,
           title,
           description: `${WEB.name} has a decade of experience selling reconditioned ${title} cars.`,
           images: [{

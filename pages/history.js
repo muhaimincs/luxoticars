@@ -56,9 +56,9 @@ HistoryPage.getLayout = function getLayout(page) {
       <NextSeo
         title={`History • ${WEB.name}`}
         description="LUXOTICARS is centre of record-breaking mega and hyper cars, based in Kuala Lumpur, MY"
-        canonical={`${WEB.link}/history/`}
+        canonical={`${WEB.link}/history`}
         openGraph={{
-          url: `${WEB.link}/history/`,
+          url: `${WEB.link}/history`,
           title: `History • ${WEB.name}`,
           description: 'LUXOTICARS is centre of record-breaking mega and hyper cars, based in Kuala Lumpur, MY'
         }}

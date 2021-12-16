@@ -165,9 +165,9 @@ export default function CarPage({ post, blockMap, relatedPosts, currentTag }) {
       <NextSeo
         title={`${post?.title} • ${WEB.name}`}
         description={post?.summary}
-        canonical={`${WEB.link}/${post?.slug}/`}
+        canonical={`${WEB.link}/${post?.slug}`}
         openGraph={{
-          url: `${WEB.link}/${post?.slug}/`,
+          url: `${WEB.link}/${post?.slug}`,
           title: post?.title,
           description: post?.summary,
           images: post?.exteriorPhotos.map(photo => ({
@@ -188,7 +188,7 @@ export default function CarPage({ post, blockMap, relatedPosts, currentTag }) {
           {
             position: 1,
             name: 'Stocks',
-            item: `${WEB.link}/search/`
+            item: `${WEB.link}/search`
           },
           {
             position: 2,
