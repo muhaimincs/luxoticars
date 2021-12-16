@@ -17,7 +17,7 @@ module.exports = {
       'pages'
     ]
   },
-  async headers () {
+  async headers() {
     return [
       {
         source: '/:path*{/}?',
@@ -40,5 +40,6 @@ module.exports = {
       })
     }
     return config
-  }
+  },
+  trailingSlash: true
 }
