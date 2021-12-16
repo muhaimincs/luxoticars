@@ -15,7 +15,7 @@ const Parallex = dynamic(
   () => import('../components/parallex.about'),
   { ssr: false }
 )
-export default function HistoryPage () {
+export default function HistoryPage() {
   return (
     <>
       <Mission />
@@ -42,7 +42,7 @@ export default function HistoryPage () {
   )
 }
 
-HistoryPage.getLayout = function getLayout (page) {
+HistoryPage.getLayout = function getLayout(page) {
   const Header = dynamic(
     () => import('../components/header'),
     { ssr: false }
@@ -56,9 +56,9 @@ HistoryPage.getLayout = function getLayout (page) {
       <NextSeo
         title={`History • ${WEB.name}`}
         description="LUXOTICARS is centre of record-breaking mega and hyper cars, based in Kuala Lumpur, MY"
-        canonical={`${WEB.link}/gallery`}
+        canonical={`${WEB.link}/history/`}
         openGraph={{
-          url: `${WEB.link}/gallery`,
+          url: `${WEB.link}/history/`,
           title: `History • ${WEB.name}`,
           description: 'LUXOTICARS is centre of record-breaking mega and hyper cars, based in Kuala Lumpur, MY'
         }}
