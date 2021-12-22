@@ -228,7 +228,7 @@ export default function CarPage({ post, blockMap, relatedPosts, currentTag }) {
         <ul className="px-[2vw] xl:px-[calc(min(12px,8vw))] w-[var(--notion-max-width)] max-w-full text-gray-400 flex space-x-3 text-xs flex-shrink">
           <li><Link href="/search"><a>Stock</a></Link></li>
           <li>&raquo;</li>
-          <li><Link href={`/tag/${post?.tags[0]}`}><a className="capitalize">{post?.brandName}</a></Link></li>
+          <li><Link href={`/tag/${post?.tags[0]}`}><a className="capitalize line-clamp-1">{post?.brandName}</a></Link></li>
         </ul>
         {interiorGallery?.length && (
           <ul className="text-gray-400 flex space-x-3 text-xs">
@@ -268,11 +268,11 @@ export default function CarPage({ post, blockMap, relatedPosts, currentTag }) {
               defaultAlt={post?.title}
             />
           )}
-        <div className="absolute top-0 inset-x-0 z-10 bg-gradient-to-b from-black max-w-7xl xl:max-w-screen-2xl mx-auto">
-          <h1 className="my-5 text-white text-lg md:text-5xl text-center w-[var(--notion-max-width)] px-[2vw] xl:px-[calc(min(12px,8vw))] mx-auto max-w-full">{post?.title}</h1>
+        <div className="absolute bottom-10 lg:top-0 inset-x-0 z-10 bg-gradient-to-t lg:bg-gradient-to-b from-black max-w-7xl xl:max-w-screen-2xl mx-auto">
+          <h1 className="my-5 text-white text-3xl md:text-5xl md:text-center lg:w-[var(--notion-max-width)] px-6 lg:px-[2vw] xl:px-[calc(min(12px,8vw))] mx-auto max-w-full">{post?.title}</h1>
         </div>
         <details className="max-w-7xl mx-auto">
-          <summary className="max-w-full py-3 bg-black text-gray-400 z-10 uppercase text-xs px-[2vw] xl:px-[calc(min(12px,8vw))] w-[var(--notion-max-width)] mx-auto">{post?.summary}</summary>
+          <summary className="max-w-full py-3 bg-black text-gray-400 z-10 uppercase text-xs px-[2vw] xl:px-[calc(min(12px,8vw))] w-[var(--notion-max-width)] mx-auto">{post?.summary || 'Tap to view more photos'}</summary>
         </details>
       </div>
       <div className="max-w-7xl mx-auto">
