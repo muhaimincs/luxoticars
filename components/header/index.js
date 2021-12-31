@@ -119,7 +119,7 @@ export default function Example() {
                         {item.name}
                       </a>
                     ))}
-                    <a href="https://shopee.com.my/bigbadassboys" className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium flex items-center space-x-3">
+                    <a href="https://shp.ee/i6sjx9t" target="_blank" className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium flex items-center space-x-3">
                       <Image src={Shopee} width={16} height={16} /> <span>Lifestyle</span>
                     </a>
                   </div>

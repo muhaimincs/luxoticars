@@ -8,7 +8,7 @@ import Img5 from '../public/img/commerce/img5.jpeg'
 import Img6 from '../public/img/commerce/img6.jpeg'
 import Shopee from '../public/img/props/shopee.svg'
 
-export default function SalesSection () {
+export default function SalesSection() {
   return (
     <section aria-labelledby="sale-heading">
       <div className="pt-32 overflow-hidden sm:pt-14">
@@ -23,7 +23,7 @@ export default function SalesSection () {
                   Gear Up
                 </h2>
                 <div className="mt-6 text-base">
-                  <a href="https://shopee.com.my/bigbadassboys?smtt=0.0.9" className="font-semibold text-red-600">
+                  <a href="https://shp.ee/i6sjx9t" target="_blank" className="font-semibold text-red-600">
                     Get them now<span aria-hidden="true"> &rarr;</span>
                   </a>
                 </div>
