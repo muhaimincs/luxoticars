@@ -40,10 +40,13 @@ function Gallery ({
 }
 
 const slide1 = [
-  'https://images.ctfassets.net/ijuxqf6x1pz2/1iPVcgMw4uL6AtwKNdoVOB/c144ebf5cfceaedbb8d5fa8528defb2f/photo_2021-10-20_10.34.05.jpeg',
-  'https://images.ctfassets.net/ijuxqf6x1pz2/7GFJfe8VdZygBgh0tMMCcG/3d4c18643a5207df0fabb62ff68462ca/photo_2021-10-20_10.29.07.jpeg',
-  'https://images.ctfassets.net/ijuxqf6x1pz2/6JvKtacC0JYN9oirQvWFfe/97606945e422c04bd9d802bff3c82767/photo_2021-10-20_10.34.09.jpeg',
-  'https://images.ctfassets.net/ijuxqf6x1pz2/bhOxdKOVomWgbZcKrKq5N/8e38c71b26b3913d0346ce32b561cf5c/photo_2021-10-20_10.29.02.jpeg'
+  'https://images.ctfassets.net/ijuxqf6x1pz2/4qoKLhWYD3IXfrIHTUWi4o/1d81807324a2ea309266cd5d54473d99/photo_2022-02-22_19.40.36.jpeg',
+  'https://images.ctfassets.net/ijuxqf6x1pz2/5dT5DNrQCDRmnVl7VP5g5W/d91e9fa0de3269849a278f71c34b26f2/photo_2022-02-22_19.40.27.jpeg',
+  'https://images.ctfassets.net/ijuxqf6x1pz2/4yd8Pn0MfojN0W5CrRW2ZQ/1034664a2f5f4d315691144936cdcced/photo_2022-02-22_19.40.17.jpeg',
+  // 'https://images.ctfassets.net/ijuxqf6x1pz2/1iPVcgMw4uL6AtwKNdoVOB/c144ebf5cfceaedbb8d5fa8528defb2f/photo_2021-10-20_10.34.05.jpeg',
+  // 'https://images.ctfassets.net/ijuxqf6x1pz2/7GFJfe8VdZygBgh0tMMCcG/3d4c18643a5207df0fabb62ff68462ca/photo_2021-10-20_10.29.07.jpeg',
+  // 'https://images.ctfassets.net/ijuxqf6x1pz2/6JvKtacC0JYN9oirQvWFfe/97606945e422c04bd9d802bff3c82767/photo_2021-10-20_10.34.09.jpeg',
+  // 'https://images.ctfassets.net/ijuxqf6x1pz2/bhOxdKOVomWgbZcKrKq5N/8e38c71b26b3913d0346ce32b561cf5c/photo_2021-10-20_10.29.02.jpeg'
 ]
 const slide2 = [
   'https://images.ctfassets.net/ijuxqf6x1pz2/5vSho2RLl6tqARVD4FUrhp/1e683c26eeb6e5facd2137e39a032eda/photo_2021-10-22_21.31.32.jpeg',
@@ -65,7 +68,7 @@ export default function ClientHomepage () {
   return (
     <div className="my-10">
       <div className="max-w-7xl mx-auto w-full px-3 md:px-6 mb-6">
-        <h3 className="text-white text-3xl font-semibold font-sans">
+        <h3 className="text-white text-3xl font-sans">
           Luxoticars Clients Moment
         </h3>
       </div>
