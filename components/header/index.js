@@ -104,7 +104,7 @@ export default function Example() {
                     </Link>
                   </div>
                 </div>
-                <div className="hidden sm:flex sm:ml-6">
+                <div className="hidden sm:flex sm:ml-auto">
                   <div className="flex items-center space-x-4">
                     {navigation.map((item) => (
                       <a
