@@ -182,6 +182,24 @@ export default function CarPage({ post, blockMap, relatedPosts, currentTag }) {
             section: post?.tags[0]
           }
         }}
+        noindex={false}
+        nofollow={false}
+        robotsProps={{
+          nosnippet: true,
+          notranslate: true,
+          noimageindex: false,
+          noarchive: true,
+          maxSnippet: -1,
+          maxImagePreview: 'large',
+          maxVideoPreview: -1,
+        }}
+        additionalMetaTags={[{
+          name: 'application-name',
+          content: 'Luxoticars'
+        }, {
+          httpEquiv: 'x-ua-compatible',
+          content: 'IE=edge; chrome=1'
+        }]}
       />
       <BreadcrumbJsonLd
         itemListElements={[
