@@ -1,4 +1,6 @@
 import dynamic from 'next/dynamic'
+import Link from 'next/link'
+import Image from 'next/image'
 import { LocalBusinessJsonLd } from 'next-seo'
 
 import WEB from '../web.config'
@@ -9,16 +11,18 @@ import Header from '../components/header'
 import Layout from '../components/layout.homepage'
 
 export async function getStaticProps ({ preview = false }) {
-  const posts = await getAllPosts({ includePages: false })
+  const posts = await getAllPosts({ includePages: true })
   const tags = getAllTagsFromPosts(posts)
   const externalSource = await getCarPhotos(posts[0].slug, preview);
+  const youtubes = posts.filter(p => p.type[0] === 'Youtube')
   return {
     props: {
       tags,
       post: {
         ...posts[0],
         externalSource: externalSource
-      }
+      },
+      youtubes
     },
     revalidate: 1
   }
@@ -40,12 +44,12 @@ const YoutubeList = dynamic(
   () => import('../components/youtube-homepage'),
 )
 
-export default function Home ({ tags, post }) {
+export default function Home ({ tags, post, youtubes }) {
   return (
     <>
     <Carousel />
     <WelcomeText />
-    <YoutubeList />
+    <YoutubeList youtubes={youtubes} />
     <div className="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:gap-24 lg:items-start min-h-full">
       <LatestPublish post={post} />
       <div className="px-3 mt-3 md:px-0 md:mt-0">
