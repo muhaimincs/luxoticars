@@ -21,9 +21,9 @@ const Collection = dynamic(() =>
 const Equation = dynamic(() =>
   import('react-notion-x/build/third-party/equation').then((m) => m.Equation)
 )
-const CollectionRow = dynamic(() =>
-  import('react-notion-x/build/third-party/collection-row').then((m) => m.Equation)
-)
+// const CollectionRow = dynamic(() =>
+//   import('react-notion-x/build/third-party/collection-row').then((m) => m.Equation)
+// )
 
 export async function getStaticProps () {
   const posts = await getAllPosts({ includePages: true })
@@ -56,7 +56,7 @@ export default function GalleryPage({ post, blockMap }) {
               components={{
                 equation: Equation,
                 code: Code,
-                collectionRow: CollectionRow,
+                // collectionRow: CollectionRow,
                 collection: Collection
               }}
               // mapPageUrl={mapPageUrl}

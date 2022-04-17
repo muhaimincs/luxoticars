@@ -30,9 +30,9 @@ const Collection = dynamic(() =>
 const Equation = dynamic(() =>
   import('react-notion-x/build/third-party/equation').then((m) => m.Equation)
 )
-const CollectionRow = dynamic(() =>
-  import('react-notion-x/build/third-party/collection-row').then((m) => m.Equation)
-)
+// const CollectionRow = dynamic(() =>
+//   import('react-notion-x/build/third-party/collection-row').then((m) => m.Equation)
+// )
 const mapPageUrl = id => {
   return 'https://www.notion.so/' + id.replace(/-/g, '')
 }
@@ -326,7 +326,7 @@ export default function CarPage({ post, blockMap, relatedPosts, currentTag }) {
               components={{
                 equation: Equation,
                 code: Code,
-                collectionRow: CollectionRow,
+                // collectionRow: CollectionRow,
                 Collection: Collection
               }}
               mapPageUrl={mapPageUrl}
