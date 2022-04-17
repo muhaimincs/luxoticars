@@ -327,6 +327,7 @@ export default function CarPage({ post, blockMap, relatedPosts, currentTag }) {
                 equation: Equation,
                 code: Code,
                 // collectionRow: CollectionRow,
+                nextLink: Link,
                 Collection: Collection
               }}
               mapPageUrl={mapPageUrl}
