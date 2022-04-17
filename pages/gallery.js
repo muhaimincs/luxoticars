@@ -5,7 +5,7 @@ import { NextSeo } from 'next-seo'
 import WEB from '../web.config'
 import { getAllPosts, getPostBlocks } from '../lib/notion'
 
-import 'rc-dropdown/assets/index.css'
+// import 'rc-dropdown/assets/index.css'
 import 'prismjs/themes/prism.css'
 import 'react-notion-x/src/styles.css'
 import 'katex/dist/katex.min.css'

@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import 'rc-dropdown/assets/index.css'
+// import 'rc-dropdown/assets/index.css'
 import 'prismjs/themes/prism.css'
 import 'react-notion-x/src/styles.css'
 import 'katex/dist/katex.min.css'
