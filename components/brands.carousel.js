@@ -22,8 +22,8 @@ function Tags ({ tag, base, index, total }) {
           className="flex-none"
           initial={false}
         >
-          <div className="bg-white p-3 w-32 h-32 rounded-xl flex items-center justify-center mx-3">
-            <Image src={logo} />
+          <div className="bg-white p-3 w-24 h-24 rounded-xl flex items-center justify-center mx-3">
+            <Image src={logo} alt={tag} />
           </div>
         </a>
       </Link>

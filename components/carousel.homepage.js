@@ -48,12 +48,16 @@ const Carousel = () => {
             width={elementDimensions.width}
             height={elementDimensions.height}
           >
-            <source
+            {/* <source
               src={`https://res.cloudinary.com/dkgbrdmj4/video/upload/ac_none,c_fit,e_deshake:16,h_${elementDimensions.height},q_70/g_north,c_scale,l_LUXOTICARS:watermark,w_180,y_180/v1635907269/LUXOTICARS/bafybeidvysen4oi7su3owebwge5aof7b6ljemtmsyuzbytowdkh5kkpova_k2ud3d.webm`}
               type="video/webm"
-            />
-            <source
+            /> */}
+            {/* <source
               src={`https://res.cloudinary.com/dkgbrdmj4/video/upload/ac_none,c_fit,e_deshake:16,h_${elementDimensions.height},q_70/g_north,c_scale,l_LUXOTICARS:watermark,w_180,y_180/v1635907269/LUXOTICARS/bafybeidvysen4oi7su3owebwge5aof7b6ljemtmsyuzbytowdkh5kkpova_k2ud3d.mp4`}
+              type="video/mp4"
+            /> */}
+            <source
+              src={'https://videos.ctfassets.net/ijuxqf6x1pz2/6RNqbc4oicSrprnxiE8wHT/f31513c52d46b75e0a1aa83517bf3951/montage.mp4'}
               type="video/mp4"
             />
             Your browser does not support the video tag.
@@ -61,7 +65,7 @@ const Carousel = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-black z-50" aria-hidden="true" />
         </SwiperSlide>
         <SwiperSlide data-swiper-autoplay="10500">
-          <div className="transform translate-y-[-137px] md:translate-y-[-346px] iphone5:translate-y-[-10px]">
+          <div className="transform translate-y-[-137px] md:translate-y-[-146px] iphone5:translate-y-[-10px]">
             <div className="relative h-screen w-screen">
               <Image
                 layout="fill"

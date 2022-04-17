@@ -1,5 +1,5 @@
 import dynamic from 'next/dynamic'
-import { NotionRenderer, Equation, Code, CollectionRow, Collection } from 'react-notion-x'
+import { NotionRenderer } from 'react-notion-x'
 import { NextSeo } from 'next-seo'
 
 import WEB from '../web.config'
@@ -10,7 +10,22 @@ import 'prismjs/themes/prism.css'
 import 'react-notion-x/src/styles.css'
 import 'katex/dist/katex.min.css'
 
-export async function getStaticProps() {
+const Code = dynamic(() =>
+  import('react-notion-x/build/third-party/code').then((m) => m.Code)
+)
+const Collection = dynamic(() =>
+  import('react-notion-x/build/third-party/collection').then(
+    (m) => m.Collection
+  )
+)
+const Equation = dynamic(() =>
+  import('react-notion-x/build/third-party/equation').then((m) => m.Equation)
+)
+const CollectionRow = dynamic(() =>
+  import('react-notion-x/build/third-party/collection-row').then((m) => m.Equation)
+)
+
+export async function getStaticProps () {
   const posts = await getAllPosts({ includePages: true })
   const post = posts.find(t => t.slug === 'gallery')
   const blockMap = await getPostBlocks(post.id)
