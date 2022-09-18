@@ -7,7 +7,7 @@ module.exports = {
       's3.us-west-2.amazonaws.com',
       'img.rnudah.com'
     ],
-    formats: ['image/avif', 'image/webp'],
+    formats: ['image/avif', 'image/webp']
   },
   eslint: {
     dirs: [
@@ -17,7 +17,7 @@ module.exports = {
       'pages'
     ]
   },
-  async headers() {
+  async headers () {
     return [
       {
         source: '/:path*{/}?',
@@ -41,5 +41,8 @@ module.exports = {
     }
     return config
   },
+  experimental: {
+    esmExternals: 'loose'
+  }
   // trailingSlash: true
 }
