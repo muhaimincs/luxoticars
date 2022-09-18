@@ -8,6 +8,9 @@ import { useMemo } from 'react'
 import dynamic from 'next/dynamic'
 import { NextSeo, BreadcrumbJsonLd, ProductJsonLd } from 'next-seo'
 import { NotionRenderer } from 'react-notion-x'
+import { Code } from 'react-notion-x/build/third-party/code'
+import { Collection } from 'react-notion-x/build/third-party/collection'
+import { Equation } from 'react-notion-x/build/third-party/equation'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useMediaQuery } from 'beautiful-react-hooks'
@@ -19,17 +22,6 @@ import formatDate from '../lib/formatDate'
 import Layout from '../components/layout.homepage'
 import Cars from '../components/cars.post'
 
-const Code = dynamic(() =>
-  import('react-notion-x/build/third-party/code').then((m) => m.Code)
-)
-const Collection = dynamic(() =>
-  import('react-notion-x/build/third-party/collection').then(
-    (m) => m.Collection
-  )
-)
-const Equation = dynamic(() =>
-  import('react-notion-x/build/third-party/equation').then((m) => m.Equation)
-)
 // const CollectionRow = dynamic(() =>
 //   import('react-notion-x/build/third-party/collection-row').then((m) => m.Equation)
 // )
