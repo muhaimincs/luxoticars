@@ -29,7 +29,7 @@ const mapPageUrl = id => {
   return 'https://www.notion.so/' + id.replace(/-/g, '')
 }
 
-export async function getStaticProps({ params: { slug }, preview }) {
+export async function getStaticProps ({ params: { slug }, preview }) {
   const posts = await getAllPosts({ includePages: false })
   const post = posts.find(t => t.slug === slug)
   const currentTag = post.tags[0]
@@ -38,7 +38,7 @@ export async function getStaticProps({ params: { slug }, preview }) {
   )
   filteredPosts = filteredPosts.filter((p) => p.id !== post.id)
   const withExternalSource = await Promise.all(filteredPosts.map(async (p) => {
-    const externalSource = await getCarPhotos(p.slug, preview);
+    const externalSource = await getCarPhotos(p.slug, preview)
     return {
       ...p,
       externalSource: externalSource.reduce((acc, item) => {
@@ -53,7 +53,7 @@ export async function getStaticProps({ params: { slug }, preview }) {
       }, [])
     }
   }))
-  const postWithExternalSource = withExternalSource.slice(0, 3);
+  const postWithExternalSource = withExternalSource.slice(0, 3)
   // const coverImage = require(`../public/brands/cover/${currentTag}.jpeg`).default
   postWithExternalSource.unshift({
     id: 'UNRELATED',
@@ -90,7 +90,7 @@ export async function getStaticProps({ params: { slug }, preview }) {
         ...post,
         brandName,
         exteriorPhotos,
-        'Interior Photos': interiorPhotos,
+        'Interior Photos': interiorPhotos
       },
       relatedPosts: postWithExternalSource,
       blockMap,
@@ -100,7 +100,7 @@ export async function getStaticProps({ params: { slug }, preview }) {
   }
 }
 
-export async function getStaticPaths() {
+export async function getStaticPaths () {
   const posts = await getAllPosts({ includePages: false })
   return {
     paths: posts.map(row => `/${row.slug}`),
@@ -197,7 +197,7 @@ export default function CarPage ({ post, blockMap, relatedPosts, currentTag }) {
           noarchive: true,
           maxSnippet: -1,
           maxImagePreview: 'large',
-          maxVideoPreview: -1,
+          maxVideoPreview: -1
         }}
         additionalMetaTags={[{
           name: 'application-name',
@@ -230,7 +230,7 @@ export default function CarPage ({ post, blockMap, relatedPosts, currentTag }) {
         manufacturerLogo={`${WEB.link}/brands/colors/${post?.tags[0]}.svg`}
         aggregateRating={{
           ratingValue: '4.4',
-          reviewCount: '89',
+          reviewCount: '89'
         }}
         offers={[
           {
@@ -243,8 +243,8 @@ export default function CarPage ({ post, blockMap, relatedPosts, currentTag }) {
               : 'https://schema.org/SoldOut',
             url: `${WEB.link}/${post?.slug}`,
             seller: {
-              name: 'Abu Garciá',
-            },
+              name: 'Abu Garciá'
+            }
           }
         ]}
       />
@@ -364,7 +364,7 @@ export default function CarPage ({ post, blockMap, relatedPosts, currentTag }) {
   )
 }
 
-CarPage.getLayout = function getLayout(page) {
+CarPage.getLayout = function getLayout (page) {
   const Header = dynamic(
     () => import('../components/header')
   )
