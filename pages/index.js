@@ -9,52 +9,53 @@ import Header from '../components/header'
 import Layout from '../components/layout.homepage'
 
 export async function getStaticProps ({ preview = false }) {
-  const posts = await getAllPosts({ includePages: true })
+  const posts = await getAllPosts({ includePages: false })
   const tags = getAllTagsFromPosts(posts)
   const externalSource = await getCarPhotos(posts[0].slug, preview)
-  const youtubes = posts.filter(p => p.type[0] === 'Youtube')
   return {
     props: {
       tags,
       post: {
         ...posts[0],
         externalSource: externalSource
-      },
-      youtubes
+      }
     },
     revalidate: 1
   }
 }
 
 const Carousel = dynamic(
-  () => import('../components/carousel.homepage')
+  () => import('../components/carousel.homepage'),
+  { ssr: true }
 )
 const BrandsCarousel = dynamic(
-  () => import('../components/brands.homepage')
+  () => import('../components/brands.homepage'),
+  { ssr: false }
 )
 const LatestPublish = dynamic(
-  () => import('../components/latest-publish.homepage')
+  () => import('../components/latest-publish.homepage'),
+  { ssr: false }
 )
 const SocialLife = dynamic(
-  () => import('../components/clients.homepage')
+  () => import('../components/clients.homepage'),
+  { ssr: false }
 )
 // const YoutubeList = dynamic(
-//   () => import('../components/youtube-homepage')
+//   () => import('../components/youtube-homepage'),
+//   { ssr: false }
 // )
-const ShopeeHomepage = dynamic(
-  () => import('../components/shopee.homepage')
-)
 
-export default function Home ({ tags, post, youtubes }) {
+export default function Home ({ tags, post }) {
   return (
     <>
     <Carousel />
     <WelcomeText />
-    <BrandsCarousel tags={tags} />
-    <ShopeeHomepage />
-    {/* <YoutubeList youtubes={youtubes} /> */}
+    {/* <YoutubeList /> */}
     <div className="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:gap-24 lg:items-start min-h-full">
       <LatestPublish post={post} />
+      <div className="px-3 mt-3 md:px-0 md:mt-0">
+        <BrandsCarousel tags={tags} />
+      </div>
     </div>
     <SocialLife />
     <div className="max-w-7xl text-white mx-auto w-full px-3 py-6">
