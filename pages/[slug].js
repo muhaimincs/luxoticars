@@ -110,29 +110,29 @@ export async function getStaticPaths() {
 
 const ComfortAssistance = dynamic(
   () => import('../components/comfort-assistance.car'), {
-  ssr: false
-}
+    ssr: false
+  }
 )
 const Interior = dynamic(
   () => import('../components/interior.car'), {
-  ssr: false
-}
+    ssr: false
+  }
 )
 const AudioCommunication = dynamic(
   () => import('../components/audio-communication.car'), {
-  ssr: false
-}
+    ssr: false
+  }
 )
 const Wheels = dynamic(
   () => import('../components/wheels.car'), {
-  ssr: false
-}
+    ssr: false
+  }
 )
 
 const PhotoBigLayout = dynamic(
   () => import('../components/cars/overview')
 )
-export default function CarPage({ post, blockMap, relatedPosts, currentTag }) {
+export default function CarPage ({ post, blockMap, relatedPosts, currentTag }) {
   const interiorGallery = post && post['Interior Photos'] ? post['Interior Photos'] : []
   const router = useRouter()
   const renderKeyFeaturesClassname = useMemo(() => {
@@ -279,7 +279,7 @@ export default function CarPage({ post, blockMap, relatedPosts, currentTag }) {
               isLarge={isLarge}
               defaultAlt={post?.title}
             />
-          )
+            )
           : (
             <PhotoBigLayout
               photos={interiorGallery?.map((photo) => ({
@@ -291,7 +291,7 @@ export default function CarPage({ post, blockMap, relatedPosts, currentTag }) {
               isLarge={isLarge}
               defaultAlt={post?.title}
             />
-          )}
+            )}
         <div className="absolute top-auto bottom-10 lg:bottom-auto lg:top-0 inset-x-0 z-10 bg-gradient-to-t lg:bg-gradient-to-b from-black max-w-7xl xl:max-w-screen-2xl mx-auto">
           <h1 className="my-5 text-white text-3xl md:text-5xl md:text-center lg:w-[var(--notion-max-width)] px-6 lg:px-[2vw] xl:px-[calc(min(12px,8vw))] mx-auto max-w-full">{post?.title}</h1>
         </div>

@@ -7,12 +7,12 @@ import SwiperCore, {
 
 import WEB from '../../web.config'
 
-SwiperCore.use([Zoom, Navigation, Pagination])
-
 import 'swiper/css'
 import 'swiper/css/zoom'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
+
+SwiperCore.use([Zoom, Navigation, Pagination])
 
 const SwiperComponent = ({ photos, initialSlide = 0 }) => {
   return (
@@ -34,11 +34,11 @@ const SwiperComponent = ({ photos, initialSlide = 0 }) => {
           <SwiperSlide key={photo.url}>
             <div className="swiper-zoom-container">
               {/* <div className="aspect-w-16 aspect-h-9 overflow-hidden"> */}
-                <img 
-                  src={photo.url} 
+                <img
+                  src={photo.url}
                   width={`${photo.width}px`}
-                  height={`${photo.height}px`} 
-                  className="w-full h-full object-cover object-center" 
+                  height={`${photo.height}px`}
+                  className="w-full h-full object-cover object-center"
                   alt={`${WEB?.name} - ${photo?.name}`}
                 />
               {/* </div> */}
