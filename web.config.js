@@ -15,6 +15,7 @@ const WEB = {
   sortByDate: true,
   notionPageId: process.env.NOTION_PAGE_ID,
   notionAccessToken: process.env.NOTION_ACCESS_TOKEN,
+  notionActiveUser: process.env.NOTION_ACTIVE_USER,
   analytics: {
     gaConfig: {
       measurementId: 'G-E645Q3EN3H'
