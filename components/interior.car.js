@@ -1,4 +1,5 @@
-import Image from 'next/image'
+/* eslint-disable @next/next/no-img-element */
+// import Image from 'next/image'
 
 export default function ComfortAssistance ({ post }) {
   if (!post?.interior_1 && !post?.interior_1_img) {
@@ -14,7 +15,7 @@ export default function ComfortAssistance ({ post }) {
         <td className="pt-2 pr-2 flex justify-end">
         {post?.interior_1_img && (
           <div className="relative w-16 h-16">
-            <Image src={post?.interior_1_img} layout="fill" objectFit="cover" />
+            <img src={post?.interior_1_img} className="object-cover w-full h-full object-center" alt="Luxoticars" />
           </div>
         )}
         </td>
@@ -25,7 +26,7 @@ export default function ComfortAssistance ({ post }) {
           <td className="pt-2 pr-2 flex justify-end">
           {post?.interior_2_img && (
             <div className="relative w-16 h-16">
-              <Image src={post?.interior_2_img} layout="fill" objectFit="cover" />
+              <img src={post?.interior_2_img} className="object-cover w-full h-full object-center" alt="Luxoticars" />
             </div>
           )}
           </td>
@@ -37,7 +38,7 @@ export default function ComfortAssistance ({ post }) {
           <td className="pt-2 pr-2 flex justify-end">
           {post?.interior_3_img && (
             <div className="relative w-16 h-16">
-              <Image src={post?.interior_3_img} layout="fill" objectFit="cover" />
+              <img src={post?.interior_3_img} className="object-cover w-full h-full object-center" alt="Luxoticars" />
             </div>
           )}
           </td>
