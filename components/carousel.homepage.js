@@ -1,10 +1,11 @@
+/* eslint-disable @next/next/no-img-element */
 import { useEffect } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import SwiperCore, {
   EffectFade,
   Autoplay
 } from 'swiper'
-import Image from 'next/image'
+// import Image from 'next/image'
 import { useDimensions } from 'react-hook-dimensions'
 
 import 'swiper/css/navigation'
@@ -63,7 +64,7 @@ const Carousel = () => {
         <SwiperSlide data-swiper-autoplay="10500">
           <div className="transform translate-y-[-137px] md:translate-y-[-346px] iphone5:translate-y-[-10px]">
             <div className="relative h-screen w-screen">
-              <Image
+              <img
                 layout="fill"
                 objectFit="cover"
                 src="https://images.ctfassets.net/ijuxqf6x1pz2/1N8YjfxoUBbnIdKnQtsZ0k/98bf4396c6cc3c4a323a33fae9accb49/photo_2021-09-24_09.31.08.jpeg"
@@ -76,7 +77,7 @@ const Carousel = () => {
         <SwiperSlide data-swiper-autoplay="10500">
           <div className="transform translate-y-[-137px] md:translate-y-[-346px] iphone5:translate-y-[-10px]">
             <div className="relative w-screen h-screen">
-              <Image
+              <img
                 layout="fill"
                 objectFit="cover"
                 src="https://images.ctfassets.net/ijuxqf6x1pz2/15nQQBgBkiECSSQznnm5lV/1178ec83805376fbad23be545a9c7503/photo_2021-09-24_09.31.11.jpeg"

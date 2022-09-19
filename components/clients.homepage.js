@@ -1,10 +1,11 @@
+/* eslint-disable @next/next/no-img-element */
 import { Swiper, SwiperSlide } from 'swiper/react'
 import SwiperCore, {
   Autoplay,
   Virtual
 } from 'swiper'
 import Link from 'next/link'
-import Image from 'next/image'
+// import Image from 'next/image'
 
 import 'swiper/css/virtual'
 
@@ -31,7 +32,7 @@ function Gallery ({
       {photos.map((photo, index) => (
         <SwiperSlide key={photo} virtualIndex={index}>
           <div className={className}>
-            <Image src={photo} alt="" layout="fill" objectFit="cover" />
+            <img src={photo} alt="" layout="fill" objectFit="cover" />
           </div>
         </SwiperSlide>
       ))}
@@ -43,7 +44,7 @@ const slide1 = [
   'https://images.ctfassets.net/ijuxqf6x1pz2/4qoKLhWYD3IXfrIHTUWi4o/1d81807324a2ea309266cd5d54473d99/photo_2022-02-22_19.40.36.jpeg',
   'https://images.ctfassets.net/ijuxqf6x1pz2/5dT5DNrQCDRmnVl7VP5g5W/d91e9fa0de3269849a278f71c34b26f2/photo_2022-02-22_19.40.27.jpeg',
   'https://images.ctfassets.net/ijuxqf6x1pz2/4yd8Pn0MfojN0W5CrRW2ZQ/1034664a2f5f4d315691144936cdcced/photo_2022-02-22_19.40.17.jpeg',
-  'https://images.ctfassets.net/ijuxqf6x1pz2/2TSVQ6Bd3NstS6tqjgWfDW/d7e568d29e67480acfd2382c7c039ecf/photo_2022-03-18_20.30.14.jpeg',
+  'https://images.ctfassets.net/ijuxqf6x1pz2/2TSVQ6Bd3NstS6tqjgWfDW/d7e568d29e67480acfd2382c7c039ecf/photo_2022-03-18_20.30.14.jpeg'
 ]
 const slide2 = [
   'https://images.ctfassets.net/ijuxqf6x1pz2/5vSho2RLl6tqARVD4FUrhp/1e683c26eeb6e5facd2137e39a032eda/photo_2021-10-22_21.31.32.jpeg',
@@ -108,7 +109,7 @@ export default function ClientHomepage () {
       <div className="flex items-center py-8 px-6 md:px-96">
         <Link href="/client">
           <a
-            className="inline-flex w-full items-center justify-center px-5 py-3 border border-transparent bg-white text-gray-800 py-4 text-lg ring ring-gray-200 ring-opacity-50 ring-offset-4 ring-offset-gray-700"
+            className="inline-flex w-full items-center justify-center px-5 border border-transparent bg-white text-gray-800 py-4 text-lg ring ring-gray-200 ring-opacity-50 ring-offset-4 ring-offset-gray-700"
           >
             &rsaquo; Meet our clients
           </a>

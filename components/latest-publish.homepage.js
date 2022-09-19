@@ -1,5 +1,6 @@
+/* eslint-disable @next/next/no-img-element */
 import { useMemo, useEffect } from 'react'
-import Image from 'next/image'
+// import Image from 'next/image'
 import Link from 'next/link'
 import { CarouselJsonLd, NewsArticleJsonLd } from 'next-seo'
 import { useDimensions } from 'react-hook-dimensions'
@@ -7,7 +8,7 @@ import { useDimensions } from 'react-hook-dimensions'
 import formatDate from '../lib/formatDate'
 import WEB from '../web.config'
 
-export default function LatestPublish({ post }) {
+export default function LatestPublish ({ post }) {
   const brand = require(`../public/brands/colors/${post?.tags[0]}.svg`)
   const name = `${post?.Year} ${post?.title}`
   const photos = useMemo(() => {
@@ -40,7 +41,7 @@ export default function LatestPublish({ post }) {
 
   useEffect(() => {
     updateElementDimensions()
-  }, [])
+  }, [updateElementDimensions])
 
   return (
     <div className="relative sm:py-16 lg:py-0">
@@ -71,7 +72,7 @@ export default function LatestPublish({ post }) {
       <div className="relative mx-auto max-w-md px-3 sm:max-w-3xl sm:px-6 lg:px-0 lg:max-w-none lg:py-20">
         <div className="relative rounded-t-xl overflow-hidden">
           <div className="relative h-64 w-auto" ref={elementRef}>
-            <Image
+            <img
               src={photos[0]}
               alt={`Latest car on ${WEB.name}`}
               objectFit="cover"
@@ -81,7 +82,7 @@ export default function LatestPublish({ post }) {
           </div>
           <div className="absolute bottom-[5px] left-0 m-3 overflow-hidden">
             <div className="max-w-[9rem] relative flex items-center justify-center filter drop-shadow-lg contrast-125">
-              <Image
+              <img
                 src={brand}
                 alt={post?.tags[0]}
               // width={80}
@@ -92,7 +93,7 @@ export default function LatestPublish({ post }) {
         </div>
         <div className={renderSubPhotosClassnames}>
           <div className="relative h-32 w-auto">
-            <Image
+            <img
               src={photos[1]}
               alt={`Latest car on ${WEB.name}`}
               objectFit="cover"
@@ -101,7 +102,7 @@ export default function LatestPublish({ post }) {
             />
           </div>
           <div className="relative h-32 w-auto">
-            <Image
+            <img
               src={photos[2]}
               alt={`Latest car on ${WEB.name}`}
               objectFit="cover"
@@ -111,7 +112,7 @@ export default function LatestPublish({ post }) {
           </div>
           {photos[3] && (
             <div className="relative h-32 w-auto">
-              <Image
+              <img
                 src={photos[3]}
                 alt={`Latest car on ${WEB.name}`}
                 objectFit="cover"
@@ -159,7 +160,7 @@ export default function LatestPublish({ post }) {
       <CarouselJsonLd
         type="default"
         data={[
-          { url: `${WEB.link}/${post?.slug}` },
+          { url: `${WEB.link}/${post?.slug}` }
         ]}
       />
     </div>
