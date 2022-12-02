@@ -56,12 +56,7 @@ export function HomepageFooter() {
         </div>
       </div>
       <section
-        className="h-screen relative snap-normal snap-center"
-        id="brands"
-        aria-labelledby="brands-title"
-      />
-      <section
-        className="h-screen relative snap-normal snap-center"
+        className="pb-10"
         id="brands"
         aria-labelledby="brands-title"
       >

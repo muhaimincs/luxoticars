@@ -37,7 +37,7 @@ const modeScript = `
 
 export default function Document() {
   return (
-    <Html className="antialiased snap-y snap-mandatory scroll-smooth" lang="en">
+    <Html className="h-full antialiased">
       <Head>
         <script dangerouslySetInnerHTML={{ __html: modeScript }} />
         <link
@@ -51,7 +51,7 @@ export default function Document() {
           href={`${process.env.NEXT_PUBLIC_SITE_URL}/rss/feed.json`}
         />
       </Head>
-      <body className="bg-zinc-50 dark:bg-black m-0 p-0">
+      <body className="bg-zinc-50 dark:bg-black m-0 p-0 scroll-smooth">
         <Main />
         <NextScript />
       </body>

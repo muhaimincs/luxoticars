@@ -147,7 +147,7 @@ export function ArticleLayout({
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>              
               )}
-              External
+              Exterior
             </button>
             <button
               type="button"
@@ -161,7 +161,7 @@ export function ArticleLayout({
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>              
               )}
-              Internal
+              Interior
             </button>
           </div>
         </div>

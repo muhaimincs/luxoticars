@@ -1,10 +1,13 @@
 import Head from 'next/head'
 import dynamic from 'next/dynamic'
+import Image from 'next/image'
 import { LazyMotion, domAnimation } from 'framer-motion'
 
+import avatarFont from '@/images/LUXOTICARS_WHITE_FONT.svg'
 import { generateRssFeed } from '@/lib/generateRssFeed'
 import { generateAlgoliaSearches } from '@/lib/generateAlgoliaSearches'
 import { getAllArticles } from '@/lib/getAllArticles'
+import { Container } from '@/components/Container'
 
 const BrandGrid = dynamic(() => import('@/components/BrandGrid').then((mod) => mod.BrandGrid), {
   ssr: false
@@ -31,6 +34,11 @@ export default function Home({ cars, brands }) {
         />
         <title>LUXOTICARS - Car lifestyle</title>
       </Head>
+      <Container className="mt-9">
+        <div className="max-w-sm flex justify-center">
+          <Image src={avatarFont} alt="Luxoticars" sizes="4rem" className="pl-10 w-64 md:w-64" priority />
+        </div>
+      </Container>
       <LazyMotion features={domAnimation}>
         {cars.map((car) => (
           <Car key={car.slug} car={car} />

@@ -7,7 +7,6 @@ import clsx from 'clsx'
 import dynamic from 'next/dynamic'
 
 import { Container } from '@/components/Container'
-import avatarFont from '@/images/LUXOTICARS_WHITE_FONT.svg'
 import avatarImage from '@/images/avatar.svg'
 import avatarLight from '@/images/LUXOTICARS_GRADIENT_SKULL.svg'
 
@@ -100,28 +99,6 @@ function MobileNavItem({ href, children }) {
 
 export function MobileNavigation(props) {
   return (
-    <>
-    <div {...props}>
-      <div className="group rounded-full bg-white/90 py-1 px-2 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20 mr-3">
-        <SearchButton
-          className="relative transition w-8 h-8 flex items-center justify-center hover:text-teal-500 dark:hover:text-teal-400">
-          <span className="sr-only">Search</span>
-          <svg
-            width="24"
-            height="24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            aria-hidden="true"
-          >
-            <path d="m19 19-3.5-3.5" />
-            <circle cx="11" cy="11" r="6" />
-          </svg>
-        </SearchButton>
-      </div>
-    </div>
     <Popover {...props}>
       <Popover.Button className="group flex items-center rounded-full bg-white/90 px-4 py-2 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10 dark:hover:ring-white/20">
         Business
@@ -162,6 +139,12 @@ export function MobileNavigation(props) {
             </div>
             <nav className="mt-6">
               <ul className="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
+                <li className="block py-2">
+                  <SearchButton
+                    className="relative flex items-center justify-center hover:text-teal-500 dark:hover:text-teal-400">
+                    Search
+                  </SearchButton>
+                </li>
                 {navigation.map((nav) => (
                   <MobileNavItem key={nav.href} href={nav.href}>{nav.name}</MobileNavItem>
                 ))}
@@ -171,7 +154,6 @@ export function MobileNavigation(props) {
         </Transition.Child>
       </Transition.Root>
     </Popover>
-    </>
   )
 }
 
@@ -298,17 +280,13 @@ function Avatar({ large = false, className, ...props }) {
       <div className="flex space-x-3">
         <Image
           src={isDark ? avatarImage : avatarLight}
-          alt="Luxoticars Logo"
+          alt="Luxoticars | Carlife Style"
           sizes={large ? '4rem' : '2.25rem'}
           className={clsx(
-            '',
             large ? 'h-24 w-24' : 'h-9 w-9'
           )}
           priority
         />
-        {large && (
-          <Image src={avatarFont} alt="Luxoticars" sizes="4rem" className="w-52 md:w-64" priority />
-        )}
       </div>
     </Link>
   )
@@ -490,7 +468,7 @@ export function Header() {
           </Container>
         </div>
       </header>
-      {/* {isHomePage && <div style={{ height: 'var(--content-offset)' }} />} */}
+      {isHomePage && <div style={{ height: 'var(--content-offset)' }} />}
     </>
   )
 }
