@@ -1,7 +1,0 @@
-.hero {
-  @apply flex h-screen w-screen overflow-hidden bg-no-repeat bg-cover bg-center items-center justify-center;
-}
-
-.h1 {
-  @apply text-white mx-6 xl:max-w-md text-center text-3xl uppercase;
-}
