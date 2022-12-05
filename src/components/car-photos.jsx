@@ -54,7 +54,7 @@ export function CarPhotos({ title, photos }) {
                   leaveFrom="opacity-100"
                   leaveTo="opacity-0"
                 >
-                  <div className="w-full h-full p-10 fixed top-0 left-0 transition-all transform bg-zinc-800">
+                  <div className="w-full h-full p-3 transition-all transform">
                     <Dialog.Panel>
                       <GalleryWithZoom photos={photos} initialSlide={isOpen} />
                     </Dialog.Panel>
