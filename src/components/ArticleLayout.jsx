@@ -117,7 +117,7 @@ export function ArticleLayout({
   }
 
   return (
-    <>
+    <div className="pb-3">
       <Head>
         <title>{`${meta.title} - LUXOTICARS`}</title>
         <meta name="description" content={meta.description} />
@@ -212,6 +212,6 @@ export function ArticleLayout({
         </div>
       </Container>
       <Footer />
-    </>
+    </div>
   )
 }
