@@ -127,7 +127,7 @@ export function BrandGrid(props) {
           />
           <BrandColumn
             cars={[...columns[1], ...columns[2][1]]}
-            className="hidden md:block"
+            className="md:block"
             reviewClassName={(reviewIndex) =>
               reviewIndex >= columns[1].length && 'lg:hidden'
             }
@@ -135,7 +135,7 @@ export function BrandGrid(props) {
           />
           <BrandColumn
             cars={columns[2].flat()}
-            className="md:block"
+            className="hidden md:block"
             msPerPixel={10}
           />
         </>

@@ -183,7 +183,7 @@ function Modal({ isOpen, onClose, pathRef }) {
                   indexName={INDEX_NAME}
                   searchClient={searchClient}
                 >
-                  <SearchBox />
+                  <SearchBox placeholder='Search...' />
                   <div className="DocSearch-Dropdown">
                     <div className="DocSearch-Dropdown-Container">
                       <Hits hitComponent={Hit} className="DocSearch-Hits" />

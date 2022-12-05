@@ -33,15 +33,8 @@ export function Car({ car }) {
         <div className="relative">
           <div
             className='absolute top-[26rem] md:top-[38rem] right-0 left-0'
-            // initial={{ opacity: 0, translateY: 100 }}
-            // whileInView={{ opacity: 1, translateY: 10 }}
-            // transition={{
-            //   type: "spring",
-            //   stiffness: 400,
-            //   damping: 40
-            // }}
           >
-            <div className='mx-auto max-w-sm md:max-w-7xl'>
+            <div className='mx-auto max-w-sm md:max-w-7xl mb-2'>
               <h2 className="text-2xl md:text-3xl lg:text-5xl font-medium text-white uppercase px-4 tracking-tight">
                 <span
                   className={`bg-clip-text text-transparent bg-gradient-to-b backdrop-opacity-10 from-white via-zinc-200 to-transparent`}

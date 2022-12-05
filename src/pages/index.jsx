@@ -34,9 +34,9 @@ export default function Home({ cars, brands }) {
         />
         <title>LUXOTICARS - Car lifestyle</title>
       </Head>
-      <Container className="mt-9">
+      <Container className="mt-0 mb-10">
         <div className="max-w-sm flex justify-center">
-          <Image src={avatarFont} alt="Luxoticars" sizes="4rem" className="pl-10 w-64 md:w-64" priority />
+          <Image src={avatarFont} alt="Luxoticars" sizes="4rem" className="pl-16 w-64 md:w-64" priority />
         </div>
       </Container>
       <LazyMotion features={domAnimation}>
@@ -49,7 +49,7 @@ export default function Home({ cars, brands }) {
         id="brands"
         aria-labelledby="brands-title"
       >
-        <div className='mx-auto max-w-7xl px-4 pt-28 pb-10'>
+        <div className='mx-auto max-w-7xl px-4 pt-10 pb-10'>
           <h2
             id="reviews-title"
             className="text-3xl font-medium tracking-tight text-gray-900 sm:text-center"
