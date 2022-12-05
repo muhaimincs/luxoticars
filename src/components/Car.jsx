@@ -60,8 +60,8 @@ export function Car({ car }) {
                       href={`/m/${car.slug}#display`}
                       className="p-6 md:px-3 md:py-2 flex items-center justify-center rounded-full shadow-md shadow-red-800/5 ring-slate-300 transition border border-zinc-700/50 bg-zinc-800 ring-0 ring-white/10 hover:border-zinc-700 hover:ring-white/20"
                     >
-                      <div className="text-xs font-medium text-zinc-800 dark:text-zinc-100 hidden sm:block">Further Information</div>
-                      <div className="font-medium text-zinc-500 dark:text-zinc-100 block sm:hidden">
+                      <div className="text-xs font-medium text-zinc-100 hidden sm:block">Further Information</div>
+                      <div className="font-medium text-zinc-100 block sm:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                           <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
                         </svg>
