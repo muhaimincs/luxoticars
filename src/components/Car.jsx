@@ -43,8 +43,8 @@ export function Car({ car }) {
                 </span>
               </h2>
             </div>
-            <div className="relative mx-auto max-w-7xl px-4 py-0 h-10">
-              <div className="before:block before:absolute before:inset-0 before:bg-[length:15px_15px] before:backdrop-brightness-90 before:backdrop-blur-[20px] footer--homepage-item">
+            <div className="relative mx-auto max-w-7xl px-4 py-0">
+              <div className="before:mt-3 before:md:mt-0 before:h-10 before:block before:absolute before:inset-0 before:bg-[length:15px_15px] before:backdrop-brightness-90 before:backdrop-blur-[20px]">
                 <div className="flex justify-between items-center">
                   <div className="grow overflow-hidden h-[30px]">
                     <div className="animate-text-slidedown">
