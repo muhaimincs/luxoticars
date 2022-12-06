@@ -49,7 +49,7 @@ export function Car({ car }) {
                   <div className="grow overflow-hidden h-[30px]">
                     <div className="animate-text-slidedown">
                       {car.highlights.map((highlight) => (
-                        <div key={highlight} className="relative text-white text-base font-bold uppercase tracking-widest line-clamp-1">
+                        <div key={highlight} className="relative text-white text-xs font-bold uppercase tracking-widest line-clamp-1">
                           {highlight}
                         </div>
                       ))}
