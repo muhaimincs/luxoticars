@@ -75,7 +75,7 @@ export function Footer() {
           <div className="flex flex-col justify-center items-center">
             <span className="text-xs font-sans text-gray-700">FROM</span>
             <a className="w-28" href="https://www.youtube.com/channel/UCi2Ca9_6t9trKeJOugAbRng">
-              <Image src={RedShoes} unoptimized />
+              <Image src={RedShoes} alt="Redshoes" unoptimized />
             </a>
           </div>
           <div className="flex space-x-3 justify-center md:justify-start lg:pl-3">

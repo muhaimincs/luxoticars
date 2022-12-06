@@ -65,7 +65,7 @@ export function HomepageFooter() {
             <div className="flex justify-between items-end">
               <p className="dark:text-zinc-300">The Luxoticars Collection</p>
               <a href="https://shp.ee/i6sjx9t" target="_blank" rel="noreferrer" className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium flex items-center space-x-3">
-                <span>Visit</span><Image src={Shopee} width={16} height={16} />
+                <span>Visit</span><Image src={Shopee} alt="Luxoticars on Shopee" width={16} height={16} />
               </a>
             </div>
             <h2
@@ -80,7 +80,7 @@ export function HomepageFooter() {
           <Merchandise />
         </div>
         <div className="mx-auto max-w-6xl px-4">
-        <Footer />
+          <Footer />
         </div>
       </section>
     </div>

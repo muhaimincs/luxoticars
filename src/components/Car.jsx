@@ -43,14 +43,14 @@ export function Car({ car }) {
                 </span>
               </h2>
             </div>
-            <div className="relative mx-auto max-w-7xl px-4 py-0 h-10 flex items-center">
-              <div className="w-full before:block before:absolute before:inset-0 before:bg-[length:15px_15px] before:backdrop-brightness-90 before:backdrop-blur-[20px] footer--homepage-item">
+            <div className="relative mx-auto max-w-7xl px-4 py-0 h-10">
+              <div className="before:block before:absolute before:inset-0 before:bg-[length:15px_15px] before:backdrop-brightness-90 before:backdrop-blur-[20px] footer--homepage-item">
                 <div className="flex justify-between items-center">
-                  <div className="grow overflow-hidden h-[65px]">
+                  <div className="grow overflow-hidden h-[30px]">
                     <div className="animate-text-slidedown">
                       {car.highlights.map((highlight) => (
-                        <div key={highlight} className="relative h-[45px] text-ellipsis overflow-hidden uppercase mt-3">
-                          <div className="text-white inline-block leading-10 font-mono line-clamp-1">{highlight}</div>
+                        <div key={highlight} className="relative text-white text-base font-bold uppercase tracking-widest line-clamp-1">
+                          {highlight}
                         </div>
                       ))}
                     </div>
@@ -70,7 +70,14 @@ export function Car({ car }) {
                   </div>
                 </div>
               </div>
-              <p>Scroll to explore</p>
+              <div class="flex justify-center mt-10">
+                <div class="animate-bounce bg-white dark:bg-slate-800 p-2 w-10 h-10 ring-1 ring-slate-900/5 dark:ring-slate-200/20 shadow-lg rounded-full flex items-center justify-center">
+                  <svg class="w-6 h-6 text-zinc-500" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                    <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                  </svg>
+                </div>
+              </div>
+              <p className="text-center text-xs uppercase text-zinc-300 italic">Scroll to explore</p>
             </div>
           </div>
         </div>
