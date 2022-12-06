@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useRef, useState } from 'react'
+import { Fragment, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -8,7 +8,6 @@ import dynamic from 'next/dynamic'
 
 import { Container } from '@/components/Container'
 import avatarImage from '@/images/avatar.svg'
-import avatarLight from '@/images/LUXOTICARS_GRADIENT_SKULL.svg'
 
 const SearchProvider = dynamic(() => import('@/components/Search').then((mod) => mod.SearchProvider), {
   ssr: false
@@ -21,7 +20,7 @@ const SearchButton = dynamic(() => import('@/components/Search').then((mod) => m
 export const navigation = [
   { name: 'About', href: '/about', current: false },
   { name: 'Stock', href: '/l', current: false },
-  { name: 'Gallery', href: '/gallery', current: false },
+  { name: 'Gallery', href: 'https://luxoticars-gallery.vercel.app/', current: false },
   { name: 'Client', href: '/client', current: false },
   // { name: 'Lifestyle', href: 'https://shop.luxoticars.my', current: false }
 ]
@@ -215,6 +214,8 @@ function ModeToggle() {
   useEffect(() => {
     let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
     let isSystemDarkMode = darkModeMediaQuery.matches
+    let isDarkMode = document.documentElement.classList.toggle('dark')
+
     function disableTransitionsTemporarily() {
       document.documentElement.classList.add('[&_*]:!transition-none')
       window.setTimeout(() => {
@@ -224,9 +225,7 @@ function ModeToggle() {
   
     function toggleMode() {
       disableTransitionsTemporarily()
-  
-      let isDarkMode = document.documentElement.classList.toggle('dark')
-  
+
       if (isDarkMode === isSystemDarkMode) {
         delete window.localStorage.isDarkMode
       } else {
@@ -234,7 +233,7 @@ function ModeToggle() {
       }
     }
 
-    if (!isSystemDarkMode) {
+    if (isDarkMode) {
       toggleMode()
     }
   }, [])
@@ -272,12 +271,6 @@ function AvatarContainer({ className, ...props }) {
 }
 
 function Avatar({ large = false, className, ...props }) {
-  let [isDark, setIsDark] = useState(false)
-
-  useEffect(() => {
-    setIsDark(document.documentElement.classList.toggle('dark'))
-  }, [])
-
   return (
     <Link
       href="/"
@@ -285,17 +278,15 @@ function Avatar({ large = false, className, ...props }) {
       className={clsx(className, 'pointer-events-auto')}
       {...props}
     >
-      <div className="flex space-x-3">
-        <Image
-          src={isDark ? avatarImage : avatarLight}
-          alt="Luxoticars | Carlife Style"
-          sizes={large ? '4rem' : '2.25rem'}
-          className={clsx(
-            large ? 'h-24 w-24' : 'h-9 w-9'
-          )}
-          priority
-        />
-      </div>
+      <Image
+        src={avatarImage}
+        alt="Luxoticars | Carlife Style"
+        sizes={large ? '4rem' : '2.25rem'}
+        className={clsx(
+          large ? 'h-24 w-24' : 'h-9 w-9'
+        )}
+        priority
+      />
     </Link>
   )
 }
