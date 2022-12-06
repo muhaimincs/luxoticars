@@ -32,7 +32,7 @@ export function Car({ car }) {
       <div className="lg:rounded-md lg:overflow-hidden sticky top-0 left-0 right-0 w-full h-screen max-w-6xl max-h-screen min-h-screen mx-auto">
         <div className="relative">
           <div
-            className='absolute top-[26rem] md:top-[38rem] lg:top-[30rem] right-0 left-0'
+            className='absolute top-[25rem] md:top-[38rem] lg:top-[30rem] right-0 left-0'
           >
             <div className='mx-auto max-w-sm md:max-w-7xl mb-2'>
               <h2 className="text-2xl md:text-3xl lg:text-5xl font-medium text-white uppercase px-4 tracking-tight">

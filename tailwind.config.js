@@ -324,19 +324,19 @@ module.exports = {
         },
         'text-slide-down': {
           '0%': {
-            marginTop: '-80px',
+            marginTop: '-100px',
           },
           '5%': {
-            marginTop: '-60px'
+            marginTop: '-50px'
           },
           '33%': {
-            marginTop: '-60px'
+            marginTop: '-50px'
           },
           '38%': {
-            marginTop: '-30px',
+            marginTop: '-20px',
           },
           '66%': {
-            marginTop: '-30px',
+            marginTop: '-20px',
           },
           '71%': {
             marginTop: '0px',
@@ -345,7 +345,7 @@ module.exports = {
             marginTop: '0px',
           },
           '100%': {
-            marginTop: '-80px',
+            marginTop: '-100px',
           },
         },
       },
