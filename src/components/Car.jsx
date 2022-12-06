@@ -46,7 +46,7 @@ export function Car({ car }) {
             <div className="relative mx-auto max-w-7xl px-4 py-0">
               <div className="before:mt-3 before:md:mt-0 before:h-10 before:block before:absolute before:inset-0 before:bg-[length:15px_15px] before:backdrop-brightness-90 before:backdrop-blur-[20px]">
                 <div className="flex justify-between items-center">
-                  <div className="grow overflow-hidden h-[30px]">
+                  <div className="grow overflow-hidden h-[1.6rem]">
                     <div className="animate-text-slidedown">
                       {car.highlights.map((highlight) => (
                         <div key={highlight} className="relative text-white text-xs font-bold uppercase tracking-widest line-clamp-1">
