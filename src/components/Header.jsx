@@ -226,18 +226,18 @@ function ModeToggle() {
     function toggleMode() {
       disableTransitionsTemporarily()
 
-      if (isDarkMode === isSystemDarkMode) {
-        delete window.localStorage.isDarkMode
-      } else {
+      // if (isDarkMode === isSystemDarkMode) {
+      //   delete window.localStorage.isDarkMode
+      // } else {
         window.localStorage.isDarkMode = isDarkMode
-      }
+      // }
     }
 
     console.log('theme', isDarkMode, isDarkMode)
 
-    if (isDarkMode) {
+    // if (!isDarkMode) {
       toggleMode()
-    }
+    // }
   }, [])
 
   // return (
