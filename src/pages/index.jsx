@@ -32,6 +32,14 @@ export default function Home({ cars, brands }) {
           property="og:title"
           content="LUXOTICARS - Car lifestyle"
         />
+        <meta
+          property="og:image"
+          content="https://nextjsconf-pics.vercel.app/og-image.png"
+        />
+        <meta
+          name="twitter:image"
+          content="https://nextjsconf-pics.vercel.app/og-image.png"
+        />
         <title>LUXOTICARS - Car lifestyle</title>
       </Head>
       <Container className="mt-0 mb-10">
