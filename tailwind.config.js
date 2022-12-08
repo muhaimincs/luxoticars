@@ -306,7 +306,6 @@ module.exports = {
       animation: {
         'fade-in': 'fade-in 0.5s linear forwards',
         marquee: 'marquee var(--marquee-duration) linear infinite',
-        'text-slidedown': 'text-slide-down 8s cubic-bezier(0.23, 1, 0.32, 1.2) infinite',
       },
       keyframes: {
         'fade-in': {
@@ -320,32 +319,6 @@ module.exports = {
         marquee: {
           '100%': {
             transform: 'translateY(-50%)',
-          },
-        },
-        'text-slide-down': {
-          '0%': {
-            marginTop: '-100px',
-          },
-          '5%': {
-            marginTop: '-50px'
-          },
-          '33%': {
-            marginTop: '-50px'
-          },
-          '38%': {
-            marginTop: '-28px',
-          },
-          '66%': {
-            marginTop: '-28px',
-          },
-          '71%': {
-            marginTop: '0',
-          },
-          '99.99%': {
-            marginTop: '0',
-          },
-          '100%': {
-            marginTop: '-100px',
           },
         },
       },
