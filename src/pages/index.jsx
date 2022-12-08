@@ -34,11 +34,11 @@ export default function Home({ cars, brands }) {
         />
         <meta
           property="og:image"
-          content="https://nextjsconf-pics.vercel.app/og-image.png"
+          content="https://luxoticars.cc/og-image.png"
         />
         <meta
           name="twitter:image"
-          content="https://nextjsconf-pics.vercel.app/og-image.png"
+          content="https://luxoticars.cc/og-image.png"
         />
         <title>LUXOTICARS - Car lifestyle</title>
       </Head>
