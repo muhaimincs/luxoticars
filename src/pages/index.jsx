@@ -40,17 +40,44 @@ export default function Home({ cars, brands }) {
           name="twitter:image"
           content="https://luxoticars.cc/og-image.png"
         />
-        <title>LUXOTICARS - Car lifestyle</title>
+        <title>LUXOTICARS - The Syndicate Carlifestyle Cartel</title>
       </Head>
-      <Container className="mt-0 mb-10">
-        <div className="max-w-sm flex justify-center">
-          <Image src={avatarFont} alt="Luxoticars" sizes="4rem" className="pl-16 w-64 md:w-64" priority />
+      <Container className="mt-0 mb-5">
+        <div className="max-w-4xl flex">
+          <div className="pl-24 mb-3">
+            <a href="https://youtu.be/lkvNgMepNbE" className="inline-flex items-center rounded-full bg-gray-800 p-1 pr-2 text-white hover:text-gray-200 text-xs xl:text-base">
+              <span className="rounded-full bg-red-600 px-3 py-0.5 font-semibold leading-5 line-clamp-1">
+                <span className="hidden md:block">Just released</span>
+                <span className="block md:hidden">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-5 w-5 text-white">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
+                  </svg>
+                </span>
+              </span>
+              <span className="ml-4 line-clamp-1">DTC CARLIFESTYLE X URBAN AUTOMOTIVE BIG NEWS / SHORT TUESDAY</span>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="ml-2 h-5 w-5 text-gray-500 hidden lg:inline-block">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div className="max-w-sm flex justify-center pl-24 md:pl-20">
+          <Image src={avatarFont} alt="Luxoticars" className=" w-64 md:w-84" priority />
+        </div>
+      </Container>
+      <Container className="mt-0 mb-10 h-screen">
+        <div className="max-w-sm flex justify-center pl-24 md:pl-20">
+          <h2 className=" w-64 md:w-64 text-white uppercase">The Syndicate Carlifestyle Cartel</h2>
         </div>
       </Container>
       <LazyMotion features={domAnimation}>
-        {cars.map((car) => (
-          <Car key={car.slug} car={car} />
-        ))}
+        <div className='mx-auto max-w-6xl md:max-w-7xl'>
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0'>
+            {cars.map((car) => (
+              <Car key={car.slug} car={car} />
+            ))}
+          </div>
+        </div>
       </LazyMotion>
       <section
         className="h-screen relative snap-normal snap-center"
