@@ -21,6 +21,21 @@ export default function CarsIndex({ cars, brands, prevPosts, nextPosts }) {
       <Container className="mt-16 sm:mt-32">
         <div className="grid grid-cols-1 gap-y-3 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
           <div className="lg:row-span-2">
+            <div className="mx-3 md:mx-auto md:max-w-2xl lg:max-w-5xl">
+              <div className="mt-3">
+                <a href="https://youtu.be/lkvNgMepNbE" className="inline-flex items-center rounded-full bg-gray-800 p-1 pr-2 text-white hover:text-gray-200 text-xs xl:text-base">
+                  <span className="flex md:block rounded-full bg-red-600 p-0.5 md:px-3 md:py-0.5 font-semibold leading-5 md:line-clamp-1">
+                    <span className="hidden md:block">NEW</span>
+                    <span className="inline-block md:hidden">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-5 w-5 text-white">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
+                      </svg>
+                    </span>
+                  </span>
+                  <span className="ml-4 line-clamp-1">DTC CARLIFESTYLE X URBAN AUTOMOTIVE BIG NEWS / SHORT TUESDAY</span>
+                </a>
+              </div>
+            </div>
             <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
               Drive In Style Your Dream Car
             </h1>
