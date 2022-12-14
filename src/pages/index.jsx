@@ -86,19 +86,22 @@ export default function Home({ cars, brands }) {
         </div>
       </section>
       <HomepageFooter />
-      <div className="absolute inset-x-0 top-0 -z-20 mx-auto max-w-[1800px]">
-        <div className="relative">
-          <video
-            muted
-            playsInline
-            autoPlay
-            loop
-            className="absolute top-10 inset-x-0 w-full h-full object-cover object-center blur -z-10"
-          >
-            <source src="/vids/montage.mp4" type="video/mp4" />
-          </video>
-          <div className="absolute top-1 blur-[106px] h-56 bg-gradient-to-br to-white from-slate-700" />
-          <div className="absolute bottom-0 blur-[106px] h-32 bg-gradient-to-bl from-white to-zinc-500" />
+      <div className="absolute inset-0 -z-20">
+        <div className="absolute inset-x-0 top-0 max-w-[1280px] overflow-hidden lg:bottom-auto lg:right-0 lg:left-auto lg:w-[80%]">
+          <div className="scale-[calc(16/9)] md:scale-100">
+            <video
+              muted
+              playsInline
+              autoPlay
+              loop
+              className="aspect-square h-full w-full md:aspect-video"
+            >
+              <source src="/vids/montage.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div className="absolute -inset-px bg-gray-900/50" />
+          <div className="absolute -inset-px bg-gradient-to-b from-transparent via-transparent to-gray-900" />
+          <div className="absolute -inset-px hidden bg-gradient-to-l from-transparent via-transparent to-gray-900 lg:block" />
         </div>
       </div>
     </>
