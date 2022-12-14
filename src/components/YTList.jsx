@@ -69,19 +69,20 @@ export function YTList({ data }) {
   return (
     <section ref={ref}>
       <div className="max-w-screen py-0 px-4 mt-1 mx-auto mb-0 overflow-hidden">
-        <div className="rounded-xl overflow-hidden mx-3 md:mx-auto md:max-w-2xl lg:max-w-5xl">
-          <iframe
-            width="560"
-            height="315"
-            src={`https://www.youtube.com/embed/${data[0]}?controls=0`}
-            title="Luxoticars - The Syndicate Carlifestyle Cartel"
-            className="w-full aspect-video"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          />
-        </div>
-        <div className="sticky top-0 mt-10 mb-32 w-full flex flex-col items-start justify-center">
+        
+        <div className="mb-32 w-full flex flex-col items-start justify-center space-y-10">
+          <div className="rounded-xl overflow-hidden mx-3 md:mx-auto max-w-7xl md:max-w-2xl lg:max-w-5xl">
+            <iframe
+              width="560"
+              height="315"
+              src={`https://www.youtube.com/embed/${data[0]}?controls=0`}
+              title="Luxoticars - The Syndicate Carlifestyle Cartel"
+              className="w-full aspect-video"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
           <motion.div ref={carouselRef} className="flex gap-12" style={{ x }}>
             {rest.map((i) => (
               <motion.div
@@ -98,7 +99,7 @@ export function YTList({ data }) {
                     className="w-full aspect-video"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
+                    allowFullScreen
                   />
                 </div>
               </motion.div>

@@ -98,7 +98,7 @@ export default function Home({ cars, brands }) {
             <source src="/vids/montage.mp4" type="video/mp4" />
           </video>
           <div className="absolute top-1 blur-[106px] h-56 bg-gradient-to-br to-white from-slate-700" />
-          <div className="blur-[106px] h-32 bg-gradient-to-bl from-white to-zinc-600" />
+          <div className="absolute bottom-0 blur-[106px] h-32 bg-gradient-to-bl from-white to-zinc-500" />
         </div>
       </div>
     </>
