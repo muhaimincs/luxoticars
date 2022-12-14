@@ -5473,6 +5473,11 @@ text-table@^0.2.0:
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
   integrity sha1-f17oI66AUgfACvLfSoTsP8+lcLQ=
 
+throttle-debounce-ts@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/throttle-debounce-ts/-/throttle-debounce-ts-1.1.1.tgz#7fa016ccd5f82a6c1e5ed248134a309439b35f13"
+  integrity sha512-GUz8pRapqadMqXhQcQPwN/Cvmt0QqFtvr/aVle4yyigqhsC+aCtS3dSnsQwmxAeeB6D8ww6xsl2GRsWWad9/4w==
+
 through@^2.3.6:
   version "2.3.8"
   resolved "https://registry.yarnpkg.com/through/-/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"

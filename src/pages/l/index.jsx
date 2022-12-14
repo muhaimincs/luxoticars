@@ -21,10 +21,10 @@ export default function CarsIndex({ cars, brands, prevPosts, nextPosts }) {
       <Container className="mt-16 sm:mt-32">
         <div className="grid grid-cols-1 gap-y-3 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
           <div className="lg:row-span-2">
-            <div className="mx-3 md:mx-auto md:max-w-2xl lg:max-w-5xl">
+            <div className="mx-0 md:mx-auto md:max-w-2xl lg:max-w-5xl">
               <div className="mt-3">
                 <a href="https://youtu.be/lkvNgMepNbE" className="inline-flex items-center rounded-full bg-gray-800 p-1 pr-2 text-white hover:text-gray-200 text-xs xl:text-base">
-                  <span className="flex md:block rounded-full bg-red-600 p-0.5 md:px-3 md:py-0.5 font-semibold leading-5 md:line-clamp-1">
+                  <span className="flex md:block rounded-full bg-red-600 p-0.5 md:px-3 md:py-0.5 font-semibold leading-5">
                     <span className="hidden md:block">NEW</span>
                     <span className="inline-block md:hidden">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-5 w-5 text-white">
