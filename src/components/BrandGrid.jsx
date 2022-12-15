@@ -21,7 +21,7 @@ export function Brand({ brand, className, nav = false, ...props }) {
   return (
     <figure
       className={clsx(
-        'relative animate-fade-in overflow-hidden flex justify-center bg-white dark:bg-zinc-800 opacity-0 shadow-md shadow-gray-900/5',
+        'relative animate-fade-in overflow-hidden flex justify-center bg-zinc-800 opacity-0 shadow-md shadow-gray-900/5',
         nav ? 'h-20 w-full lg:h-24 lg:w-24 rounded' : 'h-48 p-6 items-start rounded-3xl',
         className
       )}
@@ -30,7 +30,7 @@ export function Brand({ brand, className, nav = false, ...props }) {
     >
       {!nav && (
         <p className="mt-4 text-lg lg:text-xl text-center font-semibold leading-6 uppercase z-10">
-          <span className="bg-clip-text text-transparent bg-gradient-to-b dark:from-zinc-50 backdrop-opacity-10 from-white via-zinc-200 to-transparent subpixel-antialiased">
+          <span className="bg-clip-text text-transparent bg-gradient-to-b from-zinc-50 backdrop-opacity-10 via-zinc-200 to-transparent subpixel-antialiased">
             {brand}
           </span>
         </p>
@@ -39,7 +39,7 @@ export function Brand({ brand, className, nav = false, ...props }) {
         href={`/s/${brand}/1`}
         className={clsx(
           "absolute top-0 left-0 right-0 opacity-60",
-          !nav && 'transform scale-110 -rotate-6 translate-y-6 dark:opacity-30',
+          !nav && 'transform scale-110 -rotate-6 translate-y-6 opacity-30',
           nav && 'flex items-center justify-center'
         )}
       >
@@ -140,8 +140,8 @@ export function BrandGrid(props) {
           />
         </>
       )}
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-gray-50 dark:from-zinc-900" />
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-gray-50 dark:from-zinc-900" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-zinc-900" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-zinc-900" />
     </div>
   )
 }
