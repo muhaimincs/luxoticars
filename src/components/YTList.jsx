@@ -38,9 +38,9 @@ export function YTList({ data }) {
   const carouselRef = useRef(null);
   const { position } = useElementViewportPosition(ref);
   const [carouselEndPosition, setCarouselEndPosition] = useState(0);
-  const { scrollYProgress, scrollY } = useScroll();
+  const { scrollYProgress } = useScroll();
   const x = useTransform(scrollYProgress, position, [0, carouselEndPosition]);
-  const [, ...rest] = data;
+
   useEffect(() => {
     if (!carouselRef || !carouselRef.current) return;
     const parent = carouselRef.current.parentElement;
@@ -67,28 +67,15 @@ export function YTList({ data }) {
   }, []);
 
   return (
-    <section ref={ref}>
-      <div className="max-w-screen py-0 px-4 mt-1 mx-auto mb-0 overflow-hidden">
-        
-        <div className="mb-32 w-full flex flex-col items-start justify-center space-y-10">
-          <div className="rounded-xl overflow-hidden mx-3 md:mx-auto max-w-7xl md:max-w-2xl lg:max-w-5xl">
-            <iframe
-              width="560"
-              height="315"
-              src={`https://www.youtube.com/embed/${data[0]}?controls=0`}
-              title="Luxoticars - The Syndicate Carlifestyle Cartel"
-              className="w-full aspect-video"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </div>
-          <motion.div ref={carouselRef} className="flex gap-12" style={{ x }}>
-            {rest.map((i) => (
+    <section ref={ref} className="relative">
+      <div className="sticky inset-x-0 top-0 max-w-screen py-0 px-4 mt-1 mx-auto mb-0 overflow-hidden">
+        <div className="mt-10 md:mt-52 w-full flex relative">
+          <motion.div ref={carouselRef} className="flex gap-3 md:gap-6" style={{ x }}>
+            {data.map((i) => (
               <motion.div
                 {...slideAnimation}
                 key={i}
-                className="w-80 h-80 bg-gray-700 rounded-xl flex items-center justify-center"
+                className="w-72 h-72 md:w-80 md:h-80 bg-gray-700 rounded-xl flex items-center justify-center"
               >
                 <div className="rounded-xl overflow-hidden w-full h-full">
                   <iframe
@@ -106,7 +93,12 @@ export function YTList({ data }) {
             ))}
           </motion.div>
         </div>
+        <div className="my-8 max-w-lg space-y-6 text-lg leading-[1.4] text-gray-300 md:max-w-xl md:mx-auto lg:text-xl">
+          <p>High-quality videos, personal touch review, and enough reference to help you experience the car what you always dreamed it could be.</p>
+          <p>Welcome to Luxoticars</p>
+        </div>
       </div>
+      <div className='h-[300vh]' />
     </section>
   )
 }
