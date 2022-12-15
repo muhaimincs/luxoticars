@@ -98,7 +98,9 @@ export function YTList({ data }) {
           <p>Welcome to Luxoticars</p>
         </div>
       </div>
-      <div className='h-[300vh]' />
+      <div className='h-screen' />
+      <div className='h-screen' />
+      <div className='h-screen' />
     </section>
   )
 }

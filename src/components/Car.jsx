@@ -76,7 +76,7 @@ export function Car({ car }) {
                 </div>
               </div>
               <div className="flex lg:hidden justify-center mt-4 md:mt-10">
-                <div className="animate-bounce bg-white dark:bg-slate-800 p-2 w-6 h-6 ring-1 ring-slate-900/5 dark:ring-slate-200/20 shadow-lg rounded-full flex items-center justify-center">
+                <div className="animate-bounce bg-slate-800 p-2 w-6 h-6 ring-1 ring-slate-200/20 shadow-lg rounded-full flex items-center justify-center">
                   <svg className="w-3 h-3 text-zinc-50" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
                     <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
                   </svg>
