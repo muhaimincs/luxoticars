@@ -3,12 +3,12 @@ import {
   useTransform,
   useScroll,
 } from 'framer-motion';
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect, useState, forwardRef } from 'react';
 import { throttle } from 'throttle-debounce-ts';
 
 const slideAnimation = {
   variants: {
-    full: { backgroundColor: "#0000CC" },
+    full: { backgroundColor: "#000" },
     partial: { backgroundColor: "rgb(71 85 105 / 1)" }
   },
   initial: "partial",
@@ -33,10 +33,10 @@ function useElementViewportPosition(ref) {
   return { position };
 }
 
-export function YTList({ data }) {
-  const ref = useRef(null)
+export const YTList = forwardRef(({ data }, ref) => {
+  const mainRef = useRef(null)
   const carouselRef = useRef(null);
-  const { position } = useElementViewportPosition(ref);
+  const { position } = useElementViewportPosition(mainRef);
   const [carouselEndPosition, setCarouselEndPosition] = useState(0);
   const { scrollYProgress } = useScroll();
   const x = useTransform(scrollYProgress, position, [0, carouselEndPosition]);
@@ -67,8 +67,8 @@ export function YTList({ data }) {
   }, []);
 
   return (
-    <section ref={ref} className="relative">
-      <div className="sticky inset-x-0 top-0 max-w-screen py-0 px-4 mt-1 mx-auto mb-0 overflow-hidden">
+    <section ref={mainRef} className="relative">
+      <div ref={ref} className="sticky inset-x-0 top-0 max-w-screen py-0 px-4 mt-1 mx-auto mb-0 overflow-hidden">
         <div className="mt-10 md:mt-52 w-full flex relative">
           <motion.div ref={carouselRef} className="flex gap-3 md:gap-6" style={{ x }}>
             {data.map((i) => (
@@ -103,4 +103,4 @@ export function YTList({ data }) {
       <div className='h-screen' />
     </section>
   )
-}
+})

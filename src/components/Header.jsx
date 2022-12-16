@@ -233,8 +233,6 @@ function ModeToggle() {
       // }
     }
 
-    console.log('theme', isDarkMode, isDarkMode)
-
     // if (!isDarkMode) {
       toggleMode()
     // }

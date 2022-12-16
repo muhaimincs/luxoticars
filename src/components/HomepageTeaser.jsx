@@ -2,8 +2,11 @@ import { forwardRef } from 'react'
 import { useScroll, useTransform, m } from 'framer-motion'
 
 export const HomepageTeaser = forwardRef(({ source = '/vids/montage.mp4' }, ref) => {
-  let { scrollY } = useScroll({ target: ref})
-  let y = useTransform(scrollY, [0, 500], ["0%", "50%"])
+  let { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['end end', 'end start']
+  })
+  let y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"])
 
   return (
     <m.div style={{ y }} className="absolute inset-0 -z-20" >

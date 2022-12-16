@@ -27,7 +27,6 @@ const HomepageTeaser = dynamic(() => import('@/components/HomepageTeaser').then(
 
 export default function Home({ cars, brands }) {
   let ref = useRef(null)
-
   return (
     <>
       <Head>
@@ -50,7 +49,7 @@ export default function Home({ cars, brands }) {
         />
         <title>LUXOTICARS - The Syndicate Carlifestyle Cartel</title>
       </Head>
-      <div ref={ref} className="relative pt-16">
+      <div className="relative pt-16">
         <Container className="mt-0 mb-5">
           <div className="max-w-sm flex justify-center pl-24 md:pl-20">
             <Image src={avatarFont} alt="Luxoticars" className=" w-64 md:w-84" priority />
@@ -62,7 +61,7 @@ export default function Home({ cars, brands }) {
           </div>
         </Container>
       </div>
-      <YTList data={ytList} />
+      <YTList data={ytList} ref={ref} />
       <LazyMotion features={domAnimation}>
         <div className='mx-auto max-w-6xl md:max-w-7xl'>
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0'>
