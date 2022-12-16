@@ -74,7 +74,7 @@ export function ArticleNavBar({ sections }) {
               className={clsx(
                 'relative flex items-center py-3 px-4',
                 !open &&
-                  'bg-white/95 dark:bg-zinc-900 shadow-sm [@supports(backdrop-filter:blur(0))]:bg-white/85 [@supports(backdrop-filter:blur(0))]:backdrop-blur'
+                  'bg-zinc-900 shadow-sm [@supports(backdrop-filter:blur(0))]:bg-white/85 [@supports(backdrop-filter:blur(0))]:backdrop-blur'
               )}
             >
               {!open && (
@@ -85,7 +85,7 @@ export function ArticleNavBar({ sections }) {
                   >
                     {(mobileActiveIndex + 1).toString().padStart(2, '0')}
                   </span>
-                  <span className="ml-4 text-base font-medium text-slate-900 dark:text-slate-200">
+                  <span className="ml-4 text-base font-medium text-slate-200">
                     {sections[mobileActiveIndex].text}
                   </span>
                 </>
@@ -103,10 +103,10 @@ export function ArticleNavBar({ sections }) {
                     <span className="absolute inset-0" />
                   </>
                 )}
-                <MenuIcon open={open} className="h-6 w-6 stroke-slate-700 dark:stroke-slate-300" />
+                <MenuIcon open={open} className="h-6 w-6 stroke-slate-300" />
               </Popover.Button>
             </div>
-            <Popover.Panel className="absolute inset-x-0 top-0 bg-white/95 dark:bg-zinc-800 py-3.5 shadow-sm [@supports(backdrop-filter:blur(0))]:bg-white/85 [@supports(backdrop-filter:blur(0))]:backdrop-blur">
+            <Popover.Panel className="absolute inset-x-0 top-0 bg-zinc-800 py-3.5 shadow-sm [@supports(backdrop-filter:blur(0))]:bg-white/85 [@supports(backdrop-filter:blur(0))]:backdrop-blur">
               {sections.map((section, sectionIndex) => (
                 <Popover.Button
                   as={Link}
@@ -120,7 +120,7 @@ export function ArticleNavBar({ sections }) {
                   >
                     {(sectionIndex + 1).toString().padStart(2, '0')}
                   </span>
-                  <span className="ml-4 text-base font-medium text-slate-900 dark:text-slate-100">
+                  <span className="ml-4 text-base font-medium text-slate-100">
                     {section.text}
                   </span>
                 </Popover.Button>
@@ -130,7 +130,7 @@ export function ArticleNavBar({ sections }) {
           </>
         )}
       </Popover>
-      <div className="hidden sm:flex sm:h-32 sm:justify-center sm:border-b sm:border-slate-600 sm:bg-white/95 sm:[@supports(backdrop-filter:blur(0))]:dark:bg-zinc-900/80 sm:[@supports(backdrop-filter:blur(0))]:backdrop-blur">
+      <div className="hidden sm:flex sm:h-32 sm:justify-center sm:border-b sm:border-slate-600 sm:bg-white/95 sm:[@supports(backdrop-filter:blur(0))]:bg-zinc-900/80 sm:[@supports(backdrop-filter:blur(0))]:backdrop-blur">
         <ol
           role="list"
           className="mb-[-2px] grid auto-cols-[minmax(0,15rem)] grid-flow-col text-base font-medium text-slate-900 [counter-reset:section]"
@@ -142,8 +142,8 @@ export function ArticleNavBar({ sections }) {
                 className={clsx(
                   'flex w-full flex-col items-center justify-center border-b-2 before:mb-2 before:font-mono before:text-sm before:content-[counter(section,decimal-leading-zero)]',
                   sectionIndex === activeIndex
-                    ? 'border-red-600 bg-blue-50 dark:bg-zinc-800 text-red-600 before:text-red-600'
-                    : 'border-transparent dark:text-zinc-200 before:text-slate-500 hover:bg-blue-50/40 hover:before:text-slate-900'
+                    ? 'border-red-600 bg-zinc-800 text-red-600 before:text-red-600'
+                    : 'border-transparent text-zinc-200 before:text-slate-500 hover:bg-blue-50/40 hover:before:text-slate-900'
                 )}
               >
                 {section.text}
