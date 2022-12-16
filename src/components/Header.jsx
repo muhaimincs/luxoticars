@@ -182,12 +182,12 @@ function NavItem({ href, children }) {
 export function DesktopNavigation(props) {
   return (
     <nav {...props}>
-      <ul className="flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
+      <ul className="flex rounded-full px-3 text-sm font-medium shadow-lg shadow-zinc-800/5 ring-1 backdrop-blur bg-zinc-800/90 text-zinc-200 ring-white/10">
         {navigation.map((nav) => (
           <NavItem key={nav.href} href={nav.href}>{nav.name}</NavItem>
         ))}
         <li>
-          <SearchButton className="relative transition w-8 h-8 my-1 flex items-center justify-center hover:text-teal-500 dark:hover:text-teal-400">
+          <SearchButton className="relative transition w-8 h-8 my-1 flex items-center justify-center hover:text-red-600">
             <span className="sr-only">Search</span>
             <svg
               width="24"
