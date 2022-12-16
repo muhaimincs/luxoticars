@@ -1,3 +1,4 @@
+import { useRef } from 'react'
 import Head from 'next/head'
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
@@ -20,8 +21,13 @@ const Car = dynamic(() => import('@/components/Car').then((mod) => mod.Car), {
 const HomepageFooter = dynamic(() => import('@/components/Homepage-Footer').then((mod) => mod.HomepageFooter), {
   ssr: false
 })
+const HomepageTeaser = dynamic(() => import('@/components/HomepageTeaser').then((mod) => mod.HomepageTeaser), {
+  ssr: false
+})
 
 export default function Home({ cars, brands }) {
+  let ref = useRef(null)
+
   return (
     <>
       <Head>
@@ -44,7 +50,7 @@ export default function Home({ cars, brands }) {
         />
         <title>LUXOTICARS - The Syndicate Carlifestyle Cartel</title>
       </Head>
-      <div className="relative pt-16">
+      <div ref={ref} className="relative pt-16">
         <Container className="mt-0 mb-5">
           <div className="max-w-sm flex justify-center pl-24 md:pl-20">
             <Image src={avatarFont} alt="Luxoticars" className=" w-64 md:w-84" priority />
@@ -65,45 +71,28 @@ export default function Home({ cars, brands }) {
             ))}
           </div>
         </div>
-      </LazyMotion>
-      <section
-        className="h-screen relative snap-normal snap-center"
-        id="brands"
-        aria-labelledby="brands-title"
-      >
-        <div className='mx-auto max-w-7xl px-4 pt-10 pb-10'>
-          <h2
-            id="reviews-title"
-            className="text-3xl font-medium tracking-tight text-gray-900 sm:text-center"
-          >
-            <span className="bg-clip-text text-transparent bg-gradient-to-b dark:from-zinc-50 from-zinc-900 dark:to-zinc-300 to-zinc-100 subpixel-antialiased">
-            World famous cars line up here
-            </span>
-          </h2>
-        </div>
-        <div className='mx-auto max-w-xs md:max-w-2xl lg:max-w-5xl'>
-          <BrandGrid cars={brands} />
-        </div>
-      </section>
-      <HomepageFooter />
-      <div className="absolute inset-0 -z-20">
-        <div className="absolute inset-x-0 top-0 max-w-[1280px] overflow-hidden lg:bottom-auto lg:right-0 lg:left-auto lg:w-[80%]">
-          <div className="scale-[calc(16/9)] md:scale-100">
-            <video
-              muted
-              playsInline
-              autoPlay
-              loop
-              className="aspect-square h-full w-full md:aspect-video"
+        <section
+          className="h-screen relative snap-normal snap-center"
+          id="brands"
+          aria-labelledby="brands-title"
+        >
+          <div className='mx-auto max-w-7xl px-4 pt-10 pb-10'>
+            <h2
+              id="reviews-title"
+              className="text-3xl font-medium tracking-tight text-gray-900 sm:text-center"
             >
-              <source src="/vids/montage.mp4" type="video/mp4" />
-            </video>
+              <span className="bg-clip-text text-transparent bg-gradient-to-b dark:from-zinc-50 from-zinc-900 dark:to-zinc-300 to-zinc-100 subpixel-antialiased">
+              World famous cars line up here
+              </span>
+            </h2>
           </div>
-          <div className="absolute -inset-px bg-black/50" />
-          <div className="absolute -inset-px bg-gradient-to-b from-transparent via-transparent to-black" />
-          <div className="absolute -inset-px hidden bg-gradient-to-l from-transparent via-transparent to-black lg:block" />
-        </div>
-      </div>
+          <div className='mx-auto max-w-xs md:max-w-2xl lg:max-w-5xl'>
+            <BrandGrid cars={brands} />
+          </div>
+        </section>
+        <HomepageFooter />
+        <HomepageTeaser source='/vids/montage.mp4' ref={ref} />
+      </LazyMotion>
     </>
   )
 }
