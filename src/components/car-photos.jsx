@@ -56,7 +56,7 @@ export function CarPhotos({ title, photos }) {
                 >
                   <div className="w-full h-full p-3 transition-all transform">
                     <Dialog.Panel>
-                      <GalleryWithZoom photos={photos} initialSlide={isOpen} />
+                      <GalleryWithZoom photos={photos} initialSlide={isOpen} title={title} />
                     </Dialog.Panel>
                   </div>
                 </Transition.Child>

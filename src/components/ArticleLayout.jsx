@@ -119,12 +119,12 @@ export function ArticleLayout({
   return (
     <div className="pb-3">
       <Head>
-        <title>{`${meta.title} - LUXOTICARS`}</title>
+        <title>{meta.title}</title>
         <meta name="description" content={meta.description} />
         <meta
           key="og:title"
           property="og:title"
-          content={`${meta.title} - LUXOTICARS`}
+          content={meta.title}
         />
         <meta
           property="og:image"

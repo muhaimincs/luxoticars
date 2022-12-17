@@ -32,7 +32,7 @@ export function GalleryWithZoom({ photos, title }) {
             <img
               className="object-cover object-center swiper-lazy h-full"
               data-src={photo.url}
-              alt={`Luxoticars | ${title}`}
+              alt={title}
               height={`${photo.details.image.height}px`}
               width={`${photo.details.image.width}px`}
             />
