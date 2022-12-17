@@ -98,12 +98,14 @@ export function ArticleLayout({
             })
           }
         } else {
-          for (const photo of item.interiorPhotos) {
-            acc.push({
-              url: `https:${photo?.fields?.file?.url}`,
-              details: photo?.fields?.file?.details,
-              contentType: photo?.fields?.file?.contentType
-            })
+          if (item.interiorPhotos.length) {
+            for (const photo of item.interiorPhotos) {
+              acc.push({
+                url: `https:${photo?.fields?.file?.url}`,
+                details: photo?.fields?.file?.details,
+                contentType: photo?.fields?.file?.contentType
+              })
+            }
           }
         }
         return acc
