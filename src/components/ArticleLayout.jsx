@@ -121,6 +121,19 @@ export function ArticleLayout({
       <Head>
         <title>{`${meta.title} - LUXOTICARS`}</title>
         <meta name="description" content={meta.description} />
+        <meta
+          key="og:title"
+          property="og:title"
+          content={`${meta.title} - LUXOTICARS`}
+        />
+        <meta
+          property="og:image"
+          content={photo?.[0]?.url || 'https://luxoticars.cc/og-image.png'}
+        />
+        <meta
+          name="twitter:image"
+          content={photo?.[0]?.url || 'https://luxoticars.cc/og-image.png'}
+        />
       </Head>
       
       <div className="mx-auto max-w-5xl px-3">
