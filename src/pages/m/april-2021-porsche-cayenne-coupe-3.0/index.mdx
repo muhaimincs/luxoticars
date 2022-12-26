@@ -1,0 +1,57 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import { Featured } from '@/components/Featured'
+
+export const meta = {
+  author: 'Abu Garciá',
+  date: '2022-12-22',
+  brand: 'porsche',
+  year: 2021,
+  title: 'Porsche Cayenne Coupe [3.0]',
+  mileage: 19000,
+  highlights: ['19/20" M Double Spoke Bicolour Black Alloys', 'M Brakes With Red Calipers', 'High Beam Assist'],
+  description:
+    'Porsche Cayenne Coupe [3.0] Features And Specs on Luxoticars',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+## Exterior
+- 19/20" M Double Spoke Bicolour Black Alloys
+- M Brakes With Red Calipers
+- Sun Protection Glass
+- High Beam Assist
+
+- Lightweight Sport Package (£10,000 Option)
+- 22" GT Design Alloys Satin Finish
+- Sport Design Pack
+- Lightweight Carbon Roof
+- Roof Lining in Alcantara
+- Heated MFSW W. Alcantara
+- Sports Chrono Package
+- Sport Exhaust
+- Head Up
+- PASM
+- Surround View
+- 4 Point LED Headlights
+- Alcantara Wheel
+- PCM
+
+## Interior
+- Carbon Interior Pack
+
+## Entertainment
+- Apple Carplay
+
+## Convenience
+- Keyless Engine Start
+- Heated Sport Wheel
+
+<Featured
+  title="Seatings"
+  src="https://images.ctfassets.net/ijuxqf6x1pz2/7qmAACiczPcigIumYB14xm/e9da3f0931f77b1d15b3bc9f5b51c9fe/photo_2022-12-26_12.15.22.jpeg"
+  features={[
+    'Heated Seats',
+    'Black Partial Leather W. Seat Centre Textile Checked Pattern',
+    '18 Way Adaptive Seats Memory',
+  ]}
+/>

@@ -51,7 +51,7 @@ module.exports = {
       DEFAULT: {
         css: {
           '--tw-prose-body': theme('colors.zinc.600'),
-          '--tw-prose-headings': theme('colors.zinc.900'),
+          '--tw-prose-headings': theme('colors.zinc.100'),
           '--tw-prose-links': theme('colors.teal.500'),
           '--tw-prose-links-hover': theme('colors.teal.600'),
           '--tw-prose-underline': theme('colors.teal.500 / 0.2'),
@@ -71,7 +71,7 @@ module.exports = {
           '--tw-prose-td-borders': theme('colors.zinc.100'),
 
           '--tw-prose-invert-body': theme('colors.zinc.400'),
-          '--tw-prose-invert-headings': theme('colors.zinc.200'),
+          '--tw-prose-invert-headings': theme('colors.zinc.100'),
           '--tw-prose-invert-links': theme('colors.teal.400'),
           '--tw-prose-invert-links-hover': theme('colors.teal.400'),
           '--tw-prose-invert-underline': theme('colors.teal.400 / 0.3'),
