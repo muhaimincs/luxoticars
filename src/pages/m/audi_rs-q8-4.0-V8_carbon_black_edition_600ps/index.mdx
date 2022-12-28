@@ -1,0 +1,59 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import { Featured } from '@/components/Featured'
+
+export const meta = {
+  author: 'Abu Garciá',
+  date: '2022-12-24',
+  brand: 'porsche',
+  year: 2020,
+  title: 'AUDI RS Q8 4.0 V8 Carbon Black Edition 600PS',
+  mileage: 20000,
+  thumbnail: 'https://images.ctfassets.net/ijuxqf6x1pz2/Ti9e6qAcfhbg62izZHLnh/83cc77de7aa6439f2347c3c404f93940/photo_2022-12-28_14.05.45.jpeg',
+  highlights: ['RS Sports Exhaust System', '23” Gloss Black/Diamond Finish Wheels', 'Bang & Olufsen 3D Sound System'],
+  description:
+    'AUDI RS Q8 4.0 V8 Carbon Black Edition 600PS Features And Specs on Luxoticars',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+## Features
+- Carbon Fire Interior Trim  
+- Panoramic Sunroof 
+- Bang & Olufsen 3D Sound System
+- Surround View Camera
+- Advanced Key
+- 23” Gloss Black/Diamond Finish Wheels
+- Rear Electric Sunblinds 
+- Connect Package Plus 
+- Park Assist With Parking Aid Plus 
+- Lane Departure Warning 
+- Pre Sense City
+- RS Sports Exhaust System 
+- Powered Tailgate
+- Audi Virtual Cockpit - RS
+- Matrix LED Headlights and LED Taillights 
+- Air Suspension 
+- All Wheel Steering 
+- Adaptive Cruise Control With Speed Limiter 
+- Multi Zone Climate Control
+- Ghost Immobiliser Fitted
+
+<Featured
+  title="Exterior Paint"
+  src="https://images.ctfassets.net/ijuxqf6x1pz2/2tYNPPfcseOr8kxAgx51nB/011c44149da69234a4a65b1c6119cf45/photo_2022-12-28_14.05.57.jpeg"
+  features={[
+    'Deep Black Paint',
+    'Exterior Carbon Fibre Gloss Styling',
+    'Exterior Gloss Black Pack',
+  ]}
+/>
+
+<Featured
+  title="Seatings"
+  src="https://images.ctfassets.net/ijuxqf6x1pz2/612pNVC8fJeL5xSFWYas61/472e89b076db67f20dccb168b4d83b17/photo_2022-12-28_14.06.10.jpeg"
+  features={[
+    'Heated/Cooled Seats',
+    'Black RS Super Sports Seats With Red Stitch',
+    'Electric Memory Seats',
+  ]}
+/>
