@@ -130,11 +130,11 @@ export function ArticleLayout({
         />
         <meta
           property="og:image"
-          content={photo?.[0]?.url || 'https://luxoticars.cc/og-image.png'}
+          content={photo?.[0]?.url}
         />
         <meta
           name="twitter:image"
-          content={photo?.[0]?.url || 'https://luxoticars.cc/og-image.png'}
+          content={photo?.[0]?.url}
         />
       </Head>
       
