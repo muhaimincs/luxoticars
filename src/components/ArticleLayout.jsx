@@ -130,11 +130,11 @@ export function ArticleLayout({
         />
         <meta
           property="og:image"
-          content={photo?.[0]?.url}
+          content={meta.thumbnail}
         />
         <meta
           name="twitter:image"
-          content={photo?.[0]?.url}
+          content={meta.thumbnail}
         />
       </Head>
       
