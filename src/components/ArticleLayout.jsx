@@ -122,11 +122,27 @@ export function ArticleLayout({
     <div className="pb-3">
       <Head>
         <title>{meta.title}</title>
+        <meta name="title" content={meta.title} />
         <meta name="description" content={meta.description} />
+        <meta
+          key="og:type"
+          property="og:type"
+          content="article"
+        />
+        <meta
+          key="og:url"
+          property="og:url"
+          content={`${process.env.NEXT_PUBLIC_SITE_URL}/m/${meta.slug}`}
+        />
         <meta
           key="og:title"
           property="og:title"
           content={meta.title}
+        />
+        <meta
+          key="og:description"
+          property="og:description"
+          content={meta.description}
         />
         <meta
           property="og:image"
