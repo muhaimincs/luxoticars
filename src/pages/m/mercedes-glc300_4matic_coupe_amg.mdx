@@ -1,0 +1,41 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import { Featured } from '@/components/Featured'
+
+export const meta = {
+  author: 'Abu Garciá',
+  date: '2023-01-03',
+  title: 'Mercedes Benz GLC300 4MATIC COUPE AMG 2.0L',
+  brand: 'mercedes-benz',
+  mileage: '132KM',
+  year: 2020,
+  thumbnail: 'https://images.ctfassets.net/ijuxqf6x1pz2/7xmNAz8SfTm06CTQ9M3zOa/c2250f4245a01f5ea7fd440f4986fe55/photo_2023-01-03_22.10.13.jpeg',
+  highlights: ['Paddle Shift', 'Full Black Leather'],
+  description:
+    'Mercedes Benz GLC300 4MATIC COUPE AMG 2.0L Features And Specs on Luxoticars',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+## Extra Features
+- Unregister 2020
+- Paddle Shift 
+- Surround Camera 
+- Full Black Leather 
+- Keyless Entry
+- Rear View Camera 
+- Electric Memory Seats 
+- Multifunction Steering Wheel 
+- Sunroof
+- Power Boot
+- Parktronic 
+- Intelligence Headlamp
+- AMG Package
+
+<Featured
+  title="Japan Imported"
+  src="https://images.ctfassets.net/ijuxqf6x1pz2/3rrrl5Zwm7kCDwhdOQkJIi/ce06db37c0cd3f763cebcbb7f9741ad4/photo_2023-01-03_22.10.15.jpeg"
+  features={[
+    'Full Black Leather',
+    'Keyless Entry',
+  ]}
+/>
