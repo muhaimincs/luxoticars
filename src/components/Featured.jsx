@@ -18,7 +18,7 @@ export function Featured({ src, title = "", features = [] }) {
           ))}
         </div>
       </div>
-      <div className="absolute -inset-px bg-black/50" />
+      <div className="absolute -inset-px bg-black/30" />
       <div className="absolute -inset-px bg-gradient-to-b from-transparent via-transparent to-black" />
       <div className="absolute -inset-px hidden bg-gradient-to-l from-transparent via-transparent to-black lg:block" />
     </div>
