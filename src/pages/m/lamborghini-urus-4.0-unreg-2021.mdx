@@ -1,0 +1,57 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import { Featured } from '@/components/Featured'
+
+export const meta = {
+  author: 'Abu Garciá',
+  date: '2023-01-05',
+  title: 'LAMBORGHINI URUS 4.0 V8',
+  brand: 'lamborghini',
+  mileage: 0,
+  year: 2020,
+  thumbnail: 'https://images.ctfassets.net/ijuxqf6x1pz2/3vm1MTOlitAsA4tE7N2rCX/7dbabb50aa1dcd4721ac6464103a3dbc/photo_2023-01-05_22.17.18.jpeg',
+  highlights: ['641 BHP', 'B&O Premium Sound System', '2021 Unreg'],
+  description: 'LAMBORGHINI URUS 4.0 V8 Features And Specs',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+## Auto Features
+- 6 Drive Mode 
+- Paddle Shift 
+- Panoramic Roof 
+- Black Leather seats with Red Stitching 
+- Surround View Camera 
+- 641bhp 
+- Paddle Shift 
+- Power Tailgate 
+- Auto-Hold 
+- Dual Climate Control
+
+<Featured
+  title="Wheels and Tyre"
+  src="https://images.ctfassets.net/ijuxqf6x1pz2/7LUiabXFFojWdjCx7jgO0J/7431fb275c65caf29869f6c882a3cf75/photo_2023-01-05_22.17.33.jpeg"
+  features={[
+    '22’ Wheel',
+    'Ceramic Brake. Biggest in the world'
+  ]}
+/>
+
+## Valued Features
+- 2021 Unreg
+- UK Imported 
+
+<Featured
+  title="Convenience"
+  src="https://images.ctfassets.net/ijuxqf6x1pz2/4Vg8PsxinxRFA4Ii981o3H/ffa774de43675b54bd0e65e5777ef0a7/photo_2023-01-05_22.17.31.jpeg"
+  features={[
+    'TV Entertainment',
+    'Head Up Display',
+    'B&O Premium Sound System',
+  ]}
+/>
+
+<Featured
+  title="Lamborghini Head Crest"
+  src="https://images.ctfassets.net/ijuxqf6x1pz2/3nEli830zWP5D3bl8zruAy/a03f8344a258c14024db8d388aa50b50/photo_2023-01-05_22.17.36.jpeg"
+  features={[]}
+/>
