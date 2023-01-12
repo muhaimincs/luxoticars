@@ -124,6 +124,8 @@ export function ArticleLayout({
         <title>{meta.title}</title>
         <meta name="title" content={meta.title} />
         <meta name="description" content={meta.description} />
+        <link rel="canonical" href={`${process.env.NEXT_PUBLIC_SITE_URL}/m/${meta.slug}`} />
+        <link rel="publisher" href="https://www.facebook.com/luxoticars" />
         <meta
           key="og:type"
           property="og:type"
@@ -151,6 +153,10 @@ export function ArticleLayout({
         <meta
           name="twitter:image"
           content={meta.thumbnail}
+        />
+        <meta
+          name="article:published_time"
+          content={formatDate(meta.date)}
         />
       </Head>
       
