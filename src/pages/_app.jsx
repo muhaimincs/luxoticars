@@ -11,7 +11,11 @@ export default function App({ Component, pageProps, router }) {
     <>
       <Header />
       <main>
-        <Component previousPathname={previousPathname} {...pageProps} />
+        <Component
+          previousPathname={previousPathname} 
+          path={router.pathname}
+          {...pageProps}
+        />
       </main>
     </>
   )

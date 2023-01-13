@@ -61,6 +61,7 @@ export function ArticleLayout({
   meta,
   isRssFeed = false,
   previousPathname,
+  path
 }) {
   const [source, sourceSet] = useState(undefined)
   const [photo, setPhoto] = useState(undefined)
@@ -70,7 +71,7 @@ export function ArticleLayout({
     []
   )
   const pathname = usePathname()
-  const officialUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/m/${meta.slug}`
+  const officialUrl = `${process.env.NEXT_PUBLIC_SITE_URL}${path}`
   const contentString = renderToString(children)
   const sections = getHeadings(contentString)
 
@@ -119,6 +120,8 @@ export function ArticleLayout({
     return children
   }
 
+  console.log('photo', sections)
+
   return (
     <div className="pb-3">
       <Head>
@@ -128,25 +131,27 @@ export function ArticleLayout({
         <link rel="canonical" href={officialUrl} />
         <link rel="publisher" href="https://www.facebook.com/luxoticars" />
         <meta
-          key="og:type"
           property="og:type"
           content="article"
         />
         <meta
-          key="og:url"
           property="og:url"
           content={officialUrl}
         />
         <meta
-          key="og:title"
           property="og:title"
           content={meta.title}
         />
         <meta
-          key="og:description"
           property="og:description"
           content={meta.description}
         />
+        {sections.length ? (
+          <meta
+            property="article:section"
+            content={sections[0]?.text}
+          />
+        ) : null}
         <meta
           property="og:image"
           content={meta.thumbnail}
