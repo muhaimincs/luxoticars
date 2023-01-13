@@ -156,7 +156,19 @@ export function ArticleLayout({
         />
         <meta
           name="article:published_time"
-          content={formatDate(meta.date)}
+          content={meta.date}
+        />
+        <meta
+          name="og:site_name"
+          content="Luxoticars"
+        />
+        <meta
+          name="twitter:label1"
+          content="Sold by"
+        />
+        <meta
+          name="twitter:data1"
+          content={meta.author}
         />
       </Head>
       
