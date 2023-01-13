@@ -50,6 +50,9 @@ export default function Document() {
           type="application/feed+json"
           href={`${process.env.NEXT_PUBLIC_SITE_URL}/rss/feed.json`}
         />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#00FF6A" />
+        <meta name="msapplication-TileColor" content="#00FF6A" />
+        <meta name="theme-color" content="#00FF6A" />
       </Head>
       <body className="bg-black m-0 p-0 scroll-smooth">
         <Main />

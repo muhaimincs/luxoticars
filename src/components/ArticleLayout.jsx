@@ -70,6 +70,7 @@ export function ArticleLayout({
     []
   )
   const pathname = usePathname()
+  const officialUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/m/${meta.slug}`
   const contentString = renderToString(children)
   const sections = getHeadings(contentString)
 
@@ -124,7 +125,7 @@ export function ArticleLayout({
         <title>{meta.title}</title>
         <meta name="title" content={meta.title} />
         <meta name="description" content={meta.description} />
-        <link rel="canonical" href={`${process.env.NEXT_PUBLIC_SITE_URL}/m/${meta.slug}`} />
+        <link rel="canonical" href={officialUrl} />
         <link rel="publisher" href="https://www.facebook.com/luxoticars" />
         <meta
           key="og:type"
@@ -134,7 +135,7 @@ export function ArticleLayout({
         <meta
           key="og:url"
           property="og:url"
-          content={`${process.env.NEXT_PUBLIC_SITE_URL}/m/${meta.slug}`}
+          content={officialUrl}
         />
         <meta
           key="og:title"
