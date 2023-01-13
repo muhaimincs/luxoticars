@@ -120,8 +120,6 @@ export function ArticleLayout({
     return children
   }
 
-  console.log('photo', sections)
-
   return (
     <div className="pb-3">
       <Head>
