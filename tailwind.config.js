@@ -1,5 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  experimental: {
+    optimizeUniversalDefaults: true,
+  },
   content: ['./src/**/*.{js,jsx}'],
   darkMode: 'class',
   plugins: [
@@ -184,36 +187,22 @@ module.exports = {
 
           // Lists
           ul: {
-            listStyleType: 'disc',
+            listStyleType: 'none',
+            paddingLeft: 0,
           },
-          ol: {
-            listStyleType: 'decimal',
+          'ul > li': {
+            position: 'relative',
+            paddingLeft: '1.75em',
           },
-          'ul, ol': {
-            paddingLeft: theme('spacing.6'),
-          },
-          li: {
-            marginTop: theme('spacing.6'),
-            marginBottom: theme('spacing.6'),
-            paddingLeft: theme('spacing[3.5]'),
-          },
-          'li::marker': {
-            fontSize: theme('fontSize.sm')[0],
-            fontWeight: theme('fontWeight.semibold'),
-          },
-          'ol > li::marker': {
-            color: 'var(--tw-prose-counters)',
-          },
-          'ul > li::marker': {
-            color: 'var(--tw-prose-bullets)',
-          },
-          'li :is(ol, ul)': {
-            marginTop: theme('spacing.4'),
-            marginBottom: theme('spacing.4'),
-          },
-          'li :is(li, p)': {
-            marginTop: theme('spacing.3'),
-            marginBottom: theme('spacing.3'),
+          'ul > li::before': {
+            content: '""',
+            width: '0.75em',
+            height: '0.125em',
+            position: 'absolute',
+            top: 'calc(0.875em - 0.0625em)',
+            left: 0,
+            borderRadius: '999px',
+            backgroundColor: theme('colors.red.300'),
           },
 
           // Code blocks

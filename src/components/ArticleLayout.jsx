@@ -164,7 +164,7 @@ export function ArticleLayout({
         />
         <meta
           name="og:site_name"
-          content="Luxoticars"
+          content="LUXOTICARS &copy;"
         />
         <meta
           name="twitter:label1"

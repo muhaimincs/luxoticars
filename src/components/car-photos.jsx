@@ -20,6 +20,11 @@ export function CarPhotos({ title, photos }) {
             {title.substring(title.indexOf(' ') + 1)}
           </span>
         </h1>
+        <div className='absolute right-2 bottom-2'>
+          <svg fill="none" viewBox="0 0 26 26" className='w-6 h-6'>
+            <path stroke="red" d="M11 1H1v10M15 1h10v10M15 25h10V15M11 25H1V15m12-8v12m6-6H7"></path>
+          </svg>
+        </div>
         {/* <p className="mx-auto mt-6 max-w-lg text-center text-xl text-indigo-200 sm:max-w-3xl">
           Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt
           amet fugiat veniam occaecat fugiat aliqua.
@@ -54,10 +59,19 @@ export function CarPhotos({ title, photos }) {
                   leaveFrom="opacity-100"
                   leaveTo="opacity-0"
                 >
-                  <div className="w-full h-full p-3 transition-all transform">
+                  <div className="w-full h-full p-3 transition-all transform relative">
                     <Dialog.Panel>
                       <GalleryWithZoom photos={photos} initialSlide={isOpen} title={title} />
+                      <button type='button' onClick={closeModal} className='absolute right-2 top-2 z-50'>
+                        <svg fill="none" className='w-6 h-6' viewBox="0 0 26 26">
+                          <path
+                            stroke="red"
+                            d="M11 1H1v10M15 1h10v10M15 25h10V15M11 25H1V15m7.8-6.2 8.4 8.4m0-8.4-8.4 8.4"
+                          />
+                        </svg>
+                      </button>
                     </Dialog.Panel>
+                    
                   </div>
                 </Transition.Child>
               </div>

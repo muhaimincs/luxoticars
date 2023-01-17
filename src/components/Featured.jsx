@@ -1,7 +1,7 @@
 
 export function Featured({ src, title = "", features = [] }) {
   return (
-    <div className="relative pb-10 md:pb-0">
+    <div className="relative pb-10 md:pb-0 mb-20">
       <figure className="animate-fade-in">
         <img src={src} alt="Featured car" className="rounded-xl"  />
       </figure>
