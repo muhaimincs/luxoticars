@@ -9,7 +9,6 @@ const nextConfig = {
   swcMinify: true,
   experimental: {
     newNextLinkBehavior: true,
-    scrollRestoration: true,
   },
   images: {
     domains: ['images.ctfassets.net'],
