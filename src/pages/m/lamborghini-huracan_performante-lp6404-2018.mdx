@@ -1,0 +1,40 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import { Featured } from '@/components/Featured'
+
+export const meta = {
+  author: 'Abu Garciá',
+  date: '2023-01-29',
+  title: 'Huracan Performante LP640-4',
+  brand: 'lamborghini',
+  mileage: 22200,
+  year: 2018,
+  thumbnail: 'https://images.ctfassets.net/ijuxqf6x1pz2/34vgPxJwj8LduXoxDtS78d/4b6b61457a4916bbfa8b6ea2f5b3208b/photo_2023-01-29_22.42.47.jpeg',
+  highlights: ['DOR: 11/2018', '22,200 mileage', 'Ad Personam Grigio Aleno'],
+  description: 'Ad Personam Grigio Aleno, Nero Cosmus Interior',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+## Specification
+- Nero Cosmus Interior
+- Front and Rear Sensors and Reverse Camera
+- Electro Chromatic Wheels
+- Style Package
+- Tailpipes in Black
+- DAB
+- Alcantara Steering Wheel
+- Door sill in Forged Carbon
+- Branding Package
+- Suspension Lift
+- Magneto-rheologic Suspension
+
+<Featured
+  title="Infotainment"
+  src="https://images.ctfassets.net/ijuxqf6x1pz2/VJlXdQMdcnaEslQ1S7uoR/43d3072f121f343f8b7617466db177e0/photo_2023-01-09_22.05.16.jpeg"
+  features={[
+    'Bluetooth Preparation',
+    'Lamborghini Smartphone Interface (Apple Car Play)',
+    'Sensonum Sound System',
+    'Nav System'
+  ]}
+/>
