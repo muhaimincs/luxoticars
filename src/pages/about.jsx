@@ -61,10 +61,10 @@ export default function About() {
             </div>
           </div>
           <div className="lg:order-first lg:row-span-2">
-            <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+            <h1 className="text-4xl font-bold tracking-tight text-zinc-200 sm:text-5xl">
               We are driven to create on-demand buying experience and financing with transparency and nearly seamless end-to-end service.
             </h1>
-            <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
+            <div className="mt-6 space-y-7 text-base text-zinc-200">
               <p>
                 Founded and led by Abu Garciá, it was his love for cars that gave him direction to where he is today.
               </p>
