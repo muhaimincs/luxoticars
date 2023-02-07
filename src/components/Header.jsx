@@ -1,21 +1,15 @@
+"use client"
+
 import { Fragment, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
+import { usePathname } from 'next/navigation'
 import { Popover, Transition } from '@headlessui/react'
 import clsx from 'clsx'
-import dynamic from 'next/dynamic'
 
 import { Container } from '@/components/Container'
+import { SearchProvider, SearchButton } from '@/components/Search'
 import avatarImage from '@/images/avatar.svg'
-
-const SearchProvider = dynamic(() => import('@/components/Search').then((mod) => mod.SearchProvider), {
-  ssr: false
-})
-
-const SearchButton = dynamic(() => import('@/components/Search').then((mod) => mod.SearchButton), {
-  ssr: false
-})
 
 export const navigation = [
   { name: 'About', href: '/about', current: false },
@@ -157,7 +151,8 @@ export function MobileNavigation(props) {
 }
 
 function NavItem({ href, children }) {
-  let isActive = useRouter().pathname === href
+  const pathname = usePathname()
+  let isActive = pathname === href
 
   return (
     <li>
@@ -292,7 +287,8 @@ function Avatar({ large = false, className, ...props }) {
 }
 
 export function Header() {
-  let isHomePage = useRouter().pathname === '/'
+  const pathname = usePathname()
+  let isHomePage = pathname === '/'
 
   let headerRef = useRef()
   let avatarRef = useRef()

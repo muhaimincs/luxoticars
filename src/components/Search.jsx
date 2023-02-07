@@ -1,9 +1,8 @@
 import { Fragment, useState, useCallback, useRef, createContext, useContext, useEffect } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import Link from 'next/link'
-import Head from 'next/head'
 import Image from 'next/image'
-import { useRouter } from 'next/router'
+import { usePathname } from 'next/navigation'
 import algoliasearch from 'algoliasearch/lite'
 import { useActionKey } from '@/hooks/useActionKey'
 import { InstantSearch, SearchBox, Hits, Highlight } from 'react-instantsearch-hooks-web'
@@ -17,7 +16,7 @@ const searchClient = algoliasearch(
 const SearchContext = createContext()
 
 export function SearchProvider({ children }) {
-  const router = useRouter()
+  const pathname = usePathname()
   const pathRef = useRef()
 
   const [isOpen, setIsOpen] = useState(false)
@@ -44,14 +43,11 @@ export function SearchProvider({ children }) {
   })
 
   useEffect(() => {
-    pathRef.current = router.pathname
-  }, [router.pathname])
+    pathRef.current = pathname
+  }, [pathname])
 
   return (
     <>
-      <Head>
-        <link rel="preconnect" href={`https://${process.env.NEXT_PUBLIC_ALGOLIA_APP_ID}-dsn.algolia.net`} crossOrigin="true" />
-      </Head>
       <SearchContext.Provider
         value={{
           isOpen,
@@ -145,11 +141,11 @@ function useDocSearchKeyboardEvents({ isOpen, onOpen, onClose }) {
 }
 
 function Modal({ isOpen, onClose, pathRef }) {
-  const router = useRouter()
+  const pathname = usePathname()
 
   useEffect(() => {
     if (isOpen) {
-      if (String(pathRef) === String(router.pathname)) {
+      if (String(pathRef) === String(pathname)) {
         document.body.classList.add('DocSearch--active');
       }
     }
@@ -157,12 +153,12 @@ function Modal({ isOpen, onClose, pathRef }) {
     return () => {
       if (isOpen) {
         document.body.classList.remove('DocSearch--active');
-        if (String(pathRef) === String(router.pathname)) {
+        if (String(pathRef) === String(pathname)) {
           onClose()
         }
       }
     };
-  }, [router.pathname, pathRef, isOpen])
+  }, [pathname, pathRef, isOpen])
 
   return (
     <Transition appear show={isOpen} as={Fragment}>
