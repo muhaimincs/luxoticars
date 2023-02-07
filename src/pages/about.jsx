@@ -80,19 +80,19 @@ export default function About() {
                   className="aspect-video rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
                 />
               </div>
-              <h3 className="text-xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100">
+              <h3 className="text-xl font-bold tracking-tight text-zinc-100">
                 The Philosophy
               </h3>
               <p>
                 Luxoticars is driven by the satisfaction of our customers. We found that it takes value to make our customers happy. We have embraced these values as part of our philosophy.
               </p>
-              <h3 className="text-xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100">
+              <h3 className="text-xl font-bold tracking-tight text-zinc-100">
                 The vision
               </h3>
               <p>
                 Luxoticars’ vision is to grow as the best we can be as a company by seeking to improve our skills and quality of our service.
               </p>
-              <h3 className="text-xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100">
+              <h3 className="text-xl font-bold tracking-tight text-zinc-100">
                 The mission
               </h3>
               <p>
