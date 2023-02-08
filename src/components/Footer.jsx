@@ -1,14 +1,16 @@
+"use client"
+
 import Link from 'next/link'
 import Image from 'next/image'
 import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
-import { navigation } from '@/components/Header'
+import { navigation } from './Header'
 import { InstagramIcon, YoutubeIcon } from '@/components/SocialIcons'
 import logoFacebook from '@/images/logos/facebook.svg'
-import RedShoes from '../images/RS_002.svg'
-import Mudah from '../images/mudah.gif'
-import Telegram from '../images/telegram.svg'
+import RedShoes from '@/images/RS_002.svg'
+import Mudah from '@/images/mudah.gif'
+import Telegram from '@/images/telegram.svg'
 
 function SocialLink({ className, href, children, icon: Icon }) {
   return (
@@ -25,6 +27,7 @@ function SocialLink({ className, href, children, icon: Icon }) {
 }
 
 export function Footer() {
+  console.log('type', navigation)
   return (
     <footer className="max-w-7xl mx-auto px-4 lg:px-8 mb-32 md:mb-10">
       <Container.Outer>
