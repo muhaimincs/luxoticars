@@ -92,9 +92,9 @@ export default function IcahfaPage() {
               </p>
               <div className="rounded-xl overflow-hidden w-full h-full">
                 <iframe
-                  width="480"
-                  height="480"
-                  src="https://youtu.be/xWuVDJMrtTo"
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/xWuVDJMrtTo"
                   title="HOME DELIVERY KENA CHAI MERCEDES BENZ GLC 250 COUPE // WEDNESDAY DELIVERY"
                   className="w-full aspect-video"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
