@@ -14,7 +14,6 @@ import Img3 from './gallery/img3.jpeg'
 import Img4 from './gallery/img4.jpeg'
 import Img5 from './gallery/img5.jpeg'
 import Img6 from './gallery/img6.jpeg'
-import youtubeAwwardImage from '@/images/youtube-awward.jpeg'
 
 function SocialLink({ className, href, children, icon: Icon }) {
   return (
@@ -91,12 +90,15 @@ export default function IcahfaPage() {
               <p>
               Kami sentiasa berhubung dan sentiasa menjaga hubungan silaturrahim, En. Fauzi adalah seorang ahli perniagaan pakaian muslimah bersama isteri tercinta dan mempunyai beberapa cawangan di seluruh malaysia, juga seorang yang <em>humble</em> dan <em>low-profile</em>. 
               </p>
-              <div className="max-w-xs lg:max-w-none">
-                <Image
-                  src={youtubeAwwardImage}
-                  alt="Receive Youtube awward"
-                  sizes="(min-width: 1024px) 32rem, 20rem"
-                  className="aspect-video rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
+              <div className="rounded-xl overflow-hidden w-full h-full">
+                <iframe
+                  width="480"
+                  height="480"
+                  src="https://youtu.be/xWuVDJMrtTo"
+                  title="HOME DELIVERY KENA CHAI MERCEDES BENZ GLC 250 COUPE // WEDNESDAY DELIVERY"
+                  className="w-full aspect-video"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
                 />
               </div>
               <p>Pada tahun 2021, ini unit kelima beli dengan saya,  saya terima call dari beliau berkenaan kereta Mercedes-Benz GLC250 2019, urusan ini juga beliau tidak ke showroom saya dan meminta saya bawa kereta ke rumah untuk tunjuk pada kak icah, akak ko suka kereta ni bu, ujar beliau. Dalam masa 2 minggu akhirnya kereta selamat register, macam biasa tugas saya deliver sampai depan pintu, saya ada buat sedikit review di Youtube LUXOTICARS.</p>
