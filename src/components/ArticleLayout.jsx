@@ -182,7 +182,7 @@ export function ArticleLayout({
             <Link
               href={previousPathname}
               aria-label="Go back to car gallery"
-              className="group flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 transition dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0 dark:ring-white/10 dark:hover:border-zinc-700 dark:hover:ring-white/20 lg:absolute lg:left-10 lg:mb-0 lg:-mt-2 xl:left-0 xl:mt-0"
+              className="group flex h-10 w-10 items-center justify-center rounded-ful shadow-md shadow-zinc-800/5 transition border border-zinc-700/50 bg-zinc-800 ring-0 ring-white/10 hover:border-zinc-700 hover:ring-white/20 lg:absolute lg:left-10 lg:mb-0 lg:-mt-2 xl:left-0 xl:mt-0"
             >
               <ArrowLeftIcon className="h-4 w-4 stroke-zinc-500 transition group-hover:stroke-zinc-700 dark:stroke-zinc-500 dark:group-hover:stroke-zinc-400" />
             </Link>
@@ -192,10 +192,10 @@ export function ArticleLayout({
               type="button"
               onClick={toggleExternalView}
               aria-label="Go back to car gallery"
-              className="group flex items-center justify-center rounded-full px-3 bg-white dark:bg-zinc-800 text-zinc-500 shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 transition dark:border dark:border-zinc-700/50 dark:ring-0 dark:ring-white/10 dark:hover:border-zinc-700 dark:hover:ring-white/20"
+              className="group flex items-center justify-center rounded-full px-3 bg-zinc-800 shadow-md shadow-zinc-800/5 transition border border-zinc-700/50 ring-0 ring-white/10 hover:border-zinc-700 hover:ring-white/20"
             >
               {isExternalView && (
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="mr-1 text-zinc-700 dark:text-zinc-50 w-4 h-4">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="mr-1 text-zinc-50 w-4 h-4">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>              
@@ -206,10 +206,10 @@ export function ArticleLayout({
               type="button"
               onClick={toggleExternalView}
               aria-label="Go back to car gallery"
-              className="group flex items-center justify-center rounded-full px-3 bg-white dark:bg-zinc-800 text-zinc-500 shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 transition dark:border dark:border-zinc-700/50 dark:ring-0 dark:ring-white/10 dark:hover:border-zinc-700 dark:hover:ring-white/20"
+              className="group flex items-center justify-center rounded-full px-3 bg-zinc-800 shadow-md shadow-zinc-800/5 transition border border-zinc-700/50 ring-0 ring-white/10 hover:border-zinc-700 hover:ring-white/20"
             >
               {!isExternalView && (
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="mr-1 text-zinc-700 dark:text-zinc-50 w-4 h-4">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="mr-1 text-zinc-50 w-4 h-4">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>              

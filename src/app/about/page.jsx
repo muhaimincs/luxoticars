@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import Head from 'next/head'
 import Link from 'next/link'
 import clsx from 'clsx'
 
@@ -41,13 +40,6 @@ function MailIcon(props) {
 export default function About() {
   return (
     <>
-      <Head>
-        <title>About - LUXOTICARS</title>
-        <meta
-          name="description"
-          content="Founded and led by Abu Garciá, the company is renowned for its world-class"
-        />
-      </Head>
       <Container className="mt-16 sm:mt-32">
         <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
           <div className="lg:pl-20">

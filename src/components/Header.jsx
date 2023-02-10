@@ -1,27 +1,21 @@
+"use client"
+
 import { Fragment, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
+import { usePathname } from 'next/navigation'
 import { Popover, Transition } from '@headlessui/react'
 import clsx from 'clsx'
-import dynamic from 'next/dynamic'
 
 import { Container } from '@/components/Container'
+import { SearchProvider, SearchButton } from '@/components/Search'
 import avatarImage from '@/images/avatar.svg'
-
-const SearchProvider = dynamic(() => import('@/components/Search').then((mod) => mod.SearchProvider), {
-  ssr: false
-})
-
-const SearchButton = dynamic(() => import('@/components/Search').then((mod) => mod.SearchButton), {
-  ssr: false
-})
 
 export const navigation = [
   { name: 'About', href: '/about', current: false },
   { name: 'Stock', href: '/l', current: false },
   { name: 'Gallery', href: 'https://luxoticars-gallery.vercel.app/', current: false },
-  { name: 'Client', href: '/client', current: false },
+  { name: 'Client', href: '/client/icahfa', current: false },
   // { name: 'Lifestyle', href: 'https://shop.luxoticars.my', current: false }
 ]
 
@@ -99,7 +93,7 @@ function MobileNavItem({ href, children }) {
 export function MobileNavigation(props) {
   return (
     <Popover {...props}>
-      <Popover.Button className="group flex items-center rounded-full bg-white/90 px-4 py-2 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10 dark:hover:ring-white/20">
+      <Popover.Button className="group flex items-center rounded-full px-4 py-2 text-sm font-medium bg-zinc-800/90 text-zinc-200 shadow-lg shadow-zinc-800/5 ring-1 backdrop-blur ring-white/10 hover:ring-white/20">
         Business
         <ChevronDownIcon className="ml-3 h-auto w-2 stroke-zinc-500 group-hover:stroke-zinc-700 dark:group-hover:stroke-zinc-400" />
       </Popover.Button>
@@ -157,7 +151,8 @@ export function MobileNavigation(props) {
 }
 
 function NavItem({ href, children }) {
-  let isActive = useRouter().pathname === href
+  const pathname = usePathname()
+  let isActive = pathname === href
 
   return (
     <li>
@@ -292,7 +287,8 @@ function Avatar({ large = false, className, ...props }) {
 }
 
 export function Header() {
-  let isHomePage = useRouter().pathname === '/'
+  const pathname = usePathname()
+  let isHomePage = pathname === '/'
 
   let headerRef = useRef()
   let avatarRef = useRef()
