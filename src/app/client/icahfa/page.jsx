@@ -46,9 +46,10 @@ export default function IcahfaPage() {
           </div>
           <div className="lg:order-first lg:row-span-2">
             <h1 className="text-xl font-bold tracking-tight text-zinc-200 sm:text-3xl">
-              En. Fauzi adalah customer saya yang lama sejak dari tahun 2012. Kereta pertama yang beli dengan saya ialah Toyota Vellfire 2.4 ZG 2011
+              ICAHFA
             </h1>
             <div className="mt-6 space-y-7 text-base text-zinc-200">
+              <p>En. Fauzi adalah customer saya yang lama sejak dari tahun 2012. Kereta pertama yang beli dengan saya ialah Toyota Vellfire 2.4 ZG 2011</p>
               <p>
                 Berkenalan dengan beliau adalah melalui kawannya salah seorang dari group motor Ampang Chapter, dari sini lah saya mula berkenalan dengan beliau dan titik permulaan kami berkawan dan berurusan jual beli kereta.
                 Seterusnya urusan kedua jual beli kereta dengan beliau adalah Toyota Vellfire 2.5 ZG High Specs 2016 pada tahun 2017. 
@@ -84,7 +85,7 @@ export default function IcahfaPage() {
                   src={Img2}
                   alt="Toyota Vellfire 2.5 ZG High Specs 2016"
                   sizes="(min-width: 1024px) 32rem, 20rem"
-                  className="aspect-video rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
+                  className="aspect-video rounded-2xl object-cover bg-zinc-800"
                 />
               </div>
               <p>
