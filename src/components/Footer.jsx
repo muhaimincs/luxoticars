@@ -27,7 +27,6 @@ function SocialLink({ className, href, children, icon: Icon }) {
 }
 
 export function Footer() {
-  console.log('type', navigation)
   return (
     <footer className="max-w-7xl mx-auto px-4 lg:px-8 mb-32 md:mb-10">
       <Container.Outer>
