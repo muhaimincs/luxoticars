@@ -1,0 +1,55 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import { Featured } from '@/components/Featured'
+
+export const meta = {
+  author: 'Abu Garciá',
+  date: '2023-02-17',
+  title: 'Porsche 911 (992) Carrera 4 3.0',
+  brand: 'porsche',
+  mileage: 0,
+  year: 2021,
+  thumbnail: 'https://images.ctfassets.net/ijuxqf6x1pz2/3gJMm5yuXiIOvzcl4i3oHK/4972f7c68a1525d1ef913316d44678e0/photo_2023-02-17_12.28.40.jpeg',
+  highlights: [
+    'Porsche Logo LED Door Courtesy Lights',
+    'Front Axle Lifting System',
+    'PDC Including Reverse Camera'
+  ],
+  description:
+    'Porsche 911 (992) Carrera 4 3.0 featured Porsche Logo LED Door Courtesy Lights',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+## Features
+- Unregister 2021
+- UK Imported
+- Electric Glass Sunroof
+- Folding Mirror
+- Porsche Logo LED Door Courtesy Lights 
+- Sport Chrono Package 
+- Sport Exhaust System 
+- Front Axle Lifting System 
+- PDLS Plus
+- Auto Dimming Mirror 
+- PDC Including Reverse Camera 
+- Adaptive Cruise Control 
+- Electric Sport Seat with 14 Way Memory
+- Porsche Crest on Headrest 
+- BOSE Sound System
+
+<Featured
+  title="Performance"
+  src="https://images.ctfassets.net/ijuxqf6x1pz2/52uoxLsW3wc19NBYzVf6gQ/9053c29a3b129aa44dadc8e8edfb2d74/photo_2023-02-17_12.29.00.jpeg"
+  features={[
+    'Top speed of 181 mph (291 km/h)',
+    '385 PS (380 bhp - 283 kW) at 6500 rpm, maximum torque of 450 Nm',
+    'Turbocharged Boxer 6 cylinder engine',
+    '8 speed Dualclutch Automatic gearbox',
+  ]}
+/>
+
+<Featured
+  title="Stock tire sizes are 235 / 40 on 19 inch rims at the front, and 295 / 35 on 20 inch rims at the rear"
+  src="https://images.ctfassets.net/ijuxqf6x1pz2/2ZBdnvRYyUKxk5QfKk1im5/a6dbda1a42cb138c0cdc219862a7e627/photo_2023-02-17_12.29.01.jpeg"
+  features={[]}
+/>
