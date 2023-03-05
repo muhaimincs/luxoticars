@@ -4,7 +4,7 @@ import { Fragment, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Popover, Transition } from '@headlessui/react'
+import { Popover, Menu, Transition } from '@headlessui/react'
 import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
@@ -15,7 +15,7 @@ export const navigation = [
   { name: 'About', href: '/about', current: false },
   { name: 'Stock', href: '/l', current: false },
   { name: 'Gallery', href: 'https://luxoticars-gallery.vercel.app/', current: false },
-  { name: 'Client', href: '/client/icahfa', current: false },
+  // { name: 'Client', href: '/client/icahfa', current: false },
   // { name: 'Lifestyle', href: 'https://shop.luxoticars.my', current: false }
 ]
 
@@ -181,6 +181,45 @@ export function DesktopNavigation(props) {
         {navigation.map((nav) => (
           <NavItem key={nav.href} href={nav.href}>{nav.name}</NavItem>
         ))}
+        <li>
+          <Menu as="div" className='relative block px-3 py-2 transition '>
+            <div>
+              <Menu.Button className="inline-flex w-full justify-center text-sm font-medium text-white hover:text-red-500 dark:hover:text-red-600">
+                Clients
+              </Menu.Button>
+            </div>
+            <Transition
+              as={Fragment}
+              enter="transition ease-out duration-100"
+              enterFrom="transform opacity-0 scale-95"
+              enterTo="transform opacity-100 scale-100"
+              leave="transition ease-in duration-75"
+              leaveFrom="transform opacity-100 scale-100"
+              leaveTo="transform opacity-0 scale-95"
+            >
+              <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right divide-y divide-gray-300 rounded-md bg-zinc-800 shadow-lg ring-1 ring-white ring-opacity-5 focus:outline-none">
+                <div className="px-1 py-1 ">
+                  <Menu.Item>
+                    <Link
+                      href="/client/icahfa"
+                      className="text-slate-100 hover:bg-zinc-700 group flex w-full items-center rounded-md px-2 py-2 text-sm"
+                    >
+                      ICAHFA
+                    </Link>
+                  </Menu.Item>
+                  <Menu.Item>
+                    <Link
+                      href="/client/alhumaira-contemporary"
+                      className="text-slate-100 group flex w-full items-center rounded-md px-2 py-2 text-sm"
+                    >
+                      alHumaira Contemporary
+                    </Link>
+                  </Menu.Item>
+                </div>
+              </Menu.Items>
+            </Transition>
+          </Menu>
+        </li>
         <li>
           <SearchButton className="relative transition w-8 h-8 my-1 flex items-center justify-center hover:text-red-600">
             <span className="sr-only">Search</span>

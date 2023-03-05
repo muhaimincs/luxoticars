@@ -2,7 +2,7 @@ import { Lazy, Zoom, Navigation, Pagination } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 import 'swiper/css'
-import 'swiper/css/lazy'
+// import 'swiper/css/lazy'
 import 'swiper/css/zoom'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'

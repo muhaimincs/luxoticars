@@ -2,7 +2,7 @@ import { Lazy, Autoplay } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 import 'swiper/css'
-import 'swiper/css/lazy'
+// import 'swiper/css/lazy'
 
 export function Gallery({ photos, title }) {
   return (
