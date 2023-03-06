@@ -201,6 +201,14 @@ export function DesktopNavigation(props) {
                 <div className="px-1 py-1 ">
                   <Menu.Item>
                     <Link
+                      href="/client/kazakon"
+                      className="text-slate-100 hover:bg-zinc-700 group flex w-full items-center rounded-md px-2 py-2 text-sm"
+                    >
+                      KAZAKON
+                    </Link>
+                  </Menu.Item>
+                  <Menu.Item>
+                    <Link
                       href="/client/icahfa"
                       className="text-slate-100 hover:bg-zinc-700 group flex w-full items-center rounded-md px-2 py-2 text-sm"
                     >
@@ -210,7 +218,7 @@ export function DesktopNavigation(props) {
                   <Menu.Item>
                     <Link
                       href="/client/alhumaira-contemporary"
-                      className="text-slate-100 group flex w-full items-center rounded-md px-2 py-2 text-sm"
+                      className="text-slate-100 hover:bg-zinc-700 group flex w-full items-center rounded-md px-2 py-2 text-sm"
                     >
                       alHumaira Contemporary
                     </Link>

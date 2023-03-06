@@ -14,6 +14,11 @@ import Img3 from './gallery/img3.jpeg'
 import Img4 from './gallery/img4.jpeg'
 import Img5 from './gallery/img5.jpeg'
 
+export const metadata = {
+  title: 'Alhumaira Contemporary',
+  description: 'Pada tahun 2012, saya berkenalan dengan Humaidi melalui kawan saya Arib, beliau mengenalkan saya dengan Humaidi, berkenaan kereta.',
+};
+
 function SocialLink({ className, href, children, icon: Icon }) {
   return (
     <li className={clsx(className, 'flex')}>
