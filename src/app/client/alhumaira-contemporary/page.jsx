@@ -17,6 +17,21 @@ import Img5 from './gallery/img5.jpeg'
 export const metadata = {
   title: 'Alhumaira Contemporary',
   description: 'Pada tahun 2012, saya berkenalan dengan Humaidi melalui kawan saya Arib, beliau mengenalkan saya dengan Humaidi, berkenaan kereta.',
+  openGraph: {
+    title: 'Alhumaira Contemporary',
+    description: 'Pada tahun 2012, saya berkenalan dengan Humaidi melalui kawan saya Arib, beliau mengenalkan saya dengan Humaidi, berkenaan kereta.',
+    url: 'https://luxoticars.cc/client/alhumaira-contemporary',
+    siteName: 'Luxoticars',
+    images: [
+      {
+        url: 'https://i.ytimg.com/vi/QRXAW_RdVw0/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg%3D%3D&rs=AOn4CLCszhyD44mzgYnrdixLdR-7VTLZwQ',
+        width: 800,
+        height: 600,
+      },
+    ],
+    locale: 'my-MS',
+    type: 'article',
+  },
 };
 
 function SocialLink({ className, href, children, icon: Icon }) {

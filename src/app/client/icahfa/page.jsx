@@ -29,6 +29,26 @@ function SocialLink({ className, href, children, icon: Icon }) {
   )
 }
 
+export const metadata = {
+  title: 'Icahfa',
+  description: 'En. Fauzi adalah customer saya yang lama sejak dari tahun 2012. Kereta pertama yang beli dengan saya ialah Toyota Vellfire 2.4 ZG 2011',
+  openGraph: {
+    title: 'Icahfa',
+    description: 'En. Fauzi adalah customer saya yang lama sejak dari tahun 2012. Kereta pertama yang beli dengan saya ialah Toyota Vellfire 2.4 ZG 2011',
+    url: 'https://luxoticars.cc/client/icahfa',
+    siteName: 'Luxoticars',
+    images: [
+      {
+        url: 'https://i.ytimg.com/vi/xWuVDJMrtTo/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg%3D%3D&rs=AOn4CLCszhyD44mzgYnrdixLdR-7VTLZwQ',
+        width: 800,
+        height: 600,
+      },
+    ],
+    locale: 'my-MS',
+    type: 'article',
+  },
+};
+
 export default function IcahfaPage() {
   return (
     <>

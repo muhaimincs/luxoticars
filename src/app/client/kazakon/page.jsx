@@ -16,6 +16,21 @@ import Img4 from './gallery/img4.jpeg'
 export const metadata = {
   title: 'KAZAKON',
   description: 'Saya berjumpa dan berkenalan dengan En. Faizal pada tahun 2012 melalui walk-in atau walk-in customer.',
+  openGraph: {
+    title: 'KAZAKON',
+    description: 'Saya berjumpa dan berkenalan dengan En. Faizal pada tahun 2012 melalui walk-in atau walk-in customer.',
+    url: 'https://luxoticars.cc/client/kazakon',
+    siteName: 'Luxoticars',
+    images: [
+      {
+        url: Img1.default,
+        width: 800,
+        height: 600,
+      },
+    ],
+    locale: 'my-MS',
+    type: 'article',
+  },
 };
 
 function SocialLink({ className, href, children, icon: Icon }) {
