@@ -1,4 +1,4 @@
-import { Lazy, Zoom, Navigation, Pagination } from 'swiper'
+import { Zoom, Navigation, Pagination } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 import 'swiper/css'
@@ -13,7 +13,7 @@ export function GalleryWithZoom({ photos, title }) {
       spaceBetween={0}
       slidesPerView={1}
       centeredSlides
-      modules={[Lazy, Zoom, Navigation, Pagination]}
+      modules={[Zoom, Navigation, Pagination]}
       className="rounded-2xl overflow-hidden"
       pagination={{
         clickable: true,
@@ -31,10 +31,11 @@ export function GalleryWithZoom({ photos, title }) {
           <div className="swiper-zoom-container">
             <img
               className="object-cover object-center swiper-lazy h-full"
-              data-src={photo.url}
+              src={photo.url}
               alt={title}
               height={`${photo.details.image.height}px`}
               width={`${photo.details.image.width}px`}
+              loading="lazy"
             />
             <div className="swiper-lazy-preloader swiper-lazy-preloader-white" />
           </div>

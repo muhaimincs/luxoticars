@@ -1,4 +1,4 @@
-import { Lazy, Autoplay } from 'swiper'
+import { Autoplay } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 import 'swiper/css'
@@ -10,24 +10,28 @@ export function Gallery({ photos, title }) {
       spaceBetween={0}
       slidesPerView={1}
       centeredSlides
-      modules={[Lazy, Autoplay]}
+      modules={[Autoplay]}
       // navigation
       // autoHeight
       preloadImages={false}
       autoplay={{
         delay: 3500,
       }}
+      effect='fade'
+      fadeEffect={{
+        crossFade: true
+      }}
       className="h-full w-full swiper-backface-hidden swiper-pointer-events"
-      lazy
     >
       {photos.map((photo, index) => (
         <SwiperSlide key={photo.url}>
           <img
             className="h-full w-full object-cover object-center swiper-lazy"
-            data-src={photo.url}
+            src={photo.url}
             alt={title}
             height={`${photo.details.image.height}px`}
             width={`${photo.details.image.width}px`}
+            loading="lazy"
           />
           <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
         </SwiperSlide>
