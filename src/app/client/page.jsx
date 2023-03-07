@@ -72,7 +72,7 @@ export default function ClientPage() {
               <div className="absolute inset-0 -z-10 bg-gradient-to-t from-zinc-900 via-zinc-900/40" />
               <div className="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-zinc-900/10" />
               <h3 className='mt-3 text-lg font-semibold leading-6 text-white'>
-                <Link href={item.url}>
+                <Link href={`/client/${item.url}`}>
                   {item.name}
                 </Link>
               </h3>
