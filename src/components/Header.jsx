@@ -138,6 +138,7 @@ export function MobileNavigation(props) {
                     Search
                   </SearchButton>
                 </li>
+                <MobileNavItem href="/client">Client</MobileNavItem>
                 {navigation.map((nav) => (
                   <MobileNavItem key={nav.href} href={nav.href}>{nav.name}</MobileNavItem>
                 ))}
