@@ -80,7 +80,7 @@ export default function ClientPage() {
             </div>
           </article>
           <div className="mx-auto w-full max-w-2xl border-t border-gray-900/10 pt-12 sm:pt-16 lg:mx-0 lg:max-w-none lg:border-t-0 lg:pt-0">
-            <div className="-my-12 divide-y divide-gray-900/10">
+            <div className="-my-12 divide-y divide-gray-300/10">
               {data.slice(1).map((item) => (
                 <article className="py-12">
                   <div className="group relative max-w-xl">
