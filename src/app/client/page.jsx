@@ -78,8 +78,8 @@ export default function ClientPage() {
             <p className="text-gray-200">Saya menulis disini kenangan yang hanya terlintas dan bermain-main di minda. Mungkin ketika pembaca yang sedang melewati halaman ini akan nampak sikit atau banyak customer saya, hingga kini saya masih mengarang kisah-kisah pahit manis berurusan dengan customer. </p>
             <p className="text-gray-200">Ada yang lost contact, ada yang menjadi lawan, ada yang meninggal, ada yang berkawan, ada yang pencen, ada yang dah jadi jutawan, ada yang dah buat-buat tak kenal, ada yang dah bercerai-berai, ada yang dah ditangkap, ada yang masuk politik, ada yang dah jadi taukeh dan macam-macam lagi pengalaman yang dialami.</p>
           </article>
-          <div className="mx-auto w-full max-w-2xl border-t border-gray-900/10 pt-12 sm:pt-16 lg:mx-0 lg:max-w-none lg:border-t-0 lg:pt-0 lg:sticky lg:top-10">
-            <div className="-my-12 divide-y divide-gray-800/10 space-y-3">
+          <div className="mx-auto w-full max-w-2xl border-t border-gray-900/10 pt-12 sm:pt-16 lg:mx-0 lg:max-w-none lg:border-t-0 lg:pt-0">
+            <div className="-my-12 divide-y divide-gray-800/10 space-y-3 lg:sticky lg:top-14">
               {data.map((item) => (
                 <article>
                   <div className="group relative max-w-xl border rounded-md border-gray-500 px-3 py-4 hover:bg-zinc-600">
