@@ -81,8 +81,8 @@ export default function ClientPage() {
           <div className="mx-auto w-full max-w-2xl border-t border-gray-900/10 pt-12 sm:pt-16 lg:mx-0 lg:max-w-none lg:border-t-0 lg:pt-0 lg:sticky lg:top-10">
             <div className="-my-12 divide-y divide-gray-800/10">
               {data.map((item) => (
-                <article className="py-6 border rounded-md border-gray-300">
-                  <div className="group relative max-w-xl">
+                <article className="py-6">
+                  <div className="group relative max-w-xl border rounded-md border-gray-500 px-3 py-4 hover:bg-slate-600">
                     <h2 className="mt-2 text-lg font-semibold text-gray-300 group-hover:text-red-600">
                       <Link href={`/client/${item.url}`}>
                         <span className='absolute inset-0' />
