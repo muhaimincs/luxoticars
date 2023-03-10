@@ -63,11 +63,11 @@ export default function ClientPage() {
       <HeroPattern />
       <Container className="mt-16 sm:mt-32">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-12 sm:gap-y-16 lg:grid-cols-2">
-          <article className='mx-auto w-full max-w-2xl lg:mx-0 lg:max-w-lg'>
+          <article className='mx-auto w-full max-w-2xl lg:mx-0 lg:max-w-lg space-y-4'>
             <h2 id="featured-post" className='mt-4 text-3xl font-bold tracking-tight text-gray-300 sm:text-4xl'>
               Client History
             </h2>
-            <p className="mt-4 text-lg leading-8 text-gray-200">Salam Sejahtera kepada semua customer saya dan juga penggemar dalam dunia kereta.</p>
+            <p className="text-xl leading-8 text-gray-200">Salam Sejahtera kepada semua customer saya dan juga penggemar dalam dunia kereta.</p>
             <p className="text-gray-200">Sebelum itu saya ingin menyatakan kepada sesiapa yang tidak suka dengan website ini dan penulisan saya yang agak hambar ini boleh tinggalkan web ini atau cari bahan bacaan yang lebih bermakna.</p>
             <p className="text-gray-200">Ruangkan ini adalah tempat saya menyantuni kenangan pahit dan manis semasa berurusan dengan semua customer sepanjang perjalanan sebagai seorang Salesman cabuk. Kerjaya ini yang saya sebut sebagai ‘Hobi’ adalah suatu kerjaya yang cukup dipandang enteng oleh semua jagat raya manusia di seluruh dunia. Itu adalah pandangan mereka, tetapi tidak bagi saya, kerana kerjaya saya disini lebih dinamik dan cukup menyentuh hati</p>
             <p className="text-gray-200">Saya tidak menjual ‘keperluan’ tetapi saya hanya si tukang merealisasikan impian mendapatkan impian.</p>
@@ -78,10 +78,10 @@ export default function ClientPage() {
             <p className="text-gray-200">Saya menulis disini kenangan yang hanya terlintas dan bermain-main di minda. Mungkin ketika pembaca yang sedang melewati halaman ini akan nampak sikit atau banyak customer saya, hingga kini saya masih mengarang kisah-kisah pahit manis berurusan dengan customer. </p>
             <p className="text-gray-200">Ada yang lost contact, ada yang menjadi lawan, ada yang meninggal, ada yang berkawan, ada yang pencen, ada yang dah jadi jutawan, ada yang dah buat-buat tak kenal, ada yang dah bercerai-berai, ada yang dah ditangkap, ada yang masuk politik, ada yang dah jadi taukeh dan macam-macam lagi pengalaman yang dialami.</p>
           </article>
-          <div className="mx-auto w-full max-w-2xl border-t border-gray-900/10 pt-12 sm:pt-16 lg:mx-0 lg:max-w-none lg:border-t-0 lg:pt-0">
-            <div className="-my-12 divide-y divide-gray-300/10">
+          <div className="mx-auto w-full max-w-2xl border-t border-gray-900/10 pt-12 sm:pt-16 lg:mx-0 lg:max-w-none lg:border-t-0 lg:pt-0 lg:sticky lg:top-10">
+            <div className="-my-12 divide-y divide-gray-800/10">
               {data.map((item) => (
-                <article className="py-12">
+                <article className="py-6 border rounded-md border-gray-300">
                   <div className="group relative max-w-xl">
                     <h2 className="mt-2 text-lg font-semibold text-gray-300 group-hover:text-red-600">
                       <Link href={`/client/${item.url}`}>
