@@ -185,7 +185,7 @@ export function DesktopNavigation(props) {
         <li>
           <Menu as="div" className='relative block px-3 py-2 transition '>
             <div>
-              <Menu.Button className="inline-flex w-full justify-center text-sm font-medium text-white hover:text-red-500 dark:hover:text-red-600">
+              <Menu.Button as={Link} href="/client" className="inline-flex w-full justify-center text-sm font-medium text-white hover:text-red-500 dark:hover:text-red-600">
                 Clients
               </Menu.Button>
             </div>
@@ -199,7 +199,7 @@ export function DesktopNavigation(props) {
               leaveTo="transform opacity-0 scale-95"
             >
               <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right divide-y divide-gray-300 rounded-md bg-zinc-800 shadow-lg ring-1 ring-white ring-opacity-5 focus:outline-none">
-                <div className="px-1 py-1 ">
+                <div className="px-1 py-1">
                   <Menu.Item>
                     <Link
                       href="/client/kazakon"
@@ -222,6 +222,16 @@ export function DesktopNavigation(props) {
                       className="text-slate-100 hover:bg-zinc-700 group flex w-full items-center rounded-md px-2 py-2 text-sm"
                     >
                       alHumaira Contemporary
+                    </Link>
+                  </Menu.Item>
+                </div>
+                <div className='py-1 px-1 border-t-gray-500'>
+                  <Menu.Item>
+                    <Link
+                      href="/client"
+                      className="text-slate-100 hover:bg-zinc-700 group flex w-full items-center rounded-md px-2 py-2 text-sm"
+                    >
+                      View All
                     </Link>
                   </Menu.Item>
                 </div>

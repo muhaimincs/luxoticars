@@ -1,6 +1,4 @@
-import Image from 'next/image'
 import Link from 'next/link'
-import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
 import { Footer } from '@/components/Footer'
@@ -21,20 +19,6 @@ export const metadata = {
     type: 'article',
   },
 };
-
-function SocialLink({ className, href, children, icon: Icon }) {
-  return (
-    <li className={clsx(className, 'flex')}>
-      <Link
-        href={href}
-        className="group flex text-sm font-medium transition text-zinc-200 hover:text-red-500"
-      >
-        <Icon className="h-6 w-6 flex-none fill-zinc-200 transition group-hover:fill-red-500" />
-        <span className="ml-4">{children}</span>
-      </Link>
-    </li>
-  )
-}
 
 const data = [
   {
@@ -62,8 +46,8 @@ export default function ClientPage() {
     <>
       <HeroPattern />
       <Container className="mt-16 sm:mt-32">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-12 sm:gap-y-16 lg:grid-cols-2">
-          <article className='mx-auto w-full max-w-2xl lg:mx-0 lg:max-w-lg space-y-4'>
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-12 sm:gap-y-16 lg:grid-cols-2 pb-4">
+          <article className='w-full lg:mx-0 lg:max-w-lg space-y-4'>
             <h2 id="featured-post" className='mt-4 text-3xl font-bold tracking-tight text-gray-300 sm:text-4xl'>
               Client History
             </h2>
@@ -78,7 +62,7 @@ export default function ClientPage() {
             <p className="text-gray-200">Saya menulis disini kenangan yang hanya terlintas dan bermain-main di minda. Mungkin ketika pembaca yang sedang melewati halaman ini akan nampak sikit atau banyak customer saya, hingga kini saya masih mengarang kisah-kisah pahit manis berurusan dengan customer. </p>
             <p className="text-gray-200">Ada yang lost contact, ada yang menjadi lawan, ada yang meninggal, ada yang berkawan, ada yang pencen, ada yang dah jadi jutawan, ada yang dah buat-buat tak kenal, ada yang dah bercerai-berai, ada yang dah ditangkap, ada yang masuk politik, ada yang dah jadi taukeh dan macam-macam lagi pengalaman yang dialami.</p>
           </article>
-          <div className="mx-auto w-full max-w-2xl border-t border-gray-900/10 pt-12 sm:pt-16 lg:mx-0 lg:max-w-none lg:border-t-0 lg:pt-0">
+          <div className="w-full border-t border-gray-900/10 pt-12 sm:pt-16 lg:mx-0 lg:max-w-none lg:border-t-0 lg:pt-0">
             <div className="-my-12 divide-y divide-gray-800/10 space-y-3 lg:sticky lg:top-14">
               {data.map((item) => (
                 <article>

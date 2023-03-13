@@ -6,7 +6,7 @@ import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
 import { navigation } from './Header'
-import { InstagramIcon, YoutubeIcon } from '@/components/SocialIcons'
+import { InstagramIcon, YoutubeIcon, FacebookIcon } from '@/components/SocialIcons'
 import logoFacebook from '@/images/logos/facebook.svg'
 import RedShoes from '@/images/RS_002.svg'
 import Mudah from '@/images/mudah.gif'
@@ -43,6 +43,12 @@ export function Footer() {
                   {item.name}
                 </Link>
               ))}
+              <Link
+                href="/client"
+                className="text-zinc-700 dark:text-zinc-300 hover:text-red-600 px-3 rounded-md text-xs font-medium"
+              >
+                Client
+              </Link>
             </div>
           </div>
           <div>
@@ -81,12 +87,9 @@ export function Footer() {
             </a>
           </div>
           <div className="flex space-x-3 justify-center md:justify-start lg:pl-3">
-            <SocialLink href="https://youtube.com/luxoticars" icon={YoutubeIcon} />
-            <a href="https://facebook.com/luxoticars">
-              <Image src={logoFacebook} alt="Luxoticars on Facebook" className="h-7 w-7" unoptimized />
-            </a>
-            {/* <SocialLink href="https://facebook.com/luxoticars" icon={logoFacebook} /> */}
-            <SocialLink href="https://instagram.com/luxoticars" icon={InstagramIcon} />
+            <SocialLink className="w-6 h-6" href="https://youtube.com/luxoticars" icon={YoutubeIcon} />
+            <SocialLink className="w-6 h-6" href="https://facebook.com/luxoticars" icon={FacebookIcon} />
+            <SocialLink className="w-6 h-6" href="https://instagram.com/luxoticars" icon={InstagramIcon} />
             <a href="https://www.tiktok.com/@luxoticars">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 34 39" className="fill-current">
                 <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
