@@ -1,0 +1,51 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import { Featured } from '@/components/Featured'
+
+export const meta = {
+  author: 'Abu Garciá',
+  date: '2023-03-20',
+  title: 'Porsche 911 (992) Carrera C4S',
+  brand: 'porsche',
+  mileage: 0,
+  year: 2021,
+  thumbnail: 'https://images.ctfassets.net/ijuxqf6x1pz2/6rGUNaSVOaFM4hlg6G1YIj/d3a8197dc426e5f4d088a16cbf5ed646/photo_2023-03-20_19.02.12.jpeg',
+  highlights: ['Carbon Decorative', 'LED Headlights', 'Sport Chrono Plus'],
+  description:
+    'Porsche 911 (992) Carrera C4S Features And Specs on Luxoticars',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+## Features
+- unregister
+- 2.0L turbocharged
+- 300 hp
+
+<Featured
+  title="Engine"
+  src="https://images.ctfassets.net/ijuxqf6x1pz2/656Jdp3Z8t2Q9hi9fydt9k/81abbd8bd6674a8a6c20265bdb931365/photo_2023-03-20_19.02.15.jpeg"
+  features={[
+    '331KW @ 6500RPM',
+    '530NM@2300 - 5000RPM',
+    '0 - 100KM/H @ 3.6SEC',
+    'TOP SPEED : 217KM/H',
+  ]}
+/>
+
+## Extra
+- LED Headlights
+- Sport Chrono Plus 
+- BOSE Sound System
+- Keyless Entry
+- PDCC
+- New face-lift Model
+
+<Featured
+  title="INTERIOR"
+  src="https://images.ctfassets.net/ijuxqf6x1pz2/5iosvYf7pMaxKAAiPLIYzr/f2df834b0a769ef5e2d851fdb59895d4/DSC07213.jpg"
+  features={[
+    'Red Leather',
+    'Electric Front Seat',
+    'Carbon Decorative'
+  ]}
+/>
