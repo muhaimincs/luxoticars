@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { Container } from '@/components/Container'
 import { Footer } from '@/components/Footer'
 import { HeroPattern } from '@/components/HeroPattern'
+import vijay from './vijay/gallery/img1.jpeg'
 import kazakon from './kazakon/gallery/img1.jpeg'
 import icahfa from './icahfa/gallery/img2.jpeg'
 import alhumaira from './alhumaira-contemporary/gallery/img1.jpeg'
@@ -21,6 +22,12 @@ export const metadata = {
 };
 
 const data = [
+  {
+    name: 'Vijay',
+    description: 'Pada tahun 2009, seawal-awal saya baru setahun jagung berkecimpung dalam industri automotif, Vijay adalah antara customer saya terawal membeli kereta dengan saya iaitu kereta Toyota Caldina 2.0 ZT 2005.',
+    images: vijay,
+    url: 'vijay',
+  },
   {
     name: 'Kazakon',
     description: 'Saya berjumpa dan berkenalan dengan En. Faizal pada tahun 2012 melalui walk-in atau walk-in customer.',

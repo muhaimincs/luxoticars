@@ -1,13 +1,6 @@
 import Image from 'next/image'
-import Link from 'next/link'
-import clsx from 'clsx'
 
-import { Container } from '@/components/Container'
 import { Footer } from '@/components/Footer'
-import {
-  InstagramIcon,
-  YoutubeIcon,
-} from '@/components/SocialIcons'
 import Img1 from './gallery/img1.jpeg'
 import Img2 from './gallery/img2.jpeg'
 import Img3 from './gallery/img3.jpeg'
@@ -35,20 +28,6 @@ export const metadata = {
     type: 'article',
   },
 };
-
-function SocialLink({ className, href, children, icon: Icon }) {
-  return (
-    <li className={clsx(className, 'flex')}>
-      <Link
-        href={href}
-        className="group flex text-sm font-medium transition text-zinc-200 hover:text-red-500"
-      >
-        <Icon className="h-6 w-6 flex-none fill-zinc-200 transition group-hover:fill-red-500" />
-        <span className="ml-4">{children}</span>
-      </Link>
-    </li>
-  )
-}
 
 export default function IcahfaPage() {
   return (
@@ -339,13 +318,15 @@ export default function IcahfaPage() {
 
         <div className="mx-auto mt-10 max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-4xl lg:mx-0">
-            <div className="relative float-right lg:ml-6 mb-6">
-              <Image
-                src={Img6}
-                alt="Toyota Vellfire 2.5 Z Type Modelista 2018"
-                sizes="(min-width: 1024px) 32rem, 20rem"
-                className="w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
-              />
+            <div className='float-right lg:ml-6 mb-6'>
+              <div className="relative">
+                <Image
+                  src={Img6}
+                  alt="Toyota Vellfire 2.5 Z Type Modelista 2018"
+                  sizes="(min-width: 1024px) 32rem, 20rem"
+                  className="w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                />
+              </div>
             </div>
             <p className="mt-3 text-lg leading-8 text-gray-200">
               Pada tahun ini 2023, unit keenam. Vijay call lagi. 
@@ -357,6 +338,9 @@ export default function IcahfaPage() {
             <p className="mt-3 text-lg leading-8 text-gray-200">
               Kawannya Gobinath dari Kedah Sungai Petani. Katanya loan yang dipohon oleh rakannya semua tidak berjaya. Sampai di tangan saya jadi lulus pulak. Saya study casenya, dimana yang sesuai untuk saya submit sampai lulus. 
             </p>
+            <p className="mt-3 text-lg leading-8 text-gray-200 p-3">
+              Akhirnya impian rakanya tercapai memiliki Toyota Vellfire 2.5 Z Type Modelista 2018 warna putih. Gembira tidak terkata, katanya, pergi di dealer lain semua tidak dilayan, beli di LUXOTICARS dilayan dengan baik hingga dapat memilikinya. Saya kongsikan gambar disini. 
+            </p>
             <div className='float-left  mr-6 mt-6'>
               <div className="relative aspect-w-4 aspect-h-5 sm:aspect-w-16 sm:aspect-h-9 w-20 sm:w-44">
                 <Image
@@ -367,10 +351,6 @@ export default function IcahfaPage() {
                 />
               </div>
             </div>
-            <p className="mt-3 text-lg leading-8 text-gray-200 p-3">
-              Akhirnya impian rakanya tercapai memiliki Toyota Vellfire 2.5 Z Type Modelista 2018 warna putih. Gembira tidak terkata, katanya, pergi di dealer lain semua tidak dilayan, beli di LUXOTICARS dilayan dengan baik hingga dapat memilikinya. Saya kongsikan gambar disini. 
-            </p>
-            
             <p className="mt-3 text-xl leading-8 text-gray-200">
               Selama lebih 10 tahun saya berkawan dengan Vijay atas urusan jual beli kereta, dari bujang hingga berumah tangga. Saya ucapkan ribuan terima kasih pada beliau kerana memberi keprcayaan penuh pada LUXOTICARS!
             </p>
