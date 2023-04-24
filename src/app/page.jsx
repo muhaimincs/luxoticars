@@ -4,12 +4,10 @@ import { getAllArticles } from '@/lib/getAllArticles'
 import { Container } from '@/components/Container'
 import YouTube from './(homepage)/YouTube'
 import avatarFont from '@/images/LUXOTICARS_WHITE_FONT.svg'
-// import { generateRssFeed } from '@/lib/generateRssFeed'
 import { generateAlgoliaSearches } from '@/lib/generateAlgoliaSearches'
 
 export default async function Page() {
   if (process.env.NODE_ENV === 'production') {
-    // await generateRssFeed()
     await generateAlgoliaSearches()
   }
 
