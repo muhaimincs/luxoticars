@@ -8,6 +8,7 @@ import { generateAlgoliaSearches } from '@/lib/generateAlgoliaSearches'
 
 export default async function Page() {
   if (process.env.NODE_ENV === 'production') {
+    // generate new searches
     await generateAlgoliaSearches()
   }
 
