@@ -41,7 +41,6 @@
   },
   "devDependencies": {
     "@tailwindcss/aspect-ratio": "^0.4.2",
-    "@tailwindcss/line-clamp": "^0.4.2",
     "eslint": "8.40.0",
     "eslint-config-next": "13.4.1",
     "gray-matter": "^4.0.3",
