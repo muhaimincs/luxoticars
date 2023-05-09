@@ -202,6 +202,14 @@ export function DesktopNavigation(props) {
                 <div className="px-1 py-1">
                   <Menu.Item>
                     <Link
+                      href="/client/azwan-aboo-mansor"
+                      className="text-slate-100 hover:bg-zinc-700 group flex w-full items-center rounded-md px-2 py-2 text-sm"
+                    >
+                      Azwan Aboo Mansor
+                    </Link>
+                  </Menu.Item>
+                  <Menu.Item>
+                    <Link
                       href="/client/kazakon"
                       className="text-slate-100 hover:bg-zinc-700 group flex w-full items-center rounded-md px-2 py-2 text-sm"
                     >
