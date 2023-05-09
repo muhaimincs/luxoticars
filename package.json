@@ -14,7 +14,7 @@
     "@mapbox/rehype-prism": "^0.8.0",
     "@mdx-js/loader": "^2.3.0",
     "@mdx-js/react": "^2.3.0",
-    "@next/mdx": "^13.4.1",
+    "@next/mdx": "^13.2.3",
     "@tailwindcss/typography": "^0.5.9",
     "algoliasearch": "^4.17.0",
     "autoprefixer": "^10.4.14",
