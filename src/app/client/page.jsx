@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { Container } from '@/components/Container'
 import { Footer } from '@/components/Footer'
 import { HeroPattern } from '@/components/HeroPattern'
+import datoAzwan from './azwan-aboo-mansor/gallery/img1.jpeg'
 import vijay from './vijay/gallery/img1.jpeg'
 import kazakon from './kazakon/gallery/img1.jpeg'
 import icahfa from './icahfa/gallery/img2.jpeg'
@@ -22,6 +23,12 @@ export const metadata = {
 };
 
 const data = [
+  {
+    name: 'Dato Azwan Aboo Mansor',
+    description: 'Ini antara pelanggan saya paling lama saya mengenali beliau, tahun 2009.',
+    images: datoAzwan,
+    url: 'azwan-aboo-mansor',
+  },
   {
     name: 'Vijay',
     description: 'Pada tahun 2009, seawal-awal saya baru setahun jagung berkecimpung dalam industri automotif, Vijay adalah antara customer saya terawal membeli kereta dengan saya iaitu kereta Toyota Caldina 2.0 ZT 2005.',
