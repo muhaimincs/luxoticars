@@ -22,6 +22,7 @@ const withMDX = nextMDX({
     remarkPlugins: [remarkGfm],
     rehypePlugins: [rehypePrism],
   },
+  providerImportSource: "@mdx-js/react",
 })
 
 export default withMDX(nextConfig)
