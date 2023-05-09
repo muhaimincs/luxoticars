@@ -111,7 +111,7 @@ export async function getStaticPaths() {
     let newAcc = acc
     // const numPages = (config.postsPerPage % groupByMaker[brand].length) + 1
     const numPages = calculatePagesCount(config.postsPerPage, groupByMaker[brand].length)
-    console.log(brand, ':', groupByMaker[brand].length)
+    // console.log(brand, ':', groupByMaker[brand].length)
     const n = [...Array(numPages)].map((element, i) => {
       const p = {
         params: {
@@ -119,7 +119,7 @@ export async function getStaticPaths() {
           maker: brand
         }
       }
-      console.log(p)
+      // console.log(p)
       return p
     })
     newAcc = [...newAcc, ...n]

@@ -16,7 +16,6 @@ async function withImage(article) {
     return acc
   }, [])
 
-  console.log(article)
   return {
     objectID: article.title,
     title: article.title,
