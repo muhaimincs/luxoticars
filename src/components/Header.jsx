@@ -132,12 +132,12 @@ export function MobileNavigation(props) {
             </div>
             <nav className="mt-6">
               <ul className="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
-                <li className="block py-2">
+                {/* <li className="block py-2">
                   <SearchButton
                     className="relative flex items-center justify-center hover:text-teal-500 dark:hover:text-teal-400">
                     Search
                   </SearchButton>
-                </li>
+                </li> */}
                 <MobileNavItem href="/client">Client</MobileNavItem>
                 {navigation.map((nav) => (
                   <MobileNavItem key={nav.href} href={nav.href}>{nav.name}</MobileNavItem>
@@ -248,7 +248,7 @@ export function DesktopNavigation(props) {
           </Menu>
         </li>
         <li>
-          <SearchButton className="relative transition w-8 h-8 my-1 flex items-center justify-center hover:text-red-600">
+          {/* <SearchButton className="relative transition w-8 h-8 my-1 flex items-center justify-center hover:text-red-600">
             <span className="sr-only">Search</span>
             <svg
               width="24"
@@ -263,7 +263,7 @@ export function DesktopNavigation(props) {
               <path d="m19 19-3.5-3.5" />
               <circle cx="11" cy="11" r="6" />
             </svg>
-          </SearchButton>
+          </SearchButton> */}
         </li>
       </ul>
     </nav>
@@ -506,7 +506,7 @@ export function Header() {
             className="top-[var(--header-top,theme(spacing.6))] w-full"
             style={{ position: 'var(--header-inner-position)' }}
           >
-            <SearchProvider>
+            {/* <SearchProvider> */}
               <div className="relative flex gap-4">
                 <div className="flex flex-1">
                   {!isHomePage && (
@@ -525,7 +525,7 @@ export function Header() {
                   {/* </div>
                 </div> */}
               </div>
-            </SearchProvider>
+            {/* </SearchProvider> */}
           </Container>
         </div>
       </header>
