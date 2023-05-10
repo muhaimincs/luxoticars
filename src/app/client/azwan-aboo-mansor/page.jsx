@@ -14,7 +14,7 @@ export const metadata = {
   image: `${siteUrl}/client/azwan-aboo-mansor.jpeg`,
   url: `${siteUrl}/client/azwan-aboo-mansor`,
   openGraph: {
-    title: 'Client: Azwan Aboo Mansor | LUXOTICARS',
+    title: 'Client: Azwan Aboo Mansor',
     description: 'Ini antara pelanggan saya paling lama saya mengenali beliau, tahun 2009.',
     url: `${siteUrl}/client/azwan-aboo-mansor`,
     siteName: 'Luxoticars',
@@ -38,7 +38,8 @@ export const metadata = {
   },
   bookmarks: [
     siteUrl,
-    `${siteUrl}/client/azwan-aboo-mansor`
+    `${siteUrl}/client`,
+    `${siteUrl}/client/azwan-aboo-mansor`,
   ],
 };
 
@@ -189,6 +190,13 @@ export default function AzwanAbooMansorPage() {
                   <p className="mt-3">
                     Kebetulan kami berjiran dalam satu kawasan dan selalu berselisih.
                   </p>
+                  <div className='mt-3'>
+                    <Image
+                      src={Img2}
+                      alt=""
+                      className="aspect-1 rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                    />
+                  </div>
                   <p className="mt-3">
                     Pada tahun 2015, beliau membeli lagi dengan saya kereta jenis Mercedes Benz S400L Hybrid AMG warna hitam tahun 2013.
                   </p>

@@ -6,7 +6,6 @@ import 'focus-visible'
 
 export const metadata = {
   title: {
-    default: 'LUXOTICARS',
     template: '%s | LUXOTICARS',
   },
   description: 'The Syndicate Carlifestyle Cartel',
@@ -17,7 +16,6 @@ export const metadata = {
     locale: 'en_US',
     url: 'https://www.luxoticars.cc',
     title: {
-      default: 'LUXOTICARS',
       template: '%s | LUXOTICARS',
     },
     description: 'The Syndicate Carlifestyle Cartel',
