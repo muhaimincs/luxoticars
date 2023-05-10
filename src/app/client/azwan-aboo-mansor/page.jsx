@@ -179,16 +179,16 @@ export default function AzwanAbooMansorPage() {
                     className="aspect-1 rounded-xl bg-gray-900/5 object-cover shadow-lg"
                   />
                 </div>
-                <div className="mt-5 text-lg leading-7 text-gray-100">
+                <div className="text-lg leading-7 text-gray-100">
                   <p>
                     Memandangkan beliau sangat suka tentang dunia permotoran, anak sulungnya Azim juga dihantar melanjutkan pendidikan dalam bidang permotoran.
                   </p>
                   <p className="mt-3">
-                    Sejak berurusan jual beli kereta dengannya, beliau kerap datang ke showroom saya hanya semata-mata untuk berbual dan minum kopi. Kami menjadi rapat dan selalu berjumpa berbual tentang dunia kereta.
+                    Sejak berurusan jual beli kereta dengannya, beliau kerap datang ke showroom saya hanya semata-mata untuk berbual dan minum kopi.
                   </p>
                   <div className='grid md:grid-cols-2 md:gap-10'>
                     <p className="mt-3">
-                      Kebetulan kami berjiran dalam satu kawasan dan selalu berselisih.
+                      Kami menjadi rapat dan selalu berjumpa berbual tentang dunia kereta. Kebetulan kami berjiran dalam satu kawasan dan selalu berselisih.
                     </p>
                     <div className='mt-5'>
                       <Image
@@ -234,7 +234,14 @@ export default function AzwanAbooMansorPage() {
                       />
                     </div>
                   </div>
-                  <p className="mt-3">
+                  <div className='my-5'>
+                    <Image
+                      src={Img4}
+                      alt=""
+                      className="aspect-1 rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                    />
+                  </div>
+                  <p>
                     Jutaan terima kasih pada Dato’ Azwan kerana sentiasa memberi kepercayaan penuh pada LUXOTICARS!
                   </p>
                 </div>
