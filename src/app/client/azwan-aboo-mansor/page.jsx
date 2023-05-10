@@ -230,7 +230,7 @@ export default function AzwanAbooMansorPage() {
                       <Image
                         src={Img3}
                         alt=""
-                        className="aspect-2 rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                        className="aspect-4 rounded-xl bg-gray-900/5 object-cover shadow-lg shadow-white"
                       />
                     </div>
                   </div>
@@ -238,7 +238,7 @@ export default function AzwanAbooMansorPage() {
                     <Image
                       src={Img4}
                       alt=""
-                      className="aspect-1 rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                      className="aspect-1 rounded-xl bg-gray-900/5 object-cover shadow-white"
                     />
                   </div>
                   <p>
