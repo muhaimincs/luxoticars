@@ -33,7 +33,6 @@ export const metadata = {
     title: 'Client: Azwan Aboo Mansor',
     description: 'Ini antara pelanggan saya paling lama saya mengenali beliau, tahun 2009.',
     url: `${siteUrl}/client/azwan-aboo-mansor`,
-    siteName: 'Luxoticars',
     images: [`${siteUrl}/client/azwan-aboo-mansor.jpeg`],
   },
   bookmarks: [
@@ -223,9 +222,18 @@ export default function AzwanAbooMansorPage() {
                   <p className="mt-3">
                     Kereta anak muda, kereta koleksi dan idaman oleh semua golongan belia pada masa tersebut hingga kini. Orang kata, kereta bohjan lah! 
                   </p>
-                  <p className="mt-3">
-                    Sepanjang kami berkawan, beliau sentiasa memberi sokongansepanjang perjalanan saya sebagai seorang Salesman jalanan, dan sentiasa rekemen saya pada rakan-rakan beliau dan kejiranan membeli dan berurusan jual beli kereta dengan saya.
-                  </p>
+                  <div className='grid md:grid-cols-2 md:gap-10'>
+                    <p className="mt-3">
+                      Sepanjang kami berkawan, beliau sentiasa memberi sokongan sepanjang perjalanan saya sebagai seorang Salesman jalanan, dan sentiasa rekemen saya pada rakan-rakan beliau dan kejiranan membeli dan berurusan jual beli kereta dengan saya.
+                    </p>
+                    <div className='mt-5'>
+                      <Image
+                        src={Img3}
+                        alt=""
+                        className="aspect-2 rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                      />
+                    </div>
+                  </div>
                   <p className="mt-3">
                     Jutaan terima kasih pada Dato’ Azwan kerana sentiasa memberi kepercayaan penuh pada LUXOTICARS!
                   </p>
