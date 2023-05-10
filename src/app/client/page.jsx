@@ -1,5 +1,6 @@
 import Link from 'next/link'
 
+import { siteUrl } from 'app.config'
 import { Container } from '@/components/Container'
 import { Footer } from '@/components/Footer'
 import { HeroPattern } from '@/components/HeroPattern'
@@ -15,7 +16,7 @@ export const metadata = {
   openGraph: {
     title: 'My Clients',
     description: 'Tentang client Luxoticars',
-    url: 'https://luxoticars.cc/client',
+    url: `${siteUrl}/client`,
     siteName: 'Luxoticars',
     locale: 'my-MS',
     type: 'article',

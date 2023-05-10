@@ -7,7 +7,6 @@ import 'focus-visible'
 export const metadata = {
   title: {
     default: 'LUXOTICARS',
-    suffix: 'The Syndicate Carlifestyle Cartel',
     template: '%s | LUXOTICARS',
   },
   description: 'The Syndicate Carlifestyle Cartel',
@@ -17,7 +16,10 @@ export const metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://www.luxoticars.cc',
-    title: 'LUXOTICARS - The Syndicate Carlifestyle Cartel',
+    title: {
+      default: 'LUXOTICARS',
+      template: '%s | LUXOTICARS',
+    },
     description: 'The Syndicate Carlifestyle Cartel',
     images: [
       {
@@ -30,7 +32,10 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'LUXOTICARS - The Syndicate Carlifestyle Cartel',
+    title: {
+      default: 'LUXOTICARS',
+      template: '%s | LUXOTICARS',
+    },
     description: 'The Syndicate Carlifestyle Cartel',
     // siteId: '1467726470533754880',
     creator: '@luxoticars',
@@ -43,12 +48,6 @@ export const metadata = {
   ],
   msApplicationTileColor: '#000000',
   metadataBase: new URL('https://www.luxoticars.cc'),
-  alternates: {
-    canonical: '/',
-    languages: {
-      'en-US': '/en-US',
-    },
-  },
   robots: {
     index: false,
     follow: true,

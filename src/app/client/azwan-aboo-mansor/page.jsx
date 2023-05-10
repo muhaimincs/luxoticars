@@ -1,5 +1,6 @@
 import Image from 'next/image'
 
+import { siteUrl } from 'app.config'
 import { Footer } from '@/components/Footer'
 import Img1 from './gallery/img1.jpeg'
 import Img2 from './gallery/img2.jpeg'
@@ -10,21 +11,35 @@ import Img5 from './gallery/img5.jpeg'
 export const metadata = {
   title: 'Azwan Aboo Mansor',
   description: 'Ini antara pelanggan saya paling lama saya mengenali beliau, tahun 2009.',
+  image: `${siteUrl}/client/azwan-aboo-mansor.jpeg`,
+  url: `${siteUrl}/client/azwan-aboo-mansor`,
   openGraph: {
-    title: 'Azwan Aboo Mansor',
+    title: 'Client: Azwan Aboo Mansor | LUXOTICARS',
     description: 'Ini antara pelanggan saya paling lama saya mengenali beliau, tahun 2009.',
-    url: 'https://luxoticars.cc/client/azwan-aboo-mansor',
+    url: `${siteUrl}/client/azwan-aboo-mansor`,
     siteName: 'Luxoticars',
     images: [
       {
-        url: Img1.default,
-        width: 800,
-        height: 600,
+        url: `${siteUrl}/client/azwan-aboo-mansor.jpeg`,
+        width: 1080,
+        height: 1080,
       },
     ],
     locale: 'my-MS',
     type: 'article',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Client: Azwan Aboo Mansor',
+    description: 'Ini antara pelanggan saya paling lama saya mengenali beliau, tahun 2009.',
+    url: `${siteUrl}/client/azwan-aboo-mansor`,
+    siteName: 'Luxoticars',
+    images: [`${siteUrl}/client/azwan-aboo-mansor.jpeg`],
+  },
+  bookmarks: [
+    siteUrl,
+    `${siteUrl}/client/azwan-aboo-mansor`
+  ],
 };
 
 export default function AzwanAbooMansorPage() {
