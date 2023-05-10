@@ -4,7 +4,7 @@ import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
 import { renderToString } from 'react-dom/server'
-import { MDXProvider } from '@mdx-js/react'
+// import { MDXProvider } from '@mdx-js/react'
 
 import MDXComponents from './MDXComponents'
 import { Container } from '@/components/Container'
@@ -257,9 +257,9 @@ export function ArticleLayout({
                   <ArticleNavBar sections={sections} />
                 </Suspense>
               )}
-              <MDXProvider components={MDXComponents}>
-                <Prose className="mt-8">{children}</Prose>
-              </MDXProvider>
+              {/* <MDXProvider> */}
+                <Prose className="mt-8" components={MDXComponents}>{children}</Prose>
+              {/* </MDXProvider> */}
             </article>
           </div>
         </div>
