@@ -187,15 +187,17 @@ export default function AzwanAbooMansorPage() {
                   <p className="mt-3">
                     Sejak berurusan jual beli kereta dengannya, beliau kerap datang ke showroom saya hanya semata-mata untuk berbual dan minum kopi. Kami menjadi rapat dan selalu berjumpa berbual tentang dunia kereta.
                   </p>
-                  <p className="mt-3">
-                    Kebetulan kami berjiran dalam satu kawasan dan selalu berselisih.
-                  </p>
-                  <div className='mt-3'>
-                    <Image
-                      src={Img2}
-                      alt=""
-                      className="aspect-1 rounded-xl bg-gray-900/5 object-cover shadow-lg"
-                    />
+                  <div className='grid md:grid-cols-2 md:gap-10'>
+                    <p className="mt-3">
+                      Kebetulan kami berjiran dalam satu kawasan dan selalu berselisih.
+                    </p>
+                    <div className='mt-5'>
+                      <Image
+                        src={Img2}
+                        alt=""
+                        className="aspect-2 rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                      />
+                    </div>
                   </div>
                   <p className="mt-3">
                     Pada tahun 2015, beliau membeli lagi dengan saya kereta jenis Mercedes Benz S400L Hybrid AMG warna hitam tahun 2013.
