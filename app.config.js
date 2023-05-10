@@ -1,5 +1,5 @@
 module.exports = {
   shareImage: "https://luxoticars.cc/img/screenshot.png",
-  shareImageAlt: "Next.js MDX Blog Starter Screenshot",
+  shareImageAlt: "Luxoticars",
   postsPerPage: 8,
 }
