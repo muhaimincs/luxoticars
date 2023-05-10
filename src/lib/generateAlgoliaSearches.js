@@ -52,11 +52,11 @@ export async function generateAlgoliaSearches() {
     process.env.ALGOLIA_SEARCH_ADMIN_KEY,
   )
   const index = client.initIndex("dev_luxoticars")
-  const algoliaResponse = await index.saveObjects(transformed)
+  await index.saveObjects(transformed)
 
-  console.log(
-    `Successfully added ${algoliaResponse.objectIDs.length} records to Algolia search! Object IDs:\n${algoliaResponse.objectIDs.join(
-        "\n",
-    )}`,
-  )
+  // console.log(
+  //   `Successfully added ${algoliaResponse.objectIDs.length} records to Algolia search! Object IDs:\n${algoliaResponse.objectIDs.join(
+  //       "\n",
+  //   )}`,
+  // )
 }

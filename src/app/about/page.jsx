@@ -9,8 +9,8 @@ import {
   YoutubeIcon,
 } from '@/components/SocialIcons'
 import portraitImage from '@/images/p1.jpeg'
-import withTeamImage from '@/images/with-team.jpeg'
-import youtubeAwwardImage from '@/images/youtube-awward.jpeg'
+// import withTeamImage from '@/images/with-team.jpeg'
+// import youtubeAwwardImage from '@/images/youtube-awward.jpeg'
 
 function SocialLink({ className, href, children, icon: Icon }) {
   return (
@@ -35,6 +35,34 @@ function MailIcon(props) {
       />
     </svg>
   )
+}
+
+export const metadata = {
+  description: 'About Luxoticars',
+  image: 'https://www.luxoticars.cc/og-image.png',
+  url: 'https://www.luxoticars.cc',
+  openGraph: {
+    url: 'https://www.luxoticars.cc/about',
+    description: 'The Syndicate Carlifestyle Cartel',
+    images: [
+      {
+        url: '/opengraph-image.png',
+        width: 1200,
+        height: 670,
+      },
+    ],
+    site_name: 'LUXOTICARS',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'LUXOTICARS - The Syndicate Carlifestyle Cartel',
+    description: 'The Syndicate Carlifestyle Cartel',
+    // siteId: '1467726470533754880',
+    creator: '@luxoticars',
+    // creatorId: '1467726470533754880',
+    images: ['https://www.luxoticars.cc/opengraph-image.png'],
+    url: 'https://www.luxoticars.cc/about',
+  },
 }
 
 export default function About() {

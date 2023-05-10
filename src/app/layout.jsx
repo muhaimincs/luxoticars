@@ -19,7 +19,6 @@ export const metadata = {
     url: 'https://www.luxoticars.cc',
     title: 'LUXOTICARS - The Syndicate Carlifestyle Cartel',
     description: 'The Syndicate Carlifestyle Cartel',
-    image: '/opengraph-image.png',
     images: [
       {
         url: '/opengraph-image.png',
