@@ -159,6 +159,10 @@ export function ArticleLayout({
           content={meta.thumbnail}
         />
         <meta
+          name="twitter:title"
+          content={meta.title}
+        />
+        <meta
           name="article:published_time"
           content={meta.date}
         />
