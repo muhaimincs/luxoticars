@@ -154,6 +154,18 @@ export function ArticleLayout({
           property="og:image"
           content={meta.thumbnail}
         />
+        {meta.thumbnailW && meta.thumbnailH && (
+          <>
+            <meta
+              property="og:image:width"
+              content={meta.thumbnailW}
+            />
+            <meta
+              property="og:image:width"
+              content={meta.thumbnailH}
+            />
+          </>
+        )}
         <meta
           name="twitter:image"
           content={meta.thumbnail}
