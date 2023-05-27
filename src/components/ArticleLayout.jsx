@@ -129,6 +129,10 @@ export function ArticleLayout({
         <link rel="canonical" href={officialUrl} />
         <link rel="publisher" href="https://www.facebook.com/luxoticars" />
         <meta
+          name="og:site_name"
+          content="LUXOTICARS &copy;"
+        />
+        <meta
           property="og:type"
           content="article"
         />
@@ -167,28 +171,32 @@ export function ArticleLayout({
           </>
         )}
         <meta
-          name="twitter:image"
-          content={meta.thumbnail}
+          name="twitter:card"
+          content="summary_large_image"
+        />
+        <meta
+          name="twitter:site"
+          content="@luxoticars_"
         />
         <meta
           name="twitter:title"
           content={meta.title}
         />
         <meta
+          name="twitter:image"
+          content={meta.thumbnail}
+        />
+        <meta
+          name="twitter:description"
+          content={meta.description}
+        />
+        <meta
           name="article:published_time"
           content={meta.date}
         />
         <meta
-          name="og:site_name"
-          content="LUXOTICARS &copy;"
-        />
-        <meta
-          name="twitter:label1"
-          content="Sold by"
-        />
-        <meta
-          name="twitter:data1"
-          content={meta.author}
+          name="theme-color"
+          content="#000000"
         />
       </Head>
       
