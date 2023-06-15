@@ -140,6 +140,7 @@ export function ArticleLayout({
           property="og:url"
           content={officialUrl}
         />
+        <meta property='keywords' content={meta.highlights.map(hl => hl).join(", ")} />
         <meta
           property="og:title"
           content={meta.title}
