@@ -1,8 +1,9 @@
 import { ArticleLayout } from '@/components/ArticleLayout'
+import { Featured } from '@/components/Featured'
 
 export const meta = {
   author: 'Abu Garciá',
-  date: '2022-07-03',
+  date: '2023-06-16',
   brand: 'bmw',
   mileage: '12800KM',
   year: 2019,
@@ -21,15 +22,29 @@ export default (props) => <ArticleLayout meta={meta} {...props} />
 - Unregistered 
 - 09/2019 
 - Rear Wheel Drive (RWD)
-- 3.0 Twin Turbo Engine
-- 405 Horsepower 
-- 7 Speed Transmission 
-- 0-100 km/h 4.2 Sec
+
+<Featured
+  title="Performance"
+  src="https://images.ctfassets.net/ijuxqf6x1pz2/1f12jWUIFD0CeuTNigfoZF/529825b874eea3c54b22254333a24447/photo_2023-06-23_12.56.53.jpeg"
+  features={[
+    '0-100 km/h 4.2 Sec',
+    '405 Horsepower',
+    '3.0 Twin Turbo Engine'
+  ]}
+/>
+
 - Black color exterior 
 - Black leather interior 
 - Blue Stitching 
 - Keyless entry
-- Keyless push start 
+- Keyless push start
+
+<Featured
+  title="7 Speed Transmission"
+  src="https://images.ctfassets.net/ijuxqf6x1pz2/6vmAetTN5sj4Ur9h09uDYB/ec2df2a8b7da4dc792077cac5b96f07b/photo_2023-06-23_12.56.55.jpeg"
+  features={[]}
+/>
+
 - 2 Racing Bucket Seat M2
 - Driver memory seat
 - Passenger electronic seat
@@ -38,14 +53,28 @@ export default (props) => <ArticleLayout meta={meta} {...props} />
 - Comfort, Sport & Sport Plus
 - Harmon Kardon sound system 
 - Front monitor
-- iDrive
+
+<Featured
+  title="19” Alloy wheels"
+  src="https://images.ctfassets.net/ijuxqf6x1pz2/5oltMKmQlsVHqxv7590E01/bd933875717d22e151cc47abcab5d60b/photo_2023-06-23_12.56.34.jpeg"
+  features={[]}
+/>
+
 - Reverse camera 
 - Park sensor
-- Park assist 
-- 19” Alloy wheels 
+- Park assist
+
+<Featured
+  title="Driver Experience"
+  src="https://images.ctfassets.net/ijuxqf6x1pz2/J5vLoynySStAmdSzWLaQY/3bc9e4ceb6862f795edae1a61106b8f8/photo_2023-06-23_12.56.37.jpeg"
+  features={[
+    'iDrive',
+    'M Drive Select',
+    'M Sport Steering'
+  ]}
+/>
+
 - Carbon Fibre Reinforced Bar
-- M Drive Select 
-- M Sport Steering
 - M Sport Racing Calliper
 - M Sport Bucket Seat
 - M Sport Body Kit 
