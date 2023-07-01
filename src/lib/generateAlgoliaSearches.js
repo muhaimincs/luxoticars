@@ -60,3 +60,37 @@ export async function generateAlgoliaSearches() {
   //   )}`,
   // )
 }
+
+export async function submitToIndexNow() {
+  let articles = await getAllArticles()
+  const urlList = articles.map((article) => `https://www.luxoticars.cc/m/${article.slug}`)
+  // https://swimburger.net/blog/web/an-introduction-to-indexnow-and-why-you-should-care
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      "host": "luxoticars.cc",
+      "key": "14b32b36f7ba4cfea2421020ab92ef34",
+      "keyLocation": "https://www.luxoticars.cc/14b32b36f7ba4cfea2421020ab92ef34.txt",
+      urlList
+    })
+  }
+  console.log('options for indexer')
+  console.log(JSON.stringify(options))
+
+  const indexNow = fetch(`https://api.indexnow.org/indexnow`, options)
+  const bing = fetch(`https://www.bing.com/indexnow`, options)
+  const yandex = fetch(`https://yandex.com/indexnow`, options)
+
+  try {
+    await Promise.all([
+      indexNow,
+      bing,
+      yandex
+    ])
+  } catch (err) {
+    console.error(err.message)
+  }
+}
