@@ -1,0 +1,51 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import { Featured } from '@/components/Featured'
+
+export const meta = {
+  author: 'Abu Garciá',
+  date: '2023-08-07',
+  title: 'Porsche Macan 2.9 S',
+  brand: 'porsche',
+  mileage: 12000,
+  year: 2021,
+  thumbnail: 'https://images.ctfassets.net/ijuxqf6x1pz2/4lQUdAJR221dXpt35mkKa5/f03c9a3bc629fe18827ec0922ba6fbc2/photo_2023-08-11_12.46.32.jpeg',
+  thumbnailW: 1280,
+  thumbnailH: 719,
+  highlights: ['Black / Bordeaux Two Tone Leather', 'Panoramic Roof', 'Sport Design Side Skirts'],
+  description:
+    'Porsche Macan 2.9 S Features And Specs on Luxoticars',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+## Specs
+- Chassis : 0722
+- Black / Bordeaux Two Tone Leather 
+- Panoramic Roof 
+- Sport Design Side Skirts 
+- Side Window Trims in Black High Gloss 
+- Porsche Logo LED Courtesy Lights 
+- Adaptive Air Suspension incl PASM 
+- Sport Chrono Package 
+- Sport Tailpipes in Black 
+- 75 Litre Fuel Tank 
+- Power Steering Plus 
+- 14 Way Elec Comfort Seats with Memory
+- Sport Chrono 
+- Porsche Crest on Headrests 
+- Model Logo on Centre Console Armest 
+- Wireless Charging 
+- Bose Sound System 
+- Tinted LED Headlights incl PDLS Plus 
+- Auto Dimming Mirrors 
+- Park Assist incl Surround View
+- Adaptive Cruise Control 
+- Comfort Access
+
+<Featured
+  title="Wheels and Tyre"
+  src="https://images.ctfassets.net/ijuxqf6x1pz2/3juXcDkwFdEA4cHCpx7SX2/fade3f5253a00087e898966ba3059783/photo_2023-08-11_12.46.36.jpeg"
+  features={[
+    '21" Exclusive Design Sport Wheels'
+  ]}
+/>
