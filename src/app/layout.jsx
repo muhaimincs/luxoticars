@@ -6,6 +6,7 @@ import 'focus-visible'
 
 export const metadata = {
   title: {
+    default: 'LUXOTICARS',
     template: '%s | LUXOTICARS',
   },
   description: 'The Syndicate Carlifestyle Cartel',
