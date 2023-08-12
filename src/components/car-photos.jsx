@@ -12,7 +12,7 @@ export function CarPhotos({ title, photos }) {
   return (
     <>
       <div onClick={openModal} className="relative px-4 py-20 sm:px-6 sm:py-52 lg:py-96 lg:px-8 z-10">
-        <h1 className="md:text-center text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl antialiased">
+        <h1 className="md:text-center text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl antialiased" itemprop="name">
           <span className="bg-clip-text text-transparent bg-gradient-to-b backdrop-opacity-10 from-white via-zinc-200 to-transparent">
             {title.substring(0, title.indexOf(' '))}
           </span>

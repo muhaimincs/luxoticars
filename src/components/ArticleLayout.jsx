@@ -121,7 +121,7 @@ export function ArticleLayout({
   }
 
   return (
-    <div className="pb-3">
+    <div className="pb-3" itemscope itemtype="http://data-vocabulary.org/Product">
       <Head>
         <title>{meta.title}</title>
         <meta name="title" content={meta.title} />
