@@ -1,0 +1,56 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import { Featured } from '@/components/Featured'
+
+export const meta = {
+  author: 'Abu Garciá',
+  date: '2023-03-11',
+  title: 'Range Rover Vogue D350 First Edition [3.0] Diesel',
+  brand: 'land-rover',
+  mileage: 8000,
+  year: 2022,
+  thumbnail: 'https://images.ctfassets.net/ijuxqf6x1pz2/2yFxXDH6Jp2GuMrb37aRbV/5696f44d3b6c5c4fb2b747cf4a048379/photo_2023-08-13_09.43.59.jpeg',
+  thumbnailW: 853,
+  thumbnailH: 1280,
+  highlights: ['UK Imported', 'Blind Spot Monitoring', 'Red Brake Calipers'],
+  description:
+    'Land Rover Range Rover Vogue D350 First Edition [3.0] Diesel Features 2996cc inline-6, DOHC, 24v, turbo',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+## Specs
+- DOR: 29.04.2022
+- Miles: 8,000
+- Charente Grey
+- Black Package
+- Electric Side Steps
+- Sliding Panoramic roof
+- Rear Seat Entertainment
+- Meridian Signature Sound System
+- 3D Surround Camera
+- Soft Close Doors
+- Keyless Entry
+- Power Boot
+- Head Up Display
+- Digital LED Headlights with signature DRL
+- Privacy glass
+
+<Featured
+  title="Convenience"
+  src="https://images.ctfassets.net/ijuxqf6x1pz2/6zHLgEnmmBboKfVQYVXO1T/d20ce3f1c8e9f304efe82694ef96b4ae/photo_2023-08-13_09.43.52.jpeg"
+  features={[
+    '24-way Heated/Cooled Seats',
+    'Massage Electric Front Seats',
+    'SV Bespoke Full Leather Upgrade',
+    'Executive Class Rear Seats',
+    'Perlino Perforated Semi-Aniline Leather'
+  ]}
+/>
+
+<Featured
+  title="23" Style 1075 Gloss Black"
+  src="https://images.ctfassets.net/ijuxqf6x1pz2/68Bay1aTDnQIy6ea77BFDK/dbd3350b3e752ab8347c3f3af4d80ca5/photo_2023-08-13_09.44.12.jpeg"
+  features={[
+    'Black brake calipers'
+  ]}
+/>
