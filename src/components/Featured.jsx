@@ -18,7 +18,7 @@ export function Featured({ src, title = "", features = [] }) {
         </div>
       </div>
       <figure className="animate-fade-in">
-        <img src={src} alt="Featured car" className="rounded-xl"  />
+        <img src={src} alt={title} className="rounded-xl"  />
       </figure>
       <div className="absolute -inset-px bg-black/30" />
       <div className="absolute -inset-px bg-gradient-to-b from-transparent via-transparent to-black" />
