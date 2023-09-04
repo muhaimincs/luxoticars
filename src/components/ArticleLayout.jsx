@@ -74,6 +74,80 @@ export function ArticleLayout({
   const officialUrl = `${process.env.NEXT_PUBLIC_SITE_URL}${path}`
   const contentString = renderToString(children)
   const sections = getHeadings(contentString)
+  const structuredData = {
+    "@type": "Car",
+    // "bodyType": "suv",
+    "brand": {
+      "@type": "Thing",
+      "name": meta.brand
+    },
+    "description": `The ${meta.year} ${meta.description}`,
+    "model": "G63",
+    "name": `The ${meta.year} ${meta.title}`,
+    "productionDate": meta.year,
+    "speed": null,
+    "manufacturer": {
+      "@type": "Organization",
+      "name": meta.brand
+    },
+    // "offers": {
+    //   "@type": "Offer",
+    //   "price": 180150,
+    //   "priceCurrency": "USD",
+    //   "priceSpecification": {
+    //     "minPrice": 180150,
+    //     "maxPrice": 350150,
+    //     "price": 180150,
+    //     "priceCurrency": "USD"
+    //   }
+    // },
+    "review": {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Abu Garciá"
+      },
+      "datePublished": meta.date,
+      "description": "Specs",
+      "headline": `${meta.year} ${meta.title}`,
+      "publisher": {
+        "@type": "Organization",
+        "name": "Luxoticars",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "/default.png",
+          "width": 1024,
+          "height": 512
+        }
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "bestRating": 10,
+        "worstRating": 1,
+        "ratingValue": 8
+      },
+      "thumbnailUrl": meta.thumbnail,
+      "dateModified": meta.date,
+      "positiveNotes": {
+        "@type": "ItemList",
+        "itemListElement": meta.highlights.map((hl, idx) => ({
+          "@type": "ListItem",
+          "position": idx + 1,
+          "name": hl
+        }))
+      },
+      "negativeNotes": {
+        "@type": "ItemList",
+        "itemListElement": meta.highlights.map((hl, idx) => ({
+          "@type": "ListItem",
+          "position": idx + 1,
+          "name": hl
+        }))
+      }
+    },
+    "@context": "http://schema.org",
+    "url": officialUrl
+  }
 
   useEffect(() => {
     if (!isRssFeed) {
@@ -204,6 +278,10 @@ export function ArticleLayout({
         <meta
           name="theme-color"
           content="#000000"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </Head>
       
