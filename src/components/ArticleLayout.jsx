@@ -123,11 +123,10 @@ export function ArticleLayout({
   return (
     <div className="pb-3" itemscope itemtype="http://data-vocabulary.org/Product">
       <Head>
-        <title>{meta.title}</title>
-        <meta name="title" content={meta.title} />
-        <meta name="description" content={meta.description} />
+        <title>{meta.year} {meta.title}</title>
+        <meta name="title" content={`${meta.year} ${meta.title}`} />
+        <meta name="description" content={`The ${meta.year} ${meta.description}`} />
         <link rel="canonical" href={officialUrl} />
-        <link rel="publisher" href="https://www.facebook.com/luxoticars" />
         <meta
           name="og:site_name"
           content="LUXOTICARS &copy;"
@@ -143,18 +142,25 @@ export function ArticleLayout({
         <meta property='keywords' content={meta.highlights.map(hl => hl).join(", ")} />
         <meta
           property="og:title"
-          content={meta.title}
+          content={`${meta.year} ${meta.title}`}
         />
         <meta
           property="og:description"
           content={meta.description}
         />
         {sections.length ? (
-          <meta
-            property="article:section"
-            content={sections[0]?.text}
-          />
+          <>
+            <meta
+              property="article:section"
+              content={sections[0]?.text}
+            />
+            <meta name="article:publisher" content="https://www.facebook.com/luxoticars" property="article:publisher" />
+          </>
         ) : null}
+        <meta
+          property="thumbnail"
+          content={meta.thumbnail}
+        />
         <meta
           property="og:image"
           content={meta.thumbnail}
