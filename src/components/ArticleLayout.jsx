@@ -261,7 +261,7 @@ export function ArticleLayout({
         />
         <meta
           name="twitter:title"
-          content={meta.title}
+          content={`${meta.year} ${meta.title}`}
         />
         <meta
           name="twitter:image"
@@ -269,7 +269,7 @@ export function ArticleLayout({
         />
         <meta
           name="twitter:description"
-          content={meta.description}
+          content={`The ${meta.year} ${meta.description}`}
         />
         <meta
           name="article:published_time"
