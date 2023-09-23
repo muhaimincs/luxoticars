@@ -268,6 +268,10 @@ export function ArticleLayout({
           content={meta.thumbnail}
         />
         <meta
+          name="twitter:image:alt"
+          content={`The ${meta.year} ${meta.description}`}
+        />
+        <meta
           name="twitter:description"
           content={`The ${meta.year} ${meta.description}`}
         />
