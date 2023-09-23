@@ -22,7 +22,7 @@ export default function CarsIndex({ currBrand, cars, brands, prevPosts, nextPost
         <div className="grid grid-cols-1 gap-y-3 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
           <div className="lg:row-span-2">
             <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-              Drive In Style Your Dream Car
+              Drive In Style Your {currBrand.charAt(0).toUpperCase() + currBrand.slice(1)} Dream Car
             </h1>
             <div className="mt-6 mb-10 text-base text-zinc-600 dark:text-zinc-400">
               <p>Luxoticars is proud to offer wide array of brands. Iconic luxury cars from top brands</p>
