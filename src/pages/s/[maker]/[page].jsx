@@ -12,7 +12,7 @@ export default function CarsIndex({ currBrand, cars, brands, prevPosts, nextPost
   return (
     <>
       <Head>
-        <title>Cars - LUXOTICARS</title>
+        <title>{currBrand.charAt(0).toUpperCase() + currBrand.slice(1)} Cars on LUXOTICARS</title>
         <meta
           name="description"
           content="Search luxoticars listings in your area. See the most popular used cars for sale, car-buying advice & our loan calculator. Find your perfect car or SUV at luxoticars.cc"
