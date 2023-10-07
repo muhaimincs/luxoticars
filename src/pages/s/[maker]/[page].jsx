@@ -8,15 +8,47 @@ import { getAllArticles } from '@/lib/getAllArticles'
 import { getCarPhotos } from '@/lib/contentful'
 import config from '../../../../app.config'
 
-export default function CarsIndex({ currBrand, cars, brands, prevPosts, nextPosts }) {
+export default function CarsIndex({ currBrand, cars, brands, prevPosts, nextPosts, highlightedCarPhotos }) {
+  const officialUrl = `${process.env.NEXT_PUBLIC_SITE_URL}s/${currBrand}`
+
   return (
     <>
       <Head>
         <title>{currBrand.charAt(0).toUpperCase() + currBrand.slice(1)} Cars on LUXOTICARS</title>
         <meta
           name="description"
-          content="Search luxoticars listings in your area. See the most popular used cars for sale, car-buying advice & our loan calculator. Find your perfect car or SUV at luxoticars.cc"
+          content={`Find and compare the latest ${currBrand.charAt(0).toUpperCase() + currBrand.slice(1)} for sale with pricing & specs. Buy & Sell on Malaysia's largest marketplace!`}
         />
+        <link rel="canonical" href={officialUrl} />
+        <meta
+          name="og:site_name"
+          content="LUXOTICARS &copy;"
+        />
+        <meta
+          property="og:url"
+          content={officialUrl}
+        />
+        <meta
+          property="og:title"
+          content={`${currBrand.charAt(0).toUpperCase() + currBrand.slice(1)} Cars on LUXOTICARS`}
+        />
+        <meta
+          property="og:description"
+          content={`Find and compare the latest ${currBrand.charAt(0).toUpperCase() + currBrand.slice(1)} for sale with pricing & specs. Buy & Sell on Malaysia's largest marketplace!`}
+        />
+        <meta
+          property="og:type"
+          content="website"
+        />
+        <meta
+          property="thumbnail"
+          content={highlightedCarPhotos}
+        />
+        <meta
+          property="og:image"
+          content={highlightedCarPhotos}
+        />
+
       </Head>
       <Container className="mt-16 sm:mt-32">
         <div className="grid grid-cols-1 gap-y-3 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
@@ -93,6 +125,7 @@ export async function getStaticProps({ params }) {
       nextPosts,
       pageIndex,
       numPages,
+      highlightedCarPhotos: carsFeed[0].externalSource
     },
   }
 }
