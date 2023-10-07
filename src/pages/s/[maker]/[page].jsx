@@ -10,7 +10,47 @@ import config from '../../../../app.config'
 
 export default function CarsIndex({ currBrand, cars, brands, prevPosts, nextPosts, highlightedCarPhotos }) {
   const officialUrl = `${process.env.NEXT_PUBLIC_SITE_URL}s/${currBrand}`
-
+  const jsonLd = [
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "name": "LUXOTICARS Approved",
+      "alternateName": `Find and compare the latest ${currBrand.charAt(0).toUpperCase() + currBrand.slice(1)} for sale with pricing & specs. Buy & Sell on Malaysia's largest marketplace!`,
+      "url": officialUrl
+    },
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "https://www.luxoticars.cc",
+      "logo": "https://yt3.googleusercontent.com/AU4xbRC4M_jf3mAl2GSNkCuhdh7Hz63KoN-bCvWKFFYiNNjQ2B0GdeovhvzeEShBVcfLxGTxKw=s176-c-k-c0x00ffffff-no-rj",
+      "sameAs": [
+          "https://www.facebook.com/luxoticars",
+          "https://www.instagram.com/luxoticars",
+          "https://www.youtube.com/@LUXOTICARS",
+          "https://twitter.com/luxoticars_",
+          "https://www.tiktok.com/@luxoticars",
+      ]
+    },
+    {
+      "@context": "http://schema.org",
+      "@type": "ItemList",
+      "url": officialUrl,
+      "numberOfItems": cars.length,
+      "itemListElement": cars.map((car, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "item": {
+          "@type": "Product",
+          "name": car.title,
+          "description": car.description,
+          "brand": {
+            "@type": "Brand",
+            "name": car.brand
+          },
+        },
+      }))
+    },
+  ]
   return (
     <>
       <Head>
@@ -48,6 +88,9 @@ export default function CarsIndex({ currBrand, cars, brands, prevPosts, nextPost
           property="og:image"
           content={highlightedCarPhotos}
         />
+        <script type="application/ld+json">
+          {JSON.stringify(jsonLd)}
+        </script>
 
       </Head>
       <Container className="mt-16 sm:mt-32">
