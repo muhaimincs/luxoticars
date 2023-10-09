@@ -9,7 +9,7 @@ import { getCarPhotos } from '@/lib/contentful'
 import config from '../../../../app.config'
 
 export default function CarsIndex({ currBrand, cars, brands, prevPosts, nextPosts, highlightedCarPhotos }) {
-  const officialUrl = `${process.env.NEXT_PUBLIC_SITE_URL}s/${currBrand}`
+  const officialUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/s/${currBrand}`
   const jsonLd = [
     {
       "@context": "http://schema.org",
