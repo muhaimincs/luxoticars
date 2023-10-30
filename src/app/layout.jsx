@@ -43,7 +43,7 @@ export const metadata = {
   },
   colorScheme: 'dark',
   themeColor: [
-    { media: '(prefers-color-scheme: dark)', color: '#7c1f07' },
+    { media: '(prefers-color-scheme: dark)', color: '#000000' },
   ],
   msApplicationTileColor: '#000000',
   metadataBase: new URL('https://www.luxoticars.cc'),
