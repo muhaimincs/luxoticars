@@ -1,0 +1,37 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import { Featured } from '@/components/Featured'
+
+export const meta = {
+  author: 'Abu Garciá',
+  date: '2023-09-22',
+  title: 'Porsche 911.1 GT3 RS 4.0',
+  brand: 'porsche',
+  mileage: 2000,
+  year: 2019,
+  thumbnail: 'https://images.ctfassets.net/ijuxqf6x1pz2/5WpGABynLFzppTKSH6TJJP/6a13fbaf7e3cf4cf7f5b483c34ed5618/photo_2023-12-01_14.48.33.jpeg',
+  thumbnailW: 853,
+  thumbnailH: 1280,
+  highlights: ['Yellow Brake Caliper', 'Porsche Ceramic Composite Brake', 'Lifter Levelling'],
+  description:
+    'Porsche 911.1 GT3 RS 4.0 Features And Specs on Luxoticars',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+## Specs
+- Pre-Owned (2016)
+- Registered in 2019
+- 2k miles in KM
+- 500bhp
+- Red Seatbelt 
+- Lifter Levelling 
+- PCCB - Porsche Ceramic Composite Brake
+- Rear Wing 
+- PCM- Porsche Communication Management 
+- Paddle Shift
+
+<Featured
+  title="Yellow Brake Caliper"
+  src="https://images.ctfassets.net/ijuxqf6x1pz2/ZfMtEGzlVS90ZtiWA091M/bffb7c8f66d689bb0fe95e2bee093129/photo_2023-12-01_14.48.27.jpeg"
+  features={[]}
+/>
