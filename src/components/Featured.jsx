@@ -1,9 +1,9 @@
 
 export function Featured({ src, title = "", features = [] }) {
   return (
-    <div className="relative">
+    <div className="relative" aria-labelledby="featured-title">
       <div className="absolute top-2 left-3 md:top-36 z-20">
-        <h2 className="text-zinc-300 text-2xl md:text-xl">
+        <h2 id="featured-title" className="text-zinc-300 text-2xl md:text-xl" aria-description={title}>
           <span className="bg-clip-text text-transparent bg-gradient-to-b backdrop-opacity-10 from-white via-zinc-200 to-transparent">
             {title}
           </span>
