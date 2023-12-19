@@ -289,7 +289,7 @@ export function ArticleLayout({
         />
       </Head>
       
-      <div className="mx-auto max-w-5xl px-3">
+      <div className="mx-auto max-w-5xl px-3" role="navigation">
         <div className="mt-10 flex justify-between">
           {previousPathname && (
             <Link
@@ -332,7 +332,7 @@ export function ArticleLayout({
           </div>
         </div>
       </div>
-      <div id="display" className="relative mt-10">
+      <main id="display" className="relative mt-10">
         <div className="mx-auto max-w-6xl">
           <div className="relative shadow-xl sm:overflow-hidden sm:rounded-2xl">
             {photo && (
@@ -351,7 +351,7 @@ export function ArticleLayout({
             />
           </div>
         </div>
-      </div>
+      </main>
       <Container className="mt-16">
         <div className="xl:relative">
           <div className="mx-auto max-w-2xl">

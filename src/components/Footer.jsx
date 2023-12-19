@@ -28,7 +28,10 @@ function SocialLink({ className, href, children, icon: Icon }) {
 
 export function Footer() {
   return (
-    <footer className="max-w-7xl mx-auto px-4 lg:px-8 mb-32 md:mb-10">
+    <footer className="max-w-7xl mx-auto px-4 lg:px-8 mb-32 md:mb-10" aria-labelledby="footer-heading">
+      <h2 id="footer-heading" className="sr-only">
+        Footer
+      </h2>
       <Container.Outer>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 box-border text-white">
           <div>
