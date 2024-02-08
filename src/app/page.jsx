@@ -5,6 +5,7 @@ import { Container } from '@/components/Container'
 import YouTube from './(homepage)/YouTube'
 import avatarFont from '@/images/LUXOTICARS_WHITE_FONT.svg'
 import { generateAlgoliaSearches, submitToIndexNow } from '@/lib/generateAlgoliaSearches'
+import { Popup } from './(homepage)/pop-up'
 
 export default async function Page() {
   if (process.env.NODE_ENV === 'production') {
@@ -46,6 +47,7 @@ export default async function Page() {
         </Container>
       </div>
       <YouTube brands={brands} cars={cars} />
+      <Popup />
     </>
   )
 }
