@@ -13,7 +13,7 @@ export function Popup() {
   return (
     <>
       <Transition appear show={isOpen} as={Fragment}>
-        <Dialog as="div" className="relative z-10" onClose={closeModal}>
+        <Dialog as="div" className="relative z-[60]" onClose={closeModal}>
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -38,7 +38,7 @@ export function Popup() {
                 leaveTo="opacity-0 scale-95"
               >
                 <Dialog.Panel className="w-full max-w-md z-10 transform overflow-hidden rounded-2xl bg-white p-0 text-left align-middle shadow-xl transition-all">
-                  <img src="/ads/photo_2024-02-09 05.17.05.jpeg" alt="Luxoticars" className="h-full" />
+                  <img src="/ads/photo_2024-02-09 05.17.05.jpeg" alt="Luxoticars" className="h-full object-fill object-center" />
                 </Dialog.Panel>
               </Transition.Child>
             </div>
