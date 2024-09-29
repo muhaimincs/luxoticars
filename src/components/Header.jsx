@@ -14,6 +14,7 @@ import avatarImage from '@/images/avatar.svg'
 export const navigation = [
   { name: 'About', href: '/about', current: false },
   { name: 'Stock', href: '/l', current: false },
+  { name: 'Review', href: 'https://reviews.luxoticars.cc/', current: false },
   { name: 'Gallery', href: 'https://luxoticars-gallery.vercel.app/', current: false },
   // { name: 'Client', href: '/client/icahfa', current: false },
   // { name: 'Lifestyle', href: 'https://shop.luxoticars.my', current: false }
